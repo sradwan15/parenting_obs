@@ -43,11 +43,14 @@ for (f in files) {
   jf <- paste("parenting_obs_paq_online/",f,sep="")
   jd <- fromJSON(paste(readLines(jf), collapse=""))
   
-  attitudes_id <- data.frame(workerid = f, 
+  attitudes_id <- data.frame(sid = f, 
                    sent = jd$data$sentence[2:25],
                    rating = jd$data$rating[1:24]) 
                    
   attitudes <- bind_rows(attitudes, attitudes_id)}
+
+attitudes$sid <- str_replace(attitudes$sid, "parenting_proj_", "")
+attitudes$sid <- str_replace(attitudes$sid, ".json", "")
 
 #from paper version
 paq <- read.csv('parenting_obs_paq_paper.csv')
@@ -55,9 +58,9 @@ sents <- read.csv('sent_forms_paper.csv')
 
 paq <- paq %>%
   gather(ques, rating, Q1:Q24)%>%
-  mutate(workerid = Sub_ID)%>%
+  mutate(sid = Sub_ID)%>%
   left_join(sents)%>%
-  select(workerid, sent, rating)
+  select(sid, sent, rating)
 
 paq$rating <- as.integer(paq$rating)
 attitudes$rating <- as.integer(attitudes$rating)
@@ -78,6 +81,17 @@ Clean up labels.
 attitudes$sent <- str_replace_all(as.character(attitudes$sent), "[â‘”“’']", "")
 ```
 
+Read in demographics.
+
+```{r}
+demo <- read.csv("../parenting_proj_emilyhembacher_demo2016.csv")
+
+demo <- demo %>%
+  mutate(sid = SID)%>%
+  select(sid, ethnicity, parent_ed)
+  
+attitudes <- left_join(attitudes, demo)
+```
 
 # Data Frames and Exclusions
 
@@ -94,7 +108,7 @@ dq$rating <- as.numeric(dq$rating)
 dq$rating[dq$reverse_code == 1] <- 6 - dq$rating[dq$reverse_code == 1]
 
 atts <- dq %>%
-  group_by(workerid, category) %>% 
+  group_by(sid, category) %>% 
   summarise(rating = mean(rating))
 ```
 
@@ -138,6 +152,27 @@ ggplot(atts_m, aes(x = category, y = mean)) +
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))
+```
+```{r}
+dq$parent_ed <- as.factor(dq$parent_ed)
+
+mss <- dq %>%
+  group_by(sid, parent_ed) %>%
+  filter(!is.na(parent_ed))%>%
+  multi_boot_standard(col = "rating", na.rm = TRUE) 
+
+qplot(parent_ed, data=mss)
+
+ms <- dq %>%
+  group_by(parent_ed, category) %>%
+  filter(!is.na(parent_ed))%>%
+  multi_boot_standard(col = "rating", na.rm = TRUE) 
+
+ggplot(ms, aes(category, mean, fill=parent_ed)) +
+  geom_bar(stat="identity", position = "dodge") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9)) + 
+  scale_fill_solarized()
 ```
 
 
