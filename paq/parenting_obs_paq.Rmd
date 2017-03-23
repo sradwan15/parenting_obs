@@ -26,6 +26,7 @@ library(rjson)
 library(stringr)
 library(forcats)
 library(tibble)
+library(lme4)
 
 select <- dplyr::select # masked by MASS
 
@@ -173,8 +174,21 @@ ggplot(ms, aes(category, mean, fill=parent_ed)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9)) + 
   scale_fill_solarized()
-```
 
+da <- dq %>%
+  group_by(sid, parent_ed, category) %>%
+  filter(!is.na(parent_ed))%>%
+  multi_boot_standard(col = "rating", na.rm = TRUE) 
+
+da$parent_ed <- as.numeric(da$parent_ed)
+```
+Stats
+```{r eval = FALSE}
+mod <- lmer(mean ~ parent_ed *  category +
+                           (1 | sid), 
+                         data = da)
+summary(mod)
+```
 
 
 
