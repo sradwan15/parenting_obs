@@ -57,6 +57,8 @@ attitudes$sid <- str_replace(attitudes$sid, ".json", "")
 paq <- read.csv('parenting_obs_paq_paper.csv')
 sents <- read.csv('sent_forms_paper.csv')
 
+paq_gd <- read.csv('paq_gdrive.csv')
+
 paq <- paq %>%
   gather(ques, rating, Q1:Q24)%>%
   mutate(sid = Sub_ID)%>%
@@ -89,7 +91,7 @@ demo <- read.csv("../parenting_proj_emilyhembacher_demo2016.csv")
 
 demo <- demo %>%
   mutate(sid = SID)%>%
-  select(sid, ethnicity, parent_ed)
+  select(sid, ethnicity, parent_ed, num_lang, gender, age)
   
 attitudes <- left_join(attitudes, demo)
 ```
@@ -155,7 +157,6 @@ ggplot(atts_m, aes(x = category, y = mean)) +
              position = position_dodge(width = .9))
 ```
 
-
 Demographics
 ```{r}
 dq$parent_ed <- as.factor(dq$parent_ed)
@@ -193,5 +194,16 @@ mod <- lmer(mean ~ parent_ed *  category +
 summary(mod)
 ```
 
+Get data for individual differences analysis.
+```{r}
+ids <- dq %>%
+  group_by(sid, category) %>%
+  multi_boot_standard(col = "rating", na.rm = TRUE)%>%
+  select(sid, category, mean)%>%
+  spread(category, mean)%>%
+  left_join(demo)
+
+save(ids, file = "paq_demo.RData")
+```
 
 

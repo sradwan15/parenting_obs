@@ -113,12 +113,16 @@ d.raw <- bind_rows(d.raw, sd)
 Read in trial info and demographics. 
 
 ```{r}
-# demo <- read.csv("../parenting_obs_demo.csv")
 conditions <- read.csv("conditions.csv")
+
+load("../paq/paq_demo.RData")
+
+ids$SID <- ids$sid 
 
 d <- d.raw %>%
   left_join(conditions)%>%
-  mutate(bids_tot = bids + cja + pja)
+  mutate(bids_tot = bids + cja + pja)%>%
+  left_join(ids)
 ```
 
 ```{r}
@@ -180,6 +184,21 @@ ggplot(ms_bids, aes(x = Condition, y = mean)) +
 ```
 
 ```{r}
+# total bids
+ms_bids <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "bids_tot") 
+
+ggplot(ms_bids, aes(x = Condition, y = mean, fill=gender)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total bids for Joint Attention") 
+```
+
+
+```{r}
 #pja
 ms_pja <- d %>%
   group_by(Condition) %>%
@@ -221,7 +240,6 @@ ggplot(ms_lcja, aes(x = Condition, y = mean)) +
   xlab("Condition") + 
   ylab("Total time Spent in Coordinated Joint Attention") 
 ```
-
 
 ```{r}
 #cja
