@@ -57,8 +57,6 @@ attitudes$sid <- str_replace(attitudes$sid, ".json", "")
 paq <- read.csv('parenting_obs_paq_paper.csv')
 sents <- read.csv('sent_forms_paper.csv')
 
-paq_gd <- read.csv('paq_gdrive.csv')
-
 paq <- paq %>%
   gather(ques, rating, Q1:Q24)%>%
   mutate(sid = Sub_ID)%>%
