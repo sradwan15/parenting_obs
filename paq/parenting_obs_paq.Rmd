@@ -198,10 +198,10 @@ ids <- dq %>%
   group_by(sid, category) %>%
   multi_boot_standard(col = "rating", na.rm = TRUE)%>%
   select(sid, category, mean)%>%
-  spread(category, mean)%>%
-  left_join(demo)
+  spread(category, mean)
 
 save(ids, file = "paq_demo.RData")
+save(demo, file = "obs_demo.RData")
 ```
 
 
