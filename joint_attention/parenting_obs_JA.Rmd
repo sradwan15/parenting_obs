@@ -1,0 +1,289 @@
+---
+title: "Parenting Observational Study"
+author: "Emily"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+---
+
+<style type="text/css">
+body, td {
+   font-size: 14px;
+}
+code {
+  font-size: 11px;
+}
+pre {
+  font-size: 11px;
+}
+</style>
+
+Data analysis of social referencing and uncertainty study.
+
+# Data preprocessing
+
+Preliminaries.
+
+```{r echo=FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(fig.width=8, fig.height=5, 
+                      echo=TRUE, warning=FALSE, message=FALSE, cache=TRUE)
+library(tidyverse)
+library(lme4)
+library(knitr)
+library(markdown)
+library(lmerTest)
+library(stringr)
+library(langcog)
+theme_set(theme_bw())
+```
+
+Read in files and consolidate to the same directory. 
+
+```{r}
+d.raw <- data.frame()
+files <- dir("data/")
+
+for (f in files) {
+  jf <- paste("data/",f,sep="")
+  jd <- read.csv(jf)
+  
+  SID <- str_replace(f, ".csv", "")
+  line <- jd$JointAttention.ordinal
+  phase_onset <- jd$JointAttention.onset
+  phase_offset <- jd$JointAttention.offset
+  pja <- jd$JointAttention.pJA
+  cja <- jd$JointAttention.cJA
+  bid <- jd$JointAttention.bids
+  
+  id <- data.frame(SID = SID,
+                   line = line,
+                   phase_onset = phase_onset,
+                   phase_offset = phase_offset, 
+                   pja = pja,
+                   cja = cja,
+                   bid = bid)
+  
+  l_pja <- id%>%
+    mutate(phase_length = phase_offset - phase_onset)%>%
+    filter(pja == 1)%>%
+    group_by(SID, pja)%>%
+    summarise(pja_length = sum(phase_length))%>%
+    select(-pja)
+  
+  l_cja <- id%>%
+    mutate(phase_length = phase_offset - phase_onset)%>%
+    filter(cja == 1)%>%
+    group_by(SID, cja)%>%
+    summarise(cja_length = sum(phase_length))%>%
+    select(-cja)
+    
+  c_pja <- id%>%
+    group_by(SID)%>%
+    summarise(pja = sum(pja))
+  
+  c_cja <- id%>%
+    group_by(SID)%>%
+    summarise(cja = sum(cja)) 
+  
+  c_bids <- id%>%
+    group_by(SID)%>%
+    summarise(bids = sum(bid)) 
+
+  sd <- c_bids%>%
+    left_join(c_cja)%>%
+    left_join(c_pja)%>%
+    left_join(c_cja)%>%
+    left_join(l_pja)%>%
+    left_join(l_cja)
+    
+sd$pja_length[is.na(sd$pja_length)] <- 0
+sd$cja_length[is.na(sd$cja_length)] <- 0
+
+sd <- sd %>%
+  mutate(total_ja = pja + cja)%>%
+  mutate(total_lja = pja_length + cja_length)
+
+d.raw <- bind_rows(d.raw, sd)
+}
+```
+
+Read in trial info and demographics. 
+
+```{r}
+# demo <- read.csv("../parenting_obs_demo.csv")
+conditions <- read.csv("conditions.csv")
+
+d <- d.raw %>%
+  left_join(conditions)%>%
+  mutate(bids_tot = bids + cja + pja)
+```
+
+```{r}
+#total  # episodes of JA
+ms_total_ja <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "total_ja") 
+
+ggplot(ms_total_ja, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9)) +
+  xlab("Condition") + 
+  ylab("Episodes Joint Attention") 
+```
+
+```{r}
+#total time JA
+ms_total_lja <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "total_lja") 
+
+#plot length of joint attention.
+ggplot(ms_total_lja, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9)) +
+  xlab("Condition") + 
+  ylab("Time Spent in Joint Attention") 
+```
+
+
+```{r}
+#unsuccessful bids
+ms_bids <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "bids") 
+
+ggplot(ms_bids, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Unsuccessful bids for Joint Attention") 
+```
+
+```{r}
+# total bids
+ms_bids <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "bids_tot") 
+
+ggplot(ms_bids, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total bids for Joint Attention") 
+```
+
+```{r}
+#pja
+ms_pja <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "pja") 
+
+ggplot(ms_pja, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Episodes of Passive Joint Attention") 
+```
+
+```{r}
+#cja
+ms_cja <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "cja") 
+
+ggplot(ms_cja, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Episodes of Coordinated Joint Attention") 
+```
+
+```{r}
+#cja
+ms_lcja <- d %>%
+  filter(!is.na(Condition))%>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "cja_length") 
+
+ggplot(ms_lcja, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total time Spent in Coordinated Joint Attention") 
+```
+
+
+```{r}
+#cja
+ms_lpja <- d %>%
+  filter(!is.na(Condition))%>%
+  group_by(Condition) %>%
+  multi_boot_standard(col = "pja_length") 
+
+#plot 
+ggplot(ms_lpja, aes(x = Condition, y = mean)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total time Spent in Passive Joint Attention") 
+```
+
+#Analysis
+
+T-tests
+```{r}
+t.test(d$bids[d$Condition == "exp"],d$bids[d$Condition == "con"])
+t.test(d$bids_tot[d$Condition == "exp"],d$bids_tot[d$Condition == "con"])
+t.test(d$cja[d$Condition == "exp"],d$cja[d$Condition == "con"])
+t.test(d$pja[d$Condition == "exp"],d$pja[d$Condition == "con"])
+t.test(d$pja_length[d$Condition == "exp"],d$pja_length[d$Condition == "con"])
+t.test(d$cja_length[d$Condition == "exp"],d$cja_length[d$Condition == "con"])
+t.test(d$total_ja[d$Condition == "exp"],d$total_ja[d$Condition == "con"])
+t.test(d$total_lja[d$Condition == "exp"],d$total_lja[d$Condition == "con"])
+```
+
+Significant effect of condition on total number of bids and unsuccessful bids (most bids are unsuccessful).
+
+Mixed effects models.
+
+```{r}
+bids <- lmer(bids_tot ~ Condition  +
+                           (1 | SID) + (1 | Video),
+                         data = d)
+```
+
+
+
+```{r eval = FALSE}
+maximal_mod <- lmer(l_pja ~ condition * EL_score +
+                           (condition * EL_score | SID), 
+                         data = lmer_data)
+
+maximal_mod <- lmer(l_cja ~ condition * EL_score +
+                           (condition * EL_score | SID), 
+                         data = lmer_data)
+
+maximal_mod <- lmer(c_bids ~ condition * EL_score +
+                           (condition * EL_score | SID), 
+                         data = lmer_data)
+
+maximal_mod <- lmer(c_pja ~ condition * EL_score +
+                           (condition * EL_score | SID), 
+                         data = lmer_data)
+
+maximal_mod <- lmer(c_cja ~ condition * EL_score +
+                           (condition * EL_score | SID), 
+                         data = lmer_data)
+```
+

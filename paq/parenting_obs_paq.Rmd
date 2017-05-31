@@ -154,6 +154,9 @@ ggplot(atts_m, aes(x = category, y = mean)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))
 ```
+
+
+Demographics
 ```{r}
 dq$parent_ed <- as.factor(dq$parent_ed)
 
