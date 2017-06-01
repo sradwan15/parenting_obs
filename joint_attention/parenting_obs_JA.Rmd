@@ -37,6 +37,7 @@ library(markdown)
 library(lmerTest)
 library(stringr)
 library(langcog)
+library(xtable)
 theme_set(theme_bw())
 ```
 
@@ -127,9 +128,9 @@ demo <- demo%>%
   select(-sid)%>%
   mutate(age_months = age * 12)
 
-demo$age_group[demo$age_months <= 12] <- "6"
-demo$age_group[demo$age_months > 12 & demo$age_months <= 18 ] <- "12"
-demo$age_group[demo$age_months > 18] <- "18"
+demo$age_group[demo$age_months < 12] <- "6"
+demo$age_group[demo$age_months >= 12 & demo$age_months < 18 ] <- "12"
+demo$age_group[demo$age_months >= 18] <- "18"
 
 d <- d.raw %>%
   left_join(conditions)%>%
@@ -138,6 +139,125 @@ d <- d.raw %>%
   left_join(ids)%>%
   select(-sid)
 ```
+
+#Demographics
+
+```{r}
+demos <- conditions%>%
+  left_join(demo)
+
+demos$parent_ed[demos$parent_ed == 1] <- 8
+demos$parent_ed[demos$parent_ed == 2] <- 12
+demos$parent_ed[demos$parent_ed == 3] <- 14
+demos$parent_ed[demos$parent_ed == 4] <- 18
+demos$parent_ed[demos$parent_ed == 5] <- 20
+demos$parent_ed[demos$parent_ed == 6] <- 22
+
+#child gender
+table(demos$Condition, demos$gender)
+#ethnicity
+table(demos$Condition, demos$ethnicity)
+#years of education
+table(demos$Condition, demos$parent_ed)
+```
+
+#Reliability
+
+Import reliability coder's data (20 participants were coded for reliability).
+```{r}
+d.raw_rel <- data.frame()
+files <- dir("rel_data/")
+
+for (f in files) {
+  jf <- paste("rel_data/",f,sep="")
+  jd <- read.csv(jf)
+  
+  SID <- str_replace(f, ".csv", "")
+  line <- jd$JointAttention.ordinal
+  phase_onset <- jd$JointAttention.onset
+  phase_offset <- jd$JointAttention.offset
+  pja <- jd$JointAttention.pJA
+  cja <- jd$JointAttention.cJA
+  bid <- jd$JointAttention.bids
+  
+  id <- data.frame(SID = SID,
+                   line = line,
+                   phase_onset = phase_onset,
+                   phase_offset = phase_offset, 
+                   pja = pja,
+                   cja = cja,
+                   bid = bid)
+  
+  l_pja <- id%>%
+    mutate(phase_length = phase_offset - phase_onset)%>%
+    filter(pja == 1)%>%
+    group_by(SID, pja)%>%
+    summarise(pja_length = sum(phase_length))%>%
+    select(-pja)
+  
+  l_cja <- id%>%
+    mutate(phase_length = phase_offset - phase_onset)%>%
+    filter(cja == 1)%>%
+    group_by(SID, cja)%>%
+    summarise(cja_length = sum(phase_length))%>%
+    select(-cja)
+    
+  c_pja <- id%>%
+    group_by(SID)%>%
+    summarise(pja = sum(pja))
+  
+  c_cja <- id%>%
+    group_by(SID)%>%
+    summarise(cja = sum(cja)) 
+  
+  c_bids <- id%>%
+    group_by(SID)%>%
+    summarise(bids = sum(bid)) 
+
+  sd <- c_bids%>%
+    left_join(c_cja)%>%
+    left_join(c_pja)%>%
+    left_join(c_cja)%>%
+    left_join(l_pja)%>%
+    left_join(l_cja)
+    
+sd$pja_length[is.na(sd$pja_length)] <- 0
+sd$cja_length[is.na(sd$cja_length)] <- 0
+
+sd <- sd %>%
+  mutate(total_ja = pja + cja)%>%
+  mutate(total_lja = pja_length + cja_length)
+
+d.raw_rel <- bind_rows(d.raw_rel, sd)
+}
+```
+
+Reliability.
+```{r}
+d.raw_rel <- d.raw_rel%>%
+  mutate(bids_rel = bids, pja_rel = pja, cja_rel = cja)%>%
+  select(SID, bids_rel, pja_rel, cja_rel)
+
+bids_mat <- d.raw_rel%>%
+  left_join(d.raw)%>%
+  select(bids, bids_rel)
+
+psych::ICC(bids_mat, missing = FALSE, alpha = 0.05)
+  
+pja_mat <- d.raw_rel%>%
+  left_join(d.raw)%>%
+  select(pja, pja_rel)
+
+psych::ICC(pja_mat, missing = FALSE, alpha = 0.05)
+
+cja_mat <- d.raw_rel%>%
+  left_join(d.raw)%>%
+  select(cja, cja_rel)
+
+psych::ICC(cja_mat, missing = FALSE, alpha = 0.05)
+```
+
+Inter-rater reliability is very high for number of bids, high for number of episodes of coordinated joint attention, but there is less agreement for episodes passive joint attention. 
 
 #Plots
 
@@ -385,7 +505,7 @@ lmer_data <- d %>%
 
 Total number of bids
 ```{r}
-maximal_mod <- lmer(bids_tot ~ Condition *  EL  + Condition * AA + Condition * RR + age + gender +
+maximal_mod <- lmer(bids_tot ~ Condition *  EL  + Condition * AA + Condition * RR + age + gender + parent_ed +
                            (1| Video), 
                          data = lmer_data)
 summary(maximal_mod)
@@ -393,7 +513,7 @@ summary(maximal_mod)
 
 Episodes of coordinated joint attention.
 ```{r}
-maximal_mod <- lmer(cja ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender +
+maximal_mod <- lmer(cja ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender + parent_ed +
                            (1| Video), 
                          data = lmer_data)
 summary(maximal_mod)
@@ -401,7 +521,7 @@ summary(maximal_mod)
 
 Episodes of passive joint attention.
 ```{r}
-maximal_mod <- lmer(pja ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender +
+maximal_mod <- lmer(pja ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender + parent_ed +
                            (1| Video), 
                          data = lmer_data)
 summary(maximal_mod)
@@ -409,7 +529,7 @@ summary(maximal_mod)
 
 Total duration of passive joint attention.
 ```{r}
-maximal_mod <- lmer(pja_length ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender +
+maximal_mod <- lmer(pja_length ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender + parent_ed +
                            (1| Video), 
                          data = lmer_data)
 summary(maximal_mod)
@@ -417,7 +537,7 @@ summary(maximal_mod)
 
 Total duration of coordinated joint attention.
 ```{r}
-maximal_mod <- lmer(cja_length ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender +
+maximal_mod <- lmer(cja_length ~ Condition *  EL  + Condition * AA + Condition * RR  + age + gender + parent_ed +
                            (1| Video), 
                          data = lmer_data)
 summary(maximal_mod)
