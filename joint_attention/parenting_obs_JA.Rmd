@@ -428,6 +428,8 @@ ms_lpja <- d %>%
   group_by(Condition, age_group) %>%
   multi_boot_standard(col = "pja_length") 
 
+ms_lpja$age_group <- factor(ms_lpja$age_group , levels = c("6","12", "18"))
+
 ggplot(ms_lpja, aes(x = Condition, y = mean, fill = age_group)) + 
   geom_bar(stat="identity", position = "dodge") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
@@ -444,6 +446,8 @@ ms_lcja <- d %>%
   filter(!is.na(Condition))%>%
   group_by(Condition, age_group) %>%
   multi_boot_standard(col = "cja_length") 
+
+ms_lcja$age_group <- factor(ms_lcja$age_group , levels = c("6","12", "18"))
 
 ggplot(ms_lcja, aes(x = Condition, y = mean, fill = age_group)) + 
   geom_bar(stat="identity", position = "dodge") + 
