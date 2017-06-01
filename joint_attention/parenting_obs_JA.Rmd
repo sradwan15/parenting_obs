@@ -147,12 +147,14 @@ ms_bids <- d %>%
   group_by(Condition) %>%
   multi_boot_standard(col = "bids_tot") 
 
-ggplot(ms_bids, aes(x = Condition, y = mean)) + 
+ggplot(ms_bids, aes(x = Condition, y = mean, fill = Condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total bids for Joint Attention")
+  ylab("Total bids for Joint Attention") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Episodes of passive joint attention.
@@ -161,12 +163,14 @@ ms_pja <- d %>%
   group_by(Condition) %>%
   multi_boot_standard(col = "pja") 
 
-ggplot(ms_pja, aes(x = Condition, y = mean)) + 
+ggplot(ms_pja, aes(x = Condition, y = mean, fill = Condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Episodes of Passive Joint Attention") 
+  ylab("Episodes of Passive Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Episodes of coordinated joint attention
@@ -175,12 +179,14 @@ ms_cja <- d %>%
   group_by(Condition) %>%
   multi_boot_standard(col = "cja") 
 
-ggplot(ms_cja, aes(x = Condition, y = mean)) + 
+ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Episodes of Coordinated Joint Attention") 
+  ylab("Episodes of Coordinated Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Total duration of passive joint attention.
@@ -190,12 +196,14 @@ ms_lpja <- d %>%
   group_by(Condition) %>%
   multi_boot_standard(col = "pja_length") 
 
-ggplot(ms_lpja, aes(x = Condition, y = mean)) + 
+ggplot(ms_lpja, aes(x = Condition, y = mean, fill = Condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total Duration Passive Joint Attention") 
+  ylab("Total Duration Passive Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Total duration of coordinated joint attention.
@@ -205,12 +213,14 @@ ms_lcja <- d %>%
   group_by(Condition) %>%
   multi_boot_standard(col = "cja_length") 
 
-ggplot(ms_lcja, aes(x = Condition, y = mean)) + 
+ggplot(ms_lcja, aes(x = Condition, y = mean, fill = Condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total Duration Coordinated Joint Attention") 
+  ylab("Total Duration Coordinated Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 ##Demographics
@@ -229,7 +239,9 @@ ggplot(ms_bids, aes(x = Condition, y = mean, fill=gender)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total bids for Joint Attention") 
+  ylab("Total bids for Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Total duration of passive joint attention by gender
@@ -244,7 +256,9 @@ ggplot(ms_lpja, aes(x = Condition, y = mean, fill=gender)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total Duration Passive Joint Attention") 
+  ylab("Total Duration Passive Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Total duration of coordinated joint attention by gender
@@ -259,7 +273,9 @@ ggplot(ms_lcja, aes(x = Condition, y = mean, fill=gender)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total Duration Coordinated Joint Attention") 
+  ylab("Total Duration Coordinated Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 ###Child age
@@ -280,7 +296,9 @@ ggplot(ms_bids, aes(x = Condition, y = mean, fill=age_group)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total bids for Joint Attention") 
+  ylab("Total bids for Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Total duration of passive joint attention by age
@@ -295,7 +313,9 @@ ggplot(ms_lpja, aes(x = Condition, y = mean, fill = age_group)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total Duration Passive Joint Attention") 
+  ylab("Total Duration Passive Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 Total duration of coordinated joint attention by age
@@ -310,7 +330,9 @@ ggplot(ms_lcja, aes(x = Condition, y = mean, fill = age_group)) +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Total Duration Coordinated Joint Attention") 
+  ylab("Total Duration Coordinated Joint Attention")  +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
 ```
 
 ###Parenting attitudes and education
@@ -402,3 +424,14 @@ summary(maximal_mod)
 ```
 
 #Conclusions
+
+There is a main effect of condition on total bids for joint attention. Parents in the experimental condition (i.e., those who saw a video demonstrating an activity) made a greater number of bids for joint attention with their child.
+
+There was no effect of condition on the number of episodes of either passive or coordinated joint attention, or the duration of these episodes. 
+
+There is a marginal effect of gender on bids for joint attention, with parents of males producing more bids. There is a marginal interaction between RR scores and condition on passive joint attention, such that the experimental condition increased the number of episodes of PJA to a greater extent for people with high RR scores.
+
+While the electronically-delivered parenting advice increased the number of bids for joint attention by parents, it did not significantly effect the number or duration of episodes of joint attention. One possibility is that child variables had a comparatively larger impact on the attainment of joint attention.
+
+
+
