@@ -38,6 +38,7 @@ library(lmerTest)
 library(stringr)
 library(langcog)
 library(xtable)
+library(Hmisc)
 theme_set(theme_bw())
 ```
 
@@ -235,8 +236,8 @@ d.raw_rel <- bind_rows(d.raw_rel, sd)
 Reliability.
 ```{r}
 d.raw_rel <- d.raw_rel%>%
-  mutate(bids_rel = bids, pja_rel = pja, cja_rel = cja)%>%
-  select(SID, bids_rel, pja_rel, cja_rel)
+  mutate(bids_rel = bids, pja_rel = pja, cja_rel = cja, l_pja_rel = pja_length, l_cja_rel = cja_length)%>%
+  select(SID, bids_rel, pja_rel, cja_rel, l_cja_rel, l_pja_rel)
 
 bids_mat <- d.raw_rel%>%
   left_join(d.raw)%>%
@@ -255,6 +256,18 @@ cja_mat <- d.raw_rel%>%
   select(cja, cja_rel)
 
 psych::ICC(cja_mat, missing = FALSE, alpha = 0.05)
+
+l_pja_mat <- d.raw_rel%>%
+  left_join(d.raw)%>%
+  select(pja_length, l_pja_rel)
+
+psych::ICC(l_pja_mat, missing = FALSE, alpha = 0.05)
+
+l_cja_mat <- d.raw_rel%>%
+  left_join(d.raw)%>%
+  select(cja_length, l_cja_rel)
+
+psych::ICC(l_cja_mat, missing = FALSE, alpha = 0.05)
 ```
 
 Inter-rater reliability is very high for number of bids, high for number of episodes of coordinated joint attention, but there is less agreement for episodes passive joint attention. 
@@ -490,6 +503,16 @@ ggplot(d_plot, aes(x = parent_ed, y = bids_tot)) +
 ```
 
 #Analysis
+
+Is the duration of joint attention correlated with age in months?
+
+```{r}
+cormat <- d %>%
+  select(age_months, pja_length, cja_length, total_lja)
+rcorr(as.matrix(cormat))
+
+```
+
 
 Mixed effects models.
 
