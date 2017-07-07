@@ -1,0 +1,118 @@
+---
+title: "Parenting observation lexical diversity"
+author: "Emily"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+# Data preprocessing
+
+Preliminaries.
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=5, 
+                      echo=TRUE, warning=FALSE, message=FALSE, cache=FALSE)
+suppressPackageStartupMessages(c("dplyr","langcog","tidyr","ggplot2","lme4"))
+library(psych)
+library(langcog)
+library(tidyverse)
+library(ggthemes)
+library(lme4)
+library(lmerTest)
+
+select <- dplyr::select # masked by MASS
+theme_set(theme_few())
+```
+
+Read in participant data.
+
+```{r}
+data <- read.csv("data.csv", header =TRUE)
+dem <- read.csv("parenting_proj_emilyhembacher_demo2016.csv", header =TRUE)
+conditions <- read.csv("joint_attention/conditions.csv")
+
+#fix ids
+data$SID <- stringr::str_trim(data$SID)
+data$SID <- stringr::str_replace(data$SID, "_cut.txt", "")
+data$SID <- stringr::str_replace(data$SID, "8283_", "")
+data$SID <- stringr::str_replace(data$SID, "283_", "")
+data$SID <- stringr::str_replace(data$SID, "_cut_save.txt", "")
+data$SID <- stringr::str_replace(data$SID, "_cut_save", "")
+data$SID <- stringr::str_replace(data$SID, "_cutsave.txt", "")
+data$SID <- stringr::str_replace(data$SID, "parenting_obs_", "0")
+data$SID <- stringr::str_replace(data$SID, "_cut_m4a.txt", "")
+
+data$SID <- stringr::str_replace(data$SID, "05116_05", "050116_05")
+data$SID <- stringr::str_replace(data$SID, "05116_2", "050116_02")
+```
+
+Make data frames. 
+
+```{r}
+d <- left_join(data, conditions)%>%
+  left_join(dem)%>%
+  transmute(SID=SID, 
+            types = Type.count, 
+            tokens = Token.count, 
+            lexdiv = Lexical.diversity, 
+            condition= Condition, 
+            video = Video, 
+            age = age,
+            gender = gender,
+            parent_ed = parent_ed)%>%
+  filter(!is.na(condition))
+```
+
+Plots.
+
+Lexical Diversity.
+```{r}
+ms_lex <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "lexdiv") 
+
+ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Lexical Diversity") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
+```
+
+Number of Tokens.
+```{r}
+ms_tok <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "tokens") 
+
+ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total Number of Word Tokens") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
+```
+
+Number of Word Types.
+```{r}
+ms_type <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "types") 
+
+ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total Number of Word Types") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() 
+```
