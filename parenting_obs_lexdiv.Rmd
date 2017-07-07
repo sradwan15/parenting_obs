@@ -34,6 +34,7 @@ Read in participant data.
 data <- read.csv("data.csv", header =TRUE)
 dem <- read.csv("parenting_proj_emilyhembacher_demo2016.csv", header =TRUE)
 conditions <- read.csv("joint_attention/conditions.csv")
+load("paq/paq_demo.RData")
 
 #fix ids
 data$SID <- stringr::str_trim(data$SID)
@@ -55,7 +56,7 @@ Make data frames.
 ```{r}
 d <- left_join(data, conditions)%>%
   left_join(dem)%>%
-  transmute(SID=SID, 
+  transmute(sid=SID, 
             types = Type.count, 
             tokens = Token.count, 
             lexdiv = Lexical.diversity, 
@@ -64,6 +65,7 @@ d <- left_join(data, conditions)%>%
             age = age,
             gender = gender,
             parent_ed = parent_ed)%>%
+  left_join(ids)%>%
   filter(!is.na(condition))
 ```
 
@@ -116,3 +118,44 @@ ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) +
   langcog::scale_colour_solarized()  +
   ggthemes::theme_few() 
 ```
+
+Analyses.
+
+Prepare data.
+```{r}
+lmer_data <- d %>%
+  filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
+  mutate(condition = factor(condition), 
+         lexdiv = as.numeric(lexdiv),
+         EL = as.numeric(langcog::scale(EL, scale=FALSE)),
+         AA = as.numeric(langcog::scale(AA, scale=FALSE)),
+         RR = as.numeric(langcog::scale(RR, scale=FALSE)),
+         age = as.numeric(langcog::scale(age, scale=FALSE)),
+         gender = as.factor(gender),
+         video = as.factor(video))
+```
+
+Predicting lexical diversity based on experimental condition, PAQ, demographics. 
+```{r}
+maximal_mod <- lmer(lexdiv ~ condition *  EL  + condition * AA + condition * RR  + age + gender + parent_ed +
+                           (1| video), 
+                         data = lmer_data)
+summary(maximal_mod)
+```
+
+Predicting the number of word tokens based on experimental condition, PAQ, demographics.  
+```{r}
+maximal_mod <- lmer(tokens ~ condition *  EL  + condition * AA + condition * RR  + age + gender + parent_ed +
+                           (1| video), 
+                         data = lmer_data)
+summary(maximal_mod)
+```
+
+Predicting the number of word types based on experimental condition, PAQ, demographics.  
+```{r}
+maximal_mod <- lmer(types ~ condition *  EL  + condition * AA + condition * RR  + age + gender + parent_ed +
+                           (1| video), 
+                         data = lmer_data)
+summary(maximal_mod)
+```
+
