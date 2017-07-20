@@ -86,7 +86,7 @@ def main(speech_dir,rel_file):
 if __name__ == '__main__':
     d = sys.argv[1] #directory name
     filelist = os.listdir(d)
-    c = csv.writer(open("data.csv", "wb"))
+    c = csv.writer(open("lexdiv_data.csv", "wb"))
     c.writerow(["SID", "Type count","Token count","Lexical diversity"])
 
     for rf in filelist:
