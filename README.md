@@ -1,3 +1,3 @@
 # parenting_obs
 
-Investigating the effects of electronically-delivered parenting advice on parent-child interactions. Parents watch videos of activities developed for a parenting app (experimental group) or watch no video (control group) and then interact with their child with a set of props for 3 minutes. Outcome measures are bids for joint attention and episodes of joint attention, and parent language output (word tokens and types and lexical diversity).
+Does video-scaffolding of parent-child interactions affect the socio-linguistic attributes of the interaction? Parents watch activity-scaffolding videos developed for a parenting app (experimental group) or watch no video (control group; experiment 1) or a video about infant development that does not scaffold the activity (control group; experiment 2). Outcome measures are bids for joint attention and episodes of joint attention, and parent language output (number of word tokens and lexical diversity).
