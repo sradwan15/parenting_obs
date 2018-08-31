@@ -45,10 +45,11 @@ theme_set(theme_bw())
 Read in files and consolidate to the same directory. 
 
 ```{r}
-d.raw <- data.frame()
+d.raw <- data.frame() 
 files <- dir("data/")
 
 for (f in files) {
+
   jf <- paste("data/",f,sep="")
   jd <- read.csv(jf)
   
