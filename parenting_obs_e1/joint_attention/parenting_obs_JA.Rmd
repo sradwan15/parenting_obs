@@ -134,6 +134,7 @@ demo$age_group[demo$age_months < 12] <- "6"
 demo$age_group[demo$age_months >= 12 & demo$age_months < 18 ] <- "12"
 demo$age_group[demo$age_months >= 18] <- "18"
 
+#note from Emily- I calculated total bids by adding unsuccessful bids + episodes of joint attention that were acheived. In retrospect, this assumes that all episodes of JA were initiated by parent, which is probably false. Next time, code all parent bids rather than only unsuccessful ones.
 d <- d.raw %>%
   left_join(conditions)%>%
   mutate(bids_tot = bids + cja + pja)%>%

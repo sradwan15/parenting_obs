@@ -1,0 +1,30 @@
+
+
+using the Terminal in Mac OSX 
+
+Open Terminal
+cd to your LibreOffice installation like:
+
+cd /Applications/LibreOffice.app/Contents/MacOS
+
+then you can run the same command as you used in Linux:
+
+./soffice --headless --convert-to <extention> <path+file>
+
+Example to convert all odt files to pdf in my Downloads folder:
+
+./soffice --headless --convert-to pdf ~/Downloads/*.odt
+
+To specify an output folder you can add the --outdir option
+
+For example:
+
+ ./soffice --headless --convert-to pdf --outdir /home/user ~/Downloads/*.odt
+
+For other options or help you can use:
+
+./soffice --help
+
+
+./soffice --headless --convert-to txt --outdir ~/Desktop/parenting_obs/trans_out  ~/Desktop/parenting_obs/transcriptions/*.doc
+./soffice --headless --convert-to txt --outdir ~/Desktop/parenting_obs/trans_out  ~/Desktop/parenting_obs/transcriptions/*.docx
