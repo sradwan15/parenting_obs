@@ -1,0 +1,55 @@
+﻿FAT:	This is yellow. Yellow car. Yellow car. This one is yellow. This is yellow, too. Yellow.
+
+CHI:	Yellow.
+
+FAT:	This one is blue. Blue car. Is there another blue over here? Do you see another blue?
+
+CHI:	Blue car.
+
+FAT:	Is there – that’s blue car, yeah. Is this [xxx] you see a blue block?
+
+CHI:	Yellow [xxx].
+
+FAT:	Do you see another blue one? Do you see anything else that’s blue over here? Do you like this?
+
+CHI:	[xxx] Dada.
+
+FAT:	Yeah? This one is the yellow car. Yellow, yellow, yellow. This one is blue. See? This one is blue and this one’s yellow. What color? Can you tell me the color?
+
+CHI:	Red [xxx].
+
+FAT:	That one’s a red one. That’s a different one, you're right. 
+
+CHI:	[xxx]
+
+FAT:	Do you see one of these that’s the same color?
+
+CHI:	[xxx]
+
+FAT:	Where you going?
+
+CHI:	[xxx]
+
+FAT:	What color is this car?
+
+CHI:	[xxx]
+
+FAT:	This one’s a blue car. 
+
+CHI:	[xxx]
+
+FAT:	Red.
+
+CHI:	Red.
+
+FAT: 	Red cars. Can you find the blue car?
+
+CHI:	Blue car.
+
+FAT:	That’s a blue car, yeah. Can I play with that one? Where’s the yellow car?
+
+CHI:	[xxx]
+ 
+[End of Audio]
+
+Duration: 3 minutes

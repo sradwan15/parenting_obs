@@ -1,0 +1,114 @@
+﻿*CHI:	vroom.
+*MOT:	vroom.
+*CHI:	vroom.
+*MOT:	vroom.
+*CHI:	vroom.
+*CHI:	oh.
+[Toys crash]
+*MOT:	uhoh.
+*MOT:	oh, no.
+*MOT:	can you pass me the car please?
+*CHI:	uhoh.
+*MOT:	can you please pass me the car?
+*CHI:	[xxx]
+*MOT:	[express surprise]
+*MOT:	oh, thank you.
+*MOT:	can you please give me the car?
+*MOT:	well, thank you.
+*MOT:	what are these for?
+*MOT:	what are these?
+*CHI:	blocks.
+*MOT:	are these for building, maybe?
+*MOT:	you wanna build them, stack them up together?
+*MOT:	oh, good job.
+*CHI:	uhoh.
+*MOT:	uhoh, it fell.
+*CHI:	it fell down.
+*MOT:	it fell.
+*MOT:	look at this one.
+[Cars crash]
+*CHI:	uhoh.
+*MOT:	wonderful.
+*MOT:	can you try again?
+*MOT:	do you wanna try again?
+*CHI:	[xxx]
+*MOT:	what about these?
+*MOT:	what’s in there?
+*MOT:	can you see something in there?
+*CHI:	vroom.
+*CHI:	uhoh.
+*MOT:	uhoh.
+*MOT:	here, ready?
+*CHI:	ooh.
+*MOT:	ooh.
+*CHI:	uhoh.
+*CHI:	uhoh.
+*MOT:	ready.
+*CHI:	boom 
+*CHI:	boom.
+[Cars crash]
+*MOT:	oh, oh no.
+*MOT:	what happened to the car?
+*CHI:	[xxx]
+*MOT:	i can’t get it.
+*MOT:	can you help me?
+*MOT:	thank you.
+*MOT:	can you come over here?
+*MOT:	awesome.
+*CHI:	I get the cars?
+*MOT:	yeah.
+*CHI:	car?
+*MOT:	the cars?
+*CHI:	boom.
+[Cars crash]
+*CHI:	boom.
+*CHI:	oh, no.
+*MOT:	oh, no.
+*MOT:	oh, look.
+*MOT:	oh, wow.
+[Cars crash]
+*CHI:	boom.
+*MOT:	oh.
+*CHI:	ooh, say what.
+*MOT:	do you wanna try it?
+*MOT:	look at it.
+*MOT:	like this.
+[Cars crash]
+*CHI:	uhoh.
+*MOT:	uhoh.
+*MOT:	wanna put it on?
+*MOT:	you try it.
+*MOT:	you want mamma to help you?
+*MOT:	oh, no, you did it.
+*MOT:	good.
+*CHI:	oh, no.
+*MOT:	oh, no.
+*MOT:	does it go up there?
+*MOT:	uhoh.
+*MOT:	okay, let’s make him stable.
+*MOT:	hold on.
+*CHI:	whee.
+*MOT:	there we go.
+*MOT:	let’s see.
+*CHI:	uhoh.
+*MOT:	uhoh.
+*MOT:	they’re stuck together?
+*MOT:	oh, there you go.
+*MOT:	try another one.
+*CHI:	whee.
+*MOT:	[laughs]
+*CHI:	whee.
+*MOT:	yeah.
+[Toy car sounds]
+*CHI:	uhoh.
+*CHI:	oh!
+*MOT:	oh, no.
+[Toy car crashing sounds]
+*MOT:	[laughs] what happened?
+*CHI:	bubble.
+*MOT:	oh, those are circles.
+*MOT:	do you see the circles on the wall?
+
+[End of Audio]
+
+Duration: 3 minutes
