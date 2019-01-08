@@ -1,0 +1,300 @@
+---
+title: "Compare Lexical Diversity Measurements: MTLD and HD-D
+author: "Vivian"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+# Data preprocessing
+
+Preliminaries.
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=5, 
+                      echo=TRUE, warning=FALSE, message=FALSE, cache = TRUE)
+suppressPackageStartupMessages(c("dplyr","langcog","tidyr","ggplot2","lme4"))
+library(psych)
+library(langcog)
+library(tidyverse)
+library(ggthemes)
+library(lme4)
+library(lmerTest)
+
+select <- dplyr::select # masked by MASS
+theme_set(theme_few())
+```
+
+Read in participant data.
+
+```{r}
+data <- read.csv("MTLD_HDD.csv", header =TRUE)
+# dem <- read.csv("parenting_proj_emilyhembacher_demo2016.csv", header =TRUE)
+conditions <- read.csv("conditions.csv")
+```
+
+Make data frames. 
+
+```{r}
+d <- left_join(data, conditions, by = "sid")
+d$condition [d$sid=="111517_3"] = "exp"
+d$video [d$sid=="111517_3"] = "big_small"
+d$age [d$sid=="111517_3"] = "2"
+
+
+```
+
+#Plots
+
+##TTR
+```{r}
+ms_lex <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "TTR") 
+
+lex_means <- d%>%
+  group_by(condition)%>%
+  summarise(mean = mean(TTR))
+
+lex_sds <- d%>%
+  group_by(condition)%>%
+  summarise(sd = sd(TTR))
+
+ms_lex$condition <- factor(ms_lex$condition,
+levels = c("con", "exp"),
+labels = c("control", "video"))
+
+ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) + 
+  ylim(0.0, 0.6)+
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("TTR") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+## MTLD
+```{r}
+ms_lex <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "MTLD") 
+
+lex_means <- d%>%
+  group_by(condition)%>%
+  summarise(mean = mean(MTLD))
+
+lex_sds <- d%>%
+  group_by(condition)%>%
+  summarise(sd = sd(MTLD))
+
+ms_lex$condition <- factor(ms_lex$condition,
+levels = c("con", "exp"),
+labels = c("control", "video"))
+
+ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("MTLD") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+## HDD
+```{r}
+ms_lex <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "HDD") 
+
+lex_means <- d%>%
+  group_by(condition)%>%
+  summarise(mean = mean(HDD))
+
+lex_sds <- d%>%
+  group_by(condition)%>%
+  summarise(sd = sd(HDD))
+
+ms_lex$condition <- factor(ms_lex$condition,
+levels = c("con", "exp"),
+labels = c("control", "video"))
+
+ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("HD-D") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+##Word Tokens
+```{r}
+ms_tok <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "tokens") 
+
+ms_tok$condition <- factor(ms_tok$condition,
+levels = c("con", "exp"),
+labels = c("control", "video"))
+
+ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total Number of Word Tokens") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+
+##Word Types
+```{r}
+ms_type <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "types") 
+
+ms_type$condition <- factor(ms_type$condition,
+levels = c("con", "exp"),
+labels = c("control", "video"))
+
+ggplot(ms_type, aes(x = condition, y = mean, fill = condition)) +
+  ylim(0, 100)+
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Total Number of Word Types") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+
+##Sentences Length
+```{r}
+ms_length <- d %>%
+  group_by(condition) %>%
+  multi_boot_standard(col = "len_sentence") 
+
+ms_length$condition <- factor(ms_length$condition,
+levels = c("con", "exp"),
+labels = c("control", "video"))
+
+ggplot(ms_length, aes(x = condition, y = mean, fill = condition)) +
+  ylim(0,4.5)+
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + 
+  ylab("Average Sentence Length") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+##Sentences Length by videos
+```{r}
+ms_length <- d %>%
+  group_by(video) %>%
+  multi_boot_standard(col = "len_sentence") 
+
+ms_length$video <- factor(ms_length$video,
+levels = c("give_me_toy", "big or small", "puzzle", "Hamlin", "Feigenson", "Gopnik","big_small", "orchestra","color", "Lany", "Warneken", "Adolph"),
+labels = c("give_me_toy", "big or small_young", "puzzle", "Hamlin", "Feigenson", "Gopnik","big_small_old", "orchestra","color", "Lany", "Warneken", "Adolph"))
+
+ggplot(ms_length, aes(x = video, y = mean, fill = video)) +
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Videos") + 
+  ylab("Average Sentence Length") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+##Sentences Length by age
+```{r}
+ms_length <- d %>%
+  group_by(age) %>%
+  multi_boot_standard(col = "len_sentence") 
+
+ms_length$age <- factor(ms_length$age,
+levels = c("1", "2"),
+labels = c("12-18month", "18-24month"))
+
+ggplot(ms_length, aes(x = age, y = mean, fill = age)) +
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Age") + 
+  ylab("Average Sentence Length") +
+  langcog::scale_colour_solarized()  +
+  ggthemes::theme_few() + 
+  theme(legend.title = element_text(size=18), 
+        legend.text = element_text(size=16), 
+        axis.text.x  = element_text(vjust=0.5, size=16),
+        axis.title.x = element_text(size=18), 
+        axis.text.y  = element_text(vjust=0.5, size=16),
+        axis.title.y = element_text(size=18))
+```
+
+
+
+## Interindex correlations
+
+```{r}
+
+cor(d$ttr, d$mtld)
+cor(d$ttr, d$hdd)
+cor(d$mtld, d$hdd)
+
+```
+
+#Conclusions
+In McCarthy-Jarvis2010 paper, MTLD and HD-D has a correlation of r = .800; 
+MTLD and TTR r =.322;
+HD-D and TTR r = -.051 (N = 1584). 
+In our result, MTLD and HD-D are the best correlated, although r = .621; MTLD and ttr has r = .543, which is higher than what M-J2010 reported.
+
+All of the measure show that control group has higher lexical diversity than experimental group, with MTLD showing the biggest contrast and HD-D smallest.
