@@ -1,0 +1,230 @@
+---
+title: "Understanding the impact of electronically-delivered parenting advice"
+bibliography: library.bib
+csl: apa6.csl
+document-params: "10pt, letterpaper"
+
+author-information: > 
+    \author{{\large \bf Hanwen Vivian~Zhang (vivian3@stanford.edu)} \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA
+    \AND {\large \bf George~Kachergis (george.kachergis@gmail.com)} \\ \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA
+    \AND {\large \bf Michael C.~Frank (mcfrank@stanford.edu)} \\ \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA}
+
+abstract: >
+    Early parenting practices play an important role in shaping the future 
+    outcomes of young children [@Hart1995; @Heckman2006]. 
+    In particular, high quality early interactions and early language input appear to 
+    facilitate more effective language learning and higher levels of school performance. 
+    The rise in electronic parenting applications ("apps") holds the promise of delivering 
+    low-cost, positive interventions on parenting style to a variety of different populations. 
+    Of special interest are the parents of very young children, who are often difficult to reach in other ways. 
+    Yet little is known about the effects of communicating to parents through app-based interventions.
+    MTLD, types and tokens, joint attention, proportion of nouns/verbs/adjectives, 
+    affect, concreteness, mean length of utterance...
+    
+keywords: >
+    digital parenting advice; joint action; lexical diversity; guided play; 
+    
+output: cogsci2016::cogsci_paper
+#final-submission: \cogscifinalcopy
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=3, fig.height=3, fig.crop = F, 
+                      fig.pos = "tb", fig.path='figs/',
+                      echo=F, warning=F, cache=F, 
+                      message=F, sanitize = T)
+```
+
+```{r, libraries}
+library(png)
+library(grid)
+library(ggplot2)
+library(xtable)
+```
+
+# Introduction
+
+- children learn through play -- physics, object features
+
+## Guided Play Scaffolds Learning
+- guided play activities can scaffold children's language and reasoning
+
+## Improving Parenting Practices and Language Use
+- early interventions on parenting practices can help children's outcomes
+
+## Effectiveness of Digital Delivery
+apps are an easy way to deliver curated, age-appropriate parenting advice — but can we measure an influence on parent's language? and do the interventions lead to children paying more attention?
+
+The quality of parent-child interactions can be measured by both the social engagement of parents (e.g., joint attention to objects in the environment) and the quality of language (e.g., vocabulary diversity). 
+Although digitally-delivered activities are designed to promote learning and cognitive development, it is unclear how they might affect these dimensions of parent-child interactions. 
+How does digital scaffolding of activities affect the social and linguistic characteristics of parents' speech to their children?
+
+
+# Experiment 1
+
+In Experiment 1, we invited parents of 6- to 24-month-old infants visiting the Children's Discovery Museum in San Jose to complete activities from the Kinedu app. 
+Parents were randomly assigned to the video group or the control group; parents in the video group watched a video from the Kinedu app (matched to their child's age), and then performed the activity with their child using the props from the video. 
+Parents in the control group did not watch a Kinedu video, instead they were given the same props and were told to play with their infants as they would at home. 
+We found that compared to the control group, parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity. 
+They also made more bids for joint attention with their infants, although these bids did not result in more episodes of joint attention compared to the control group. 
+In summary, following digitally-scaffolded activities may cause parents to engage with and speak more to children overall, but speak more repetitively.
+
+## Method
+
+### Participants. 
+60 infants aged 6-24 months and their parents participated in a museum in northern California. We included infants who were exposed to English at least 50 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home.
+[include specific demo info here?] - good to include now, and we can comment it out if it's too much (the full report/paper will have it)
+
+### Materials.
+Stimuli included videos from a commercial parenting application, Kinedu Inc. The videos were designed to show activities parents could perform with their child to foster cognitive and physical development, and were targeted to the child's age and development. In each video, an adult and child perform the activity while a narrator explains the activity and its purpose. We selected two videos for each of three age groups in our sample (6-11.9 months, 12-17.9 months, 18-23.94 months). More information about the specific videos is available in the Appendix. Participants were also given a set of props corresponding to those in the video they watched, so that they could complete the activity. The props associated with each video are listed in the Appendix.
+
+Participants were randomly assigned to an Activity Video condition or No-Video Control condition. Participants in the Activity Video condition were assigned to one of the two videos available for their child's age group. The No-Video Control condition was yoked to the Activity Video condition such that for every participant in the Activity Video condition who saw a particular video and received the associated props, a participant in the No-Video Control condition received the same props but did not watch the corresponding video.
+Parents also completed the Parenting Attitudes Questionnaire (PAQ). The PAQ measures parents' attitudes about parenting and child development along three dimensions: rules and respect, early learning, and affection and attachment.
+
+## Procedure.
+After providing informed consent, parents in the Activity Video condition watched the assigned video on a laptop with headphones.
+To ensure that parents could give the video their full attention, the experimenter played with the infant with a set of toys (different from the experimental props used in the study) while the video was being played. 
+Immediately following the video, each parent-child dyad was provided with the props to complete the activity they had viewed. 
+The toys were placed on a large foam mat, and parents were instructed to sit on the mat with their child and re-create the activity they had viewed for a period of three minutes.
+In the No-Video control condition, after consenting parents were told to play with their child as they would at home with the provided props for a period of three minutes. 
+They were not given any additional instructions about how to use the props.
+
+In both conditions, two video cameras were used to record the play session from different angles, and parents were fitted with a wireless audio recorder to record their speech to their child. After three minutes of play had elapsed, parents were told they could stop playing and cameras and audio were turned off. Parents were then asked to complete the PAQ before being debriefed. 
+
+### Joint Attention Coding Procedure.
+Video of each session was coded for episodes of joint attention using Datavyu software. 
+The video taken at floor level was coded by default, but the other video was referred to if the participants were not visible or if there was a technological error with the first camera. For each participant we coded for episodes of coordinated joint attention, episodes of passive joint attention, and parental bids for joint attention. 
+We defined parental bids for joint attention as any attempt to initiate joint attention (i.e label, point, or otherwise draw attention to an object) that does not result in passive or coordinated joint attention. 
+If more than 3 seconds elapsed between bids, they were coded as separate attempts. 
+An episode of joint attention was considered passive if both participants visually focused on an object for a minimum of 3 seconds but the child did not acknowledge the parent. 
+If either participant looked away from the object for less than 3 seconds and then returned to the same object it was considered part of the same period of joint attention. 
+Episodes joint attention were considered coordinated if  both participants visually focused on an object for a minimum of 3 seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent. 
+This could be looks to the parent's face, gestures, vocalizations, or turn-taking. 
+If either participant looked away for less than 3 seconds and then returned to the same object, it was coded as part of the same period of joint attention. 
+A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. % report reliability
+
+# Results
+
+## Lexical Diversity
+
+## Joint Attention
+
+# Experiment 2
+
+In Experiment 2 we attempt to replicate the findings from Experiment 1 with a restricted number of preregistered predictions. 
+We will additionally include a second control condition, in which the same activities are described in written form, rather than being demonstrated in video. 
+This manipulation will help determine what the contribution of the video demonstration is in producing the observed effects on parent-child interactions.
+
+## Method
+
+### Participants. 
+84 infants aged 12-24 months and their parents participated in the same museum as Experiment 1. We included infants who were exposed to English at least 75 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home. [specific demo info]
+
+### Materials. 
+The design of Experiment 2 was similar to that of Experiment 1, except that instead of a No-Video control condition, parents instead watched a video that was generally related to child development research, but did not give any specific instructions about how to interact with infants or children. 
+This was to control for the possibility that differences in language output and joint attention in Experiment 1 could be due to simply cuing parents to think about infants' learning and cognitive development. 
+The videos presented in the Control Video condition were media clips (available on YouTube) of developmental psychologists explaining their research interleaved with footage of infants or toddlers engaged in developmental research studies. 
+Thus, the content of the videos superficially matched those in the Activity Video condition, but did not suggest any particular activities.
+The videos were trimmed to approximately match the average video length in the Activity Video condition (2 minutes ??).
+
+### Procedure. 
+The procedure for Experiment 2 matched that of Experiment 1, except that parents in the Control Video condition watched a control video before the play session. 
+Consistent with the No-Video control condition in Experiment 1, parents in the Control Video condition were told to play with their child as they would at home, and were not given additional instructions.
+
+# Results
+
+## Lexical Diversity
+
+## Joint Attention
+
+
+# Discussion
+
+For more information on citations in RMarkdown, see **[here](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#citations).**
+
+## Footnotes
+
+Indicate footnotes with a number\footnote{Sample of the first
+footnote.} in the text. Place the footnotes in 9 point type at the
+bottom of the page on which they appear. Precede the footnote with a
+horizontal rule.\footnote{Sample of the second footnote.} You can also use 
+markdown formatting to include footnotes using this syntax [^1].
+
+[^1]: Sample of a markdown footnote.
+
+## Two-column images
+
+You can read local images using png package for example and plot 
+it like a regular plot using grid.raster from the grid package. 
+With this method you have full control of the size of your image. **Note: Image must be in .png file format for the readPNG function to work.**
+
+You might want to display a wide figure across both columns. To do this, you change the `fig.env` chunk option to `figure*`. To align the image in the center of the page, set `fig.align` option to `center`. To format the width of your caption text, you set the `num.cols.cap` option to `2`.
+
+```{r 2-col-image, fig.env = "figure*", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "This image spans both columns. And the caption text is limited to 0.8 of the width of the document."}
+img <- png::readPNG("figs/walrus.png")
+grid::grid.raster(img)
+```
+
+## One-column images
+
+Single column is the default option, but if you want set it explicitly, set `fig.env` to `figure`. Notice that the `num.cols` option for the caption width is set to `1`.
+
+```{r image, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=2, fig.height=2, set.cap.width=T, num.cols.cap=1, fig.cap = "One column image."}
+img <- png::readPNG("figs/lab_logo_stanford.png")
+grid::grid.raster(img)
+```
+
+
+## R Plots
+
+You can use R chunks directly to plot graphs. And you can use latex floats in the
+fig.pos chunk option to have more control over the location of your plot on the page. For more information on latex placement specifiers see **[here](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)**
+
+```{r plot, fig.env="figure", fig.pos = "H", fig.align = "center", fig.width=2, fig.height=2, fig.cap = "R plot" }
+x <- 0:100
+y <- 2 * (x + rnorm(length(x), sd = 3) + 3)
+
+ggplot2::ggplot(data = data.frame(x, y), 
+       aes(x = x, y = y)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+
+## Tables
+
+Number tables consecutively; place the table number and title (in
+10 point) above the table with one line space above the caption and
+one line space below it, as in Table 1. You may float
+tables to the top or bottom of a column, set wide tables across both
+columns.
+
+You can use the xtable function in the xtable package.
+
+```{r xtable, results="asis"}
+n <- 100
+x <- rnorm(n)
+y <- 2*x + rnorm(n)
+out <- lm(y ~ x)
+
+tab1 <- xtable::xtable(summary(out)$coef, digits=c(0, 2, 2, 1, 2), 
+                      caption = "This table prints across one column.")
+
+print(tab1, type="latex", comment = F, table.placement = "H")
+```
+
+# Acknowledgements
+
+Place acknowledgments (including funding information) in a section at
+the end of the paper.
+
+# References 
+
+```{r}
+# References will be generated automatically by Pandoc and included here.
+# The following code is some latex to format the bibliography. Do not remove it.
+```
+
+\setlength{\parindent}{-0.1in} 
+\setlength{\leftskip}{0.125in}
+\noindent
