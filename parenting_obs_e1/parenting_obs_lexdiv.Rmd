@@ -1,6 +1,6 @@
 ---
 title: "Parenting observation lexical diversity"
-author: "Emily"
+author: "Vivian, George, and Emily"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -32,7 +32,10 @@ Read in participant data.
 
 ```{r}
 data <- read.csv("lexdiv_data.csv", header =TRUE)
-dem <- read.csv("parenting_proj_emilyhembacher_demo2016.csv", header =TRUE)
+#dem <- read.csv("parenting_proj_emilyhembacher_demo2016.csv", header =TRUE) # anonymized demographics data
+#dem_anon = dem[,c("SID","age","gender","ethnicity","english","parent_ed","num_lang","Exclude")]
+#write.csv(dem_anon, file="anonymized_demographics_parenting_obs_e1.csv")
+dem <- read.csv("anonymized_demographics_parenting_obs_e1.csv", header=T)
 conditions <- read.csv("joint_attention/conditions.csv")
 load("paq/paq_demo.RData")
 
@@ -75,7 +78,7 @@ d <- left_join(data, conditions)%>%
 ```{r}
 ms_lex <- d %>%
   group_by(condition) %>%
-  multi_boot_standard(col = "lexdiv") 
+  multi_boot_standard(col = "lexdiv") # Type/Token Ratio
 
 lex_means <- d%>%
   group_by(condition)%>%
@@ -87,22 +90,17 @@ lex_sds <- d%>%
 
 ms_lex$condition <- factor(ms_lex$condition,
 levels = c("con", "exp"),
-labels = c("control", "video"))
+labels = c("Control", "Video"))
 
 ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
   xlab("Condition") + 
-  ylab("Lexical Diversity") +
+  ylab("Type/Token Ratio (TTR)") +
   langcog::scale_colour_solarized()  +
-  ggthemes::theme_few() + 
-  theme(legend.title = element_text(size=18), 
-        legend.text = element_text(size=16), 
-        axis.text.x  = element_text(vjust=0.5, size=16),
-        axis.title.x = element_text(size=18), 
-        axis.text.y  = element_text(vjust=0.5, size=16),
-        axis.title.y = element_text(size=18))
+  ggthemes::theme_few() 
+ggsave(file="e1_TTR.pdf", width=3, height=3)
 ```
 
 ##Word Tokens
@@ -113,7 +111,7 @@ ms_tok <- d %>%
 
 ms_tok$condition <- factor(ms_tok$condition,
 levels = c("con", "exp"),
-labels = c("control", "video"))
+labels = c("Control", "Video"))
 
 ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) + 
   geom_bar(stat="identity") + 
@@ -122,13 +120,8 @@ ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) +
   xlab("Condition") + 
   ylab("Total Number of Word Tokens") +
   langcog::scale_colour_solarized()  +
-  ggthemes::theme_few() + 
-  theme(legend.title = element_text(size=18), 
-        legend.text = element_text(size=16), 
-        axis.text.x  = element_text(vjust=0.5, size=16),
-        axis.title.x = element_text(size=18), 
-        axis.text.y  = element_text(vjust=0.5, size=16),
-        axis.title.y = element_text(size=18))
+  ggthemes::theme_few() 
+ggsave(file="e1_word_tokens.pdf", width=3, height=3)
 ```
 
 ##Word Types
@@ -139,7 +132,7 @@ ms_type <- d %>%
 
 ms_type$condition <- factor(ms_type$condition,
 levels = c("con", "exp"),
-labels = c("control", "video"))
+labels = c("Control", "Video"))
 
 ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) + 
   geom_bar(stat="identity") + 
@@ -148,13 +141,8 @@ ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) +
   xlab("Condition") + 
   ylab("Total Number of Word Types") +
   langcog::scale_colour_solarized()  +
-  ggthemes::theme_few() + 
-  theme(legend.title = element_text(size=18), 
-        legend.text = element_text(size=16), 
-        axis.text.x  = element_text(vjust=0.5, size=16),
-        axis.title.x = element_text(size=18), 
-        axis.text.y  = element_text(vjust=0.5, size=16),
-        axis.title.y = element_text(size=18))
+  ggthemes::theme_few()
+ggsave(file="e1_word_types.pdf", width=3, height=3)
 ```
 
 #Analyses

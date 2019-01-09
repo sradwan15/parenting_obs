@@ -105,7 +105,16 @@ A second coder independently coded a third of the videos (i.e., 20 of the 60 vid
 
 # Results
 
+The data was analyzed according to our preregistration. [link]
+
 ## Lexical Diversity
+
+- calculate Type/Token Ratio (TTR)
+
+Fig 1 - TTR, maybe also Total Tokens and Total Types (if subfigures fit)
+(otherwise a table with mean and SD of tokens, types, and TTR)
+However, note that TTR is a measure that is correlated with the length of a text. ... 
+According to [@Jarvis2010], MTLD is a better measure of lexical diversity. 
 
 ## Joint Attention
 
