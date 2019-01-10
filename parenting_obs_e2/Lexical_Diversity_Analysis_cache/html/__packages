@@ -1,0 +1,17 @@
+base
+psych
+langcog
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+stringr
+forcats
+ggthemes
+Matrix
+lme4
+lmerTest
+bindrcpp

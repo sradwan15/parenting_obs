@@ -31,7 +31,7 @@ def clean(string):
 col_names = ['sid', 'MTLD', 'HDD', 'types', 'tokens', 'TTR', 'len_sentence']
 results = pd.DataFrame(columns = col_names)
 
-files = os.listdir("trans_out_txt/")
+files = os.listdir("trans_out/")
 try:
     files.remove('.DS_Store')
 except:
@@ -39,7 +39,7 @@ except:
 all_dat = {}
 # print (files)
 for fname in files:
-    folder = "trans_out_txt/"
+    folder = "trans_out/"
     name =  fname
     path = "".join((folder,name))
     fr = open(path, 'r')
@@ -66,7 +66,7 @@ for fname in files:
     all_dat[fname] = text_ready
 
 # call MTLD and HDD functions and calculate
-    id = fname[6:14]
+    id = fname
     print (len(str.split(text_ready)))
     if (len(str.split(text_ready)))>50:
         mtld_value = mtld(text_ready.split())
