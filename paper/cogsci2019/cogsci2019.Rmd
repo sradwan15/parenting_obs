@@ -72,14 +72,24 @@ In summary, following digitally-scaffolded activities may cause parents to engag
 ## Method
 
 ### Participants. 
-60 infants aged 6-24 months and their parents participated in a museum in northern California. We included infants who were exposed to English at least 50 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home.
+60 infants aged 6-24 months and their parents participated in a museum in northern California. 
+We included infants who were exposed to English at least 50 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home.
 [include specific demo info here?] - good to include now, and we can comment it out if it's too much (the full report/paper will have it)
 
 ### Materials.
-Stimuli included videos from a commercial parenting application, Kinedu Inc. The videos were designed to show activities parents could perform with their child to foster cognitive and physical development, and were targeted to the child's age and development. In each video, an adult and child perform the activity while a narrator explains the activity and its purpose. We selected two videos for each of three age groups in our sample (6-11.9 months, 12-17.9 months, 18-23.94 months). More information about the specific videos is available in the Appendix. Participants were also given a set of props corresponding to those in the video they watched, so that they could complete the activity. The props associated with each video are listed in the Appendix.
+Stimuli included videos from a commercial parenting application, Kinedu Inc. 
+The videos were designed to show activities parents could perform with their child to foster cognitive and physical development, and were targeted to the child's age and development. 
+In each video, an adult and child perform the activity while a narrator explains the activity and its purpose. 
+We selected two videos for each of three age groups in our sample (6-11.9 months, 12-17.9 months, 18-23.94 months). 
+More information about the specific videos is available in the Appendix. 
+Participants were also given a set of props corresponding to those in the video they watched, so that they could complete the activity. 
+The props associated with each video are listed in the Appendix.
 
-Participants were randomly assigned to an Activity Video condition or No-Video Control condition. Participants in the Activity Video condition were assigned to one of the two videos available for their child's age group. The No-Video Control condition was yoked to the Activity Video condition such that for every participant in the Activity Video condition who saw a particular video and received the associated props, a participant in the No-Video Control condition received the same props but did not watch the corresponding video.
-Parents also completed the Parenting Attitudes Questionnaire (PAQ). The PAQ measures parents' attitudes about parenting and child development along three dimensions: rules and respect, early learning, and affection and attachment.
+Participants were randomly assigned to an Activity Video condition or No-Video Control condition. 
+Participants in the Activity Video condition were assigned to one of the two videos available for their child's age group. 
+The No-Video Control condition was yoked to the Activity Video condition such that for every participant in the Activity Video condition who saw a particular video and received the associated props, a participant in the No-Video Control condition received the same props but did not watch the corresponding video.
+Parents also completed the Parenting Attitudes Questionnaire (PAQ). 
+The PAQ measures parents' attitudes about parenting and child development along three dimensions: rules and respect, early learning, and affection and attachment.
 
 ## Procedure.
 After providing informed consent, parents in the Activity Video condition watched the assigned video on a laptop with headphones.
@@ -89,11 +99,14 @@ The toys were placed on a large foam mat, and parents were instructed to sit on 
 In the No-Video control condition, after consenting parents were told to play with their child as they would at home with the provided props for a period of three minutes. 
 They were not given any additional instructions about how to use the props.
 
-In both conditions, two video cameras were used to record the play session from different angles, and parents were fitted with a wireless audio recorder to record their speech to their child. After three minutes of play had elapsed, parents were told they could stop playing and cameras and audio were turned off. Parents were then asked to complete the PAQ before being debriefed. 
+In both conditions, two video cameras were used to record the play session from different angles, and parents were fitted with a wireless audio recorder to record their speech to their child. 
+After three minutes of play had elapsed, parents were told they could stop playing and cameras and audio were turned off. 
+Parents were then asked to complete the PAQ before being debriefed. 
 
 ### Joint Attention Coding Procedure.
 Video of each session was coded for episodes of joint attention using Datavyu software. 
-The video taken at floor level was coded by default, but the other video was referred to if the participants were not visible or if there was a technological error with the first camera. For each participant we coded for episodes of coordinated joint attention, episodes of passive joint attention, and parental bids for joint attention. 
+The video taken at floor level was coded by default, but the other video was referred to if the participants were not visible or if there was a technological error with the first camera. 
+For each participant we coded for episodes of coordinated joint attention, episodes of passive joint attention, and parental bids for joint attention. 
 We defined parental bids for joint attention as any attempt to initiate joint attention (i.e label, point, or otherwise draw attention to an object) that does not result in passive or coordinated joint attention. 
 If more than 3 seconds elapsed between bids, they were coded as separate attempts. 
 An episode of joint attention was considered passive if both participants visually focused on an object for a minimum of 3 seconds but the child did not acknowledge the parent. 
@@ -114,7 +127,7 @@ The data was analyzed according to our preregistration. [link]
 Fig 1 - TTR, maybe also Total Tokens and Total Types (if subfigures fit)
 (otherwise a table with mean and SD of tokens, types, and TTR)
 However, note that TTR is a measure that is correlated with the length of a text. ... 
-According to [@Jarvis2010], MTLD is a better measure of lexical diversity. 
+According to Jarvis2010, MTLD is a better measure of lexical diversity. 
 
 ## Joint Attention
 
@@ -142,6 +155,16 @@ Consistent with the No-Video control condition in Experiment 1, parents in the C
 
 # Results
 
+```{r e2TTR, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=2, fig.height=2, set.cap.width=T, num.cols.cap=1, fig.cap = "How to do subfigures?"}
+img <- png::readPNG("figs/e2_TTR.png")
+grid::grid.raster(img)
+```
+
+```{r e2MTLD, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=2, fig.height=2, set.cap.width=T, num.cols.cap=1, fig.cap = "One column image."}
+img <- png::readPNG("figs/e2_MTLD.png")
+grid::grid.raster(img)
+```
+
 ## Lexical Diversity
 
 ## Joint Attention
@@ -154,9 +177,7 @@ For more information on citations in RMarkdown, see **[here](http://rmarkdown.rs
 ## Footnotes
 
 Indicate footnotes with a number\footnote{Sample of the first
-footnote.} in the text. Place the footnotes in 9 point type at the
-bottom of the page on which they appear. Precede the footnote with a
-horizontal rule.\footnote{Sample of the second footnote.} You can also use 
+footnote.} in the text. You can also use 
 markdown formatting to include footnotes using this syntax [^1].
 
 [^1]: Sample of a markdown footnote.
@@ -169,10 +190,6 @@ With this method you have full control of the size of your image. **Note: Image 
 
 You might want to display a wide figure across both columns. To do this, you change the `fig.env` chunk option to `figure*`. To align the image in the center of the page, set `fig.align` option to `center`. To format the width of your caption text, you set the `num.cols.cap` option to `2`.
 
-```{r 2-col-image, fig.env = "figure*", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "This image spans both columns. And the caption text is limited to 0.8 of the width of the document."}
-img <- png::readPNG("figs/walrus.png")
-grid::grid.raster(img)
-```
 
 ## One-column images
 
