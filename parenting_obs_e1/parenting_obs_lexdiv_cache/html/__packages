@@ -12,3 +12,6 @@ ggthemes
 Matrix
 lme4
 lmerTest
+stringr
+forcats
+bindrcpp

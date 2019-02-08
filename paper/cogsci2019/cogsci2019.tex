@@ -36,7 +36,7 @@
 \usepackage{apacite}
 
 % KM added 1/4/18 to allow control of blind submission
-
+\cogscifinalcopy
 
 \usepackage{color}
 
@@ -55,7 +55,7 @@
 \title{Understanding the impact of electronically-delivered parenting advice}
 
 
-\author{{\large \bf Hanwen Vivian~Zhang (vivian3@stanford.edu)} \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA \AND {\large \bf George~Kachergis (george.kachergis@gmail.com)} \\ \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA \AND {\large \bf Michael C.~Frank (mcfrank@stanford.edu)} \\ \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA}
+\author{{\large\bf Hanwen Vivian~Zhang} (\texttt{vivian3@stanford.edu}) \\ {\large\bf George~Kachergis} (\texttt{george.kachergis@gmail.com}) \\ {\large\bf Michael C.~Frank} (\texttt{mcfrank@stanford.edu}) \\  Department of Psychology, Stanford University \\  Palo Alto, CA 94301 USA}
 
 \begin{document}
 
@@ -287,6 +287,30 @@ note that TTR is a measure that is correlated with the length of a text.
 \ldots{} MTLD is a better measure of lexical diversity (McCarthy \&
 Jarvis, 2010).
 
+\begin{CodeChunk}
+\begin{figure}[H]
+
+{\centering \includegraphics{figs/e1lex_div-1} 
+
+}
+
+\caption[Mean lexical diversity scores by condition (left]{Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1.}\label{fig:e1lex_div}
+\end{figure}
+\end{CodeChunk}
+
+Word tokens and word types
+
+\begin{CodeChunk}
+\begin{figure}[H]
+
+{\centering \includegraphics{figs/e1token_type-1} 
+
+}
+
+\caption[Mean number of word types and word tokens by condition in Experiment 1]{Mean number of word types and word tokens by condition in Experiment 1.}\label{fig:e1token_type}
+\end{figure}
+\end{CodeChunk}
+
 \subsection{Joint Attention}\label{joint-attention}
 
 \section{Experiment 2}\label{experiment-2}
@@ -366,9 +390,6 @@ instructions.
 
 \section{Discussion}\label{discussion}
 
-For more information on citations in RMarkdown, see
-\textbf{\href{http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html\#citations}{here}.}
-
 \subsection{Footnotes}\label{footnotes}
 
 Indicate footnotes with a number\footnote{Sample of the first
@@ -377,22 +398,11 @@ footnotes using this syntax.\footnote{Sample of a markdown footnote.}
 
 \subsection{Two-column images}\label{two-column-images}
 
-You can read local images using png package for example and plot it like
-a regular plot using grid.raster from the grid package. With this method
-you have full control of the size of your image. \textbf{Note: Image
-must be in .png file format for the readPNG function to work.}
-
 You might want to display a wide figure across both columns. To do this,
 you change the \texttt{fig.env} chunk option to \texttt{figure*}. To
 align the image in the center of the page, set \texttt{fig.align} option
 to \texttt{center}. To format the width of your caption text, you set
 the \texttt{num.cols.cap} option to \texttt{2}.
-
-\subsection{One-column images}\label{one-column-images}
-
-Single column is the default option, but if you want set it explicitly,
-set \texttt{fig.env} to \texttt{figure}. Notice that the
-\texttt{num.cols} option for the caption width is set to \texttt{1}.
 
 \subsection{Tables}\label{tables}
 

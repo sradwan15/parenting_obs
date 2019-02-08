@@ -5,9 +5,11 @@ csl: apa6.csl
 document-params: "10pt, letterpaper"
 
 author-information: > 
-    \author{{\large \bf Hanwen Vivian~Zhang (vivian3@stanford.edu)} \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA
-    \AND {\large \bf George~Kachergis (george.kachergis@gmail.com)} \\ \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA
-    \AND {\large \bf Michael C.~Frank (mcfrank@stanford.edu)} \\ \\ Department of Psychology, Stanford University \\ Palo Alto, CA 94301 USA}
+    \author{{\large\bf Hanwen Vivian~Zhang} (\texttt{vivian3@stanford.edu}) \\
+    {\large\bf George~Kachergis} (\texttt{george.kachergis@gmail.com}) \\
+    {\large\bf Michael C.~Frank} (\texttt{mcfrank@stanford.edu}) \\ 
+    Department of Psychology, Stanford University \\ 
+    Palo Alto, CA 94301 USA}
 
 abstract: >
     Early parenting practices play an important role in shaping the future 
@@ -25,7 +27,7 @@ keywords: >
     digital parenting advice; joint attention; lexical diversity; guided play; 
     
 output: cogsci2016::cogsci_paper
-#final-submission: \cogscifinalcopy
+final-submission: \cogscifinalcopy
 ---
 
 ```{r global_options, include=FALSE}
@@ -35,11 +37,22 @@ knitr::opts_chunk$set(fig.width=3, fig.height=3, fig.crop = F,
                       message=F, sanitize = T)
 ```
 
-```{r, libraries}
+```{r libraries, echo=F, include=F}
+suppressPackageStartupMessages(c("dplyr","langcog","tidyr","ggplot2","lme4"))
 library(png)
 library(grid)
 library(ggplot2)
 library(xtable)
+library(psych)
+library(langcog)
+library(tidyverse)
+library(ggthemes)
+library(lme4)
+library(lmerTest)
+source("multiplot.R")
+
+select <- dplyr::select # masked by MASS
+theme_set(theme_few())
 ```
 
 # Introduction
@@ -95,7 +108,7 @@ In summary, following digitally-scaffolded activities may cause parents to engag
 
 ```{r, echo=F}
 e1path = "../../parenting_obs_e1/"
-load(paste(e1path,"Exp1_cleaned_data.RData",sep=''))
+load(paste(e1path,"Exp1_cleaned_data.RData",sep='')) # merged dataframe ready for plotting
 
 ```
 
@@ -157,7 +170,73 @@ Fig 1 - TTR, maybe also Total Tokens and Total Types (if subfigures fit)
 However, note that TTR is a measure that is correlated with the length of a text. ... 
 MTLD is a better measure of lexical diversity [@McCarthy2010].
 
+```{r e1lex_div, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.1, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1."}
+d$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Control", "Video"))
+
+ms_lex <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col="TTR") # Type/Token Ratio
+
+ttr_means <- d%>%
+  group_by(Condition)%>%
+  summarise(mean = mean(TTR), sd = sd(TTR))
+
+# report table with ttr_means lex_sds
+
+e1ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
+  xlab("Condition") + ylab("Type/Token Ratio (TTR)") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() +
+  theme(legend.position="none") 
+
+ms_lex_mtld <- d %>%
+  group_by(Condition) %>%
+  multi_boot_standard(col="MTLD") 
+
+mtld_means <- d %>%
+  group_by(Condition)%>%
+  summarise(mean = mean(MTLD), sd=sd(MTLD))
+
+# report table with mtld_means _sds
+
+e1mtld <- ggplot(ms_lex_mtld, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("MTLD") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
+  theme(legend.position="none") 
+
+multiplot(e1ttr, e1mtld, cols=2)
+```
+
+Word tokens and word types
+
+```{r e1token_type, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.1, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of word types and word tokens by condition in Experiment 1."}
+ms_tok <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col = "tokens") 
+
+e1tokens <- ggplot(ms_tok, aes(x=Condition, y = mean, fill = Condition)) +geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("Total Number of Word Tokens") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() +
+  theme(legend.position="none") 
+
+ms_type <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col = "types") 
+
+e1types <- ggplot(ms_type, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+             position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("Total Number of Word Types") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() +
+  theme(legend.position="none") 
+
+multiplot(e1tokens, e1types, cols=2)
+```
+
+
 ## Joint Attention
+
+
 
 # Experiment 2
 
@@ -207,7 +286,6 @@ grid::grid.raster(img)
 
 # Discussion
 
-For more information on citations in RMarkdown, see **[here](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#citations).**
 
 ## Footnotes
 
@@ -219,17 +297,7 @@ markdown formatting to include footnotes using this syntax [^1].
 
 ## Two-column images
 
-You can read local images using png package for example and plot 
-it like a regular plot using grid.raster from the grid package. 
-With this method you have full control of the size of your image. **Note: Image must be in .png file format for the readPNG function to work.**
-
 You might want to display a wide figure across both columns. To do this, you change the `fig.env` chunk option to `figure*`. To align the image in the center of the page, set `fig.align` option to `center`. To format the width of your caption text, you set the `num.cols.cap` option to `2`.
-
-
-## One-column images
-
-Single column is the default option, but if you want set it explicitly, set `fig.env` to `figure`. Notice that the `num.cols` option for the caption width is set to `1`.
-
 
 ## Tables
 

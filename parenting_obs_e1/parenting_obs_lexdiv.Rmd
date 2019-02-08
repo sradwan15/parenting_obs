@@ -41,7 +41,7 @@ data$X = NULL
 #write.csv(dem_anon, file="anonymized_demographics_parenting_obs_e1.csv")
 dem <- read.csv("anonymized_demographics_parenting_obs_e1.csv", header=T)
 conditions <- read.csv("joint_attention/conditions.csv")
-load("paq/paq_demo.RData") # do we use this??
+load("paq/paq_demo.RData") # do we use this?? GK: yes, see left_join on line 76
 
 #fix ids
 data$SID <- stringr::str_trim(data$SID)
@@ -75,6 +75,8 @@ d <- left_join(data, conditions)%>%
             parent_ed = parent_ed)%>%
   left_join(ids)%>%
   filter(!is.na(condition))
+
+save(d, file="Exp1_cleaned_data.RData") # for use in paper.Rmd
 ```
 
 #Plots
@@ -165,7 +167,7 @@ ms_type$condition <- factor(ms_type$condition,
 levels = c("con", "exp"),
 labels = c("Control", "Video"))
 
-ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) + 
+ggplot(ms_type, aes(x = condition, y = mean, fill = condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
@@ -183,7 +185,7 @@ Prepare data.
 lmer_data <- d %>%
   filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
   mutate(condition = factor(condition), 
-         lexdiv = as.numeric(lexdiv),
+         MTLD = as.numeric(MTLD),
          EL = as.numeric(langcog::scale(EL, scale=FALSE)),
          AA = as.numeric(langcog::scale(AA, scale=FALSE)),
          RR = as.numeric(langcog::scale(RR, scale=FALSE)),
@@ -195,7 +197,7 @@ lmer_data <- d %>%
 ##Lexical diversity
 Predicting lexical diversity based on experimental condition, PAQ, demographics. 
 ```{r}
-maximal_mod <- lmer(lexdiv ~ condition  + age + gender + parent_ed +
+maximal_mod <- lmer(MTLD ~ condition  + age + gender + parent_ed +
                            (1| video), 
                          data = lmer_data)
 summary(maximal_mod)
@@ -204,8 +206,8 @@ summary(maximal_mod)
 
 M1 <- lex_means$mean[1]
 M2 <- lex_means$mean[2]
-SD1 <- lex_sds$sd[1]
-SD2 <- lex_sds$sd[2]
+SD1 <- lex_means$sd[1]
+SD2 <- lex_means$sd[2]
 
 cohens_d <- (M2 - M1)/(sqrt(SD1^2 + SD2^2)/2)
 ```
