@@ -46,30 +46,30 @@ library(xtable)
 
 Children spend a large portion of their waking time at play in their environment.
 Playing with objects may allow them to discover hidden features, as well as to build a causal understanding of how the objects interact. 
-Beyond learning object features, the laws of physics, and causal relationships (CITE), during play children practice motor skills that help them effectively navigate their world (Hirsh, 2008).
-Social play can help children learn about human relationships, both through imitation of adult behaviors and by experiencing and learning to process emotional events (Hirsh, 2008).
+Beyond learning object features, the laws of physics, and causal relationships [e.g., @Schulz2007], during play children practice motor skills that help them effectively navigate their world [@Singer2006].
+Social play can help children learn about human relationships, both through imitation of adult behaviors and by experiencing and learning to process emotional events [@Singer2006].
 
 ## Guided Play Scaffolds Learning
 Children's early play behaviors are often assisted by more skilled and knowledgeable play partners such as their caregivers and older siblings (Kaye, 1970). 
 Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided (Vygotsky, 197X).
 These tutorial interactions have been shown to be a "a crucial feature of infancy and childhood" (Wood, 1970).
-Thus, with the knowledge of both play and tutorial interactions, guided play, "where children actively engage in pleasurable and seemingly spontaneous activities under the direction of adults" (Hirsh, 2008), 
+Thus, with the knowledge of both play and tutorial interactions, guided play, "where children actively engage in pleasurable and seemingly spontaneous activities under the direction of adults" (Hirsh-Pasek, 2008), 
 have drawn researchers' interest. 
 Weisberg showed that, with preschoolers, guided play scaffolds the environment while still allowing children to maintain a large degree of control, 
-and it outperforms direct-instruction approaches in encouraging a variety of positive academic outcomes (Weisberg, Hirsh and Golinkoff, 2013).
+and it outperforms direct-instruction approaches in encouraging a variety of positive academic outcomes (Weisberg, Hirsh-Pasek and Golinkoff, 2013).
 Massey specifically showed that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills (Massey, 2013).
 
 ## Improving Parenting Practices and Language Use
-- early interventions on parenting practices can help children's outcomes
+(early interventions on parenting practices can help children's outcomes)
 Thus, including guided play in parenting practices early on is important and should help with children's later performances. Suskind did a parent-directed home-visiting intervention experiment in 2015, 
 and found that parents in experimental group have greater knowledge of language development and this effect sustained after the experiment is done. 
 However, more interactive outcomes, like parent word type and token numbers, child word types, conversational turn counts and child vocalization counts, 
-increased during the home-visiting but did not sustain after four months of intervention [there are more detailed sustainibility differences of these measure. should I make it more clear?] (Suskind, 2015).
+increased during the home-visiting but did not sustain after four months of intervention (there are more detailed sustainibility differences of these measure. should I make it more clear?) [@Suskind2015].
 The fact that changes did not sustain could be due to the intervention itself, 
 or could merely be that home-visiting is not sustainable enough for parents to easily and constantly get parenting advice.
 
 ## Effectiveness of Digital Delivery
--apps are an easy way to deliver curated, age-appropriate parenting advice — but can we measure an influence on parent's language? and do the interventions lead to children paying more attention?
+(apps are an easy way to deliver curated, age-appropriate parenting advice — but can we measure an influence on parent's language? and do the interventions lead to children paying more attention?)
 
 Digitally-delivered methods could address some logistic barriers to face-to-face delivery methods. 
 Bretenstein reviewed 11 studies on them and showed good promise for the efficacy of interventions using digitally-delivered methods. 
@@ -92,6 +92,12 @@ They also made more bids for joint attention with their infants, although these 
 In summary, following digitally-scaffolded activities may cause parents to engage with and speak more to children overall, but speak more repetitively.
 
 ## Method
+
+```{r, echo=F}
+e1path = "../../parenting_obs_e1/"
+load(paste(e1path,"Exp1_cleaned_data.RData",sep=''))
+
+```
 
 ### Participants. 
 60 infants aged 6-24 months and their parents participated in a museum in northern California. 
@@ -140,16 +146,16 @@ A second coder independently coded a third of the videos (i.e., 20 of the 60 vid
 
 # Results
 
-The data was analyzed according to our preregistration. [link]
+The data was analyzed according to our preregistration: [link](https://osf.io/2bpdf/).
 
 ## Lexical Diversity
 
-- calculate Type/Token Ratio (TTR)
+We first calculated Type/Token Ratio (TTR) for each transcript. ..
 
 Fig 1 - TTR, maybe also Total Tokens and Total Types (if subfigures fit)
 (otherwise a table with mean and SD of tokens, types, and TTR)
 However, note that TTR is a measure that is correlated with the length of a text. ... 
-According to Jarvis2010, MTLD is a better measure of lexical diversity. 
+MTLD is a better measure of lexical diversity [@McCarthy2010].
 
 ## Joint Attention
 
@@ -161,8 +167,15 @@ This manipulation will help determine what the contribution of the video demonst
 
 ## Method
 
+```{r, echo=F}
+e2path = "../../parenting_obs_e2/"
+#load(paste(e2path,"Exp2_cleaned_data.RData",sep=''))
+e2d <- read.csv(paste(e2path,"MTLD_HDD.csv",sep=''), header=TRUE) 
+```
+
 ### Participants. 
-84 infants aged 12-24 months and their parents participated in the same museum as Experiment 1. We included infants who were exposed to English at least 75 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home. [specific demo info]
+84 infants aged 12-24 months and their parents participated in the same museum as Experiment 1. 
+We included infants who were exposed to English at least 75 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home. [specific demo info]
 
 ### Materials. 
 The design of Experiment 2 was similar to that of Experiment 1, except that instead of a No-Video control condition, parents instead watched a video that was generally related to child development research, but did not give any specific instructions about how to interact with infants or children. 
@@ -217,27 +230,6 @@ You might want to display a wide figure across both columns. To do this, you cha
 
 Single column is the default option, but if you want set it explicitly, set `fig.env` to `figure`. Notice that the `num.cols` option for the caption width is set to `1`.
 
-```{r image, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=2, fig.height=2, set.cap.width=T, num.cols.cap=1, fig.cap = "One column image."}
-img <- png::readPNG("figs/lab_logo_stanford.png")
-grid::grid.raster(img)
-```
-
-
-## R Plots
-
-You can use R chunks directly to plot graphs. And you can use latex floats in the
-fig.pos chunk option to have more control over the location of your plot on the page. For more information on latex placement specifiers see **[here](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)**
-
-```{r plot, fig.env="figure", fig.pos = "H", fig.align = "center", fig.width=2, fig.height=2, fig.cap = "R plot" }
-x <- 0:100
-y <- 2 * (x + rnorm(length(x), sd = 3) + 3)
-
-ggplot2::ggplot(data = data.frame(x, y), 
-       aes(x = x, y = y)) + 
-  geom_point() + 
-  geom_smooth(method = "lm")
-```
-
 
 ## Tables
 
@@ -248,23 +240,6 @@ tables to the top or bottom of a column, set wide tables across both
 columns.
 
 You can use the xtable function in the xtable package.
-
-```{r xtable, results="asis"}
-n <- 100
-x <- rnorm(n)
-y <- 2*x + rnorm(n)
-out <- lm(y ~ x)
-
-tab1 <- xtable::xtable(summary(out)$coef, digits=c(0, 2, 2, 1, 2), 
-                      caption = "This table prints across one column.")
-
-print(tab1, type="latex", comment = F, table.placement = "H")
-```
-
-# Acknowledgements
-
-Place acknowledgments (including funding information) in a section at
-the end of the paper.
 
 # References 
 
