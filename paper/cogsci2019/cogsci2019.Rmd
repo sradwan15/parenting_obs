@@ -110,12 +110,22 @@ In summary, following digitally-scaffolded activities may cause parents to engag
 e1path = "../../parenting_obs_e1/"
 load(paste(e1path,"Exp1_cleaned_data.RData",sep='')) # merged dataframe ready for plotting
 
+lmer_data <- d %>%
+  filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
+  mutate(condition = factor(condition), 
+         MTLD = as.numeric(MTLD),
+         EL = as.numeric(langcog::scale(EL, scale=FALSE)),
+         AA = as.numeric(langcog::scale(AA, scale=FALSE)),
+         RR = as.numeric(langcog::scale(RR, scale=FALSE)),
+         age = as.numeric(langcog::scale(age, scale=FALSE)),
+         gender = as.factor(gender),
+         video = as.factor(video))
 ```
 
 ### Participants. 
-60 infants aged 6-24 months and their parents participated in a museum in northern California. 
+`r nrow(d)` infants aged 6-24 months and their parents participated in a museum in northern California. 
 We included infants who were exposed to English at least 50 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home.
-[include specific demo info here?] - good to include now, and we can comment it out if it's too much (the full report/paper will have it)
+*INCLUDE FULL DEMOGRAPHIC INFO*
 
 ### Materials.
 Stimuli included videos from a commercial parenting application, Kinedu Inc. 
@@ -126,7 +136,7 @@ More information about the specific videos is available in the Appendix.
 Participants were also given a set of props corresponding to those in the video they watched, so that they could complete the activity. 
 The props associated with each video are listed in the Appendix.
 
-Participants were randomly assigned to an Activity Video condition or No-Video Control condition. 
+Participants were randomly assigned to either the Activity *Video* condition or the No-Video *Control* condition. 
 Participants in the Activity Video condition were assigned to one of the two videos available for their child's age group. 
 The No-Video Control condition was yoked to the Activity Video condition such that for every participant in the Activity Video condition who saw a particular video and received the associated props, a participant in the No-Video Control condition received the same props but did not watch the corresponding video.
 Parents also completed the Parenting Attitudes Questionnaire (PAQ). 
@@ -145,7 +155,7 @@ After three minutes of play had elapsed, parents were told they could stop playi
 Parents were then asked to complete the PAQ before being debriefed. 
 
 ### Joint Attention Coding Procedure.
-Video of each session was coded for episodes of joint attention using Datavyu software. 
+The video of each session was manually coded for episodes of joint attention using the Datavyu software. 
 The video taken at floor level was coded by default, but the other video was referred to if the participants were not visible or if there was a technological error with the first camera. 
 For each participant we coded for episodes of coordinated joint attention, episodes of passive joint attention, and parental bids for joint attention. 
 We defined parental bids for joint attention as any attempt to initiate joint attention (i.e label, point, or otherwise draw attention to an object) that does not result in passive or coordinated joint attention. 
@@ -155,7 +165,7 @@ If either participant looked away from the object for less than 3 seconds and th
 Episodes joint attention were considered coordinated if  both participants visually focused on an object for a minimum of 3 seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent. 
 This could be looks to the parent's face, gestures, vocalizations, or turn-taking. 
 If either participant looked away for less than 3 seconds and then returned to the same object, it was coded as part of the same period of joint attention. 
-A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. % report reliability
+A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. *REPORT RELIABILITY*
 
 # Results
 
@@ -170,8 +180,31 @@ Fig 1 - TTR, maybe also Total Tokens and Total Types (if subfigures fit)
 However, note that TTR is a measure that is correlated with the length of a text. ... 
 MTLD is a better measure of lexical diversity [@McCarthy2010].
 
-```{r e1lex_div, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.1, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1."}
+```{r, e1-lexdiv-regressions, echo=F, include=F}
+# Predicting lexical diversity based on experimental condition, PAQ, demographics. 
+maximal_mod <- lmer(MTLD ~ condition + age + gender + parent_ed + (1| video), data = lmer_data)
+summary(maximal_mod)
+
+# predict word tokesn
+tokens_mod <- lmer(tokens ~ condition*EL + condition*AA + condition*RR + age + gender + parent_ed + (1| video), 
+                         data = lmer_data)
+summary(tokens_mod)
+
+# predict word types
+types_mod <- lmer(types ~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1| video), 
+                         data = lmer_data)
+summary(types_mod)
+```
+
+```{r e1lex_div, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1."}
 d$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Control", "Video"))
+
+# all at once, but there are NAs in SD cols ?
+e1 <- d %>% group_by(Condition) %>%
+  summarise(TTR=mean(TTR), TTRsd=sd(TTR),
+            MTLD=mean(MTLD), MTLDsd=sd(MTLD),
+            types=mean(types), types.sd=sd(types),
+            tokens = mean(tokens), tokens.sd=sd(tokens))
 
 ms_lex <- d %>%
   group_by(Condition) %>%
@@ -197,7 +230,7 @@ mtld_means <- d %>%
   group_by(Condition)%>%
   summarise(mean = mean(MTLD), sd=sd(MTLD))
 
-# report table with mtld_means _sds
+# report table with mtld_means
 
 e1mtld <- ggplot(ms_lex_mtld, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
@@ -210,7 +243,7 @@ multiplot(e1ttr, e1mtld, cols=2)
 
 Word tokens and word types
 
-```{r e1token_type, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.1, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of word types and word tokens by condition in Experiment 1."}
+```{r e1token_type, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of word types and word tokens by condition in Experiment 1."}
 ms_tok <- d %>% group_by(Condition) %>%
   multi_boot_standard(col = "tokens") 
 
@@ -233,9 +266,18 @@ e1types <- ggplot(ms_type, aes(x = Condition, y = mean, fill = Condition)) + geo
 multiplot(e1tokens, e1types, cols=2)
 ```
 
+```{r, e1-effect-size, echo=F}
+cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
+```
 
 ## Joint Attention
 
+
+## Discussion
+
+Both the number of tokens and types are higher in the experimental condition, while lexical diversity (Type/Token ratio) is higher in the control condition. 
+Parents may be relatively more repetetive in the experimental condition since they are attempting to stick to a specific prescribed task, but they talk more overall.
+Demographics and PAQ do not interact with condition, but there is a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (more types and tokens for higher parent education).
 
 
 # Experiment 2
@@ -248,12 +290,12 @@ This manipulation will help determine what the contribution of the video demonst
 
 ```{r, echo=F}
 e2path = "../../parenting_obs_e2/"
-#load(paste(e2path,"Exp2_cleaned_data.RData",sep=''))
-e2d <- read.csv(paste(e2path,"MTLD_HDD.csv",sep=''), header=TRUE) 
+load(paste(e2path,"Exp2_cleaned_data.RData",sep=''))
+
 ```
 
 ### Participants. 
-84 infants aged 12-24 months and their parents participated in the same museum as Experiment 1. 
+`r nrow(d)` infants aged 12-24 months and their parents participated in the same museum as Experiment 1. 
 We included infants who were exposed to English at least 75 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home. [specific demo info]
 
 ### Materials. 
@@ -269,17 +311,57 @@ Consistent with the No-Video control condition in Experiment 1, parents in the C
 
 # Results
 
-```{r e2TTR, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=2, fig.height=2, set.cap.width=T, num.cols.cap=1, fig.cap = "How to do subfigures?"}
-img <- png::readPNG("figs/e2_TTR.png")
-grid::grid.raster(img)
-```
-
-```{r e2MTLD, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=2, fig.height=2, set.cap.width=T, num.cols.cap=1, fig.cap = "One column image."}
-img <- png::readPNG("figs/e2_MTLD.png")
-grid::grid.raster(img)
-```
-
 ## Lexical Diversity
+
+```{r e2lexdiv, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 2."}
+ms_lex <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col="TTR") 
+ttr_mean <- d%>% group_by(Condition)%>%
+  summarise(mean=mean(TTR), sd=sd(TTR))
+
+e2ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + ylim(0.0, 0.6) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
+  xlab("Condition") + ylab("TTR") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() +
+  theme(legend.position="none") 
+
+ms_lex <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col="MTLD") 
+mltd_mean <- d %>% group_by(Condition)%>%
+  summarise(mean = mean(MTLD), sd=sd(MTLD))
+
+e2mtld <- ggplot(ms_lex, aes(x = Condition, y = mean, fill = Condition)) + 
+  geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("MTLD") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() +
+  theme(legend.position="none") 
+
+multiplot(e2ttr, e2mtld, cols=2)
+```
+
+```{r e2token-type, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of word types and word tokens by condition in Experiment 2."}
+ms_tok <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col = "tokens") 
+
+e2tokens <- ggplot(ms_tok, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("Total Number of Word Tokens") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() +
+  theme(legend.position="none") 
+
+ms_typ <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col = "types") 
+
+e2types <- ggplot(ms_typ, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("Total Number of Word Types") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() +
+  theme(legend.position="none") 
+
+multiplot(e2tokens, e2types, cols=2)
+```
+
 
 ## Joint Attention
 
@@ -298,16 +380,6 @@ markdown formatting to include footnotes using this syntax [^1].
 ## Two-column images
 
 You might want to display a wide figure across both columns. To do this, you change the `fig.env` chunk option to `figure*`. To align the image in the center of the page, set `fig.align` option to `center`. To format the width of your caption text, you set the `num.cols.cap` option to `2`.
-
-## Tables
-
-Number tables consecutively; place the table number and title (in
-10 point) above the table with one line space above the caption and
-one line space below it, as in Table 1. You may float
-tables to the top or bottom of a column, set wide tables across both
-columns.
-
-You can use the xtable function in the xtable package.
 
 # References 
 

@@ -44,7 +44,10 @@ d$condition [d$sid=="111517_3"] = "exp"
 d$video [d$sid=="111517_3"] = "big_small"
 d$age [d$sid=="111517_3"] = "2"
 
-
+# age is "1" or "2", but should be continuous value (in mos)
+d$age = as.numeric(d$age)
+d$Condition <- factor(d$condition, levels=c("con","exp"), labels=c("Control","Video"))
+save(d, file="Exp2_cleaned_data.Rdata")
 ```
 
 #Plots
