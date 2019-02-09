@@ -277,7 +277,8 @@ Inter-rater reliability is very high for number of bids, high for number of epis
 #Plots
 
 Total number of bids (successful and unsuccessful)
-```{r}
+```{r, width=4, height=4}
+save(d, file="Exp1_joint_attention_data.RData")
 ms_bids <- d %>%
   group_by(Condition) %>%
   multi_boot_standard(col = "bids_tot") 
@@ -294,12 +295,7 @@ ggplot(ms_bids, aes(x = Condition, y = mean, fill = Condition)) +
   ylab("Total bids for Joint Attention") +
   langcog::scale_colour_solarized()  +
   ggthemes::theme_few() + 
-  theme(legend.title = element_text(size=18), 
-        legend.text = element_text(size=16), 
-        axis.text.x  = element_text(vjust=0.5, size=16),
-        axis.title.x = element_text(size=18), 
-        axis.text.y  = element_text(vjust=0.5, size=16),
-        axis.title.y = element_text(size=18))
+  theme(legend.position="none") 
 ```
 
 Total episodes of joint attention.

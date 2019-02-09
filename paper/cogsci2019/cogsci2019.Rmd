@@ -272,12 +272,103 @@ cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
 
 ## Joint Attention
 
+```{r, e1ja-regressions, echo=F, include=F}
+load(paste(e1path,"joint_attention/Exp1_joint_attention_data.RData",sep=''))
+d$Condition <- factor(d$Condition, levels = c("con","exp"), labels = c("Control","Video"))
+
+lmer_data <- d %>%
+  filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
+  mutate(Condition = factor(Condition), 
+         bids_tot = as.numeric(bids_tot),
+         EL = as.numeric(langcog::scale(EL, scale=FALSE)),
+         AA = as.numeric(langcog::scale(AA, scale=FALSE)),
+         RR = as.numeric(langcog::scale(RR, scale=FALSE)),
+         age = as.numeric(langcog::scale(age, scale=FALSE)),
+         gender = as.factor(gender),
+         Video = as.factor(Video))
+
+# Total number of bids
+bids_mod <- lmer(bids_tot ~ Condition *  EL  + Condition * AA + Condition * RR + age + gender + parent_ed +
+                           (1| Video), data = lmer_data)
+summary(bids_mod)
+
+# Episodes of coordinated joint attention.
+cja_mod <- lmer(cja ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
+                           (1| Video), data = lmer_data)
+summary(cja_mod)
+
+# Episodes of passive joint attention.
+pja_mod <- lmer(pja ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
+                           (1| Video), data = lmer_data)
+summary(pja_mod)
+
+# Total duration of passive joint attention.
+pja_time_mod <- lmer(pja_length ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
+                           (1| Video), data = lmer_data)
+summary(pja_time_mod)
+
+# Total duration of coordinated joint attention.
+cja_time_mod <- lmer(cja_length ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
+                           (1| Video), data = lmer_data)
+summary(cja_time_mod)
+```
+
+
+```{r e1ja-graphs, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of bids and episodes of Joint Attention in Experiment 1."}
+
+ms_bids <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col="bids_tot") 
+
+e1bids <- ggplot(ms_bids, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
+  xlab("Condition") + ylab("Total Bids for Joint Attention") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
+  theme(legend.position="none") 
+
+# total joint attention episodes
+ms_tja <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col = "total_ja") 
+
+e1tja <- ggplot(ms_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("Total Episodes of Joint Attention") +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
+  theme(legend.position="none") 
+  
+multiplot(e1bids, e1tja, cols=2)
+```
+
+```{r e1ja-graphs-pass-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Average number of passive and coordinated episodes of JA in Experiment 1."}
+ms_pja <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col = "pja") 
+
+e1pja <- ggplot(ms_pja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("Episodes of Passive Joint Attention")  +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
+
+#Episodes of coordinated joint attention
+ms_cja <- d %>% group_by(Condition) %>%
+  multi_boot_standard(col = "cja") 
+
+e1cja <- ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
+  xlab("Condition") + ylab("Episodes of Coordinated Joint Attention")  +
+  langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
+
+multiplot(e1pja, e1cja, cols=2)
+```
 
 ## Discussion
 
 Both the number of tokens and types are higher in the experimental condition, while lexical diversity (Type/Token ratio) is higher in the control condition. 
 Parents may be relatively more repetetive in the experimental condition since they are attempting to stick to a specific prescribed task, but they talk more overall.
 Demographics and PAQ do not interact with condition, but there is a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (more types and tokens for higher parent education).
+
+There is a main effect of condition on total bids for joint attention. Parents in the experimental condition (i.e., those who saw a video demonstrating an activity) made a greater number of bids for joint attention with their child.
+There was no effect of condition on the number of episodes of either passive or coordinated joint attention, or the duration of these episodes. 
+There is a marginal effect of gender on bids for joint attention, with parents of males producing more bids. There is a marginal interaction between RR scores and condition on passive joint attention, such that the experimental condition increased the number of episodes of PJA to a greater extent for people with high RR scores.
+While the electronically-delivered parenting advice increased the number of bids for joint attention by parents, it did not significantly effect the number or duration of episodes of joint attention. One possibility is that child variables had a comparatively larger impact on the attainment of joint attention.
 
 
 # Experiment 2
