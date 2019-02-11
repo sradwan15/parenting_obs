@@ -64,26 +64,28 @@ Social play can help children learn about human relationships, both through imit
 
 ## Guided Play Scaffolds Learning
 Children's early play behaviors are often assisted by more skilled and knowledgeable play partners such as their caregivers and older siblings [@Kaye1970]. 
-Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided [@Vygotsky1978].
-These tutorial interactions have been shown to be an important component of child development [@Wood1976].
+Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided [@Vygotsky1980].
+These tutorial interactions have been shown to be important components of child development [@Wood1976].
 Thus, with the knowledge of both play and tutorial interactions, guided play, which consists of both active and enjoyable activities as well as close guidance of adults [@Hirsh2008]
-have drawn researchers' interest. 
-Weisberg showed that, with preschoolers, guided play scaffolds the environment while still allowing children to maintain a large degree of control, 
+has drawn researchers' interest. 
+A study on preschoolers by Weisberg showed that guided play scaffolds the environment while still allowing children to maintain a large degree of control, 
 and it outperforms direct-instruction approaches in encouraging a variety of positive academic outcomes [@Weisberg2013].
-Massey specifically showed that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills [@Massey2013].
+Another study by Massey specifically found that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills [@Massey2013].
 
 ## Improving Parenting Practices and Language Use
-Thus, including guided play in parenting practices early on is important and should help with children's later performances. Suskind did a parent-directed home-visiting intervention experiment in 2015, 
-and found that parents in experimental group have greater knowledge of language development and this effect sustained after the experiment is done. 
-However, more interactive outcomes, like parent word type and token numbers, child word types, conversational turn counts and child vocalization counts, 
-increased during the home-visiting but did not sustain after four months of intervention (there are more detailed sustainibility differences of these measure. should I make it more clear?) [@Suskind2015].
+Thus, including guided play in parenting practices early on is crucial and will help with children's later performances in academic and social situations. 
+To intervene in parenting practices, Suskind and others did a parent-directed home-visiting intervention experiment in 2015 for children of low socioeconomic status.
+They showed that parents in experimental group have greater knowledge of language development and this effect sustained four months after the intervention. 
+However, more interactive outcomes, like adult word tokens, conversational turn counts, and child vocalization counts, 
+though increased significantly during the experiment,
+did not sustain after the intervention [@Suskind2015].
 That changes did not sustain could be due to the intervention itself,
-or could merely be that home-visiting is not sustainable enough for parents to easily and constantly get parenting advice. 
+or could merely be that the methods of home-visiting is not sustainable enough for parents to easily and constantly get parenting advice.
 Thus, new methods of delivering parenting advice should be considered.
 
 ## Effectiveness of Digital Delivery
-Digitally-delivered methods could address some logistic barriers to face-to-face delivery methods. 
-Breitenstein reviewed 11 studies on them and showed good promise for the efficacy of interventions using digitally-delivered methods [@Breitenstein2014].
+With the development of technology, digitally-delivered methods could address some logistic barriers to face-to-face delivery methods. 
+Breitenstein has reviewed 11 studies on them and showed good promise for the efficacy of interventions using digitally-delivered methods [@Breitenstein2014].
 However, the parent and child outcomes assessed in the review (e.g.infant positive behaviors, satisfaction, emotional symptoms etc.) did not address the nature or quality of parent-infant interactions at a detailed level,
 like if the interventions lead to children paying more attention, or vocabulary changes in parents' language usages. 
 Although digitally-delivered ac-tivities are designed to promote learning and cognitive devel-opment, it is unclear how they might affect these dimensions of parent-child interactions.
@@ -117,12 +119,18 @@ lmer_data <- d %>%
          age = as.numeric(langcog::scale(age, scale=FALSE)),
          gender = as.factor(gender),
          video = as.factor(video))
+
+a <- d$gender == "F"
+length(a[a == TRUE])
+
+
+
+
 ```
 
 ### Participants. 
-`r nrow(d)` infants aged 6-24 months and their parents participated in a museum in northern California. 
-We included infants who were exposed to English at least 50 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home.
-*INCLUDE FULL DEMOGRAPHIC INFO*
+`r nrow(d)` infants  (F=42, M=18) aged 6-24 months (20 6-11.9 month-olds, 20 12-17.9 month-olds, and 20 18-24 month-olds) and their parents participated in a museum in northern California. 
+We included infants who were exposed to English at least 50 percent of the time (n= 58) or who were exposed less but whose participating parent reported that they primarily speak English with their child at home (n = 2). Sixty-one% of participants (n=37) had been exposed to 2 or more languages as indicated by their parent. Parents identified their children as White (n=25), Asian (n=11), African American/Black (n=2), Biracial (n=12), other (n=5), or declined to state (n=5). Fifteen parents reported their child was of Hispanic origin. Parents tended to be highly educated, with a highest level of education reported as high school (n = 5), some college (n = 6), four-year college (n = 14), some graduate school (n = 1), completed graduate school (n = 28) or declined to state (n=6).
 
 ### Materials.
 Stimuli included videos from a commercial parenting application, Kinedu Inc. 
@@ -133,7 +141,7 @@ More information about the specific videos is available in the Appendix.
 Participants were also given a set of props corresponding to those in the video they watched, so that they could complete the activity. 
 The props associated with each video are listed in the Appendix.
 
-Participants were randomly assigned to either the Activity *Video* condition or the No-Video *Control* condition. 
+Participants were randomly assigned to either the *Video* condition or the *Control* condition. 
 Participants in the Activity Video condition were assigned to one of the two videos available for their child's age group. 
 The No-Video Control condition was yoked to the Activity Video condition such that for every participant in the Activity Video condition who saw a particular video and received the associated props, a participant in the No-Video Control condition received the same props but did not watch the corresponding video.
 Parents also completed the Parenting Attitudes Questionnaire (PAQ). 
@@ -162,7 +170,7 @@ If either participant looked away from the object for less than 3 seconds and th
 Episodes joint attention were considered coordinated if  both participants visually focused on an object for a minimum of 3 seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent. 
 This could be looks to the parent's face, gestures, vocalizations, or turn-taking. 
 If either participant looked away for less than 3 seconds and then returned to the same object, it was coded as part of the same period of joint attention. 
-A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. *REPORT RELIABILITY*
+A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. The two coders achieved reliability with ICC = 0.80 with 95% confident interval = 0.57-0.92 (p<0.05) for number of parent bids; ICC = 0.20 with 95% confident interval = -0.26-0.58 for number of passive joint attention established; ICC = 0.66 with 95% confident interval = 0.32-0.85 (p<0.05) for number of coordinated joint attention established; ICC = 0.24 with 95% confident interval = -0.21-0.61 for length of passive joint attention, and ICC = 0.62 with 95% confident interval = 0.27-0.83 (p<0.05) for length of passive joint attention. 
 
 # Results
 
@@ -391,7 +399,7 @@ The design of Experiment 2 was similar to that of Experiment 1, except that inst
 This was to control for the possibility that differences in language output and joint attention in Experiment 1 could be due to simply cuing parents to think about infants' learning and cognitive development. 
 The videos presented in the Control Video condition were media clips (available on YouTube) of developmental psychologists explaining their research interleaved with footage of infants or toddlers engaged in developmental research studies. 
 Thus, the content of the videos superficially matched those in the Activity Video condition, but did not suggest any particular activities.
-The videos were trimmed to approximately match the average video length in the Activity Video condition (2 minutes ??).
+The videos were trimmed to approximately match the average video length in the Activity Video condition around 1.5 minutes.
 
 ### Procedure. 
 The procedure for Experiment 2 matched that of Experiment 1, except that parents in the Control Video condition watched a control video before the play session. 

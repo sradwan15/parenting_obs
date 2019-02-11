@@ -41,7 +41,7 @@ data$X = NULL
 #write.csv(dem_anon, file="anonymized_demographics_parenting_obs_e1.csv")
 dem <- read.csv("anonymized_demographics_parenting_obs_e1.csv", header=T)
 conditions <- read.csv("joint_attention/conditions.csv")
-load("paq/paq_demo.RData") # do we use this?? GK: yes, see left_join on line 76
+load("paq/paq_demo.RData") 
 
 #fix ids
 data$SID <- stringr::str_trim(data$SID)
@@ -56,6 +56,7 @@ data$SID <- stringr::str_replace(data$SID, "_cut_m4a.txt", "")
 
 data$SID <- stringr::str_replace(data$SID, "05116_05", "050116_05")
 data$SID <- stringr::str_replace(data$SID, "05116_2", "050116_02")
+data$SID <- stringr::str_replace(data$SID, "98470_111716_02", "111716_02")
 ```
 
 Make data frames. 
