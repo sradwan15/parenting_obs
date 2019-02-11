@@ -63,36 +63,33 @@ Beyond learning object features, the laws of physics, and causal relationships [
 Social play can help children learn about human relationships, both through imitation of adult behaviors and by experiencing and learning to process emotional events [@Singer2006].
 
 ## Guided Play Scaffolds Learning
-Children's early play behaviors are often assisted by more skilled and knowledgeable play partners such as their caregivers and older siblings (Kaye, 1970). 
-Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided (Vygotsky, 197X).
-These tutorial interactions have been shown to be a "a crucial feature of infancy and childhood" (Wood, 1970).
-Thus, with the knowledge of both play and tutorial interactions, guided play, "where children actively engage in pleasurable and seemingly spontaneous activities under the direction of adults" (Hirsh-Pasek, 2008), 
+Children's early play behaviors are often assisted by more skilled and knowledgeable play partners such as their caregivers and older siblings [@Kaye1970]. 
+Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided [@Vygotsky1978].
+These tutorial interactions have been shown to be an important component of child development [@Wood1976].
+Thus, with the knowledge of both play and tutorial interactions, guided play, which consists of both active and enjoyable activities as well as close guidance of adults [@Hirsh2008]
 have drawn researchers' interest. 
 Weisberg showed that, with preschoolers, guided play scaffolds the environment while still allowing children to maintain a large degree of control, 
-and it outperforms direct-instruction approaches in encouraging a variety of positive academic outcomes (Weisberg, Hirsh-Pasek and Golinkoff, 2013).
-Massey specifically showed that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills (Massey, 2013).
+and it outperforms direct-instruction approaches in encouraging a variety of positive academic outcomes [@Weisberg2013].
+Massey specifically showed that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills [@Massey2013].
 
 ## Improving Parenting Practices and Language Use
-(early interventions on parenting practices can help children's outcomes)
 Thus, including guided play in parenting practices early on is important and should help with children's later performances. Suskind did a parent-directed home-visiting intervention experiment in 2015, 
 and found that parents in experimental group have greater knowledge of language development and this effect sustained after the experiment is done. 
 However, more interactive outcomes, like parent word type and token numbers, child word types, conversational turn counts and child vocalization counts, 
 increased during the home-visiting but did not sustain after four months of intervention (there are more detailed sustainibility differences of these measure. should I make it more clear?) [@Suskind2015].
-The fact that changes did not sustain could be due to the intervention itself, 
-or could merely be that home-visiting is not sustainable enough for parents to easily and constantly get parenting advice.
+That changes did not sustain could be due to the intervention itself,
+or could merely be that home-visiting is not sustainable enough for parents to easily and constantly get parenting advice. 
+Thus, new methods of delivering parenting advice should be considered.
 
 ## Effectiveness of Digital Delivery
-(apps are an easy way to deliver curated, age-appropriate parenting advice — but can we measure an influence on parent's language? and do the interventions lead to children paying more attention?)
-
 Digitally-delivered methods could address some logistic barriers to face-to-face delivery methods. 
-Bretenstein reviewed 11 studies on them and showed good promise for the efficacy of interventions using digitally-delivered methods. 
+Breitenstein reviewed 11 studies on them and showed good promise for the efficacy of interventions using digitally-delivered methods [@Breitenstein2014].
 However, the parent and child outcomes assessed in the review (e.g.infant positive behaviors, satisfaction, emotional symptoms etc.) did not address the nature or quality of parent-infant interactions at a detailed level,
 like if the interventions lead to children paying more attention, or vocabulary changes in parents' language usages. 
+Although digitally-delivered ac-tivities are designed to promote learning and cognitive devel-opment, it is unclear how they might affect these dimensions of parent-child interactions.
 Thus, we want to conduct this experiment to explore if and how digital scaffolding of activities affect the social and linguistic characteristics of parent-child ineractions.
+The quality of parent-child interactions can be measured by both the social engagement of parents (e.g., joint attention to objects in the environment)[@Bigelow2004] and the quality of language (e.g., vocabulary diversity) [@Malvern2004]. 
 
-The quality of parent-child interactions can be measured by both the social engagement of parents (e.g., joint attention to objects in the environment) and the quality of language (e.g., vocabulary diversity). 
-Although digitally-delivered activities are designed to promote learning and cognitive development, it is unclear how they might affect these dimensions of parent-child interactions. 
-How does digital scaffolding of activities affect the social and linguistic characteristics of parents' speech to their children?
 
 
 # Experiment 1
