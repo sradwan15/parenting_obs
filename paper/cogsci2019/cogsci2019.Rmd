@@ -9,19 +9,21 @@ author-information: >
     {\large\bf George~Kachergis} (\texttt{george.kachergis@gmail.com}) \\
     {\large\bf Michael C.~Frank} (\texttt{mcfrank@stanford.edu}) \\ 
     Department of Psychology, Stanford University \\ 
-    Palo Alto, CA 94301 USA}
+    Stanford, CA 94305 USA}
 
 abstract: >
     Early parenting practices play an important role in shaping the future 
     outcomes of young children [@Hart1995; @Heckman2006]. 
-    In particular, high quality early interactions and early language input appear to 
-    facilitate more effective language learning and higher levels of school performance. 
-    The rise in electronic parenting applications ("apps") holds the promise of delivering 
+    In particular, high-quality early interactions and language input appear to 
+    facilitate language learning and result in higher levels of school performance. 
+    The rise of phone- and tablet-based parenting applications ("apps") holds the promise of delivering 
     low-cost, positive interventions on parenting style to a variety of different populations. 
     Of special interest are the parents of very young children, who are often difficult to reach in other ways. 
     Yet little is known about the effects of communicating to parents through app-based interventions.
-    MTLD, types and tokens, joint attention, proportion of nouns/verbs/adjectives, 
-    affect, concreteness, mean length of utterance...
+    In a study of one commercial app offering a collection of age-appropriate activity videos, we find 
+    that the quality of parent-child interactions increases in some ways as a result of using the app. 
+    Specifically, the lexical diversity of parents' child-directed speech increases, and measures of 
+    joint attention show...
     
 keywords: >
     digital parenting advice; joint attention; lexical diversity; guided play; 
@@ -57,38 +59,38 @@ theme_set(theme_few())
 
 # Introduction
 
-Children spend a large portion of their waking time at play in their environment.
-Playing with objects may allow them to discover hidden features, as well as to build a causal understanding of how the objects interact. 
-Beyond learning object features, the laws of physics, and causal relationships [e.g., @Schulz2007], during play children practice motor skills that help them effectively navigate their world [@Singer2006].
-Social play can help children learn about human relationships, both through imitation of adult behaviors and by experiencing and learning to process emotional events [@Singer2006].
+Young children spend a large portion of their waking time at play, variously manipulating objects, exploring their environment, and interacting with caregivers and peers.
+Playing with objects allows them to discover hidden object properties and relations, and to build a causal understanding of how objects interact [e.g., @Schulz2007]. 
+Meanwhile, play also gives children an opportunity to set and achieve goals (e.g., build a tower) and to practice a wide range of motor skills (e.g., stacking) that will help them navigate the world [@Singer2006].
+Social play can help children learn about human relationships, both through imitation of adult behaviors and by experiencing and learning to process emotional events such as failures [@Singer2006].
+Of course, young children are rarely playing in isolation: caregivers often provide encouragement and guidance while scaffolding a child's play [@Kaye1970; @Wood1976]. 
+Early parenting practices have been shown to play an important role in shaping the future outcomes of young children [@Hart1995; @Heckman2006]. 
+While many interventions have trouble reaching the parents of very young children, digital delivery of parenting advice by way of 
 
 ## Guided Play Scaffolds Learning
 Children's early play behaviors are often assisted by more skilled and knowledgeable play partners such as their caregivers and older siblings [@Kaye1970]. 
 Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided [@Vygotsky1980].
 These tutorial interactions have been shown to be important components of child development [@Wood1976].
-Thus, with the knowledge of both play and tutorial interactions, guided play, which consists of both active and enjoyable activities as well as close guidance of adults [@Hirsh2008]
-has drawn researchers' interest. 
-A study on preschoolers by Weisberg showed that guided play scaffolds the environment while still allowing children to maintain a large degree of control, 
+Thus, with the knowledge of both play and tutorial interactions, guided play, which consists of both active and enjoyable activities as well as close guidance of adults [@Hirsh2008] has drawn researchers' interest. 
+A study of preschoolers showed that guided play scaffolds the environment while still allowing children to maintain a large degree of control, 
 and it outperforms direct-instruction approaches in encouraging a variety of positive academic outcomes [@Weisberg2013].
-Another study by Massey specifically found that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills [@Massey2013].
+Another study found that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills [@Massey2013].
 
 ## Improving Parenting Practices and Language Use
 Thus, including guided play in parenting practices early on is crucial and will help with children's later performances in academic and social situations. 
 To intervene in parenting practices, Suskind and others did a parent-directed home-visiting intervention experiment in 2015 for children of low socioeconomic status.
 They showed that parents in experimental group have greater knowledge of language development and this effect sustained four months after the intervention. 
-However, more interactive outcomes, like adult word tokens, conversational turn counts, and child vocalization counts, 
-though increased significantly during the experiment,
-did not sustain after the intervention [@Suskind2015].
+However, although a number of interactive measures increased during the experiment, including the number of word tokens, conversational turns, and child vocalizations, these increases did not sustain after the intervention [@Suskind2015].
 That changes did not sustain could be due to the intervention itself,
 or could merely be that the methods of home-visiting is not sustainable enough for parents to easily and constantly get parenting advice.
 Thus, new methods of delivering parenting advice should be considered.
 
 ## Effectiveness of Digital Delivery
-With the development of technology, digitally-delivered methods could address some logistic barriers to face-to-face delivery methods. 
-Breitenstein has reviewed 11 studies on them and showed good promise for the efficacy of interventions using digitally-delivered methods [@Breitenstein2014].
+With the widespread use of smartphones and tablets worldwide, digitally-delivered interventions could address many of the logistical barriers that have limited scaling up face-to-face delivery methods.
+A review of 11 studies verified that digital delivery is a promising means of effectively distributing interventions [@Breitenstein2014].
 However, the parent and child outcomes assessed in the review (e.g.infant positive behaviors, satisfaction, emotional symptoms etc.) did not address the nature or quality of parent-infant interactions at a detailed level,
 like if the interventions lead to children paying more attention, or vocabulary changes in parents' language usages. 
-Although digitally-delivered ac-tivities are designed to promote learning and cognitive devel-opment, it is unclear how they might affect these dimensions of parent-child interactions.
+Although digitally-delivered ac-tivities are designed to promote learning and cognitive development, it is unclear how they might affect these dimensions of parent-child interactions.
 Thus, we want to conduct this experiment to explore if and how digital scaffolding of activities affect the social and linguistic characteristics of parent-child ineractions.
 The quality of parent-child interactions can be measured by both the social engagement of parents (e.g., joint attention to objects in the environment)[@Bigelow2004] and the quality of language (e.g., vocabulary diversity) [@Malvern2004]. 
 
@@ -99,13 +101,10 @@ The quality of parent-child interactions can be measured by both the social enga
 In Experiment 1, we invited parents of 6- to 24-month-old infants visiting the Children's Discovery Museum in San Jose to complete activities from the Kinedu app. 
 Parents were randomly assigned to the video group or the control group; parents in the video group watched a video from the Kinedu app (matched to their child's age), and then performed the activity with their child using the props from the video. 
 Parents in the control group did not watch a Kinedu video, instead they were given the same props and were told to play with their infants as they would at home. 
-We found that compared to the control group, parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity. 
-They also made more bids for joint attention with their infants, although these bids did not result in more episodes of joint attention compared to the control group. 
-In summary, following digitally-scaffolded activities may cause parents to engage with and speak more to children overall, but speak more repetitively.
 
 ## Method
 
-```{r, echo=F}
+```{r, include=F}
 e1path = "../../parenting_obs_e1/"
 load(paste(e1path,"Exp1_cleaned_data.RData",sep='')) # merged dataframe ready for plotting
 
@@ -124,84 +123,101 @@ a <- d$gender == "F"
 length(a[a == TRUE])
 
 
-
-
 ```
 
 ### Participants. 
-`r nrow(d)` infants  (F = 42, M = 18) aged 6-24 months (20 6-11.9 month-olds, 20 12-17.9 month-olds, and 20 18-24 month-olds) and their parents participated in a museum in northern California. 
-We included infants who were exposed to English at least 50 percent of the time (n = 58) or who were exposed less but whose participating parent reported that they primarily speak English with their child at home (n = 2). Sixty-one% of participants (n = 37) had been exposed to 2 or more languages as indicated by their parent. Parents identified their children as White (n = 25), Asian (n = 11), African American/Black (n = 2), Biracial (n = 12), other (n = 5), or declined to state (n = 5). Fifteen parents reported their child was of Hispanic origin. Parents tended to be highly educated, with a highest level of education reported as high school (n = 5), some college (n = 6), four-year college (n = 14), some graduate school (n = 1), completed graduate school (n = 28) or declined to state (n = 6).
+`r nrow(d)` infants (F = 42, M = 18) aged 6-24 months (20 6-11.9 month-olds, 20 12-17.9 month-olds, and 20 18-24 month-olds) and their parents participated in a museum in northern California. 
+We included infants who were exposed to English at least 50 percent of the time (n = 58) or who were exposed less but whose participating parent reported that they primarily speak English with their child at home (n = 2). 
+Sixty-one% of participants (n = 37) had been exposed to two or more languages as indicated by their parent. 
+Parents identified their children as White (n = 25), Asian (n = 11), African American/Black (n = 2), Biracial (n = 12), other (n = 5), or declined to state (n = 5). 
+Fifteen parents reported their child was of Hispanic origin. 
+Parents tended to be highly-educated, with reports of highest level of education ranging from completed high school (n = 5), some college (n = 6), four-year college (n = 14), some graduate school (n = 1), to completed graduate school (n = 28) or declined to state (n = 6).
 
 ### Materials.
-Stimuli included videos from a commercial parenting application, Kinedu Inc. 
-The videos were designed to show activities parents could perform with their child to foster cognitive and physical development, and were targeted to the child's age and development. 
+Stimuli included videos from the Kinedu (Kinedu Inc.) commercial parenting application. 
+The videos were designed to show activities to parents that they could perform with their child in order to foster cognitive and physical development, and were targeted to the child's age and level of development. 
 In each video, an adult and child perform the activity while a narrator explains the activity and its purpose. 
 We selected two videos for each of three age groups in our sample (6-11.9 months, 12-17.9 months, 18-23.94 months). 
 More information about the specific videos is available in the Appendix. 
-Participants were also given a set of props corresponding to those in the video they watched, so that they could complete the activity. 
+Participants were also given a set of props corresponding to those in the video they watched so that they could complete the activity. 
 The props associated with each video are listed in the Appendix.
 
 Participants were randomly assigned to either the *Video* condition or the *Control* condition. 
-Participants in the Activity Video condition were assigned to one of the two videos available for their child's age group. 
-The No-Video Control condition was yoked to the Activity Video condition such that for every participant in the Activity Video condition who saw a particular video and received the associated props, a participant in the No-Video Control condition received the same props but did not watch the corresponding video.
+Participating parents in the Video condition were assigned to watch one of the two activity videos available for their child's age group. 
+Participating parents in the Control condition watched no activity video, and were merely asked to play with their child as they normally would.
+The Control condition was yoked to the Activity Video condition such that for every participant in the Video condition who saw a particular video and received the associated props, a participant in the Control condition received the same props but did not watch the activity video.
 Parents also completed the Parenting Attitudes Questionnaire (PAQ). 
 The PAQ measures parents' attitudes about parenting and child development along three dimensions: rules and respect, early learning, and affection and attachment.
 
 ## Procedure.
-After providing informed consent, parents in the Activity Video condition watched the assigned video on a laptop with headphones.
+After providing informed consent, parents in the Video condition watched the assigned activity video on a laptop with headphones.
 To ensure that parents could give the video their full attention, the experimenter played with the infant with a set of toys (different from the experimental props used in the study) while the video was being played. 
 Immediately following the video, each parent-child dyad was provided with the props to complete the activity they had viewed. 
 The toys were placed on a large foam mat, and parents were instructed to sit on the mat with their child and re-create the activity they had viewed for a period of three minutes.
-In the No-Video control condition, after consenting parents were told to play with their child as they would at home with the provided props for a period of three minutes. 
+In the Control condition, after consenting parents were told to play with their child as they would at home with the provided props for a period of three minutes. 
 They were not given any additional instructions about how to use the props.
 
-In both conditions, two video cameras were used to record the play session from different angles, and parents were fitted with a wireless audio recorder to record their speech to their child. 
-After three minutes of play had elapsed, parents were told they could stop playing and cameras and audio were turned off. 
+In both conditions, two video cameras were used to record the play session from different angles, and parents were fitted with a wireless audio recorder to record their child-directed speech. 
+After three minutes of play had elapsed, parents were told they could stop playing and cameras and audio were turned off.
 Parents were then asked to complete the PAQ before being debriefed. 
 
 ### Joint Attention Coding Procedure.
-The video of each session was manually coded for episodes of joint attention using the Datavyu software. 
-The video taken at floor level was coded by default, but the other video was referred to if the participants were not visible or if there was a technological error with the first camera. 
-For each participant we coded for episodes of coordinated joint attention, episodes of passive joint attention, and parental bids for joint attention. 
-We defined parental bids for joint attention as any attempt to initiate joint attention (i.e label, point, or otherwise draw attention to an object) that does not result in passive or coordinated joint attention. 
+The video of each session was manually coded for episodes of joint attention using the Datavyu software [@datavyu]. 
+The video taken at floor level was coded by default, but the other video was referred to if the participants were not visible or if there was technical difficulty with the first camera. 
+Each session's video was coded for episodes of coordinated joint attention, episodes of passive joint attention, and parental bids for joint attention. 
+Parental bids for joint attention were defined as any attempt to initiate joint attention (i.e labeling, pointing, or otherwise drawing attention to an object) that did not result in passive or coordinated joint attention. 
 If more than 3 seconds elapsed between bids, they were coded as separate attempts. 
 An episode of joint attention was considered passive if both participants visually focused on an object for a minimum of 3 seconds but the child did not acknowledge the parent. 
 If either participant looked away from the object for less than 3 seconds and then returned to the same object it was considered part of the same period of joint attention. 
-Episodes joint attention were considered coordinated if  both participants visually focused on an object for a minimum of 3 seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent. 
+Episodes joint attention were considered coordinated if both participants visually focused on an object for a minimum of 3 seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent. 
 This could be looks to the parent's face, gestures, vocalizations, or turn-taking. 
 If either participant looked away for less than 3 seconds and then returned to the same object, it was coded as part of the same period of joint attention. 
-A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. The two coders achieved reliability with ICC = 0.80 with 95% confident interval = 0.57-0.92 (p < 0.05) for number of parent bids; ICC = 0.20 with 95% confident interval = -0.26-0.58 for number of passive joint attention established; ICC = 0.66 with 95% confident interval = 0.32-0.85 (p < 0.05) for number of coordinated joint attention established; ICC = 0.24 with 95% confident interval = -0.21-0.61 for length of passive joint attention, and ICC = 0.62 with 95% confident interval = 0.27-0.83 (p < 0.05) for length of passive joint attention. 
+A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. 
+The two coders had a reliability of ICC = 0.80 with 95% confident interval (CI) = [0.57,0.92] (p < 0.05) for number of parent bids for JA; ICC = 0.20 with 95% CI = [-0.26,0.58] for number of passive JA episodes; ICC = 0.66 with 95% CI = [0.32,0.85] (p < 0.05) for number of coordinated JA episodes; ICC = 0.24 with 95% CI = [-0.21,0.61] for total duration of passive JA episodes, and ICC = 0.62 with 95% CI = [0.27,0.83] (p < 0.05) for total duration of passive (coordinated??) JA episodes. 
 
 # Results
 
-The data was analyzed according to our preregistration: [link](https://osf.io/2bpdf/).
+The transcripts and hand-coded behavioral data was analyzed according to our preregistration[^1].
+Below we first describe the lexical diversity results, followed by the joint attention results.
+
+[^1]: Preregistration: [https://osf.io/2bpdf/](https://osf.io/2bpdf/)]
 
 ## Lexical Diversity
 
-We first calculated Type/Token Ratio (TTR) for each transcript. ..
+Parents' child-directed speech during the play sessions was transcribed.
+For each transcript, the words were lemmatized using @spacy2, and the word *types* (unique words) and *tokens* (total words) were then tallied and the type-token ratio (TTR) calculated as a measure of lexical diversity. 
+Although TTR was our preregistered measure of lexical diversity, TTR is correlated with the length of a text, whereas the measure of textual lexical diversity (MTLD) is not [@McCarthy2010]. 
+Thus, we also measure lexical diversity with MTLD, which is calculated as the mean length of sequential word strings in a text that maintain a given TTR value (here, .720).
 
-Fig 1 - TTR, maybe also Total Tokens and Total Types (if subfigures fit)
-(otherwise a table with mean and SD of tokens, types, and TTR)
-However, note that TTR is a measure that is correlated with the length of a text. ... 
-MTLD is a better measure of lexical diversity [@McCarthy2010].
 
 ```{r, e1-lexdiv-regressions, echo=F, include=F}
 # Predicting lexical diversity based on experimental condition, PAQ, demographics. 
-maximal_mod <- lmer(MTLD ~ condition + age + gender + parent_ed + (1| video), data = lmer_data)
-summary(maximal_mod)
+modTTR <- lmer(TTR ~ condition + age + gender + parent_ed + (1|video), data=lmer_data)
+summary(modTTR) # 
 
-# predict word tokesn
-tokens_mod <- lmer(tokens ~ condition*EL + condition*AA + condition*RR + age + gender + parent_ed + (1| video), 
-                         data = lmer_data)
-summary(tokens_mod)
+modMTLD <- lmer(MTLD ~ condition + age + gender + parent_ed + (1|video), data=lmer_data)
+summary(modMTLD)
+
+# predict word tokens
+tokens_mod <- lmer(tokens ~ condition*EL + condition*AA + condition*RR + age + gender + parent_ed + (1|video),  data=lmer_data)
+summary(tokens_mod) # condition *
 
 # predict word types
-types_mod <- lmer(types ~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1| video), 
-                         data = lmer_data)
+types_mod <- lmer(types ~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1|video), data=lmer_data)
 summary(types_mod)
 ```
 
-```{r e1lex_div, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1."}
+We fit a mixed-effects linear regression predicting TTR as a function of condition, age (scaled and 0-centered), gender, and parent's education level with a random intercept per video using lme4 [@lme4]. 
+There was significantly lower TTR in the Video condition (mean: 0.32) than in the Control condition (mean: 0.43, $\beta=-.12$, t(39.9) = 4.25, *p*<.001). 
+There were no significant effects of age, gender, or parent's level of education.
+A similar mixed-effects linear regression instead predicting MTLD also found significantly lower lexical diversity in the Video condition (mean: 15.7) than in the Control condition (mean: 21.9, $\beta=-11.67$, t(43) = 3.08, *p*<.01), with no other significant effects.
+Figure 1 shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
+
+We also conducted similar regressions predicting the number of word tokens and types, finding only a significant effect of condition on the number of word tokens ($\beta=57.23$, t(34.4)=2.19, *p*<.05), with parents using more words in the Video condition (mean: 225, 95% CI: [197,252]) than in the Control condition (mean: 165, 95% CI: [139,193]).
+
+(Table with mean and SD of tokens, types, and TTR)
+
+```{r e1lex_div, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1. Error bars show bootstrapped 95 percent confidence intervals (CIs)."}
 d$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Control", "Video"))
 
 # all at once, but there are NAs in SD cols ?
@@ -378,6 +394,8 @@ While the electronically-delivered parenting advice increased the number of bids
 
 # Experiment 2
 
+Experiment 1 found that compared to parents who did not watch a video, parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity. 
+Parents who watched a video also made more bids for joint attention, although these bids did not result in more episodes of joint attention compared to the control group. 
 In Experiment 2 we attempt to replicate the findings from Experiment 1 with a restricted number of preregistered predictions. 
 We will additionally include a second control condition, in which the same activities are described in written form, rather than being demonstrated in video. 
 This manipulation will help determine what the contribution of the video demonstration is in producing the observed effects on parent-child interactions.
@@ -464,14 +482,6 @@ multiplot(e2tokens, e2types, cols=2)
 
 # Discussion
 
-
-## Footnotes
-
-Indicate footnotes with a number\footnote{Sample of the first
-footnote.} in the text. You can also use 
-markdown formatting to include footnotes using this syntax [^1].
-
-[^1]: Sample of a markdown footnote.
 
 ## Two-column images
 
