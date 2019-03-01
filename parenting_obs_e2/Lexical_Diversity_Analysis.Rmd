@@ -13,7 +13,7 @@ output:
 
 Preliminaries.
 
-```{r echo=FALSE}
+```{r include=FALSE}
 knitr::opts_chunk$set(fig.width=8, fig.height=5, 
                       echo=TRUE, warning=FALSE, message=FALSE, cache = TRUE)
 suppressPackageStartupMessages(c("dplyr","langcog","tidyr","ggplot2","lme4"))
@@ -222,7 +222,7 @@ ggplot(ms_length, aes(x = video, y = mean, fill = video)) +
 ```
 
 ###Sentence Length by age
-(Maybe do a scatterplot with continuous scatterplot)
+(Maybe do a scatterplot with continuous age)
 
 ```{r echo=FALSE}
 ms_length <- d %>%

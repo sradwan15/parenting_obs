@@ -64,8 +64,8 @@ Playing with objects allows them to discover hidden object properties and relati
 Meanwhile, play also gives children an opportunity to set and achieve goals (e.g., build a tower) and to practice a wide range of motor skills (e.g., stacking) that will help them navigate the world [@Singer2006].
 Social play can help children learn about human relationships, both through imitation of adult behaviors and by experiencing and learning to process emotional events such as failures [@Singer2006].
 Of course, young children are rarely playing in isolation: caregivers often provide encouragement and guidance while scaffolding a child's play [@Kaye1970; @Wood1976]. 
-Early parenting practices have been shown to play an important role in shaping the future outcomes of young children [@Hart1995; @Heckman2006]. 
-While many interventions have trouble reaching the parents of very young children, digital delivery of parenting advice by way of 
+Indeed, parenting practices early in childhood have been shown to play an important role in shaping the future outcomes of young children [@Hart1995; @Heckman2006]. 
+While interventions often have trouble reaching many parents of very young children, the proliferation of mobile devices offers a good avenut for the digital delivery of parenting advice [@Breitenstein2014].
 
 ## Guided Play Scaffolds Learning
 Children's early play behaviors are often assisted by more skilled and knowledgeable play partners such as their caregivers and older siblings [@Kaye1970]. 
