@@ -39,7 +39,7 @@ knitr::opts_chunk$set(fig.width=3, fig.height=3, fig.crop = F,
                       message=F, sanitize = T)
 ```
 
-```{r libraries, echo=F, include=F}
+```{r libraries, include=F}
 suppressPackageStartupMessages(c("dplyr","langcog","tidyr","ggplot2","lme4"))
 library(png)
 library(grid)
@@ -66,6 +66,8 @@ Social play can help children learn about human relationships, both through imit
 Of course, young children are rarely playing in isolation: caregivers often provide encouragement and guidance while scaffolding a child's play [@Kaye1970; @Wood1976]. 
 Indeed, parenting practices early in childhood have been shown to play an important role in shaping the future outcomes of young children [@Hart1995; @Heckman2006]. 
 While interventions often have trouble reaching many parents of very young children, the proliferation of mobile devices offers a good avenut for the digital delivery of parenting advice [@Breitenstein2014].
+However, the efficacy of digital parenting advice has not been widely proven. 
+
 
 ## Guided Play Scaffolds Learning
 Children's early play behaviors are often assisted by more skilled and knowledgeable play partners such as their caregivers and older siblings [@Kaye1970]. 
@@ -169,9 +171,8 @@ Parental bids for joint attention were defined as any attempt to initiate joint 
 If more than 3 seconds elapsed between bids, they were coded as separate attempts. 
 An episode of joint attention was considered passive if both participants visually focused on an object for a minimum of 3 seconds but the child did not acknowledge the parent. 
 If either participant looked away from the object for less than 3 seconds and then returned to the same object it was considered part of the same period of joint attention. 
-Episodes joint attention were considered coordinated if both participants visually focused on an object for a minimum of 3 seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent. 
-This could be looks to the parent's face, gestures, vocalizations, or turn-taking. 
-If either participant looked away for less than 3 seconds and then returned to the same object, it was coded as part of the same period of joint attention. 
+A joint attention episode was considered coordinated if both participants visually focused on an object for a minimum of 3 seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent such as looking at their face, gesturing, vocalizing, or turn-taking. 
+
 A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. 
 The two coders had a reliability of ICC = 0.80 with 95% confident interval (CI) = [0.57,0.92] (p < 0.05) for number of parent bids for JA; ICC = 0.20 with 95% CI = [-0.26,0.58] for number of passive JA episodes; ICC = 0.66 with 95% CI = [0.32,0.85] (p < 0.05) for number of coordinated JA episodes; ICC = 0.24 with 95% CI = [-0.21,0.61] for total duration of passive JA episodes, and ICC = 0.62 with 95% CI = [0.27,0.83] (p < 0.05) for total duration of passive (coordinated??) JA episodes. 
 
