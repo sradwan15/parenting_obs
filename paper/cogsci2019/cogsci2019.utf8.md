@@ -32,30 +32,9 @@ output: cogsci2016::cogsci_paper
 final-submission: \cogscifinalcopy
 ---
 
-```{r global_options, include=FALSE}
-knitr::opts_chunk$set(fig.width=3, fig.height=3, fig.crop = F, 
-                      fig.pos = "tb", fig.path='figs/',
-                      echo=F, warning=F, cache=F, 
-                      message=F, sanitize = T)
-```
 
-```{r libraries, include=F}
-suppressPackageStartupMessages(c("dplyr","langcog","tidyr","ggplot2","lme4"))
-library(png)
-library(grid)
-library(ggplot2)
-library(xtable)
-library(psych)
-library(langcog)
-library(tidyverse)
-library(ggthemes)
-library(lme4)
-library(lmerTest)
-source("multiplot.R")
 
-select <- dplyr::select # masked by MASS
-theme_set(theme_few())
-```
+
 
 # Introduction
 
@@ -106,29 +85,10 @@ Parents in the control group did not watch a Kinedu video, instead they were giv
 
 ## Method
 
-```{r, include=F}
-e1path = "../../parenting_obs_e1/"
-load(paste(e1path,"Exp1_cleaned_data.RData",sep='')) # merged dataframe ready for plotting
 
-lmer_data <- d %>%
-  filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
-  mutate(condition = factor(condition), 
-         MTLD = as.numeric(MTLD),
-         EL = as.numeric(langcog::scale(EL, scale=FALSE)),
-         AA = as.numeric(langcog::scale(AA, scale=FALSE)),
-         RR = as.numeric(langcog::scale(RR, scale=FALSE)),
-         age = as.numeric(langcog::scale(age, scale=FALSE)),
-         gender = as.factor(gender),
-         video = as.factor(video))
-
-a <- d$gender == "F"
-length(a[a == TRUE])
-
-
-```
 
 ### Participants. 
-`r nrow(d)` infants (F = 42, M = 18) aged 6-24 months (20 6-11.9 month-olds, 20 12-17.9 month-olds, and 20 18-24 month-olds) and their parents participated in a museum in northern California. 
+60 infants (F = 42, M = 18) aged 6-24 months (20 6-11.9 month-olds, 20 12-17.9 month-olds, and 20 18-24 month-olds) and their parents participated in a museum in northern California. 
 We included infants who were exposed to English at least 50 percent of the time (n = 58) or who were exposed less but whose participating parent reported that they primarily speak English with their child at home (n = 2). 
 Sixty-one% of participants (n = 37) had been exposed to two or more languages as indicated by their parent. 
 Parents identified their children as White (n = 25), Asian (n = 11), African American/Black (n = 2), Biracial (n = 12), other (n = 5), or declined to state (n = 5). 
@@ -191,22 +151,7 @@ Although TTR was our preregistered measure of lexical diversity, TTR is correlat
 Thus, we also measure lexical diversity with MTLD, which is calculated as the mean length of sequential word strings in a text that maintain a given TTR value (here, .720).
 
 
-```{r, e1-lexdiv-regressions, echo=F, include=F}
-# Predicting lexical diversity based on experimental condition, PAQ, demographics. 
-modTTR <- lmer(TTR ~ condition + age + gender + parent_ed + (1|video), data=lmer_data)
-summary(modTTR) # 
 
-modMTLD <- lmer(MTLD ~ condition + age + gender + parent_ed + (1|video), data=lmer_data)
-summary(modMTLD)
-
-# predict word tokens
-tokens_mod <- lmer(tokens ~ condition*EL + condition*AA + condition*RR + age + gender + parent_ed + (1|video),  data=lmer_data)
-summary(tokens_mod) # condition *
-
-# predict word types
-types_mod <- lmer(types ~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1|video), data=lmer_data)
-summary(types_mod)
-```
 
 We fit a mixed-effects linear regression predicting TTR as a function of condition, age (scaled and 0-centered), gender, and parent's education level with a random intercept per video using lme4 [@lme4]. 
 There was significantly lower TTR in the Video condition (mean: 0.32) than in the Control condition (mean: 0.43, $\beta=-.12$, t(39.9) = 4.25, *p*<.001). 
@@ -218,168 +163,58 @@ We also conducted similar regressions predicting the number of word tokens and t
 
 (Table with mean and SD of tokens, types, and TTR)
 
-```{r e1lex_div, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1. Error bars show bootstrapped 95 percent confidence intervals (CIs)."}
-d$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Control", "Video"))
+\begin{CodeChunk}
+\begin{figure}[H]
 
-# all at once, but there are NAs in SD cols ?
-e1 <- d %>% group_by(Condition) %>%
-  summarise(TTR=mean(TTR), TTRsd=sd(TTR),
-            MTLD=mean(MTLD), MTLDsd=sd(MTLD),
-            types=mean(types), types.sd=sd(types),
-            tokens = mean(tokens), tokens.sd=sd(tokens))
+{\centering \includegraphics{figs/e1lex_div-1} 
 
-ms_lex <- d %>%
-  group_by(Condition) %>%
-  multi_boot_standard(col="TTR") # Type/Token Ratio
+}
 
-ttr_means <- d%>%
-  group_by(Condition)%>%
-  summarise(mean = mean(TTR), sd = sd(TTR))
-
-# report table with ttr_means lex_sds
-
-e1ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  xlab("Condition") + ylab("Type/Token Ratio (TTR)") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") 
-
-ms_lex_mtld <- d %>%
-  group_by(Condition) %>%
-  multi_boot_standard(col="MTLD") 
-
-mtld_means <- d %>%
-  group_by(Condition)%>%
-  summarise(mean = mean(MTLD), sd=sd(MTLD))
-
-# report table with mtld_means
-
-e1mtld <- ggplot(ms_lex_mtld, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("MTLD") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") 
-
-multiplot(e1ttr, e1mtld, cols=2)
-```
+\caption[Mean lexical diversity scores by condition (left]{Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 1. Error bars show bootstrapped 95 percent confidence intervals (CIs).}\label{fig:e1lex_div}
+\end{figure}
+\end{CodeChunk}
 
 Word tokens and word types
 
-```{r e1token_type, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of word types and word tokens by condition in Experiment 1."}
-ms_tok <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "tokens") 
+\begin{CodeChunk}
+\begin{figure}[H]
 
-e1tokens <- ggplot(ms_tok, aes(x=Condition, y = mean, fill = Condition)) +geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Total Number of Word Tokens") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") 
+{\centering \includegraphics{figs/e1token_type-1} 
 
-ms_type <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "types") 
+}
 
-e1types <- ggplot(ms_type, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
-             position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Total Number of Word Types") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") 
+\caption[Mean number of word types and word tokens by condition in Experiment 1]{Mean number of word types and word tokens by condition in Experiment 1.}\label{fig:e1token_type}
+\end{figure}
+\end{CodeChunk}
 
-multiplot(e1tokens, e1types, cols=2)
-```
 
-```{r, e1-effect-size, echo=F}
-cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
-```
 
 ## Joint Attention
 
-```{r, e1ja-regressions, echo=F, include=F}
-load(paste(e1path,"joint_attention/Exp1_joint_attention_data.RData",sep=''))
-d$Condition <- factor(d$Condition, levels = c("con","exp"), labels = c("Control","Video"))
-
-lmer_data <- d %>%
-  filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
-  mutate(Condition = factor(Condition), 
-         bids_tot = as.numeric(bids_tot),
-         EL = as.numeric(langcog::scale(EL, scale=FALSE)),
-         AA = as.numeric(langcog::scale(AA, scale=FALSE)),
-         RR = as.numeric(langcog::scale(RR, scale=FALSE)),
-         age = as.numeric(langcog::scale(age, scale=FALSE)),
-         gender = as.factor(gender),
-         Video = as.factor(Video))
-
-# Total number of bids
-bids_mod <- lmer(bids_tot ~ Condition *  EL  + Condition * AA + Condition * RR + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
-summary(bids_mod)
-
-# Episodes of coordinated joint attention.
-cja_mod <- lmer(cja ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
-summary(cja_mod)
-
-# Episodes of passive joint attention.
-pja_mod <- lmer(pja ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
-summary(pja_mod)
-
-# Total duration of passive joint attention.
-pja_time_mod <- lmer(pja_length ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
-summary(pja_time_mod)
-
-# Total duration of coordinated joint attention.
-cja_time_mod <- lmer(cja_length ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
-summary(cja_time_mod)
-```
 
 
-```{r e1ja-graphs, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of bids and episodes of Joint Attention in Experiment 1."}
 
-ms_bids <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col="bids_tot") 
+\begin{CodeChunk}
+\begin{figure}[H]
 
-e1bids <- ggplot(ms_bids, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  xlab("Condition") + ylab("Total Bids for Joint Attention") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") 
+{\centering \includegraphics{figs/e1ja-graphs-1} 
 
-# total joint attention episodes
-ms_tja <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "total_ja") 
+}
 
-e1tja <- ggplot(ms_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Total Episodes of Joint Attention") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") 
-  
-multiplot(e1bids, e1tja, cols=2)
-```
+\caption[Mean number of bids and episodes of Joint Attention in Experiment 1]{Mean number of bids and episodes of Joint Attention in Experiment 1.}\label{fig:e1ja-graphs}
+\end{figure}
+\end{CodeChunk}
 
-```{r e1ja-graphs-pass-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Average number of passive and coordinated episodes of JA in Experiment 1."}
-ms_pja <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "pja") 
+\begin{CodeChunk}
+\begin{figure}[H]
 
-e1pja <- ggplot(ms_pja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Episodes of Passive Joint Attention")  +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
+{\centering \includegraphics{figs/e1ja-graphs-pass-coord-1} 
 
-#Episodes of coordinated joint attention
-ms_cja <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "cja") 
+}
 
-e1cja <- ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Episodes of Coordinated Joint Attention")  +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
-
-multiplot(e1pja, e1cja, cols=2)
-```
+\caption[Average number of passive and coordinated episodes of JA in Experiment 1]{Average number of passive and coordinated episodes of JA in Experiment 1.}\label{fig:e1ja-graphs-pass-coord}
+\end{figure}
+\end{CodeChunk}
 
 ## Discussion
 
@@ -403,20 +238,10 @@ This manipulation will help determine what the contribution of the video demonst
 
 ## Method
 
-```{r, echo=F}
-e2path = "../../parenting_obs_e2/"
-load(paste(e2path,"Exp2_cleaned_data.RData",sep=''))
 
-lmer_data <- d %>%
-  mutate(condition = factor(condition), 
-         MTLD = as.numeric(MTLD),
-         TTR = as.numeric(TTR),
-         age = as.numeric(langcog::scale(age, scale=FALSE)),
-         video = as.factor(video))
-```
 
 ### Participants. 
-`r nrow(d)` infants (F = 37, M = 47) aged 12-24 months (42 12-17.9 month-olds, 42 18-24 month-olds) and their parents participated in the same museum as Experiment 1. 
+84 infants (F = 37, M = 47) aged 12-24 months (42 12-17.9 month-olds, 42 18-24 month-olds) and their parents participated in the same museum as Experiment 1. 
 We included infants who were exposed to English at least 75 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home. 
 Forty nine% of participants (n = 41) had been exposed to two or more languages as indicated by their parent. 
 Parents identified their children as White (n = 39), Asian (n = 20), African American/Black (n = 1), Biracial (n = 9), other (n = 7), or declined to state (n = 8). Sixteen parents reported their child was of Hispanic origin. 
@@ -441,22 +266,7 @@ The two coders had a reliability of ICC = 0.80 with 95% confident interval (CI) 
 Parents' child-directed speech was transcribed and processed in the same way as in Experiment 1.
 
 ## Lexical Diversity
-```{r, e2-lexdiv-regressions, echo=F, include=F}
-# Predicting lexical diversity based on experimental condition. 
-modTTR <- lmer(TTR ~ age * condition + (1 | video), data=lmer_data) 
-summary(modTTR)
 
-modMTLD <- lmer(MTLD ~ age * condition + (1 | video), data=lmer_data)
-summary(modMTLD)
-
-# predict word tokens
-tokens_mod <- lmer(tokens ~ age * condition + (1 | video), data=lmer_data)
-summary(tokens_mod)
-
-# predict word types
-types_mod <- lmer(types ~ age * condition + (1 | video), data=lmer_data)
-summary(types_mod)
-```
 
 We fit a mixed-effects linear regression predicting TTR and MTLD as a function of age (scaled and 0-centered) and condition with a random intercept per video using lme4 [@lme4].
 There was significantly lower TTR in the Video condition (mean: 0.38) than in the Control condition (mean: 0.47, $\beta=-.09$, t(8) = 3.16, *p*<.05). 
@@ -468,155 +278,55 @@ We also conducted similar regressions predicting the number of word tokens and t
 
 (Table with mean and SD of tokens, types, and TTR)
 
-```{r e2lexdiv, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 2."}
+\begin{CodeChunk}
+\begin{figure}[H]
 
-d$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Control", "Video"))
+{\centering \includegraphics{figs/e2lexdiv-1} 
 
-# all at once, but there are NAs in SD cols ?
-e2 <- d %>% group_by(Condition) %>%
-  summarise(TTR=mean(TTR), TTRsd=sd(TTR),
-            MTLD=mean(MTLD), MTLDsd=sd(MTLD),
-            types=mean(types), types.sd=sd(types),
-            tokens = mean(tokens), tokens.sd=sd(tokens))
+}
 
-ms_lex <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col="TTR") 
-ttr_mean <- d%>% group_by(Condition)%>%
-  summarise(mean=mean(TTR), sd=sd(TTR))
-
-ttr_means <- d%>%
-  group_by(Condition)%>%
-  summarise(mean = mean(TTR), sd = sd(TTR))
-
-# report table with ttr_means lex_sds
-
-e2ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + ylim(0.0, 0.6) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  xlab("Condition") + ylab("TTR") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") 
-
-ms_lex <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col="MTLD") 
-mltd_mean <- d %>% group_by(Condition)%>%
-  summarise(mean = mean(MTLD), sd=sd(MTLD))
-
-mtld_means <- d %>%
-  group_by(Condition)%>%
-  summarise(mean = mean(MTLD), sd=sd(MTLD))
-
-e2mtld <- ggplot(ms_lex, aes(x = Condition, y = mean, fill = Condition)) + 
-  geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("MTLD") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") 
-
-multiplot(e2ttr, e2mtld, cols=2)
-```
+\caption[Mean lexical diversity scores by condition (left]{Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 2.}\label{fig:e2lexdiv}
+\end{figure}
+\end{CodeChunk}
 
 
 
-```{r e2token-type, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of word types and word tokens by condition in Experiment 2."}
-ms_tok <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "tokens") 
+\begin{CodeChunk}
+\begin{figure}[H]
 
-e2tokens <- ggplot(ms_tok, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Total Number of Word Tokens") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") 
+{\centering \includegraphics{figs/e2token-type-1} 
 
-ms_typ <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "types") 
+}
 
-e2types <- ggplot(ms_typ, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Total Number of Word Types") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") 
+\caption[Mean number of word types and word tokens by condition in Experiment 2]{Mean number of word types and word tokens by condition in Experiment 2.}\label{fig:e2token-type}
+\end{figure}
+\end{CodeChunk}
 
-multiplot(e2tokens, e2types, cols=2)
-```
-```{r, e2-effect-size, echo=F}
-cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
-```
 
 ## Joint Attention
-```{r, e2ja-regressions, echo=F, include=F}
-x<- load(paste(e2path,"joint_attention/Exp2_joint_attention_data.RData",sep=''))
-d$Condition <- factor(d$condition, levels = c("con","exp"), labels = c("Control","Video"))
 
-lmer_data <- d %>%
-  mutate(Condition = factor(Condition), 
-         bids_tot = as.numeric(bids),
-         Video = as.factor(video))
 
-# Total number of bids
-bids_mod <- lmer(bids_tot ~ age * condition + (1 | video), data = lmer_data)
-summary(bids_mod)
+\begin{CodeChunk}
+\begin{figure}[H]
 
-# Episodes of coordinated joint attention.
-cja_mod <- lmer(cja ~ age * condition + (1 | video), data = lmer_data)
-summary(cja_mod)
+{\centering \includegraphics{figs/e2ja-graphs-1} 
 
-# Episodes of passive joint attention.
-pja_mod <- lmer(pja ~ age * condition + (1 | video), data = lmer_data)
-summary(pja_mod)
+}
 
-# Total duration of passive joint attention.
-pja_time_mod <- lmer(pja_length ~ age * condition + (1 | video), data = lmer_data)
-summary(pja_time_mod)
+\caption[Mean number of bids and episodes of Joint Attention in Experiment 2]{Mean number of bids and episodes of Joint Attention in Experiment 2.}\label{fig:e2ja-graphs}
+\end{figure}
+\end{CodeChunk}
 
-# Total duration of coordinated joint attention.
-cja_time_mod <- lmer(cja_length ~ age * condition + (1 | video), data = lmer_data)
-summary(cja_time_mod)
-```
+\begin{CodeChunk}
+\begin{figure}[H]
 
-```{r e2ja-graphs, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of bids and episodes of Joint Attention in Experiment 2."}
+{\centering \includegraphics{figs/e2ja-graphs-pass-coord-1} 
 
-ms_bids <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col="bids") 
+}
 
-e2bids <- ggplot(ms_bids, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  xlab("Condition") + ylab("Total Bids for Joint Attention") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") 
-
-# total joint attention episodes
-ms_tja <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "total_ja") 
-
-e2tja <- ggplot(ms_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Total Episodes of Joint Attention") +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") 
-  
-multiplot(e2bids, e2tja, cols=2)
-```
-
-```{r e2ja-graphs-pass-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Average number of passive and coordinated episodes of JA in Experiment 2."}
-ms_pja <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "pja") 
-
-e2pja <- ggplot(ms_pja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Episodes of Passive Joint Attention")  +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
-
-#Episodes of coordinated joint attention
-ms_cja <- d %>% group_by(Condition) %>%
-  multi_boot_standard(col = "cja") 
-
-e2cja <- ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9))+
-  xlab("Condition") + ylab("Episodes of Coordinated Joint Attention")  +
-  langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
-
-multiplot(e2pja, e2cja, cols=2)
-```
+\caption[Average number of passive and coordinated episodes of JA in Experiment 2]{Average number of passive and coordinated episodes of JA in Experiment 2.}\label{fig:e2ja-graphs-pass-coord}
+\end{figure}
+\end{CodeChunk}
 
 # Discussion
 
@@ -636,10 +346,7 @@ You might want to display a wide figure across both columns. To do this, you cha
 
 # References 
 
-```{r}
-# References will be generated automatically by Pandoc and included here.
-# The following code is some latex to format the bibliography. Do not remove it.
-```
+
 
 \setlength{\parindent}{-0.1in} 
 \setlength{\leftskip}{0.125in}
