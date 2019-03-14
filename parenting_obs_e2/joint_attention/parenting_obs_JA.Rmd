@@ -248,6 +248,16 @@ Inter-rater reliability is very high for number of bids, high for number of epis
 
 Total number of bids (successful and unsuccessful)
 ```{r, width=4, height=4}
+dem <- read.csv("../anonymized_demographics_parenting_obs_e2.csv", header=T)
+dem$age = as.numeric(as.character(dem$age))
+d$age = NULL
+d$X = NULL
+d$X.1 = NULL
+d$X.2 = NULL
+dem$X = NULL
+d <- d %>% left_join(dem, by=c("sid" = "SID")) %>%
+  filter(age <= 2.0)
+
 save(d, file="Exp2_joint_attention_data.RData")
 ms_bids <- d %>%
   group_by(condition) %>%
@@ -534,7 +544,7 @@ Mixed effects models.
 
 Prepare data.
 ```{r}
-lmer_data <- d %>%
+lmer_data <- d %>% 
   filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
   mutate(Condition = factor(Condition), 
          bids_tot = as.numeric(bids_tot),
