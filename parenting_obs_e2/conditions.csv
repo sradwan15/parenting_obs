@@ -1,0 +1,85 @@
+sid,condition,video,label
+111517_2,exp,give_me_toy,1eA
+091318_2,exp,give_me_toy,1eA
+101818_1,exp,give_me_toy,1eA
+102618_5,exp,give_me_toy,1eA
+110418_3,exp,give_me_toy,1eA
+110918_3,exp,give_me_toy,1eA
+110918_4,exp,give_me_toy,1eA
+120117_2,exp,big or small,1eB
+091818_2,exp,big or small,1eB
+101818_4,exp,big or small,1eB
+110218_8,exp,big or small,1eB
+110818_1,exp,big or small,1eB
+110918_6,exp,big or small,1eB
+113018_1,exp,big or small,1eB
+082918_1,exp,puzzle,1eC
+091818_3,exp,puzzle,1eC
+101818_5,exp,puzzle,1eC
+110218_4,exp,puzzle,1eC
+110818_3,exp,puzzle,1eC
+113018_3,exp,puzzle,1eC
+113018_4,exp,puzzle,1eC
+121317_1,con,Hamlin,1cA
+091118_8,con,Hamlin,1cA
+083018_1,con,Hamlin,1cA
+091818_4,con,Hamlin,1cA
+083018_6,con,Hamlin,1cA
+102518_3,con,Hamlin,1cA
+102518_4,con,Hamlin,1cA
+022619_1,con,Feigenson,1cB
+092018_4,con,Feigenson,1cB
+090618_4,con,Feigenson,1cB
+101118_2,con,Feigenson,1cB
+102518_5,con,Feigenson,1cB
+090618_5,con,Feigenson,1cB
+101118_5,con,Feigenson,1cB
+091118_1,con,Gopnik,1cC
+101218_3,con,Gopnik,1cC
+102618_2,con,Gopnik,1cC
+091118_4,con,Gopnik,1cC
+101218_7,con,Gopnik,1cC
+091118_7,con,Gopnik,1cC
+101718_1,con,Gopnik,1cC
+111517_3 ,exp,big_small,2eA
+112217_2,exp,big_small,2eA
+092018_6,exp,big_small,2eA
+101218_4,exp,big_small,2eA
+101218_6,exp,big_small,2eA
+101818_2,exp,big_small,2eA
+102618_1,exp,big_small,2eA
+102818_2,exp,orchestra,2eB
+110218_1,exp,orchestra,2eB
+110218_2,exp,orchestra,2eB
+110218_3,exp,orchestra,2eB
+110218_7,exp,orchestra,2eB
+110218_9,exp,orchestra,2eB
+110418_4,exp,orchestra,2eB
+022619_2,exp,color,2eC
+090418_2,exp,color,2eC
+101118_4,exp,color,2eC
+101218_5,exp,color,2eC
+101718_2,exp,color,2eC
+102518_6,exp,color,2eC
+102818_1,exp,color,2eC
+011118_1,con,Lany,2cA
+090418_3,con,Lany,2cA
+110818_2,con,Lany,2cA
+110818_5,con,Lany,2cA
+022619_3,con,Lany,2cA
+090618_1,con,Lany,2cA
+101218_1,con,Lany,2cA
+083018_4,con,Warneken,2cB
+090618_3,con,Warneken,2cB
+110818_6,con,Warneken,2cB
+113018_2,con,Warneken,2cB
+090418_6,con,Warneken,2cB
+032219_1,con,Warneken,2cB
+090618_6,con,Warneken,2cB
+090518_1,con,Adolph,2cC
+091818_1,con,Adolph,2cC
+101218_2,con,Adolph,2cC
+110918_2,con,Adolph,2cC
+110918_5,con,Adolph,2cC
+091118_3,con,Adolph,2cC
+092018_5,con,Adolph,2cC
