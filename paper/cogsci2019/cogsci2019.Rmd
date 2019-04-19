@@ -5,8 +5,8 @@ csl: apa6.csl
 document-params: "10pt, letterpaper"
 
 author-information: > 
-    \author{{\large\bf Hanwen Vivian~Zhang} (\texttt{vivian3@stanford.edu}) \\
-    {\large\bf George~Kachergis} (\texttt{george.kachergis@gmail.com}) \\
+    \author{{\large\bf George~Kachergis} (\texttt{kachergis@stanford.edu}) \\
+    {\large\bf Hanwen Vivian~Zhang} (\texttt{vivian3@stanford.edu}) \\
     {\large\bf Michael C.~Frank} (\texttt{mcfrank@stanford.edu}) \\ 
     Department of Psychology, Stanford University \\ 
     Stanford, CA 94305 USA}
@@ -17,7 +17,7 @@ abstract: >
     In particular, high-quality early interactions and language input appear to 
     facilitate language learning and result in higher levels of school performance. 
     The rise of phone- and tablet-based parenting applications ("apps") holds the promise of delivering 
-    low-cost, positive interventions on parenting style to a variety of different populations. 
+    low-cost, positive interventions on parenting style to a wide variety of populations. 
     Of special interest are the parents of very young children, who are often difficult to reach in other ways. 
     Yet little is known about the effects of communicating to parents through app-based interventions.
     In a study of one commercial app offering a collection of age-appropriate activity videos, we find 
@@ -59,12 +59,16 @@ theme_set(theme_few())
 
 # Introduction
 
+Children of any given age show remarkable variability in their levels of language proficiency [@Fenson1994], 
+
 Young children spend a large portion of their waking time at play, variously manipulating objects, exploring their environment, and interacting with caregivers and peers.
 Playing with objects allows them to discover hidden object properties and relations, and to build a causal understanding of how objects interact [e.g., @Schulz2007]. 
 Meanwhile, play also gives children an opportunity to set and achieve goals (e.g., build a tower) and to practice a wide range of motor skills (e.g., stacking) that will help them navigate the world [@Singer2006].
 Social play can help children learn about human relationships, both through imitation of adult behaviors and by experiencing and learning to process emotional events such as failures [@Singer2006].
 Of course, young children are rarely playing in isolation: caregivers often provide encouragement and guidance while scaffolding a child's play [@Kaye1970; @Wood1976]. 
-Indeed, parenting practices early in childhood have been shown to play an important role in shaping the future outcomes of young children [@Hart1995; @Heckman2006]. 
+The quality of interactions during such guided play has been shown to influence language learning: parents' joint attention to objects that their child was focused on was positively correlated with the child's subsequent vocabulary growth [@Tomasello1986; @Carpenter1998].
+Episodes of joint attention during guided play have also been found to contain more age-appropriate advanced forms of play [@Bigelow2004].
+More generally, parenting practices early in childhood have been shown to play an important role in shaping the future outcomes of young children [@Hart1995; @Heckman2006]. 
 While interventions often have trouble reaching many parents of very young children, the proliferation of mobile devices offers a good avenut for the digital delivery of parenting advice [@Breitenstein2014].
 However, the efficacy of digital parenting advice has not been widely proven. 
 
@@ -79,10 +83,9 @@ and it outperforms direct-instruction approaches in encouraging a variety of pos
 Another study found that guided play could facilitate children's vocabulary and comprehensive language development and subsequent literacy skills [@Massey2013].
 
 ## Improving Parenting Practices and Language Use
-Thus, including guided play in parenting practices early on is crucial and will help with children's later performances in academic and social situations. 
-To intervene in parenting practices, Suskind and others did a parent-directed home-visiting intervention experiment in 2015 for children of low socioeconomic status.
-They showed that parents in experimental group have greater knowledge of language development and this effect sustained four months after the intervention. 
-However, although a number of interactive measures increased during the experiment, including the number of word tokens, conversational turns, and child vocalizations, these increases did not sustain after the intervention [@Suskind2015].
+Thus, including guided play in parenting practices from an early age may boost children's language and educational outcomes. 
+A recent home-visit parenting practices intervention targeting children of low socioeconomic status found that parents in the intervention group gained knowledge of language development, and that this effect sustained four months after the intervention [@Suskind2015].
+However, although a number of interactive measures increased during the experiment, including the number of word tokens, conversational turns, and child vocalizations, these increases did not sustain after the intervention.
 That changes did not sustain could be due to the intervention itself,
 or could merely be that the methods of home-visiting is not sustainable enough for parents to easily and constantly get parenting advice.
 Thus, new methods of delivering parenting advice should be considered.
@@ -132,7 +135,7 @@ length(a[a == TRUE])
 We included infants who were exposed to English at least 50 percent of the time (n = 58) or who were exposed less but whose participating parent reported that they primarily speak English with their child at home (n = 2). 
 61% of participants (n = 37) had been exposed to two or more languages as indicated by their parent. 
 Parents identified their children as White (n = 25), Asian (n = 11), African American/Black (n = 2), Biracial (n = 12), other (n = 5), or declined to state (n = 5). 
-Fifteen parents reported their child was of Hispanic origin. 
+Fifteen parents reported that their child was of Hispanic origin. 
 Parents tended to be highly-educated, with reports of highest level of education ranging from completed high school (n = 5), some college (n = 6), four-year college (n = 14), some graduate school (n = 1), to completed graduate school (n = 28) or declined to state (n = 6).
 
 ### Materials.
@@ -141,15 +144,14 @@ The videos were designed to show activities to parents that they could perform w
 In each video, an adult and child perform the activity while a narrator explains the activity and its purpose. 
 We selected two videos for each of three age groups in our sample (6-11.9 months, 12-17.9 months, 18-23.94 months). 
 More information about the specific videos is available in the Appendix. 
-Participants were also given a set of props corresponding to those in the video they watched so that they could complete the activity. 
-The props associated with each video are listed in the Appendix.
+Participants were also given a set of toys corresponding to those in the video that they watched so that they could complete the activity. 
+The toys associated with each video are listed in the Appendix.
 
 Participants were randomly assigned to either the *Video* condition or the *Control* condition. 
-Participating parents in the Video condition were assigned to watch one of the two activity videos available for their child's age group. 
-Participating parents in the Control condition watched no activity video, and were merely asked to play with their child as they normally would.
+Parents participating in the Video condition were assigned to watch one of the two activity videos available for their child's age group, while parents in the Control condition watched no activity video, and were simply asked to play with their child as they normally would.
 The Control condition was yoked to the Activity Video condition such that for every participant in the Video condition who saw a particular video and received the associated props, a participant in the Control condition received the same props but did not watch the activity video.
-Parents also completed the Parenting Attitudes Questionnaire (PAQ). 
-The PAQ measures parents' attitudes about parenting and child development along three dimensions: rules and respect, early learning, and affection and attachment.
+Parents also completed the Early Parenting Attitudes Questionnaire (EPAQ; [@Hembacher2018]). 
+The EPAQ measures parents' attitudes about parenting and child development along three dimensions: rules and respect, early learning, and affection and attachment.
 
 ## Procedure.
 After providing informed consent, parents in the Video condition watched the assigned activity video on a laptop with headphones.
@@ -194,17 +196,18 @@ Thus, we also measure lexical diversity with MTLD, which is calculated as the me
 ```{r, e1-lexdiv-regressions, echo=F, include=F}
 # Predicting lexical diversity based on experimental condition, PAQ, demographics. 
 modTTR <- lmer(TTR ~ condition + age + gender + parent_ed + (1|video), data=lmer_data)
-summary(modTTR) # condition t(39.9) = 4.25 p<.001
+summary(modTTR) # condition -0.123 t(39.9) = 4.25 p<.001
 
 modMTLD <- lmer(MTLD ~ condition + age + gender + parent_ed + (1|video), data=lmer_data)
-summary(modMTLD) # condition t(43) = 4.69 p<.001
+summary(modMTLD) # condition -11.67 t(43) = 3.08 p=.004 !! singular fit
+# Bayesian regression (stan_glmer in rstanarm) shows the same
 
 # predict word tokens
 tokens_mod <- lmer(tokens ~ condition*EL + condition*AA + condition*RR + age + gender + parent_ed + (1|video),  data=lmer_data)
-summary(tokens_mod) # condition t(34.4) = 2.19 p<.05
+summary(tokens_mod) # condition 57.23 t(34.4) = 2.19 p<.05
 
 # predict word types
-types_mod <- lmer(types ~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1|video), data=lmer_data)
+types_mod <- lmer(types ~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1|video), data=lmer_data) # !! singular fit
 summary(types_mod) # nothing
 ```
 
@@ -294,6 +297,14 @@ cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
 
 ## Joint Attention
 
+We fit a mixed-effects linear regression predicting the number of bids for joint attention (JA) as a function of fixed effects of condition, age (scaled and 0-centered), gender, parent's education level, and the subscales of the EPAQ: Early Learning (EL), Affection and Attachment (AA), and Rules and Respect (RR), along with interactions of condition and EL, AA, and RR. This lme4 model included random intercepts per video. 
+There were significantly more bids for JA in the Video condition (mean: X) than in the Control condition (mean: X, $\beta=3.51$, t(40.3) = 2.95, *p*<.01). 
+There were no other significant effects.
+Mixed-effects regressions with the same structure were performed predicting the number of episodes of coordinated and passive JA, and the total duration of time spent in coordinated and passive JA.
+There were no significant effects on the number or total duration of coordinated JA episodes, nor on the total duration of passive JA episodes. 
+For the regression predicting the number of passive joint attention episodes, the only significant effect was an interaction of condition and RR ($\beta=1.83$, t(41.5) = 2.22, *p*<.05), showing that...
+Figure X shows ... by condition.
+
 ```{r, e1ja-regressions, echo=F, include=F}
 load(paste(e1path,"joint_attention/Exp1_joint_attention_data.RData",sep=''))
 d$Condition <- factor(d$Condition, levels = c("con","exp"), labels = c("Control","Video"))
@@ -309,29 +320,26 @@ lmer_data <- d %>%
          gender = as.factor(gender),
          Video = as.factor(Video))
 
+model_string =  "~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed + (1| Video)"
+
 # Total number of bids
-bids_mod <- lmer(bids_tot ~ Condition *  EL  + Condition * AA + Condition * RR + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
-summary(bids_mod) # condition beta = 3.51, t(40.3) = 2.95 p<.01
+bids_mod <- lmer(paste("bids_tot", model_string), data = lmer_data)
+summary(bids_mod) # condition beta = 3.51, t(40.3) = 2.95 p<.01, gender p=.05 ?
 
 # Episodes of coordinated joint attention.
-cja_mod <- lmer(cja ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
+cja_mod <- lmer(paste("cja", model_string), data = lmer_data)
 summary(cja_mod) # NA
 
 # Episodes of passive joint attention.
-pja_mod <- lmer(pja ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
+pja_mod <- lmer(paste("pja", model_string), data = lmer_data)
 summary(pja_mod) # marginal RR, beta=-1.07 p=.07, condition*RR beta=1.83 p<.05
 
 # Total duration of passive joint attention.
-pja_time_mod <- lmer(pja_length ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
+pja_time_mod <- lmer(paste("pja_length", model_string), data = lmer_data)
 summary(pja_time_mod) # NA
 
 # Total duration of coordinated joint attention.
-cja_time_mod <- lmer(cja_length ~ Condition * EL + Condition * AA + Condition * RR  + age + gender + parent_ed +
-                           (1| Video), data = lmer_data)
+cja_time_mod <- lmer(paste("cja_length", model_string), data = lmer_data)
 summary(cja_time_mod) # marginal parent education p=.09
 ```
 
@@ -383,21 +391,24 @@ multiplot(e1pja, e1cja, cols=2)
 
 ## Discussion
 
-Both the number of tokens and types are higher in the experimental condition, while lexical diversity (Type/Token ratio) is higher in the control condition. 
+In summary, while the number of tokens and types were higher in the experimental condition, lexical diversity (Type/Token ratio) was higher in the control condition. 
 Parents may be relatively more repetetive in the experimental condition since they are attempting to stick to a specific prescribed task, but they talk more overall.
 Demographics and PAQ do not interact with condition, but there is a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (more types and tokens for higher parent education).
 
-There was a main effect of condition on total bids for joint attention. Parents in the experimental condition (i.e., those who saw a video demonstrating an activity) made a greater number of bids for joint attention with their child.
+There was a main effect of condition on total bids for joint attention. 
+Parents in the Video condition, after seeing a video demonstrating an activity, made a greater number of bids for joint attention with their child.
 There was no effect of condition on the number of episodes of either passive or coordinated joint attention, or the duration of these episodes. 
-There is a marginal effect of gender on bids for joint attention, with parents of males producing more bids. There is a marginal interaction between RR scores and condition on passive joint attention, such that the experimental condition increased the number of episodes of PJA to a greater extent for people with high RR scores.
-While the electronically-delivered parenting advice increased the number of bids for joint attention by parents, it did not significantly effect the number or duration of episodes of joint attention. One possibility is that child variables had a comparatively larger impact on the attainment of joint attention.
+There was a marginal effect of gender on bids for joint attention, with parents of males producing more bids. 
+There was a marginal interaction between RR scores and condition on passive joint attention, such that the experimental condition increased the number of episodes of PJA to a greater extent for people with high RR scores.
+While the electronically-delivered parenting advice increased the number of bids for joint attention by parents, it did not significantly effect the number or duration of episodes of joint attention. 
+It may be that child variables had a larger relative impact on the attainment of joint attention.
 
 
 # Experiment 2
 
-Experiment 1 found that compared to parents who did not watch a video, parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity. 
+Experiment 1 found that compared to parents who played with children as they normally would, parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity. 
 Parents who watched a video also made more bids for joint attention, although these bids did not result in more episodes of joint attention compared to the control group. 
-In Experiment 2 we attempt to replicate the findings from Experiment 1 with a restricted number of preregistered predictions. 
+Experiment 2 attempts to replicate the findings from Experiment 1 with a restricted number of preregistered predictions. 
 We will additionally include a second control condition, in which the same activities are described in written form, rather than being demonstrated in video. 
 This manipulation will help determine what the contribution of the video demonstration is in producing the observed effects on parent-child interactions.
 
@@ -438,7 +449,7 @@ The two coders had a reliability of ICC = 0.80 with 95% confident interval (CI) 
 
 # Results
 
-Parents' child-directed speech was transcribed and processed in the same way as in Experiment 1.
+Parents' child-directed speech was transcribed and processed according to the same procedure used in Experiment 1.
 
 ## Lexical Diversity
 ```{r, e2-lexdiv-regressions, echo=F, include=F}
@@ -458,13 +469,12 @@ types_mod <- lmer(types ~ age * condition + (1 | video), data=lmer_data)
 summary(types_mod) # NA
 ```
 
-We fit a mixed-effects linear regression predicting TTR and MTLD as a function of age (scaled and 0-centered) and condition with a random intercept per video using lme4 [@lme4].
+We fit a mixed-effects linear regression predicting TTR and MTLD as a function of age (scaled and 0-centered) and condition with an interaction term, and with random intercepts per video using lme4 [@lme4].
 There was significantly lower TTR in the Video condition (mean: 0.38) than in the Control condition (mean: 0.47, $\beta=-.09$, t(8.7) = 3.06, *p*=.01).
 There was no significant effect of age.
 A similar mixed-effects linear regression instead predicting MTLD found no significant effects of age or condition.
 Figure 1 shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
-
-We also conducted similar regressions predicting the number of word tokens and types, finding no significant effects of of age or condition.
+Regressions with the same structure predicting the number of word tokens and types found no significant effects of age or condition.
 
 (Table with mean and SD of tokens, types, and TTR)
 
@@ -568,7 +578,7 @@ pja_time_mod <- lmer(pja_length ~ age * condition + (1 | video), data = e2ja)
 summary(pja_time_mod) # age beta=-15512 t(79) = 2.40 p<.05
 
 # Total duration of coordinated joint attention.
-cja_time_mod <- lmer(cja_length ~ age * condition + (1 | video), data = lmer_data)
+cja_time_mod <- lmer(cja_length ~ age * condition + (1 | video), data = e2ja)
 summary(cja_time_mod) # marginal age: beta=31757 t(79) = 1.81 p=.07
 ```
 
