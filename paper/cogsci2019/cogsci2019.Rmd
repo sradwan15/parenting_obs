@@ -153,17 +153,17 @@ The Control condition was yoked to the Activity Video condition such that for ev
 Parents also completed the Early Parenting Attitudes Questionnaire (EPAQ; [@Hembacher2018]). 
 The EPAQ measures parents' attitudes about parenting and child development along three dimensions: rules and respect, early learning, and affection and attachment.
 
-## Procedure.
+### Procedure.
 After providing informed consent, parents in the Video condition watched the assigned activity video on a laptop with headphones.
 To ensure that parents could give the video their full attention, the experimenter played with the infant with a set of toys (different from the experimental props used in the study) while the video was being played. 
-Immediately following the video, each parent-child dyad was provided with the props to complete the activity they had viewed. 
+Immediately following the video, each parent-child dyad was provided with the props to complete the activity the parent had viewed. 
 The toys were placed on a large foam mat, and parents were instructed to sit on the mat with their child and re-create the activity they had viewed for a period of three minutes.
 In the Control condition, after consenting parents were told to play with their child as they would at home with the provided props for a period of three minutes. 
 They were not given any additional instructions about how to use the props.
 
-In both conditions, two video cameras were used to record the play session from different angles, and parents were fitted with a wireless audio recorder to record their child-directed speech. 
-After three minutes of play had elapsed, parents were told they could stop playing and cameras and audio were turned off.
-Parents were then asked to complete the PAQ before being debriefed. 
+In both conditions, two video cameras were used to record the play session from different angles, and parents were fitted with a wireless microphone (Shurre lavalier microphone) to record their child-directed speech. 
+After three minutes of play had elapsed, parents were told they could stop playing and the cameras and microphone were turned off.
+Parents were then asked to complete the EPAQ before being debriefed. 
 
 ### Joint Attention Coding Procedure.
 The video of each session was manually coded for episodes of joint attention using the Datavyu software [@datavyu]. 
@@ -178,14 +178,14 @@ A joint attention episode was considered coordinated if both participants visual
 A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. 
 The two coders had a reliability of ICC = 0.80 with 95% confident interval (CI) = [0.57,0.92] (p < 0.05) for number of parent bids for JA; ICC = 0.20 with 95% CI = [-0.26,0.58] for number of passive JA episodes; ICC = 0.66 with 95% CI = [0.32,0.85] (p < 0.05) for number of coordinated JA episodes; ICC = 0.24 with 95% CI = [-0.21,0.61] for total duration of passive JA episodes, and ICC = 0.62 with 95% CI = [0.27,0.83] (p < 0.05) for total duration of coordinated JA episodes. 
 
-# Results
+## Results
 
 The transcripts and hand-coded behavioral data was analyzed according to our preregistration[^1].
 Below we first describe the lexical diversity results, followed by the joint attention results.
 
 [^1]: Preregistration: [https://osf.io/2bpdf/](https://osf.io/2bpdf/)]
 
-## Lexical Diversity
+### Lexical Diversity
 
 Parents' child-directed speech during the play sessions was transcribed.
 For each transcript, the words were lemmatized using @spacy2, and the word *types* (unique words) and *tokens* (total words) were then tallied and the type-token ratio (TTR) calculated as a measure of lexical diversity. 
@@ -295,7 +295,7 @@ multiplot(e1tokens, e1types, cols=2)
 cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
 ```
 
-## Joint Attention
+### Joint Attention
 
 We fit a mixed-effects linear regression predicting the number of bids for joint attention (JA) as a function of fixed effects of condition, age (scaled and 0-centered), gender, parent's education level, and the subscales of the EPAQ: Early Learning (EL), Affection and Attachment (AA), and Rules and Respect (RR), along with interactions of condition and EL, AA, and RR. This lme4 model included random intercepts per video. 
 There were significantly more bids for JA in the Video condition (mean: X) than in the Control condition (mean: X, $\beta=3.51$, t(40.3) = 2.95, *p*<.01). 
@@ -391,9 +391,9 @@ multiplot(e1pja, e1cja, cols=2)
 
 ## Discussion
 
-In summary, while the number of tokens and types were higher in the experimental condition, lexical diversity (Type/Token ratio) was higher in the control condition. 
+In summary, while parents produced more word types and tokens after viewing the activity video, lexical diversity (Type/Token ratio and MTLD) was higher when parents were just asked to play as they normally would.
 Parents may be relatively more repetetive in the experimental condition since they are attempting to stick to a specific prescribed task, but they talk more overall.
-Demographics and PAQ do not interact with condition, but there is a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (more types and tokens for higher parent education).
+Demographics and EPAQ do not interact with condition, but there is a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (more types and tokens for higher parent education).
 
 There was a main effect of condition on total bids for joint attention. 
 Parents in the Video condition, after seeing a video demonstrating an activity, made a greater number of bids for joint attention with their child.
@@ -406,9 +406,9 @@ It may be that child variables had a larger relative impact on the attainment of
 
 # Experiment 2
 
-Experiment 1 found that compared to parents who played with children as they normally would, parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity. 
-Parents who watched a video also made more bids for joint attention, although these bids did not result in more episodes of joint attention compared to the control group. 
-Experiment 2 attempts to replicate the findings from Experiment 1 with a restricted number of preregistered predictions. 
+Experiment 1 found that parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity compared to parents who played with their children as they normally would at home. 
+Parents who watched a Kinedu video also made more bids for joint attention, although these bids did not result in more episodes of joint attention compared to the control group. 
+Experiment 2 attempts to replicate the findings from Experiment 1 with a restricted number of preregistered predictions ([link](https://osf.io/2bpdf/)). 
 We will additionally include a second control condition, in which the same activities are described in written form, rather than being demonstrated in video. 
 This manipulation will help determine what the contribution of the video demonstration is in producing the observed effects on parent-child interactions.
 
@@ -447,11 +447,11 @@ The coding procedure also matched that of Experiment 1. A second coder independe
 The two coders had a reliability of ICC = 0.80 with 95% confident interval (CI) = [0.60,0.90] (p < 0.05) for number of parent bids for JA; ICC = 0.74 with 95% CI = [0.59,0.87] (p < 0.05) for number of passive JA episodes; ICC = 0.78 with 95% CI = [0.58,0.90] (p < 0.05) for number of coordinated JA episodes; ICC = 0.72 with 95% CI = [0.46,0.86] (p < 0.05) for total duration of passive JA episodes, and ICC = 0.88 with 95% CI = [0.75,0.94] (p < 0.05) for total duration of coordinated JA episodes. 
 
 
-# Results
+## Results
 
 Parents' child-directed speech was transcribed and processed according to the same procedure used in Experiment 1.
 
-## Lexical Diversity
+### Lexical Diversity
 ```{r, e2-lexdiv-regressions, echo=F, include=F}
 # Predicting lexical diversity based on experimental condition. 
 modTTR <- lmer(TTR ~ age * condition + (1 | video), data=lmer_data) 
@@ -473,7 +473,7 @@ We fit a mixed-effects linear regression predicting TTR and MTLD as a function o
 There was significantly lower TTR in the Video condition (mean: 0.38) than in the Control condition (mean: 0.47, $\beta=-.09$, t(8.7) = 3.06, *p*=.01).
 There was no significant effect of age.
 A similar mixed-effects linear regression instead predicting MTLD found no significant effects of age or condition.
-Figure 1 shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
+Figure X shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
 Regressions with the same structure predicting the number of word tokens and types found no significant effects of age or condition.
 
 (Table with mean and SD of tokens, types, and TTR)
@@ -552,7 +552,7 @@ multiplot(e2tokens, e2types, cols=2)
 cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
 ```
 
-## Joint Attention
+### Joint Attention
 ```{r, e2ja-regressions, echo=F, include=F}
 load(paste(e2path,"joint_attention/Exp2_joint_attention_data.RData",sep=''))
 d$Condition <- factor(d$condition, levels = c("con","exp"), labels = c("Control","Video"))
@@ -627,21 +627,22 @@ e2cja <- ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + geom_b
 multiplot(e2pja, e2cja, cols=2)
 ```
 
+There was a marginal effect of condition on total bids for joint attention. Parents in the experimental condition (i.e., those who saw a video demonstrating an activity) made a greater number of bids for joint attention with their child.
+There was no effect of condition on the number of episodes of passive or coordinated JA, nor on the duration of these episodes. 
+For passive joint attention, there was a main effect of age on both the number and duration of episodes, with older children having fewer episodes of passive JA and episodes of shorter duration.
+Moreover, older children had longer duration episodes of coordinated JA.
+These results suggest that as children age, they become more socially engaged in interactions with their caregivers.
+
 # Discussion
 
-Similar to results in Experiment 1, the number of tokens was higher in the experimental condition, while the number of types and lexical diversity (Type/Token ratio) were higher in the control condition. 
+In both experiments, the number of tokens was higher in the experimental condition, while the number of types and lexical diversity (Type/Token ratio) were higher in the control condition. 
 Parents may be relatively more repetetive in the experimental condition since they are attempting to stick to a specific prescribed task, but they talk more overall.
-There was a marginal effect of condition on total bids for joint attention. Parents in the experimental condition (i.e., those who saw a video demonstrating an activity) made a greater number of bids for joint attention with their child.
-There was no effect of condition on the number of episodes of coordinated joint attention.
-There was no effect of condition on the number of episodes of either passive or coordinated joint attention, or the duration of these episodes. 
-However, there was a main effect of age on number of episodes of passive joint attention, duration of passive and coordinated joint attention, 
-with the older children having fewer episodes of passive joint attention, shorter duration of passive joint attention, and longer duration of coordinated joint attention. 
-These results suggest that children become more socially engaging in interactions with their caregivers as they develop.
 
 
-## Two-column images
+# Acknowledgements
 
-You might want to display a wide figure across both columns. To do this, you change the `fig.env` chunk option to `figure*`. To align the image in the center of the page, set `fig.align` option to `center`. To format the width of your caption text, you set the `num.cols.cap` option to `2`.
+This work was supported by a gift from Kinedu, Inc. 
+Thanks to members of the Language and Cognition Lab at Stanford for helpful discussion.
 
 # References 
 
