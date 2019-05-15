@@ -438,11 +438,12 @@ Parents identified their children as White (n = 39), Asian (n = 20), African Ame
 Parents tended to be highly- educated, with reports of highest level of education ranging from completed high school (n = 0), some college (n = 5), four-year college (n = 28), some graduate school (n = 2), to completed graduate school (n = 35) or declined to state (n = 14).
 
 ### Materials. 
+
 The design of Experiment 2 was similar to that of Experiment 1, except that instead of a No-Video control condition, parents instead watched a video that was generally related to child development research, but did not give any specific instructions about how to interact with infants or children. 
 This was to control for the possibility that differences in language output and joint attention in Experiment 1 could be due to simply cuing parents to think about infants' learning and cognitive development. 
 The videos presented in the Control Video condition were media clips (available on YouTube) of developmental psychologists explaining their research interleaved with footage of infants or toddlers engaged in developmental research studies. 
 Thus, the content of the videos superficially matched those in the Activity Video condition, but did not suggest any particular activities.
-The videos were trimmed to approximately match the average video length in the Activity Video condition around 1.5 minutes.
+The videos were trimmed to approximately match the average video length in the Activity Video condition (close to 90 s).
 
 ### Procedure. 
 The procedure for Experiment 2 matched that of Experiment 1, except that parents in the Control Video condition watched a control video before the play session. 
@@ -658,3 +659,39 @@ Thanks to members of the Language and Cognition Lab at Stanford for helpful disc
 \setlength{\parindent}{-0.1in} 
 \setlength{\leftskip}{0.125in}
 \noindent
+
+# Appendix
+
+## Experiment 1
+
+### Video A (6-11.9 months) "Pick it up"
+
+Parents are told to encourage their child to pick up and drop individual objects. They are also encouraged to place toys on a small cloth and show the child that they can drag the cloth towards them to reach the toys. 
+
+Props: cloth, small plastic horse, small plastic sheep, small plastic elephant, small toy car
+
+### Video B (6-11.9 months) “Animal sounds”
+
+### Video C (12-17.9 months)
+
+### Video D (12-17.9 months)
+
+### Video E (18-23.9 months)
+
+### Video F (18-23.9 months)
+
+
+## Experiment 2
+
+### Video A (12-17.9 months)
+
+### Video B (12-17.9 months)
+
+### Video C (12-17.9 months)
+
+### Video D (18-23.9 months)
+
+### Video E (18-23.9 months)
+
+### Video F (18-23.9 months)
+
