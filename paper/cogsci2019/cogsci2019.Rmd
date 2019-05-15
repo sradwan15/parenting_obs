@@ -5,11 +5,17 @@ csl: apa6.csl
 document-params: "10pt, letterpaper"
 
 author-information: > 
-    \author{{\large\bf George~Kachergis} (\texttt{kachergis@stanford.edu}) \\
-    {\large\bf Hanwen Vivian~Zhang} (\texttt{vivian3@stanford.edu}) \\
-    {\large\bf Michael C.~Frank} (\texttt{mcfrank@stanford.edu}) \\ 
-    Department of Psychology, Stanford University \\ 
-    Stanford, CA 94305 USA}
+    \author{ 
+      {\large\bf George~Kachergis}^1 (\texttt{kachergis@stanford.edu}) \\
+      {\large\bf Emily~Hembacher}^2 (\texttt{emily.hembacher@gmail.com}) \\
+      {\large\bf Veronica~Cristiano}^2 (\texttt{CRISTIANO @gallaudet.edu}) \\
+      {\large\bf Hanwen Vivian~Zhang}^1 (\texttt{vivian3@stanford.edu}) \\
+      {\large\bf Michael C.~Frank}^1 (\texttt{mcfrank@stanford.edu}) \\ 
+    ^{1}Department of Psychology, Stanford University \\ 
+    Stanford, CA 94305 USA \\
+    ^{2} Nextdoor, Inc., Burlingame, CA \\
+    ^{3} Gallaudet University 
+    }
 
 abstract: >
     Early parenting practices play an important role in shaping the future 
@@ -408,9 +414,7 @@ It may be that child variables had a larger relative impact on the attainment of
 
 Experiment 1 found that parents who watched a Kinedu video spoke more words overall, but had lower lexical diversity compared to parents who played with their children as they normally would at home. 
 Parents who watched a Kinedu video also made more bids for joint attention, although these bids did not result in more episodes of joint attention compared to the control group. 
-Experiment 2 attempts to replicate the findings from Experiment 1 with a restricted number of preregistered predictions ([link](https://osf.io/2bpdf/)). 
-We will additionally include a second control condition, in which the same activities are described in written form, rather than being demonstrated in video. 
-This manipulation will help determine what the contribution of the video demonstration is in producing the observed effects on parent-child interactions.
+Experiment 2 attempts to replicate these findings from with a restricted number of preregistered predictions ([link](https://osf.io/2bpdf/)). 
 
 ## Method
 
@@ -476,7 +480,7 @@ A similar mixed-effects linear regression instead predicting MTLD found no signi
 Figure X shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
 Regressions with the same structure predicting the number of word tokens and types found no significant effects of age or condition.
 
-(Table with mean and SD of tokens, types, and TTR)
+(Table with mean and SD of tokens, types, TTR, MTLD)
 
 ```{r e2lexdiv, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean lexical diversity scores by condition (left: Type/Token ratio, right: MTLD) in Experiment 2."}
 
