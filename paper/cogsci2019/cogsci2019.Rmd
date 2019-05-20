@@ -14,7 +14,7 @@ author-information: >
     ^{1}Department of Psychology, Stanford University \\ 
     Stanford, CA 94305 USA \\
     ^{2} Nextdoor, Inc., Burlingame, CA \\
-    ^{3} Gallaudet University 
+    ^{3} Gallaudet University, Washington, D.C.
     }
 
 abstract: >
@@ -172,10 +172,10 @@ After three minutes of play had elapsed, parents were told they could stop playi
 Parents were then asked to complete the EPAQ before being debriefed. 
 
 ### Joint Attention Coding Procedure.
-The video of each session was manually coded for episodes of joint attention using the Datavyu software [@datavyu]. 
+The video of each session was manually coded for episodes of joint attention (JA) using the Datavyu software [@datavyu]. 
 The video taken at floor level was coded by default, but the other video was referred to if the participants were not visible or if there was technical difficulty with the first camera. 
-Each session's video was coded for episodes of coordinated joint attention, episodes of passive joint attention, and parental bids for joint attention. 
-Parental bids for joint attention were defined as any attempt to initiate joint attention (i.e labeling, pointing, or otherwise drawing attention to an object) that did not result in passive or coordinated joint attention. 
+Each session's video was coded for episodes of coordinated JA, episodes of passive JA, and parental bids for JA. 
+Parental bids for JA were defined as any attempt to initiate joint attention (i.e labeling, pointing, or otherwise drawing attention to an object) that did not result in passive or coordinated JA. 
 If more than 3 seconds elapsed between bids, they were coded as separate attempts. 
 An episode of joint attention was considered passive if both participants visually focused on an object for a minimum of 3 seconds but the child did not acknowledge the parent. 
 If either participant looked away from the object for less than 3 seconds and then returned to the same object it was considered part of the same period of joint attention. 
@@ -303,14 +303,6 @@ cohens_d <- diff(ttr_means$mean) / (sqrt(sum(ttr_means$sd^2)) / 2)
 
 ### Joint Attention
 
-We fit a mixed-effects linear regression predicting the number of bids for joint attention (JA) as a function of fixed effects of condition, age (scaled and 0-centered), gender, parent's education level, and the subscales of the EPAQ: Early Learning (EL), Affection and Attachment (AA), and Rules and Respect (RR), along with interactions of condition and EL, AA, and RR. This lme4 model included random intercepts per video. 
-There were significantly more bids for JA in the Video condition (mean: X) than in the Control condition (mean: X, $\beta=3.51$, t(40.3) = 2.95, *p*<.01). 
-There were no other significant effects.
-Mixed-effects regressions with the same structure were performed predicting the number of episodes of coordinated and passive JA, and the total duration of time spent in coordinated and passive JA.
-There were no significant effects on the number or total duration of coordinated JA episodes, nor on the total duration of passive JA episodes. 
-For the regression predicting the number of passive joint attention episodes, the only significant effect was an interaction of condition and RR ($\beta=1.83$, t(41.5) = 2.22, *p*<.05), showing that...
-Figure X shows ... by condition.
-
 ```{r, e1ja-regressions, echo=F, include=F}
 load(paste(e1path,"joint_attention/Exp1_joint_attention_data.RData",sep=''))
 d$Condition <- factor(d$Condition, levels = c("con","exp"), labels = c("Control","Video"))
@@ -332,6 +324,10 @@ model_string =  "~ Condition * EL + Condition * AA + Condition * RR  + age + gen
 bids_mod <- lmer(paste("bids_tot", model_string), data = lmer_data)
 summary(bids_mod) # condition beta = 3.51, t(40.3) = 2.95 p<.01, gender p=.05 ?
 
+bid_cond <- lmer_data %>% group_by(Condition) %>% 
+  summarise(mean = mean(bids), sd = sd(bids)) 
+print(bid_cond)
+
 # Episodes of coordinated joint attention.
 cja_mod <- lmer(paste("cja", model_string), data = lmer_data)
 summary(cja_mod) # NA
@@ -339,6 +335,7 @@ summary(cja_mod) # NA
 # Episodes of passive joint attention.
 pja_mod <- lmer(paste("pja", model_string), data = lmer_data)
 summary(pja_mod) # marginal RR, beta=-1.07 p=.07, condition*RR beta=1.83 p<.05
+
 
 # Total duration of passive joint attention.
 pja_time_mod <- lmer(paste("pja_length", model_string), data = lmer_data)
@@ -348,6 +345,14 @@ summary(pja_time_mod) # NA
 cja_time_mod <- lmer(paste("cja_length", model_string), data = lmer_data)
 summary(cja_time_mod) # marginal parent education p=.09
 ```
+
+We fit a mixed-effects linear regression predicting the number of bids for joint attention (JA) as a function of fixed effects of condition, age (scaled and 0-centered), gender, parent's education level, and the subscales of the EPAQ: Early Learning (EL), Affection and Attachment (AA), and Rules and Respect (RR), along with interactions of condition and EL, AA, and RR. This lme4 model included random intercepts per video. 
+There were significantly more bids for JA in the Video condition (mean: 6.24, sd: 2.79) than in the Control condition (mean: 3.56, sd: 2.50, $\beta=3.51$, t(40.3) = 2.95, *p*<.01). 
+There were no other significant effects.
+Mixed-effects regressions with the same structure were performed predicting the number of episodes of coordinated and passive JA, and the total duration of time spent in coordinated and passive JA.
+There were no significant effects on the number or total duration of coordinated JA episodes, nor on the total duration of passive JA episodes. 
+For the regression predicting the number of passive JA episodes, the only significant effect was an interaction of condition and RR ($\beta=1.83$, t(41.5) = 2.22, *p*<.05), showing that for parents in the Video condition, those with higher Rules and Respect subscores engaged in more passive JA episodes.
+Figure X shows ... by condition.
 
 
 ```{r e1ja-graphs, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.0, set.cap.width=T, num.cols.cap=1, fig.cap = "Mean number of bids and episodes of Joint Attention in Experiment 1."}
@@ -398,7 +403,7 @@ multiplot(e1pja, e1cja, cols=2)
 ## Discussion
 
 In summary, while parents produced more word types and tokens after viewing the activity video, lexical diversity (Type/Token ratio and MTLD) was higher when parents were just asked to play as they normally would.
-Parents may be relatively more repetetive in the experimental condition since they are attempting to stick to a specific prescribed task, but they talk more overall.
+This may suggest that parents in the Video condition are being more repetitive in their attempt to stick to the task prescribed in the video.
 Demographics and EPAQ do not interact with condition, but there is a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (more types and tokens for higher parent education).
 
 There was a main effect of condition on total bids for joint attention. 
