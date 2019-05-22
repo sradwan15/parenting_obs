@@ -688,15 +688,39 @@ Props: cloth, small plastic horse, small plastic sheep, small plastic elephant, 
 
 ## Experiment 2
 
-### Video A (12-17.9 months)
+### Video A (12-17.9 months) "Give me the toy"
 
-### Video B (12-17.9 months)
+Parents are told to ask their child to hand over individual toys. They are also encouraged to praise the child after they give them the toys, and repeat the process until the child could follow the verbal instructions.
 
-### Video C (12-17.9 months)
+Props: plastic pig, plastic horse, plastic dog, plastic cat, plastic cow
 
-### Video D (18-23.9 months)
+### Video B (12-17.9 months) "Classifying my toys"
 
-### Video E (18-23.9 months)
+Parents are told to place toys of different sizes (big or small) in two hoops. They are also encouraged to ask their child to distinguish between two objects and identify which one is larger.
 
-### Video F (18-23.9 months)
+Props: two yellow and green rings, big car, small car, big horse, small horse
+
+### Video C (12-17.9 months) "Geometric shapes jigzsaw puzzle"
+
+Parents are told to encourage their child to name different shapes on a jigzsaw puzzle. Then they are told to undo the puzzle and invite the child to complete the puzzle. 
+
+Props: A jigzsaw puzzle of geometric shapes
+
+### Video D (18-23.9 months) "My toys II"
+
+Parents are told to show the child toys of the same shape but different sizes, to place one of the objects in a basket and to ask the child to take out the object. They are also encoureaged to ask their child if the object is bigger or smaller compared to its pair.
+
+Props: two buckets, big car, small car, big horse, small horse
+
+### Video E (18-23.9 months) "The Orchestra"
+
+Parents are told to give their child a musical instrument to play. They are also encouraged to play a song and see if the child follows the rhythm.
+
+Props: maracas, drum, tambourine, clapper
+
+### Video F (18-23.9 months) "My Yellow Toys"
+
+Parents are told to show their child yellow toys and to ask "what color are they". They are also told to give the child toys of different colors, ask them to only play with the yellow ones and praise the child after they do so.
+
+Props: blue car, yellow car, yellow block, red block, blue block, green block
 
