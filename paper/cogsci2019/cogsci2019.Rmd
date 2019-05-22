@@ -1,5 +1,5 @@
 ---
-title: "Understanding the impact of electronically-delivered parenting advice"
+title: "Understanding the impacts of video activity guides on parent-child interaction"
 bibliography: library.bib
 csl: apa6.csl
 document-params: "10pt, letterpaper"
@@ -65,7 +65,69 @@ theme_set(theme_few())
 
 # Introduction
 
-Children of any given age show remarkable variability in their levels of language proficiency [@Fenson1994], 
+The quantity and quality of early language input has been found to be strongly associated with later language and academic outcomes [@Hart1995; @Marchman2008; @cartmill2012; @HirshPasek2015]. Thus, because of the potential for large downstream effects [@Heckman2006], there is tremendous interest in interventions that change children's language environment. 
+And because parents define a large portion of that environment, especially before the onset of formal schooling, parent behavior is a critical locus for such interventions. 
+Many effective parenting interventions require large resource investments and require many hours of in-person contact [@Jamaica2014; @PerryPreschool2004], making implementation at scale a daunting proposition. 
+For this reason, many researchers targeting early language are interested in delivering parenting interventions remotely -- through texts, apps, and videos. 
+But what do parents take away from these short messages about what to do or how to talk?
+
+The content provided by digital parenting interventions runs the gamut from general parenting messages and facts from child development research to specific advice and suggested activities. 
+A growing body of evidence suggests that these digital interventions can be effective in a range of contexts [@Breitenstein2014]. AGE RANGE
+For example, HIGHLIGHT ONE INTERVENTION.
+Often, however, the theory of change presupposed by such interventions is relatively vague.
+Both within and outside the realm of academic interventions, mesages to parents of young children often seek to provide knowledge about some aspect of developent (e.g., early language), often in tandem with a suggestion regarding activities.
+Such messages are assumed to inform parents' behavior choice and spur them to engage in the target activity, which is assumed to be more stimulating than what parents would have done otherwise. 
+
+This theory of change is grounded in ideas about guided play and early language stimulation. 
+TOKEN DIVERSITY [@Malvern2004]
+Further, language learning -- especially the acquisition of early vocabulary in the first years -- appears to be supported preferentially by joint attention, DEF. [@Bigelow2004]
+Guided PLAY link here? 
+Thus, the current literature supports interventions that encourage parents to provide high quality language and interaction through something like guided play -- whether via reading books or playing with a shape-sorter at home, or via a conversation about categories in the supermarket.
+
+But is this theory of change correct? That is, does the provision of knowledge and activities lead to higher-quality play? 
+An alternative hypothesis is that this theory could be wrong in a number of ways. 
+By focusing parents on a specific activity, they could over-focus on achieving the superficial goals of the activity. 
+This problem might be especially likely with video messages, which could encourage parents to try to mimic a model. 
+And these misinterpretation in turn could result in less high quality talk, with less joint attention. 
+Or, these messages could produce the desired effect, but only for those parents who already have a general orientation towards children's early learning.
+
+Our current experiments were designed to make a direct test of this question: how do parents change their interactions with young children on the basis of short video parenting messages? 
+In both studies, we collected data from parent-child dyads in a local children's museum. 
+We showed parents in the experimental group a single short video modeling an interactive toy-based activity along with a scientific justification. 
+Parents in the control group received either no video (Experiment 1) or a video of a recent finding in developmental psychology (Experiment 2). 
+We then gave the toys from the video to all dyads and videotaped their interactions, coding for language quantity and quality as well as joint attention. 
+
+
+
+
+partners such as their caregivers and older siblings [@Kaye1970]. 
+Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided [@Vygotsky1980].
+These tutorial interactions have been shown to be important components of child development [@Wood1976].
+Thus, with the knowledge of both play and tutorial interactions, guided play, which consists of both active and enjoyable activities as well as close guidance of adults [@Hirsh2008] has drawn researchers' interest. 
+A study of preschoolers showed that guided play scaffolds the environment while still allowing children to maintain a large degree of control, 
+and it outperforms direct-instruction approaches in encouraging a variety of positive academic outcomes [@Weisberg2013].
+
+
+But does providing such information change parents' behavior towards young children? And are those changes effective in producing change along the desired dimension? An alternative might be that asking parents to focus on a specific activity could result in decreases in 
+
+
+
+
+What are digital interventions
+With the widespread use of smartphones and tablets worldwide, digitally-delivered interventions could address many of the logistical barriers that have limited scaling up face-to-face delivery methods.
+A review of 11 studies verified that 
+However, the parent and child outcomes assessed in the review (e.g.infant positive behaviors, satisfaction, emotional symptoms etc.) did not address the nature or quality of parent-infant interactions at a detailed level, for example whether the interventions lead to children paying more attention, or vocabulary changes in parents' language usages. 
+Although digitally-delivered ac-tivities are designed to promote learning and cognitive development, it is unclear how they might affect these dimensions of parent-child interactions.
+Thus, we want to conduct this experiment to explore if and how digital scaffolding of activities affect the social and linguistic characteristics of parent-child ineractions.
+The quality of parent-child interactions can be measured by both the social engagement of parents (e.g., joint attention to objects in the environment)[@Bigelow2004] and the quality of language (e.g., vocabulary diversity) [@Malvern2004]. 
+
+
+Communication and message conntet
+
+
+In our study, we focus on videos that provide suggested play activities to parents. 
+These videos constitute a short-term "guided play" intervention. 
+
 
 Young children spend a large portion of their waking time at play, variously manipulating objects, exploring their environment, and interacting with caregivers and peers.
 Playing with objects allows them to discover hidden object properties and relations, and to build a causal understanding of how objects interact [e.g., @Schulz2007]. 
@@ -97,13 +159,7 @@ or could merely be that the methods of home-visiting is not sustainable enough f
 Thus, new methods of delivering parenting advice should be considered.
 
 ## Effectiveness of Digital Delivery
-With the widespread use of smartphones and tablets worldwide, digitally-delivered interventions could address many of the logistical barriers that have limited scaling up face-to-face delivery methods.
-A review of 11 studies verified that digital delivery is a promising means of effectively distributing interventions [@Breitenstein2014].
-However, the parent and child outcomes assessed in the review (e.g.infant positive behaviors, satisfaction, emotional symptoms etc.) did not address the nature or quality of parent-infant interactions at a detailed level,
-like if the interventions lead to children paying more attention, or vocabulary changes in parents' language usages. 
-Although digitally-delivered ac-tivities are designed to promote learning and cognitive development, it is unclear how they might affect these dimensions of parent-child interactions.
-Thus, we want to conduct this experiment to explore if and how digital scaffolding of activities affect the social and linguistic characteristics of parent-child ineractions.
-The quality of parent-child interactions can be measured by both the social engagement of parents (e.g., joint attention to objects in the environment)[@Bigelow2004] and the quality of language (e.g., vocabulary diversity) [@Malvern2004]. 
+
 
 
 
