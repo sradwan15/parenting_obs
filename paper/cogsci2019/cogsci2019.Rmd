@@ -1,41 +1,26 @@
 ---
 title: "Understanding the impacts of video activity guides on parent-child interaction"
+author-information: "\\author{ \n  {\\large\\bf George~Kachergis}^1 (\\texttt{kachergis@stanford.edu})
+  \\\\\n  {\\large\\bf Emily~Hembacher}^2 (\\texttt{emily.hembacher@gmail.com}) \\\\\n
+  \ {\\large\\bf Veronica~Cristiano}^2 (\\texttt{CRISTIANO @gallaudet.edu}) \\\\\n
+  \ {\\large\\bf Hanwen Vivian~Zhang}^1 (\\texttt{vivian3@stanford.edu}) \\\\\n  {\\large\\bf
+  Michael C.~Frank}^1 (\\texttt{mcfrank@stanford.edu}) \\\\ \n^{1}Department of Psychology,
+  Stanford University \\\\  Stanford, CA 94305 USA \\\\ ^{2} Nextdoor, Inc., Burlingame,
+  CA \\\\ ^{3} Gallaudet University, Washington, D.C. }\n"
+header-includes:
+   - \usepackage{float}
 bibliography: library.bib
-csl: apa6.csl
-document-params: "10pt, letterpaper"
-
-author-information: > 
-    \author{ 
-      {\large\bf George~Kachergis}^1 (\texttt{kachergis@stanford.edu}) \\
-      {\large\bf Emily~Hembacher}^2 (\texttt{emily.hembacher@gmail.com}) \\
-      {\large\bf Veronica~Cristiano}^2 (\texttt{CRISTIANO @gallaudet.edu}) \\
-      {\large\bf Hanwen Vivian~Zhang}^1 (\texttt{vivian3@stanford.edu}) \\
-      {\large\bf Michael C.~Frank}^1 (\texttt{mcfrank@stanford.edu}) \\ 
-    ^{1}Department of Psychology, Stanford University \\ 
-    Stanford, CA 94305 USA \\
-    ^{2} Nextdoor, Inc., Burlingame, CA \\
-    ^{3} Gallaudet University, Washington, D.C.
-    }
-
-abstract: >
-    Early parenting practices play an important role in shaping the future 
-    outcomes of young children [@Hart1995; @Heckman2006]. 
-    In particular, high-quality early interactions and language input appear to 
-    facilitate language learning and result in higher levels of school performance. 
-    The rise of phone- and tablet-based parenting applications ("apps") holds the promise of delivering 
-    low-cost, positive interventions on parenting style to a wide variety of populations. 
-    Of special interest are the parents of very young children, who are often difficult to reach in other ways. 
-    Yet little is known about the effects of communicating to parents through app-based interventions.
-    In a study of one commercial app offering a collection of age-appropriate activity videos, we find 
-    that the quality of parent-child interactions increases in some ways as a result of using the app. 
-    Specifically, the lexical diversity of parents' child-directed speech increases, and measures of 
-    joint attention show...
-    
-keywords: >
-    digital parenting advice; joint attention; lexical diversity; guided play; 
-    
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+document-params: 10pt, letterpaper
 final-submission: \cogscifinalcopy
+keywords: "digital parenting advice; joint attention; lexical diversity; guided play;
+  \n"
+csl: apa6.csl
+abstract: |
+  Early parenting practices play an important role in shaping the future  outcomes of young children [@Hart1995; @Heckman2006].  In particular, high-quality early interactions and language input appear to  facilitate language learning and result in higher levels of school performance.  The rise of phone- and tablet-based parenting applications ("apps") holds the promise of delivering  low-cost, positive interventions on parenting style to a wide variety of populations.  Of special interest are the parents of very young children, who are often difficult to reach in other ways.  Yet little is known about the effects of communicating to parents through app-based interventions. In a study of one commercial app offering a collection of age-appropriate activity videos, we find  that the quality of parent-child interactions increases in some ways as a result of using the app.  Specifically, the lexical diversity of parents' child-directed speech increases, and measures of  joint attention show...
 ---
 
 ```{r global_options, include=FALSE}
@@ -72,15 +57,15 @@ For this reason, many researchers targeting early language are interested in del
 But what do parents take away from these short messages about what to do or how to talk with their children?
 
 The content provided by digital parenting interventions runs the gamut from general parenting messages and facts from child development research to specific advice and suggested activities. 
-A growing body of evidence suggests that these digital interventions can be effective across a range of cultures, income levels, and children's ages (for a review, see )[@Breitenstein2014].
+A growing body of evidence suggests that these digital interventions can be effective across a range of cultures, income levels, and children's ages [for a review, see @Breitenstein2014].
 For example, in contrast to a face-to-face parent training intervention, a tablet-based version saw significantly higher session completion rates (51% attendance vs. 85% module completion) and comparable or larger effect sizes on parents' and children's (aged 2 to 5 years) behavior [@Breitenstein2016].
 Often, however, the theory of change presupposed by such interventions is relatively vague.
 Both within and outside the realm of academic interventions, messages to parents of young children often seek to provide knowledge about some aspect of development (e.g., early language), often in tandem with a suggestion regarding activities.
-Such messages are assumed to inform parents' choice of behaviors, spurring them to engage in the target activity, which is assumed to be more stimulating than what parents would have done otherwise. 
+Such messages are assumed to inform parents' choice of behaviors, spurring them to engage in some target activity, which is assumed to be more stimulating than what parents would have done otherwise. 
 
-This theory of change is grounded in ideas about guided play and early language stimulation. 
-Language input varies not only in quantity (i.e., the number of total tokens), but also in quality (i.e., the diversity of the tokens) [@Malvern2004].
-Further, language learning -- especially the acquisition of early vocabulary in the first years -- appears to be supported preferentially by parents and children _jointly attending_ to some object or activity [@Bigelow2004].
+This theory of change is typically grounded in ideas about guided play and early language stimulation. 
+Child-directed speech varies not only in quantity (i.e., the number of total tokens), but also in quality in terms of the diversity of the tokens [@Malvern2004] or the context-appropriateness of the speech [@Cartmill2013], both of which have been linked to children's subsequent language development.
+Further, language learning -- especially the acquisition of early vocabulary in the first years -- appears to be supported preferentially by parents and children _jointly attending_ to some object or activity [@Baldwin1991; @Bigelow2004].
 Episodes of joint attention are frequent during guided play, when parents set goals and scaffold their child's activities [@Wood1976; @Weisberg2013].
 Thus, the current literature supports interventions that encourage parents to provide high-quality language and interaction through something like guided play -- whether via reading books or playing with a shape-sorter at home, or via a conversation about categories in the supermarket.
 
@@ -96,10 +81,6 @@ In both studies, we collected data from parent-child dyads in a local children's
 We showed parents in the experimental group a single short video modeling an interactive toy-based activity along with a scientific justification. 
 Parents in the control group received either no video (Experiment 1) or a video of a recent finding in developmental psychology (Experiment 2). 
 We then gave the toys from the video to all dyads and videotaped their interactions, coding for language quantity and quality as well as joint attention. 
-
-
-
-Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided [@Vygotsky1980].
 
 
 But does providing such information change parents' behavior towards young children? 
