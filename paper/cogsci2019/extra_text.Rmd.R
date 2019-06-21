@@ -48,3 +48,8 @@ or could merely be that the methods of home-visiting is not sustainable enough f
 Thus, new methods of delivering parenting advice should be considered.
 
 ## Effectiveness of Digital Delivery
+
+
+But does providing such information change parents' behavior towards young children? 
+And is this advice effective in producing change along the desired dimension? 
+An alternative might be that asking parents to focus on a specific activity that may be novel to them may tax their cognitive resources, resulting in decreases in the quality of their child-directed speech, or in less flexible, lower-quality social interactions.
