@@ -6,3 +6,6 @@
 *.out
 *.aux
 *.gz(busy)
+.DS_Store
+*.rdb
+*.rdx
