@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  7 JUL 2019 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  7 JUL 2019 13:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -743,11 +743,11 @@ l.480
 
 LaTeX Warning: Reference `e2tab' on page 8 undefined on input line 575.
 
-<figs/fig:e2lexdiv-1.pdf, id=276, 247.92625pt x 203.76125pt>
+<figs/fig:e2lexdiv-1.pdf, id=276, 387.4475pt x 203.76125pt>
 File: figs/fig:e2lexdiv-1.pdf Graphic file (type pdf)
 <use figs/fig:e2lexdiv-1.pdf>
 Package pdftex.def Info: figs/fig:e2lexdiv-1.pdf  used on input line 598.
-(pdftex.def)             Requested size: 247.92564pt x 203.76074pt.
+(pdftex.def)             Requested size: 387.45245pt x 203.76384pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
 has been already used, duplicate ignored
 
@@ -817,7 +817,7 @@ type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on cogsci2019.pdf (12 pages, 414968 bytes).
+Output written on cogsci2019.pdf (12 pages, 415206 bytes).
 PDF statistics:
  464 PDF objects out of 1000 (max. 8388607)
  411 compressed objects within 5 object streams
