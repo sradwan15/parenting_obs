@@ -220,7 +220,7 @@ e1_lexdiv <- lmer_data %>% group_by(condition) %>%
   summarise(TTR=mean(TTR), MTLD=mean(MTLD), tokens=mean(tokens)) 
 ```
 
-We fit a mixed-effects linear regression predicting TTR as a function of condition, age (scaled and 0-centered), gender, and parent's education level with a random intercept per video using lme4 [@lme4]. 
+We fit a mixed-effects linear regression predicting TTR as a function of condition, age (0-centered), gender, and parent's education level with a random intercept per video using lme4 [@lme4]. 
 There was significantly lower TTR in the Video condition (mean: `r round(subset(e1_lexdiv, condition=='exp')$TTR, 2)`) than in the Control condition (mean: `r round(subset(e1_lexdiv, condition=='con')$TTR, 2)`, $\beta=$`r e1TTR["conditionexp","beta"]`, t(52.4) = `r e1TTR["conditionexp","zval"]`, *p*<.001). 
 There were no significant effects of age, gender, or parent's level of education.
 A similar mixed-effects linear regression instead predicting MTLD also found significantly lower lexical diversity in the Video condition (mean MTLD: `r round(subset(e1_lexdiv, condition=='exp')$MTLD, 2)`) than in the Control condition (mean: `r round(subset(e1_lexdiv, condition=='exp')$TTR, 2)`, $\beta=$`r e1MTLD["conditionexp","beta"]`, t(55) = `r e1MTLD["conditionexp","zval"]`, *p*=.001), with no other significant effects.

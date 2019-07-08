@@ -49,15 +49,16 @@ dem$age = as.numeric(as.character(dem$age))
 d$age = NULL
 dem$X = NULL
 d <- d %>% left_join(dem, by=c("sid" = "SID")) %>%
-  filter(age <= 2.0)
+  filter(age <= 2.0 & age>=1.0)
 
 d$Condition <- factor(d$condition, levels=c("con","exp"), labels=c("Control","Video"))
 save(d, file="Exp2_cleaned_data.Rdata")
 ```
 
-#Plots
+# Plots
 
-##TTR
+## TTR
+
 ```{r echo=FALSE}
 ms_lex <- d %>%
   group_by(condition) %>%
@@ -82,7 +83,9 @@ ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) +
   ggthemes::theme_few() 
 ggsave(file="figs/e2_TTR.pdf", width=3, height=3)
 ```
+
 ## MTLD
+
 ```{r echo=FALSE}
 ms_lex <- d %>%
   group_by(condition) %>%
@@ -106,35 +109,10 @@ ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) +
   ggthemes::theme_few() 
 ggsave(file="figs/e2_MTLD.pdf", width=3, height=3)
 ```
-## HD-D
-```{r echo=FALSE}
-ms_lex <- d %>%
-  group_by(condition) %>%
-  multi_boot_standard(col = "HDD") 
 
-lex_means <- d%>%
-  group_by(condition)%>%
-  summarise(mean = mean(HDD))
 
-lex_sds <- d%>%
-  group_by(condition)%>%
-  summarise(sd = sd(HDD))
+## Word Tokens
 
-ms_lex$condition <- factor(ms_lex$condition,
-levels = c("con", "exp"),
-labels = c("Control", "Video"))
-
-ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) + 
-  geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
-             position = position_dodge(width = .9))+
-  xlab("Condition") + 
-  ylab("HD-D") +
-  langcog::scale_colour_solarized()  +
-  ggthemes::theme_few()
-ggsave(file="figs/e2_HDD.pdf", width=3, height=3)
-```
-##Word Tokens
 ```{r echo=FALSE}
 ms_tok <- d %>%
   group_by(condition) %>%
@@ -155,7 +133,8 @@ ggplot(ms_tok, aes(x = condition, y = mean, fill = condition)) +
 ggsave(file="figs/e2_tokens.pdf", width=3, height=3)
 ```
 
-##Word Types
+## Word Types
+
 ```{r echo=FALSE}
 ms_type <- d %>%
   group_by(condition) %>%
@@ -177,7 +156,8 @@ ggplot(ms_type, aes(x = condition, y = mean, fill = condition)) +
 ggsave(file="figs/e2_types.pdf", width=3, height=3)
 ```
 
-##Sentence Length
+## Sentence Length
+
 ```{r echo=FALSE}
 ms_length <- d %>%
   group_by(condition) %>%
@@ -199,7 +179,7 @@ ggplot(ms_length, aes(x = condition, y = mean, fill = condition)) +
 ggsave(file="figs/e2_sentence_length.pdf", width=3, height=3)
 ```
 
-###Sentence Length by videos
+### Sentence Length by Video
 
 ```{r echo=FALSE}
 ms_length <- d %>%
@@ -226,32 +206,16 @@ ggplot(ms_length, aes(x = video, y = mean, fill = video)) +
         axis.title.y = element_text(size=18))
 ```
 
-###Sentence Length by age
+### Sentence Length by age
 (Maybe do a scatterplot with continuous age)
 
 ```{r echo=FALSE}
-ms_length <- d %>%
-  group_by(age) %>%
-  multi_boot_standard(col = "len_sentence") 
-
-ms_length$age <- factor(ms_length$age,
-levels = c("1", "2"),
-labels = c("12-18", "18-24"))
-
-ggplot(ms_length, aes(x = age, y = mean, fill = age)) +
-  geom_bar(stat="identity") + 
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
-             position = position_dodge(width = .9))+
-  xlab("Age (months)") + 
-  ylab("Average Sentence Length") +
-  langcog::scale_colour_solarized()  +
-  ggthemes::theme_few() + 
-  theme(legend.title = element_text(size=18), 
-        legend.text = element_text(size=16), 
-        axis.text.x  = element_text(vjust=0.5, size=16),
-        axis.title.x = element_text(size=18), 
-        axis.text.y  = element_text(vjust=0.5, size=16),
-        axis.title.y = element_text(size=18))
+ac <- d %>% filter(!is.na(age) & !is.na(condition))
+ggplot(ac, aes(x = age, y = len_sentence, group=condition, colour = condition)) +
+  geom_point(alpha=.7) + geom_smooth(method='lm') + 
+  xlab("Age (years)") + ylab("Mean Sentence Length") +
+  langcog::scale_colour_solarized() +
+  ggthemes::theme_few() 
 ```
 
 
@@ -264,10 +228,9 @@ round(cor(d[,c("TTR","MTLD","HDD","len_sentence")]), 3)
 
 ```
 
-#Conclusions
-In McCarthy-Jarvis2010 paper, MTLD and HD-D has a correlation of r = .800; 
-MTLD and TTR r =.322;
-HD-D and TTR r = -.051 (N = 1584). 
-In our results, MTLD and HD-D have the highest correlation (r = .714). Meanwhile, MTLD and TTR has r = .270, a bit lower than what M-J2010 reported. TTR and HDD are also modestly correlated (r = .426)
+# Conclusions
+
+In McCarthy-Jarvis2010 paper, MTLD and HD-D has a correlation of r = .800; MTLD and TTR r =.322; HD-D and TTR r = -.051 (N = 1584). 
+In our results, MTLD and HD-D have the highest correlation (r = .710). Meanwhile, MTLD and TTR has r = .287, a bit lower than what M-J2010 reported. TTR and HDD are also modestly correlated (r = .444).
 
 All of the measures suggest that the control group has higher lexical diversity than experimental group, with HD-D showing the biggest contrast and MTLD the smallest.
