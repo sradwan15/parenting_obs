@@ -256,7 +256,7 @@ kable(e1, digits=2, caption="Lexical diversity measures in Experiment 1.")
 
 e1ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .7)) +
-  geom_point(data=d, aes(x=Condition, y=TTR), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Type/Token Ratio (TTR)") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -264,7 +264,7 @@ e1ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(sta
 
 e1mtld <- ggplot(ms_lex_mtld, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=MTLD), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("MTLD") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
@@ -278,14 +278,14 @@ Word tokens and word types
 
 e1tokens <- ggplot(ms_tok, aes(x=Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=tokens), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Tokens") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
 
 e1types <- ggplot(ms_type, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=types), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=types), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Types") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -365,7 +365,7 @@ ms_bids <- d %>% group_by(Condition) %>%
 
 e1bids <- ggplot(ms_bids, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=bids_tot), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=bids_tot), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Bids for Joint Attention") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
@@ -376,7 +376,7 @@ ms_tja <- d %>% group_by(Condition) %>%
 
 e1tja <- ggplot(ms_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=total_ja), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=total_ja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Episodes of Joint Attention") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
@@ -390,7 +390,7 @@ ms_pja <- d %>% group_by(Condition) %>%
 
 e1pja <- ggplot(ms_pja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=pja), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=pja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Episodes of Passive Joint Attention") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
 
@@ -400,7 +400,7 @@ ms_cja <- d %>% group_by(Condition) %>%
 
 e1cja <- ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=cja), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=cja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Episodes of Coordinated Joint Attention")  +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
 
@@ -478,10 +478,22 @@ Parents' child-directed speech was transcribed and processed according to the sa
 
 ### Lexical Diversity
 ```{r, e2-lexdiv-regressions, echo=F, include=F}
+# preregistered analyses:
+# The number of parent bids for joint attention, the number of episodes of joint attention, the number of word tokens produced by parents, and the lexical diversity of parent language output (word types/word tokens). 
+# Mixed-effects linear regressions predicting the dependent variables with condition (video scaffolding vs. control) and age in months as fixed effects and participant and specific video as random effects. 
+# DV ~ age * condition + (1 | participant) + (1 | video)
+# Lab standard operating procedures will be used for random effects pruning in case of non-convergence.
+# We will interpret condition main effects as well as age * condition interactions (positive or negative) as evidence for behavior changes caused by video scaffolding. 
+# Because of the larger number of coefficients of interest (4 models x 2 coefficients), we will adopt an alpha level of .005 for statistical significance and will report alpha between .05 and .005 as suggestive.
+# “secondary analyses"
+# We will analyze the proportion of coordinated vs. passive joint attention separately using the same model specification.
+
+# Notes: 
+# - including (1|sid) never works: "Error: number of levels of each grouping factor must be < number of observations", so we back off to (1|video)
 # Predicting lexical diversity based on experimental condition. 
 modTTR <- lmer(TTR ~ age * condition + (1 | video), data=lmer_data) 
-summary(modTTR) # condition beta=-.09  t(8.7) = 3.06 p=.01
-e2TTR <- get_lmer_reporting_values(modTTR)
+summary(modTTR) # condition beta=-.09  t(8.7) = 3.06 p=.0141
+e2TTR <- get_lmer_reporting_values(modTTR) # here, the extracted pval = .003 
 
 modMTLD <- lmer(MTLD ~ age * condition + (1 | video), data=lmer_data)
 summary(modMTLD) # NA
@@ -495,11 +507,11 @@ summary(tokens_mod) # NA
 #summary(types_mod) # NA
 ```
 
-We fit a mixed-effects linear regression predicting TTR as a function of age (scaled and 0-centered) and condition with an interaction term, and with random intercepts per video using lme4 [@lme4].
-There was significantly lower TTR in the Video condition (mean: 0.38) than in the Control condition (mean: 0.47, $\beta=`r e2TTR["conditionexp","beta"]`$, t(8.7) = `r e2TTR["conditionexp","zval"]`, *p*=.01).
+We fit a mixed-effects linear regression predicting TTR as a function of age (0-centered) and condition with an interaction term, and with random intercepts per video using lme4 [@lme4].
+There was suggestively lower TTR in the Video condition (mean: 0.38) than in the Control condition (mean: 0.47, $\beta=`r e2TTR["conditionexp","beta"]`$, t(8.7) = `r e2TTR["conditionexp","zval"]`, *p*=.01). 
 There was no significant effect of age, nor a significant interaction.
 The preregistered regression of 
-An exploratory similar mixed-effects linear regression instead predicting MTLD found no significant effects of age or condition.
+A similar but exploratory mixed-effects linear regression predicting MTLD found no significant effects of age or condition.
 Figure \ref{fig:e2lexdiv} shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
 Regressions with the same structure predicting the number of words tokens found no significant effects of age or condition.
 The means of the lexical measures are shown in Table \ref{e2tab}.
@@ -523,7 +535,7 @@ ms_lex <- d %>% group_by(Condition) %>%
 
 e2ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=TTR), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("TTR") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -534,7 +546,7 @@ ms_lex <- d %>% group_by(Condition) %>%
 e2mtld <- ggplot(ms_lex, aes(x = Condition, y = mean, fill = Condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=MTLD), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("MTLD") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -544,7 +556,7 @@ ms_tok <- d %>% group_by(Condition) %>%
 
 e2tokens <- ggplot(ms_tok, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=tokens), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Tokens") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -561,14 +573,15 @@ ms_typ <- d %>% group_by(Condition) %>%
 
 e2types <- ggplot(ms_typ, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=types), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=types), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Types") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
 
 #multiplot(e2tokens, e2types, cols=2)
 ```
-```{r, e2-effect-size, echo=F}
+
+```{r, e2-effect-size, echo=F, include=F}
 ttr_means <- d %>% group_by(Condition) %>%
   summarise(mean = mean(TTR), sd = sd(TTR))
 cohens_d(ttr_means)
@@ -580,9 +593,12 @@ load(paste(e2path,"joint_attention/Exp2_joint_attention_data.RData",sep=''))
 summary(d)
 # triplicate variables: gender.x/y, ethnicity, english, num_lang, parent_ed, Exclude
 d$Condition <- factor(d$condition, levels = c("con","exp"), labels = c("Control","Video"))
-e2ja = d
-e2ja$age = as.numeric(langcog::scale(e2ja$age, scale=FALSE)) # 0-centered but NOT scaled -- change text
 
+e2ja <- d %>% mutate(bids = bids_tot,
+                     age = as.numeric(langcog::scale(age, scale=FALSE)),
+                     pja_length = pja_length/1000,
+                     cja_length = cja_length/1000,
+                     total_lja = total_lja/1000)
 
 # Total number of bids
 bids_mod <- lmer(bids ~ age * Condition + (1 | video), data = e2ja)
@@ -666,7 +682,7 @@ Figure \ref{fig:e2ja} shows the mean number of bids and episodes of JA by condit
 
 e2bids <- ggplot(e2_bids, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=bids), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=e2ja, aes(x=Condition, y=bids), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Bids for Joint Attention") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
@@ -674,7 +690,7 @@ e2bids <- ggplot(e2_bids, aes(x = Condition, y = mean, fill = Condition)) + geom
 # total JA episodes
 e2tja <- ggplot(e2_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=total_ja), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=e2ja, aes(x=Condition, y=total_ja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Episodes of Joint Attention") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
@@ -688,7 +704,7 @@ ms_pja <- d %>% group_by(Condition) %>%
 
 e2pja <- ggplot(ms_pja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=pja), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=pja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Episodes of Passive Joint Attention") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
 
@@ -698,7 +714,7 @@ ms_cja <- d %>% group_by(Condition) %>%
 
 e2cja <- ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=cja), alpha=.3, position = position_jitterdodge()) +
+  geom_point(data=d, aes(x=Condition, y=cja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Episodes of Coordinated Joint Attention") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
 
