@@ -64,10 +64,6 @@ ms_lex <- d %>%
   group_by(condition) %>%
   multi_boot_standard(col = "TTR") 
 
-lex_mean_TTR <- d%>%
-  group_by(condition)%>%
-  summarise(mean = mean(TTR), sd = sd(TTR))
-
 ms_lex$condition <- factor(ms_lex$condition,
 levels = c("con", "exp"),
 labels = c("Control", "Video"))
@@ -90,10 +86,6 @@ ggsave(file="figs/e2_TTR.pdf", width=3, height=3)
 ms_lex <- d %>%
   group_by(condition) %>%
   multi_boot_standard(col = "MTLD") 
-
-lex_mean_MTLD <- d%>%
-  group_by(condition)%>%
-  summarise(mean = mean(MTLD), sd=sd(MTLD))
 
 ms_lex$condition <- factor(ms_lex$condition,
 levels = c("con", "exp"),

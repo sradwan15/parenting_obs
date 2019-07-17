@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  8 JUL 2019 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  17 JUL 2019 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -644,87 +644,90 @@ e
 )) [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 243.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 244.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 243.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 244.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 243
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 244
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 243
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 244
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 243.
+(Font)              <10> on input line 244.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 243.
+(Font)              <7> on input line 244.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 243.
-LaTeX Font Info:    Try loading font information for U+msa on input line 243.
+(Font)              <5> on input line 244.
+LaTeX Font Info:    Try loading font information for U+msa on input line 244.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 243.
+LaTeX Font Info:    Try loading font information for U+msb on input line 244.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 244.
+(Font)              <8> on input line 245.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 244.
+(Font)              <6> on input line 245.
 [2]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 337.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 338.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3]
+
+LaTeX Warning: Reference `e1tab' on page 4 undefined on input line 372.
+
 <figs/fig:e1lex_div-1.pdf, id=192, 246.9225pt x 203.76125pt>
 File: figs/fig:e1lex_div-1.pdf Graphic file (type pdf)
 <use figs/fig:e1lex_div-1.pdf>
-Package pdftex.def Info: figs/fig:e1lex_div-1.pdf  used on input line 393.
+Package pdftex.def Info: figs/fig:e1lex_div-1.pdf  used on input line 395.
 (pdftex.def)             Requested size: 246.92188pt x 203.76074pt.
 <figs/e1token_type-1.pdf, id=193, 246.9225pt x 204.765pt>
 File: figs/e1token_type-1.pdf Graphic file (type pdf)
 <use figs/e1token_type-1.pdf>
-Package pdftex.def Info: figs/e1token_type-1.pdf  used on input line 404.
+Package pdftex.def Info: figs/e1token_type-1.pdf  used on input line 406.
 (pdftex.def)             Requested size: 246.92188pt x 204.76448pt.
 [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.410 
-       <./figs/fig:e1lex_div-1.pdf>]
+l.411 \end{figure}
+                   <./figs/fig:e1lex_div-1.pdf>]
 <figs/fig:e1ja-1.pdf, id=214, 246.9225pt x 203.76125pt>
 File: figs/fig:e1ja-1.pdf Graphic file (type pdf)
 <use figs/fig:e1ja-1.pdf>
-Package pdftex.def Info: figs/fig:e1ja-1.pdf  used on input line 437.
+Package pdftex.def Info: figs/fig:e1ja-1.pdf  used on input line 439.
 (pdftex.def)             Requested size: 246.92188pt x 203.76074pt.
 [5pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.443 
+l.445 
        <./figs/e1token_type-1.pdf>]
 <figs/fig:e1ja-pass-coord-1.pdf, id=232, 246.9225pt x 239.89626pt>
 File: figs/fig:e1ja-pass-coord-1.pdf Graphic file (type pdf)
 <use figs/fig:e1ja-pass-coord-1.pdf>
-Package pdftex.def Info: figs/fig:e1ja-pass-coord-1.pdf  used on input line 446
+Package pdftex.def Info: figs/fig:e1ja-pass-coord-1.pdf  used on input line 448
 .
 (pdftex.def)             Requested size: 246.92188pt x 239.89566pt.
 [6pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
@@ -732,58 +735,59 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.480 
+l.482 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.480 
+l.482 
        <./figs/fig:e1ja-1.pdf> <./figs/fig:e1ja-pass-coord-1.pdf>] [7]
 
-LaTeX Warning: Reference `e2tab' on page 8 undefined on input line 575.
+LaTeX Warning: Reference `e2tab' on page 8 undefined on input line 584.
 
 <figs/fig:e2lexdiv-1.pdf, id=276, 387.4475pt x 203.76125pt>
 File: figs/fig:e2lexdiv-1.pdf Graphic file (type pdf)
 <use figs/fig:e2lexdiv-1.pdf>
-Package pdftex.def Info: figs/fig:e2lexdiv-1.pdf  used on input line 598.
+Package pdftex.def Info: figs/fig:e2lexdiv-1.pdf  used on input line 607.
 (pdftex.def)             Requested size: 387.45245pt x 203.76384pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.620 
+l.627 
        <./figs/fig:e2lexdiv-1.pdf>]
-<figs/fig:e2ja-1.pdf, id=300, 246.9225pt x 203.76125pt>
+<figs/fig:e2ja-1.pdf, id=299, 420.57124pt x 206.7725pt>
 File: figs/fig:e2ja-1.pdf Graphic file (type pdf)
 <use figs/fig:e2ja-1.pdf>
-Package pdftex.def Info: figs/fig:e2ja-1.pdf  used on input line 626.
-(pdftex.def)             Requested size: 246.92188pt x 203.76074pt.
-<figs/e2ja-pass-coord-1.pdf, id=301, 246.9225pt x 208.78pt>
+Package pdftex.def Info: figs/fig:e2ja-1.pdf  used on input line 639.
+(pdftex.def)             Requested size: 420.57663pt x 206.77513pt.
+<figs/e2ja-pass-coord-1.pdf, id=300, 246.9225pt x 208.78pt>
 File: figs/e2ja-pass-coord-1.pdf Graphic file (type pdf)
 <use figs/e2ja-pass-coord-1.pdf>
-Package pdftex.def Info: figs/e2ja-pass-coord-1.pdf  used on input line 635.
+Package pdftex.def Info: figs/e2ja-pass-coord-1.pdf  used on input line 648.
 (pdftex.def)             Requested size: 246.92188pt x 208.77946pt.
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.653 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-7}) has been already used, duplicate ignored
+l.654 
+       <./figs/fig:e2ja-1.pdf>] [10pdfTeX warning (ext4): destination with the 
+same identifier (name{figure.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.653 
-       <./figs/fig:e2ja-1.pdf> <./figs/e2ja-pass-coord-1.pdf>] [10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 917.
-[12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 917.
+l.705 P
+       rops: cloth, plastic horse, plastic sheep, plastic elephant, toy car <./
+figs/e2ja-pass-coord-1.pdf>] [11] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 930.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 930.
 (./cogsci2019.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 917.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 917.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 930.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 930.
 Package rerunfilecheck Info: File `cogsci2019.out' has not changed.
 (rerunfilecheck)             Checksum: CAD6B8ED95734FA5E6A939928DEC602E;6445.
 
@@ -792,16 +796,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 917.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 930.
  ) 
 Here is how much of TeX's memory you used:
- 12865 strings out of 492616
- 187864 string characters out of 6129482
- 299784 words of memory out of 5000000
- 16352 multiletter control sequences out of 15000+600000
- 71694 words of font info for 124 fonts, out of 8000000 for 9000
+ 12869 strings out of 492616
+ 187904 string characters out of 6129482
+ 299883 words of memory out of 5000000
+ 16353 multiletter control sequences out of 15000+600000
+ 71824 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,8n,38p,973b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,8n,38p,973b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
 19/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-d
@@ -817,10 +821,10 @@ type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on cogsci2019.pdf (12 pages, 414124 bytes).
+Output written on cogsci2019.pdf (13 pages, 419214 bytes).
 PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
- 119 named destinations out of 1000 (max. 500000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 418 compressed objects within 5 object streams
+ 120 named destinations out of 1000 (max. 500000)
  14668 words of extra memory for PDF output out of 17280 (max. 10000000)
 
