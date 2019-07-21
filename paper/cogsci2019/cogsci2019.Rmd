@@ -72,7 +72,7 @@ Episodes of joint attention are frequent during guided play, when parents set go
 Thus, the current literature supports interventions that encourage parents to provide high-quality language and interaction through something like guided play -- whether via reading books or playing with a shape-sorter at home, or via a conversation about categories in the supermarket.
 
 But is this theory of change correct? That is, does the provision of knowledge and activities lead to higher-quality play? 
-Alternatively, this theory could be wrong in a number of ways. 
+Alternatively, this theory could be flawed in a number of ways. 
 By focusing parents on a specific activity, parents may over-focus on achieving the superficial goals of the activity. 
 This problem might be especially likely with video messages, which could encourage parents to try to mimic a model's specific speech and/or actions.
 Attempting to reproduce such surface details of a video-guided activity could in turn result in less high-quality talk, with less responsiveness to their child's play.
@@ -390,7 +390,7 @@ e1tja <- ggplot(ms_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_b
 multiplot(e1bids, e1tja, cols=2)
 ```
 
-```{r fig:e1ja-pass-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.5, set.cap.width=T, num.cols.cap=1, fig.cap = "\\label{fig:e1ja-pass-coord} Mean number of passive (left) and coordinated episodes (right) of JA by condition in Experiment 1."}
+```{r fig:e1ja-pass-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=3.5, fig.height=3.5, set.cap.width=T, num.cols.cap=1, fig.cap = "\\label{fig:e1ja-pass-coord} The mean number of passive (left) and coordinated episodes (right) of JA  in Experiment 1 were similar in both conditions."}
 ms_pja <- d %>% group_by(Condition) %>%
   tidyboot_mean(pja) 
 
@@ -417,15 +417,13 @@ multiplot(e1pja, e1cja, cols=2)
 
 In summary, while parents produced more word types and tokens after viewing the activity video, lexical diversity (both TTR and MTLD) was higher when parents were just asked to play as they normally would.
 It may be that parents in the Video condition, in their attempt to stick to the prescribed task, end up repeating themselves more.
-Demographics and EPAQ do not interact with condition, although there was a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (more types and tokens for higher parent education).
+Demographics and EPAQ do not interact with condition, although there was a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (higher education yielding more types and tokens).
 
-Compared to parents in the Control condition, parents who watched an activity video made significantly more bids for JA with their child, although this did not result in a greater number of successful episodes of JA than dyads in the Control condition.
+Parents who watched an activity video made significantly more bids for JA with their child, although this did not result in a greater number of successful episodes of JA than dyads in the no video condition.
 No differences in the duration or number of episodes of passive or coordinated JA between conditions were found. 
 
-There was a marginal effect of gender on bids for JA, with parents of males producing more bids. 
-There was an interaction between RR scores and condition on passive JA, such that Video condition increased the number of episodes of passive JA to a greater extent for people with high RR scores.
+There was an interactive effect of RR scores and condition on passive JA, such that for parents with high RR scores, the activity video increased the number of episodes of passive JA to a greater extent than for parents in the no video condition.
 While the electronically-delivered parenting advice increased the number of bids for JA by parents, it did not significantly affect the number or duration of episodes of JA. 
-It may be that children had a larger relative impact on the attainment of joint attention.
 
 
 # Experiment 2
@@ -647,10 +645,10 @@ e2_tja <- e2ja %>% group_by(Condition) %>%
 ```
 
 As preregistered, we fit mixed-effects linear regressions predicting the number of parental bids for joint attention and the total number of episodes of JA as a function of fixed effects of condition, age (0-centered), and their interaction, with random intercepts per video.
-Shown in Figure \ref{fig:e2ja} (left panel), parents made significantly more bids for JA after watching the Activity Video (mean: `r round(subset(e2_bids, Condition=="Video")$mean,2)`, bootstrapped 95% CI: `r round(subset(e2_bids, Condition=="Video")$ci_lower,2)`, `r round(subset(e2_bids, Condition=="Video")$ci_upper,2)`; $\beta=`r e2bids["ConditionVideo","beta"]`$, t(`r e2bids["ConditionVideo","df"]`) = `r e2bids["ConditionVideo","tval"]`, *p*=`r e2bids["ConditionVideo","pval"]`)) than after the Control Video (mean: `r round(subset(e2_bids, Condition=="Control")$mean,2)`, 95% CI: `r round(subset(e2_bids, Condition=="Control")$ci_lower,2)`, `r round(subset(e2_bids, Condition=="Control")$ci_upper,2)`, $\beta=`r e2bids["ConditionVideo","beta"]`$, t(`r e2bids["ConditionVideo","df"]`) = `r e2bids["ConditionVideo","tval"]`, *p*<.001). 
+Shown in Figure \ref{fig:e2ja} (left panel), parents made significantly more bids for JA after watching the Activity Video (mean: `r round(subset(e2_bids, Condition=="Video")$mean,2)`, bootstrapped 95% CI: `r round(subset(e2_bids, Condition=="Video")$ci_lower,2)`, `r round(subset(e2_bids, Condition=="Video")$ci_upper,2)`; $\beta=`r e2bids["ConditionVideo","beta"]`$, t(`r e2bids["ConditionVideo","df"]`) = `r e2bids["ConditionVideo","tval"]`, *p*=`r e2bids["ConditionVideo","pval"]`)) than after the Control Video (mean: `r round(subset(e2_bids, Condition=="Control")$mean,2)`, 95% CI: [`r round(subset(e2_bids, Condition=="Control")$ci_lower,2)`, `r round(subset(e2_bids, Condition=="Control")$ci_upper,2)`], $\beta=`r e2bids["ConditionVideo","beta"]`$, t(`r e2bids["ConditionVideo","df"]`) = `r e2bids["ConditionVideo","tval"]`, *p*<.001). 
 There were no other significant effects on parental bids for JA.
 
-In the regression predicting the number of episodes of JA, there was a significant main effect of condition ($\beta=`r e2tja["ConditionVideo","beta"]`$, t(`r e2tja["ConditionVideo","df"]`) = `r e2tja["ConditionVideo","tval"]`, *p*=`r e2tja["ConditionVideo","pval"]`), with more episodes of JA occurring after the Activity Video (mean: `r round(subset(e2_tja, Condition=="Video")$mean,2)`, 95% CI: `r round(subset(e2_tja, Condition=="Video")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Video")$ci_upper,2)`) than after the Control Video (mean: `r round(subset(e2_tja, Condition=="Control")$mean,2)`, 95% CI: `r round(subset(e2_tja, Condition=="Control")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Control")$ci_upper,2)`).
+In the regression predicting the number of episodes of JA, there was a significant main effect of condition ($\beta=`r e2tja["ConditionVideo","beta"]`$, t(`r e2tja["ConditionVideo","df"]`) = `r e2tja["ConditionVideo","tval"]`, *p*=`r e2tja["ConditionVideo","pval"]`), with more episodes of JA occurring after the Activity Video (mean: `r round(subset(e2_tja, Condition=="Video")$mean,2)`, 95% CI: [`r round(subset(e2_tja, Condition=="Video")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Video")$ci_upper,2)`]) than after the Control Video (mean: `r round(subset(e2_tja, Condition=="Control")$mean,2)`, 95% CI: [`r round(subset(e2_tja, Condition=="Control")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Control")$ci_upper,2)`]).
 There was also a significant main effect of age ($\beta=`r e2tja["age","beta"]`$, t(`r e2tja["age","df"]`) = `r e2tja["age","tval"]`, *p*=`r e2tja["age","pval"]`), showing that the number of episodes of JA decreased with the child's age. 
 However, a significant interaction of age and condition ($\beta=`r e2tja["age:ConditionVideo","beta"]`$, t(`r e2tja["age:ConditionVideo","df"]`) = `r e2tja["age:ConditionVideo","tval"]`, *p*=`r e2tja["age:ConditionVideo","pval"]`), shown in the right panel of Figure \ref{fig:e2ja}, demonstrates that older children in the Activity Video condition did not see a decrease in the number of episodes of JA.
 
@@ -724,7 +722,7 @@ e2_cja <- e2ja %>% group_by(Condition) %>%
 ### Exploratory Analyses
 
 Four additional exploratory regressions with a similar structure were carried out to predict the number and duration of coordinated and passive JA episodes.
-The regression predicting the number of episodes of coordinated JA found a significant main effect of condition ($\beta=`r e2cja["ConditionVideo","beta"]`$, t(`r e2cja["ConditionVideo","df"]`) = `r e2cja["ConditionVideo","tval"]`, *p*=`r e2cja["ConditionVideo","pval"]`), with more episodes of coordinated JA occurring after the Activity Video (mean: `r round(subset(e2_cja, Condition=="Video")$mean,2)`, 95% CI: `r round(subset(e2_cja, Condition=="Video")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Video")$ci_upper,2)`) than after the Control Video (mean: `r round(subset(e2_cja, Condition=="Control")$mean,2)`, 95% CI: `r round(subset(e2_cja, Condition=="Control")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Control")$ci_upper,2)`).
+The regression predicting the number of episodes of coordinated JA found a significant main effect of condition ($\beta=`r e2cja["ConditionVideo","beta"]`$, t(`r e2cja["ConditionVideo","df"]`) = `r e2cja["ConditionVideo","tval"]`, *p*=`r e2cja["ConditionVideo","pval"]`), with more episodes of coordinated JA occurring after the Activity Video (mean: `r round(subset(e2_cja, Condition=="Video")$mean,2)`, 95% CI: [`r round(subset(e2_cja, Condition=="Video")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Video")$ci_upper,2)`]) than after the Control Video (mean: `r round(subset(e2_cja, Condition=="Control")$mean,2)`, 95% CI: [`r round(subset(e2_cja, Condition=="Control")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Control")$ci_upper,2)`]).
 There was no significant effect of age, but there was a significant interaction of age and condition ($\beta=`r e2cja["age:ConditionVideo","beta"]`$, t(`r e2cja["age:ConditionVideo","df"]`) = `r e2cja["age:ConditionVideo","tval"]`, *p*=`r e2cja["age:ConditionVideo","pval"]`), shown in Figure \ref{e2ja-coord}, revealing that older children in the Activity Video condition had more episodes of coordinated JA than children in the Control Video condition.
 The regression predicting the total duration of coordinated JA episodes revealed no significant effects.
 
@@ -757,9 +755,24 @@ print(e2cja_age)
 
 # Discussion
 
-In both experiments, the number of tokens was higher in the experimental condition, while the number of types and lexical diversity (Type/Token ratio) were higher in the control condition. 
-Parents may be relatively more repetetive in the experimental condition since they are attempting to stick to a specific prescribed task, but they talk more overall.
+This study investigated how parents change their interactions with their young children on the basis of one of several short video parenting messages from the Kinedu commercial parenting app, which suggest interactive toy-based activities (e.g., learning animal sounds), along with a scientific justification.
+Parents in the control conditions received either no video (Experiment 1) or a video of a recent finding in developmental psychology (Experiment 2), but played with the same sets of toys given to those in the experimental conditions.
+After completing the videos, parents were videotaped playing with their children for two minutes. 
+The quality of parents' interactions with their children were measured by the lexical diversity of their child-directed speech, and through behavioral coding of bids for and episodes of joint attention (JA).
 
+Experiment 1 investigated 6--24-month-olds, and found a greater number of bids for JA from parents after watching the activity video, but no difference in the number of JA episodes. 
+Experiment 2 (12--24-month-olds) replicated this greater number of bids for JA after the activity video, and moreover found that while the number of JA episodes dwindled for older infants in the control condition, dyads in the activity video condition achieved an overall higher and constant number of JA episodes.
+In combination, these results suggest that short parenting messages suggesting activities can encourage parents to make more attempts to engage their child in joint attention, and that in some cases--especially in older children--these bids are successful in increasing engagement.
+
+Experiment 1 found lower lexical diversity in parents' speech after watching the activity video, but the average number of word tokens used was higher after the activity video, and the number of word types was the same in both conditions.
+Experiment 2 had similar lexical diversity results, finding suggestively lower Type-Token Ratio after the activity video, although the length-corrected lexical diversity measure (MTLD) did not differ significantly. 
+However, the number of tokens did not significantly differ betwen condition in Experiment 2. [nor types -- exploratory regression]
+Overall, although it may seem worrisome that the activity videos lead to somewhat lower lexical diversity, this worry is  mitigated by the fact that this difference is explained not by fewer word types but by a greater number of word tokens used by parents after the activity video (significantly in Experiment 1, and numerically in Experiment 2).
+It may be that parents are relatively more repetitive after watching the activity video in their attempt to stick to the prescribed task, but overall they talk more.
+
+Taken together, the results of this study show that digital parenting interventions recommending particular play activities to parents of young children can influence both the quality and quantity of child-directed speech, as well as parents attempts to engage their children in joint attention---at least in the short term.
+[more limitations / recommendations for extensions]
+What do these results imply for a theory of change?
 
 # Acknowledgements
 
@@ -787,7 +800,7 @@ Parents are told to encourage their child to pick up and drop individual objects
 
 Props: cloth, plastic horse, plastic sheep, plastic elephant, toy car
 
-### Video B (6-11.9 months) “Animal sounds”
+### Video B (6-11.9 months) "Animal sounds"
 
 Parents are told to call different animals and imitate different sounds the animals make. They are also encourgaed to observe which animal the child prefers.
 
