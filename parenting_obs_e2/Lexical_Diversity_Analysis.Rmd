@@ -52,7 +52,7 @@ d <- d %>% left_join(dem, by=c("sid" = "SID")) %>%
   filter(age <= 2.0 & age>=1.0)
 
 d$Condition <- factor(d$condition, levels=c("con","exp"), labels=c("Control","Video"))
-save(d, file="Exp2_cleaned_data.Rdata")
+#save(d, file="Exp2_cleaned_data.Rdata")
 ```
 
 # Plots
