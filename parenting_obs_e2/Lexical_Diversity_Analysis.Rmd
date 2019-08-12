@@ -69,14 +69,10 @@ levels = c("con", "exp"),
 labels = c("Control", "Video"))
 
 ggplot(ms_lex, aes(x = condition, y = mean, fill = condition)) + 
-  ylim(0.0, 0.6)+
-  geom_bar(stat="identity") + 
+  ylim(0.0, 0.6) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
              position = position_dodge(width = .9))+
-  xlab("Condition") + 
-  ylab("TTR") +
-  langcog::scale_colour_solarized()  +
-  ggthemes::theme_few() 
+  xlab("Condition") + ylab("TTR") + langcog::scale_colour_solarized() + ggthemes::theme_few() 
 ggsave(file="figs/e2_TTR.pdf", width=3, height=3)
 ```
 
@@ -151,6 +147,9 @@ ggsave(file="figs/e2_types.pdf", width=3, height=3)
 ## Sentence Length
 
 ```{r echo=FALSE}
+slen <- lmer(len_sentence ~ condition * age + (1|video), data=d)
+summary(slen)
+
 ms_length <- d %>%
   group_by(condition) %>%
   multi_boot_standard(col = "len_sentence") 
