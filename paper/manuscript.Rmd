@@ -657,8 +657,8 @@ Shown in Figure \ref{fig:e2ja} (left panel), parents made significantly more bid
 There were no other significant effects on parental bids for JA.
 
 In the regression predicting the number of episodes of JA, there was a significant main effect of condition ($\beta=`r e2tjaCond["ConditionActivity Video"]`$, 95% CI = [`r e2tjaCond["95pLB"]`,`r e2tjaCond["95pUB"]`]), with more episodes of JA occurring after the Activity Video (mean: `r round(subset(e2_tja, Condition=="Activity Video")$mean,2)`, 95% CI: [`r round(subset(e2_tja, Condition=="Activity Video")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Activity Video")$ci_upper,2)`]) than after the Control Video (mean: `r round(subset(e2_tja, Condition=="Science Video")$mean,2)`, 95% CI: [`r round(subset(e2_tja, Condition=="Science Video")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Science Video")$ci_upper,2)`]).
-There was also a significant main effect of age ($\beta=`r e2tja["age","beta"]`$, t(`r e2tja["age","df"]`) = `r e2tja["age","tval"]`, *p*=`r e2tja["age","pval"]`), showing that the number of episodes of JA decreased with the child's age. 
-However, a significant interaction of age and condition ($\beta=`r e2tja["age:ConditionActivity Video","beta"]`$, t(`r e2tja["age:ConditionActivity Video","df"]`) = `r e2tja["age:ConditionActivity Video","tval"]`, *p*=`r e2tja["age:ConditionActivity Video","pval"]`), shown in the right panel of Figure \ref{fig:e2ja}, demonstrates that older children in the Activity Video condition did not see a decrease in the number of episodes of JA.
+There was also a significant main effect of age ($\beta=`r e2tjaAge["age"]`$, 95% CI = [`r e2bidsAge["95pLB"]`,`r e2bidsAge["95pUB"]`]), showing that the number of episodes of JA decreased with the child's age. 
+However, a significant interaction of age and condition ($\beta=`r e2tjaAgeCond["age:ConditionActivity Video"]`$, 95% CI = [`r e2tjaAgeCond["95pLB"]`,`r e2tjaAgeCond["95pUB"]`]), shown in the right panel of Figure \ref{fig:e2ja}, demonstrates that older children in the Activity Video condition did not see a decrease in the number of episodes of JA.
 
 
 ```{r fig:e2ja, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=6.5, fig.height=3.0, fig.cap = "\\label{fig:e2ja} Mean number of bids for JA by condition (left) and the number of episodes of JA by age and condition (right) in Experiment 2. After watching an activity video, parents made more bids for JA. Older children in the Activity Video condition showed no decrease in the number of episodes of JA, unlike children in the Control Video condition."}
@@ -678,7 +678,7 @@ e2tja <- ggplot(e2_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_b
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
 
-e2tja_age = ggplot(d, aes(x = age, y = total_ja, group=Condition, colour = Condition)) +
+e2tja_age = ggplot(e2data, aes(x = age, y = total_ja, group=Condition, colour = Condition)) +
   geom_point(alpha=.7) + geom_smooth(method='lm') + 
   xlab("Age (years)") + ylab("Total Episodes of Joint Attention") +
   langcog::scale_colour_solarized() +
@@ -693,13 +693,11 @@ multiplot(e2bids, e2tja_age, cols=5, layout=matrix(c(1,1,2,2,2), nrow=1))
 # EXPLORATORY ANALYSES (NOT PREREGISTERED)
 
 # Episodes of coordinated joint attention
-cja_mod <- lmer(cja ~ age * Condition + (1 | video), data = e2ja,
-                control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e5)))
-summary(cja_mod) #  Condition: t(80) = 2.47 beta=1.37 p=.01; age*Condition beta=5.24 t(80) = 2.19 p=.02
-e2cja <- get_lmer_reporting_values(cja_mod)
-# also singular fit, convergence code: 0 - Bayesian regression confirms:
-cja_bmod <- stan_glmer(cja ~ age * Condition + (1|video), data=e2ja)
-summary(cja_bmod) # age n.s., sig effect of condition: mean=1.3 95% CI=[.1,2.6]; age*condition mean=5.1 CI=[.5,9.6]
+e2cja_m <- stan_lmer(cja ~ age * Condition + (1 | video), data = e2ja)
+summary(e2cja_m) #  Condition: t(80) = 2.47 beta=1.37 p=.01; age*Condition beta=5.24 t(80) = 2.19 p=.02
+e2cjaCond <- get_stan_glmer_reporting_values(e2cja_m, "ConditionActivity Video")
+e2cjaAgeCond <- get_stan_glmer_reporting_values(e2cja_m, "age:ConditionActivity Video")
+# age n.s., sig effect of condition: mean=1.3 95% CI=[.1,2.6]; age*condition mean=5.1 CI=[.5,9.6]
 #                                        mean    sd     2.5%   25%    50%    75%    97.5%
 # (Intercept)                             5.3    0.4    4.5    5.0    5.3    5.6    6.2 
 # age                                    -2.0    1.4   -4.8   -2.9   -2.0   -1.1    0.9 
@@ -707,24 +705,18 @@ summary(cja_bmod) # age n.s., sig effect of condition: mean=1.3 95% CI=[.1,2.6];
 # age:ConditionVideo                      5.1    2.3    0.5    3.5    5.1    6.5    9.6 
 
 # Episodes of passive joint attention.
-pja_mod <- lmer(pja ~ age * Condition + (1 | video), data = e2ja)
-summary(pja_mod) # age beta=-2.88 t(13.4) = 2.53 p=.02
-e2pja <- get_lmer_reporting_values(pja_mod)
+e2pja_m <- stan_lmer(pja ~ age * Condition + (1 | video), data = e2ja)
+summary(e2pja_m) # age beta=-2.7 95% CI=[-5.1,0.0]
+e2pja <- get_stan_glmer_reporting_values(e2pja_m, "age")
 
 # Total duration of passive joint attention.
-pja_time_mod <- lmer(pja_length ~ age * Condition + (1 | video), data = e2ja,
-                     control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e5)))
-summary(pja_time_mod) # singular - convergence code: 0, age beta=-18.89 t(80) = 2.72 p=.008
-e2pja_time <- get_lmer_reporting_values(pja_time_mod)
-pjat_bmod <- stan_glmer(pja_length ~ age * Condition + (1|video), data=e2ja)
-summary(pjat_bmod) # age: est: -17.9 95% CI = [-33.1,-2.2]
+e2pjat_m <- stan_lmer(pja_length ~ age * Condition + (1|video), data=e2ja)
+summary(e2pjat_m) # age: est: -17.9 95% CI = [-33.1,-2.2] 
+e2pjat <- get_stan_glmer_reporting_values(e2pjat_m, "age")
 
 # Total duration of coordinated joint attention.
-cja_time_mod <- lmer(cja_length ~ age * condition + (1 | video), data = e2ja,
-                     control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e5)))
-summary(cja_time_mod) # singular - convergence code: 0, marginal age: beta=37.35 t(80) = 1.95 p=.05
-cjat_bmod <- stan_glmer(cja_length ~ age * Condition + (1|video), data=e2ja)
-summary(cjat_bmod) # age: est: 35.3 95% CI = [-6.1,77.4] NOT SIGNIFICANT
+e2cjat_m <- stan_glmer(cja_length ~ age * Condition + (1|video), data=e2ja)
+summary(e2cjat_m) # age: est: 35.3 95% CI = [-6.1,77.4] ns
 
 e2_cja <- e2ja %>% group_by(Condition) %>%
   tidyboot_mean(cja)
@@ -733,27 +725,27 @@ e2_cja <- e2ja %>% group_by(Condition) %>%
 ### Exploratory Analyses
 
 Four additional exploratory regressions with a similar structure were carried out to predict the number and duration of coordinated and passive JA episodes.
-The regression predicting the number of episodes of coordinated JA found a significant main effect of condition ($\beta=`r e2cja["ConditionActivity Video","beta"]`$, t(`r e2cja["ConditionActivity Video","df"]`) = `r e2cja["ConditionActivity Video","tval"]`, *p*=`r e2cja["ConditionActivity Video","pval"]`), with more episodes of coordinated JA occurring after the Activity Video (mean: `r round(subset(e2_cja, Condition=="Activity Video")$mean,2)`, 95% CI: [`r round(subset(e2_cja, Condition=="Activity Video")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Activity Video")$ci_upper,2)`]) than after the Control Video (mean: `r round(subset(e2_cja, Condition=="Science Video")$mean,2)`, 95% CI: [`r round(subset(e2_cja, Condition=="Science Video")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Science Video")$ci_upper,2)`]).
-There was no significant effect of age, but there was a significant interaction of age and condition ($\beta=`r e2cja["age:ConditionActivity Video","beta"]`$, t(`r e2cja["age:ConditionActivity Video","df"]`) = `r e2cja["age:ConditionActivity Video","tval"]`, *p*=`r e2cja["age:ConditionActivity Video","pval"]`), shown in Figure \ref{fig:e2ja-coord}, revealing that older children in the Activity Video condition had more episodes of coordinated JA than children in the Control Video condition.
+The regression predicting the number of episodes of coordinated JA found a significant main effect of condition ($\beta=`r e2cjaCond["ConditionActivity Video"]`$, 95% CI = [`r e2cjaCond["95pLB"]`,`r e2cjaCond["95pUB"]`]), with more episodes of coordinated JA occurring after the Activity Video (mean: `r round(subset(e2_cja, Condition=="Activity Video")$mean,2)`, 95% CI: [`r round(subset(e2_cja, Condition=="Activity Video")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Activity Video")$ci_upper,2)`]) than after the Control Video (mean: `r round(subset(e2_cja, Condition=="Science Video")$mean,2)`, 95% CI: [`r round(subset(e2_cja, Condition=="Science Video")$ci_lower,2)`, `r round(subset(e2_cja, Condition=="Science Video")$ci_upper,2)`]).
+There was no significant effect of age, but there was a significant interaction of age and condition ($\beta=`r e2cjaAgeCond["age:ConditionActivity Video"]`$, 95% CI = [`r e2cjaAgeCond["95pLB"]`,`r e2cjaAgeCond["95pUB"]`]), shown in Figure \ref{fig:e2ja-coord}, revealing that older children in the Activity Video condition had more episodes of coordinated JA than children in the Control Video condition.
 The regression predicting the total duration of coordinated JA episodes revealed no significant effects.
 
-In the regression predicting the number of episodes of passive JA, there was a main effect of age ($\beta=`r e2pja["ConditionActivity Video","beta"]`$, t(`r e2pja["ConditionActivity Video","df"]`) = `r e2pja["ConditionActivity Video","tval"]`, *p*=`r e2pja["ConditionActivity Video","pval"]`), showing that older children had more episodes of passive JA with their caregiver.
-The regression predicting the total duration of passive JA revealed a main effect of age ($\beta=`r e2pja_time["ConditionActivity Video","beta"]`$, t(`r e2pja_time["ConditionActivity Video","df"]`) = `r e2pja_time["ConditionActivity Video","tval"]`, *p*=`r e2pja_time["ConditionActivity Video","pval"]`), revealing that older children spent more time in passive JA with their caregiver.
+In the regression predicting the number of episodes of passive JA, there was a main effect of age ($\beta=`r e2pja["age"]`$, 95% CI = [`r e2pja["95pLB"]`,`r e2pja["95pUB"]`]), showing that older children had more episodes of passive JA with their caregiver.
+The regression predicting the total duration of passive JA revealed a main effect of age ($\beta=`r e2pjat["age"]`$, 95% CI = [`r e2pjat["95pLB"]`,`r e2pjat["95pUB"]`]), revealing that older children spent more time in passive JA with their caregiver.
 Overall, these results show that the older children in our sample engage in more and longer episodes of joint attention with their caregivers, and suggest that the Activity Video strengthened this trend in the number of episodes of coordinated JA.
 
 ```{r e2ja-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=5.5, fig.height=3.5, fig.cap = "\\label{fig:e2ja-coord} The number of episodes of coordinated JA by condition and age in Experiment 2. Older children in the Activity Video condition engaged in more episodes of coordinated JA with their caregiver than dyads in the Control Video condition."}
 
 #Episodes of coordinated joint attention
-ms_cja <- d %>% group_by(Condition) %>%
+e2cjad <- e2ja %>% group_by(Condition) %>%
   tidyboot_mean(cja) 
 
-e2cja <- ggplot(ms_cja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+e2cja <- ggplot(e2cjad, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
   geom_point(data=d, aes(x=Condition, y=cja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Episodes of Coordinated JA") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
 
-e2cja_age = ggplot(d, aes(x = age, y = cja, group=Condition, colour = Condition)) +
+e2cja_age = ggplot(e2ja, aes(x = age, y = cja, group=Condition, colour = Condition)) +
   geom_point(alpha=.7) + geom_smooth(method='lm') + 
   xlab("Age (years)") + ylab("Episodes of Coordinated JA") +
   langcog::scale_colour_solarized() + ggthemes::theme_few() 
