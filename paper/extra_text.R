@@ -1,3 +1,7 @@
+notes:
+  - replace bootstrapped 95pct CIs with Bayesian credibility interval?
+  -
+
 unused text
 
 Under such expert guidance, children are encouraged and motivated to engage in more advanced play, undertaking explorations that push the boundaries of what they would be able to do unaided [@Vygotsky1980].

@@ -263,7 +263,7 @@ e1tokens = get_stan_glmer_reporting_values(tokens_mod, "conditionexp") # 54.8
 types_mod <- stan_glmer(types ~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1|video), data=e1ld) 
 summary(types_mod) # nothing 
 
-e1_lexdiv <- lmer_data %>% group_by(condition) %>%
+e1_lexdiv <- e1ld %>% group_by(condition) %>%
   summarise(TTR=mean(TTR), MTLD=mean(MTLD), tokens=mean(tokens)) 
 ```
 
@@ -303,7 +303,7 @@ kable(e1, digits=2, caption="Lexical diversity measures in Experiment 1.")
 ```{r hiddenfigs, include=F}
 e1ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .7)) +
-  geom_point(data=d, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e1ld, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Type/Token Ratio (TTR)") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -311,14 +311,14 @@ e1ttr <- ggplot(ms_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(sta
 
 e1mtld <- ggplot(ms_lex_mtld, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e1ld, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("MTLD") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
 
 e1tokens <- ggplot(ms_tok, aes(x=Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e1ld, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Tokens") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -337,7 +337,7 @@ cohens_d <- function(dat) {
   return( diff(dat$mean) / (sqrt(sum(dat$sd^2)) / 2) )
 }
 
-ttr_means <- d %>% group_by(Condition) %>%
+ttr_means <- e1ld %>% group_by(Condition) %>%
   summarise(mean = mean(TTR), sd = sd(TTR))
 cohens_d(ttr_means) # -1.68 - should we report this?
 ```
@@ -406,7 +406,7 @@ ms_bids1 <- d %>% group_by(Condition) %>%
 
 e1bids <- ggplot(ms_bids1, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=bids_tot), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e1ja, aes(x=Condition, y=bids_tot), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Mean Bids for Joint Attention") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
@@ -417,7 +417,7 @@ ms_tja1 <- d %>% group_by(Condition) %>%
 
 e1tja <- ggplot(ms_tja1, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=total_ja), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e1ja, aes(x=Condition, y=total_ja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Mean Episodes of Joint Attention") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
@@ -528,7 +528,7 @@ summary(e2tokens_m) # NA
 e2MTLD_m <- stan_lmer(MTLD ~ age * condition + (1 | video), data=e2data)
 summary(e2MTLD_m) # NA
 
-e2_lexdiv <- lmer_data %>% group_by(condition) %>%
+e2_lexdiv <- e2data %>% group_by(condition) %>%
   summarise(TTR=mean(TTR), MTLD=mean(MTLD), tokens=mean(tokens)) 
 # predict word types (NOT A PREREGISTERED REGRESSION)
 #types_mod <- lmer(types ~ age * condition + (1 | video), data=lmer_data)
@@ -546,8 +546,8 @@ The means of the lexical measures are shown in Table \ref{e2tab}.
 
 
 ```{r e2tab, echo=F}
-d$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Science Video", "Activity Video"))
-e2 <- d %>% group_by(Condition) %>%
+e2data$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Science Video", "Activity Video"))
+e2 <- e2data %>% group_by(Condition) %>%
   summarise("Mean TTR"=mean(TTR), TTRsd=sd(TTR),
             "Mean MTLD"=mean(MTLD), MTLDsd=sd(MTLD),
             "Mean types"=mean(types), types.sd=sd(types),
@@ -563,7 +563,7 @@ ttr2 <- e2data %>% group_by(Condition) %>%
 
 e2ttr <- ggplot(ttr2, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat="identity") + # labels=addline_format(c("Science Video", "Activity Video"))
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e2data, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("TTR") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -574,7 +574,7 @@ mtld2 <- e2data %>% group_by(Condition) %>%
 e2mtld <- ggplot(mtld2, aes(x = Condition, y = mean, fill = Condition)) + 
   geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e2data, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("MTLD") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -584,7 +584,7 @@ e2tok <- e2data %>% group_by(Condition) %>%
 
 e2tokens <- ggplot(e2tok, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e2data, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Tokens") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -601,7 +601,7 @@ e2typ <- e2data %>% group_by(Condition) %>%
 
 e2types <- ggplot(e2typ, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=types), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e2data, aes(x=Condition, y=types), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Types") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
   theme(legend.position="none") 
@@ -625,7 +625,7 @@ e2ja <- d %>% mutate(bids = bids_tot,
                      age = as.numeric(langcog::scale(age, scale=FALSE)),
                      pja_length = pja_length/1000,
                      cja_length = cja_length/1000,
-                     total_lja = total_lja/1000)
+                     total_lja = total_lja/1000) # convert duration ms -> seconds
 
 # Total number of bids
 e2bids_m <- stan_lmer(bids ~ age * Condition + (1|video), data=e2ja)
@@ -641,8 +641,8 @@ summary(e2tja_m) # total episodes of joint attention -- age, age*condition, cond
 # ConditionVideo                          1.5    0.6    0.3    1.1    1.5    1.9    2.8 
 # age:ConditionVideo                      5.6    2.5    0.7    3.9    5.7    7.4   10.5 
 e2tjaAge = get_stan_glmer_reporting_values(e2tja_m, "age")
-e2tjaCond = get_stan_glmer_reporting_values(e2tja_m, "ConditionVideo")
-e2tjaAgeCond = get_stan_glmer_reporting_values(e2tja_m, "age:ConditionVideo")
+e2tjaCond = get_stan_glmer_reporting_values(e2tja_m, "ConditionActivity Video")
+e2tjaAgeCond = get_stan_glmer_reporting_values(e2tja_m, "age:ConditionActivity Video")
 
 
 e2_bids <- e2ja %>% group_by(Condition) %>%
@@ -657,7 +657,7 @@ Shown in Figure \ref{fig:e2ja} (left panel), parents made significantly more bid
 There were no other significant effects on parental bids for JA.
 
 In the regression predicting the number of episodes of JA, there was a significant main effect of condition ($\beta=`r e2tjaCond["ConditionActivity Video"]`$, 95% CI = [`r e2tjaCond["95pLB"]`,`r e2tjaCond["95pUB"]`]), with more episodes of JA occurring after the Activity Video (mean: `r round(subset(e2_tja, Condition=="Activity Video")$mean,2)`, 95% CI: [`r round(subset(e2_tja, Condition=="Activity Video")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Activity Video")$ci_upper,2)`]) than after the Control Video (mean: `r round(subset(e2_tja, Condition=="Science Video")$mean,2)`, 95% CI: [`r round(subset(e2_tja, Condition=="Science Video")$ci_lower,2)`, `r round(subset(e2_tja, Condition=="Science Video")$ci_upper,2)`]).
-There was also a significant main effect of age ($\beta=`r e2tjaAge["age"]`$, 95% CI = [`r e2bidsAge["95pLB"]`,`r e2bidsAge["95pUB"]`]), showing that the number of episodes of JA decreased with the child's age. 
+There was also a significant main effect of age ($\beta=`r e2tjaAge["age"]`$, 95% CI = [`r e2tjaAge["95pLB"]`,`r e2tjaAge["95pUB"]`]), showing that the number of episodes of JA decreased with the child's age. 
 However, a significant interaction of age and condition ($\beta=`r e2tjaAgeCond["age:ConditionActivity Video"]`$, 95% CI = [`r e2tjaAgeCond["95pLB"]`,`r e2tjaAgeCond["95pUB"]`]), shown in the right panel of Figure \ref{fig:e2ja}, demonstrates that older children in the Activity Video condition did not see a decrease in the number of episodes of JA.
 
 
@@ -678,7 +678,7 @@ e2tja <- ggplot(e2_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_b
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
   theme(legend.position="none") 
 
-e2tja_age = ggplot(e2data, aes(x = age, y = total_ja, group=Condition, colour = Condition)) +
+e2tja_age = ggplot(e2ja, aes(x = age, y = total_ja, group=Condition, colour = Condition)) +
   geom_point(alpha=.7) + geom_smooth(method='lm') + 
   xlab("Age (years)") + ylab("Total Episodes of Joint Attention") +
   langcog::scale_colour_solarized() +
@@ -720,6 +720,11 @@ summary(e2cjat_m) # age: est: 35.3 95% CI = [-6.1,77.4] ns
 
 e2_cja <- e2ja %>% group_by(Condition) %>%
   tidyboot_mean(cja)
+
+
+e2tjat_m <- stan_glmer(total_lja ~ age * Condition + (1|video), data=e2ja)
+summary(e2tjat_m) # anything here?
+
 ```
 
 ### Exploratory Analyses
@@ -733,7 +738,7 @@ In the regression predicting the number of episodes of passive JA, there was a m
 The regression predicting the total duration of passive JA revealed a main effect of age ($\beta=`r e2pjat["age"]`$, 95% CI = [`r e2pjat["95pLB"]`,`r e2pjat["95pUB"]`]), revealing that older children spent more time in passive JA with their caregiver.
 Overall, these results show that the older children in our sample engage in more and longer episodes of joint attention with their caregivers, and suggest that the Activity Video strengthened this trend in the number of episodes of coordinated JA.
 
-```{r e2ja-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=5.5, fig.height=3.5, fig.cap = "\\label{fig:e2ja-coord} The number of episodes of coordinated JA by condition and age in Experiment 2. Older children in the Activity Video condition engaged in more episodes of coordinated JA with their caregiver than dyads in the Control Video condition."}
+```{r e2ja-coord, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=5.5, fig.height=3.5, fig.cap = "The number of episodes of coordinated JA by condition and age in Experiment 2. Older children in the Activity Video condition engaged in more episodes of coordinated JA with their caregiver than dyads in the Control Video condition."}
 
 #Episodes of coordinated joint attention
 e2cjad <- e2ja %>% group_by(Condition) %>%
@@ -741,7 +746,7 @@ e2cjad <- e2ja %>% group_by(Condition) %>%
 
 e2cja <- ggplot(e2cjad, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
-  geom_point(data=d, aes(x=Condition, y=cja), alpha=.2, position = position_jitterdodge()) +
+  geom_point(data=e2ja, aes(x=Condition, y=cja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Episodes of Coordinated JA") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + theme(legend.position="none") 
 
@@ -796,3 +801,8 @@ r_refs(file = "library.bib")
 
 <div id = "refs"></div>
 \endgroup
+
+```{r echo = FALSE, results = 'asis'}
+render_appendix('appendix.Rmd')
+```
+

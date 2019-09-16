@@ -209,7 +209,7 @@ If more than 3 seconds elapsed between bids, they were coded as separate attempt
 An episode of joint attention was considered \emph{passive} if both participants visually focused on an object for 3 or more seconds but the child did not acknowledge the parent.
 If either participant looked away from the object for less than 3 seconds and then returned to the same object it was considered part of the same episode of joint attention.
 A joint attention episode was considered \emph{coordinated} if both participants visually focused on an object for 3 or more seconds and at some point in the interaction the child indicated awareness of interaction with some overt behavior toward the parent such as looking at their face, gesturing, vocalizing, or turn-taking.
-Full details of our guidelines for coding joint attention are available in \href{https://docs.google.com/document/d/1cZrT_Gjt6p0om19lXO-XcFnT09pb0giyhRQ-Pm1yoBU/edit?usp=sharing}{SI}.
+Full details of our guidelines for coding joint attention are available in SI.
 
 A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability.
 The two coders had a reliability of ICC = 0.80 with 95\% confident interval (CI) = {[}0.57,0.92{]} for number of parent bids for JA; ICC = 0.20 with 95\% CI = {[}-0.26,0.58{]} for number of passive JA episodes; ICC = 0.66 with 95\% CI = {[}0.32,0.85{]} for number of coordinated JA episodes; ICC = 0.24 with 95\% CI = {[}-0.21,0.61{]} for total duration of passive JA episodes, and ICC = 0.62 with 95\% CI = {[}0.27,0.83{]} for total duration of coordinated JA episodes.
@@ -228,29 +228,14 @@ For each transcript, the words were lemmatized using \texttt{spacy2} (Honnibal, 
 Although TTR was our preregistered measure of lexical diversity as it has commonly been used, it has been noted that TTR is correlated with the length of a text, which has led to the development of new measures such as the measure of textual lexical diversity (MTLD; McCarthy \& Jarvis, 2010).
 Thus, we also measure lexical diversity with MTLD, which is calculated as the mean length of sequential word strings in a text that maintain a given TTR value (here we use the value proposed by McCarthy and Jarvis (2010): 0.720).
 
-We fit a mixed-effects linear regression predicting TTR as a function of condition, age (centered), gender, and parent's education level with a random intercept per video using lme4 (Bates, Mächler, Bolker, \& Walker, 2015).
-There was significantly lower TTR in the Video condition (mean: 0.32) than in the Control condition (mean: 0.43, \(\beta=\)-0.11, t(52.4) = 4.22, \emph{p}\textless{}.001).
+We fit a Bayesian mixed-effects linear regression predicting TTR as a function of condition, age (centered), gender, and parent's education level with a random intercept per video using rstanarm (Goodrich, Gabry, Ali, \& Brilleman, 2018).
+For effects that are at least 95\% likely to be non-zero according to the posterior distribution, we report estimated coefficients (\(\beta\)) as well as 95\% Bayesian credible intervals (95\% CI), demarcating the range within which 95\% of the posterior predictive values fall.
+There was significantly lower TTR in the Video condition (mean: 0.32) than in the Control condition (mean: 0.43, \(\beta=\)-0.11, 95\% CI={[}-0.16,-0.06{]}).
 There were no significant effects of age, gender, or parent's level of education.
-A similar mixed-effects linear regression instead predicting MTLD also found significantly lower lexical diversity in the Video condition (mean MTLD: 17.87) than in the Control condition (mean: 0.32, \(\beta=\)-8.73, t(55) = 2.67, \emph{p}=.001), with no other significant effects.
+A similar Bayesian mixed-effects linear regression instead predicting MTLD also found significantly lower lexical diversity in the Video condition (mean MTLD: 17.87) than in the Control condition (mean: 27.09, \(\beta=\)-8.62, 95\% CI={[}-15.15,-2.01{]}), with no other significant effects.
 Figure \ref{fig:e1lexdiv} shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
 
-We also conducted similar regressions predicting the number of word tokens and types, finding only a significant effect of condition on the number of word tokens (\(\beta= 56.01\), t(40.4)=2.30, \emph{p}\textless{}.05), with parents using more words in the Video condition (mean: 225, bootstrapped 95\% confidence intervals (CI): {[}199,253{]}) than in the Control condition (mean: 165, bootstrapped 95\% CI: {[}139,192{]}).
-The means of the lexical diversity measures are reported in Table \ref{tab:e1tab}.
-
-\begin{table}[t]
-
-\caption{\label{tab:e1tab}Lexical diversity measures in Experiment 1.}
-\centering
-\begin{tabular}{l|r|r|r|r|r|r|r|r}
-\hline
-Condition & TTR (M) & (sd) & MTLD (M) & (sd) & Types (M) & (sd) & Tokens (M) & (sd)\\
-\hline
-No Video & 0.43 & 0.10 & 27.09 & 15.33 & 67.33 & 22.94 & 165.10 & 75.15\\
-\hline
-Activity Video & 0.32 & 0.09 & 17.87 & 6.28 & 67.37 & 19.01 & 225.43 & 76.07\\
-\hline
-\end{tabular}
-\end{table}
+We also conducted similar regressions predicting the number of word tokens and types, finding only a significant effect of condition on the number of word tokens (\(\beta=\) 56.36, 95\% CI={[}14.02,96.32{]})), with parents using more words in the Video condition (mean: 225, bootstrapped 95\% confidence intervals (CI): {[}199,252{]}) than in the Control condition (mean: 165, bootstrapped 95\% CI: {[}139,193{]}).
 
 \begin{figure}[H]
 
@@ -266,12 +251,11 @@ Activity Video & 0.32 & 0.09 & 17.87 & 6.28 & 67.37 & 19.01 & 225.43 & 76.07\\
 
 We fit a mixed-effects linear regression predicting the number of bids for joint attention (JA) as a function of fixed effects of condition, age (centered), gender, parent's education level, and the subscales of the EPAQ: Early Learning (EL), Affection and Attachment (AA), and Rules and Respect (RR), along with interactions of condition and EL, AA, and RR.
 This lme4 model included random intercepts per video.
-There were significantly more bids for JA in the Video condition (mean: 6.24, sd: 2.79) than in the Control condition (mean: 3.56, sd: 2.50, \(\beta=3.51\), t(40.30) = 2.95, \emph{p}\textless{}.01).
-There were no other significant effects.
+There were significantly more bids for JA in the Video condition (mean: 6.24, sd: 2.79) than in the Control condition (mean: 3.56, sd: 2.50, \(\beta=3.44\), 95\% CI={[}1.12,5.80{]}).
 
 Mixed-effects regressions with the same structure were performed predicting the number of episodes of coordinated and passive JA, and the total duration of time spent in coordinated and passive JA.
 There were no significant effects on the number or total duration of coordinated JA episodes, nor on the total duration of passive JA episodes.
-For the regression predicting the number of passive JA episodes, the only significant effect was an interaction of condition and RR (\(\beta=1.83\), t(41.50) = 2.22, \emph{p}\textless{}.05), showing that for parents in the Video condition, those with higher Rules and Respect subscores engaged in more passive JA episodes.
+For the regression predicting the number of passive JA episodes, the only significant effect was an interaction of condition and RR (\(\beta=1.84\), 95\% CI={[}0.23,3.44{]}), showing that for parents in the Video condition, those with higher Rules and Respect subscores engaged in more passive JA episodes.
 Figure \ref{fig:e1ja} shows the mean number bids for JA and episodes of JA by condition in Experiment 1.
 
 \begin{figure}
@@ -309,7 +293,8 @@ Experiment 2 attempts to replicate these findings from with a restricted number 
 84 infants (F = 36, M = 46) aged 12-24 months (41 12-17.9 month-olds, 43 18-24 month-olds) and their parents participated in the same museum as Experiment 1.
 We included infants who were exposed to English at least 75 percent of the time or who were exposed less but whose participating parent reported that they primarily speak English with their child at home.
 Forty-nine percent of participants (n = 41) had been exposed to two or more languages as indicated by their parent.
-Parents identified their children as White (n = 39), Asian (n = 20), African American/Black (n = 1), Biracial (n = 9), other (n = 7), or declined to state (n = 8). Sixteen parents reported their child was of Hispanic origin.
+Parents identified their children as White (n = 39), Asian (n = 20), African American/Black (n = 1), Biracial (n = 9), other (n = 7), or declined to state (n = 8).
+Sixteen parents reported their child was of Hispanic origin.
 Parents tended to be highly-educated, with reports of highest level of education ranging from some college (n = 5), four-year college (n = 28), some graduate school (n = 2), to completed graduate school (n = 36) or declined to state (n = 13).
 
 \hypertarget{materials.-1}{%
@@ -342,8 +327,8 @@ As noted in the preregistration, we adopt an alpha level of .005 for statistical
 \hypertarget{lexical-diversity-1}{%
 \subsubsection{Lexical Diversity}\label{lexical-diversity-1}}
 
-We fit a mixed-effects linear regression predicting TTR as a function of age (centered) and condition with an interaction term, and with random intercepts per video using lme4 (Bates et al., 2015).
-There was suggestively lower TTR in the Video condition (mean: 0.38) than in the Control condition (mean: 0.48, \(\beta=-0.09\), t(8.60) = 3.33, \emph{p}=0.01).
+We fit a mixed-effects linear regression predicting TTR as a function of age (centered) and condition with an interaction term, and with random intercepts per video using lme4 (Bates, Mächler, Bolker, \& Walker, 2015).
+There was suggestively lower TTR in the Video condition (mean: 0.38) than in the Control condition (mean: 0.48, \(\beta=-0.09\), , 95\% CI={[}-0.15,-0.03{]}).
 There was no significant effect of age, nor a significant interaction.
 The preregistered regression predicting the number of tokens used by parents revealed no significant effects.
 An exploratory mixed-effects linear regression predicting MTLD found no significant effects of age or condition.
@@ -379,12 +364,12 @@ Activity Video & 0.38 & 0.12 & 20.63 & 8.66 & 80.95 & 24.14 & 234.60 & 92.68\\
 \subsubsection{Joint Attention}\label{joint-attention-1}}
 
 As preregistered, we fit mixed-effects linear regressions predicting the number of parental bids for joint attention and the total number of episodes of JA as a function of fixed effects of condition, age (centered), and their interaction, with random intercepts per video.
-Shown in Figure \ref{fig:e2ja} (left panel), parents made significantly more bids for JA after watching the Activity Video (mean: 12.98, bootstrapped 95\% CI: 11.77, 14.18; \(\beta=3.11\), t(80) = 3.52, \emph{p}=0.00)) than after the Science Video (mean: 9.88, 95\% CI: {[}8.69, 11.11{]}, \(\beta=3.11\), t(80) = 3.52, \emph{p}\textless{}.001).
+Shown in Figure \ref{fig:e2ja} (left panel), parents made significantly more bids for JA after watching the Activity Video (mean: 12.96, bootstrapped 95\% CI: 11.74, 14.21; \(\beta=3.06\), 95\% CI = {[}0.96,5.06{]}) than after the Science Video (mean: 9.88, 95\% CI: {[}8.71, 11.07{]}).
 There were no other significant effects on parental bids for JA.
 
-In the regression predicting the number of episodes of JA, there was a significant main effect of condition (\(\beta=1.49\), t(80) = 2.70, \emph{p}=0.01), with more episodes of JA occurring after the Activity Video (mean: 8.78, 95\% CI: {[}7.89, 9.67{]}) than after the Control Video (mean: 7.33, 95\% CI: {[}6.57, 8.06{]}).
-There was also a significant main effect of age (\(\beta=-5.27\), t(80) = 3.48, \emph{p}=0.00), showing that the number of episodes of JA decreased with the child's age.
-However, a significant interaction of age and condition (\(\beta=5.92\), t(80) = 2.61, \emph{p}=0.01), shown in the right panel of Figure \ref{fig:e2ja}, demonstrates that older children in the Activity Video condition did not see a decrease in the number of episodes of JA.
+In the regression predicting the number of episodes of JA, there was a significant main effect of condition (\(\beta=1.49\), 95\% CI = {[}0.26,2.78{]}), with more episodes of JA occurring after the Activity Video (mean: 8.79, 95\% CI: {[}7.95, 9.67{]}) than after the Control Video (mean: 7.33, 95\% CI: {[}6.54, 8.05{]}).
+There was also a significant main effect of age (\(\beta=-5.02\), 95\% CI = {[}-8.23,-1.41{]}), showing that the number of episodes of JA decreased with the child's age.
+However, a significant interaction of age and condition (\(\beta=5.67\), 95\% CI = {[}0.50,10.71{]}), shown in the right panel of Figure \ref{fig:e2ja}, demonstrates that older children in the Activity Video condition did not see a decrease in the number of episodes of JA.
 
 \begin{figure}[H]
 
@@ -399,12 +384,12 @@ However, a significant interaction of age and condition (\(\beta=5.92\), t(80) =
 \subsubsection{Exploratory Analyses}\label{exploratory-analyses}}
 
 Four additional exploratory regressions with a similar structure were carried out to predict the number and duration of coordinated and passive JA episodes.
-The regression predicting the number of episodes of coordinated JA found a significant main effect of condition (\(\beta=1.37\), t(80) = 2.59, \emph{p}=0.01), with more episodes of coordinated JA occurring after the Activity Video (mean: 6.71, 95\% CI: {[}5.92, 7.61{]}) than after the Control Video (mean: 5.34, 95\% CI: {[}4.72, 5.98{]}).
-There was no significant effect of age, but there was a significant interaction of age and condition (\(\beta=5.24\), t(80) = 2.40, \emph{p}=0.02), shown in Figure \ref{fig:e2ja-coord}, revealing that older children in the Activity Video condition had more episodes of coordinated JA than children in the Control Video condition.
+The regression predicting the number of episodes of coordinated JA found a significant main effect of condition (\(\beta=1.36\), 95\% CI = {[}0.16,2.58{]}), with more episodes of coordinated JA occurring after the Activity Video (mean: 6.71, 95\% CI: {[}5.90, 7.56{]}) than after the Control Video (mean: 5.34, 95\% CI: {[}4.68, 6.02{]}).
+There was no significant effect of age, but there was a significant interaction of age and condition (\(\beta=5.34\), 95\% CI = {[}0.80,10.22{]}), shown in Figure \ref{fig:e2ja-coord}, revealing that older children in the Activity Video condition had more episodes of coordinated JA than children in the Control Video condition.
 The regression predicting the total duration of coordinated JA episodes revealed no significant effects.
 
-In the regression predicting the number of episodes of passive JA, there was a main effect of age (\(\beta=0.11\), t(6.90) = 0.27, \emph{p}=0.80), showing that older children had more episodes of passive JA with their caregiver.
-The regression predicting the total duration of passive JA revealed a main effect of age (\(\beta=0.40\), t(80) = 0.16, \emph{p}=0.88), revealing that older children spent more time in passive JA with their caregiver.
+In the regression predicting the number of episodes of passive JA, there was a main effect of age (\(\beta=-2.72\), 95\% CI = {[}-5.07,0.19{]}), showing that older children had more episodes of passive JA with their caregiver.
+The regression predicting the total duration of passive JA revealed a main effect of age (\(\beta=-17.70\), 95\% CI = {[}-32.73,-1.79{]}), revealing that older children spent more time in passive JA with their caregiver.
 Overall, these results show that the older children in our sample engage in more and longer episodes of joint attention with their caregivers, and suggest that the Activity Video strengthened this trend in the number of episodes of coordinated JA.
 
 \begin{figure}[H]
@@ -413,7 +398,7 @@ Overall, these results show that the older children in our sample engage in more
 
 }
 
-\caption{\label{fig:e2ja-coord} The number of episodes of coordinated JA by condition and age in Experiment 2. Older children in the Activity Video condition engaged in more episodes of coordinated JA with their caregiver than dyads in the Control Video condition.}\label{fig:e2ja-coord}
+\caption{The number of episodes of coordinated JA by condition and age in Experiment 2. Older children in the Activity Video condition engaged in more episodes of coordinated JA with their caregiver than dyads in the Control Video condition.}\label{fig:e2ja-coord}
 \end{figure}
 
 \hypertarget{discussion-1}{%
@@ -474,6 +459,9 @@ Cartmill, E. A., Armstrong, B. F., Gleitman, L. R., Goldin-Meadow, S., Medina, T
 
 \leavevmode\hypertarget{ref-Jamaica2014}{}%
 Gertler, P., Heckman, J., Pinto, R., Zanolini, A., Vermeersch, C., Walker, S., \ldots{} Grantham-McGregor, S. (2014). Labor market returns to an early childhood stimulation intervention in jamaica. \emph{Science}, \emph{344}(6187), 998--1001. \url{http://doi.org/10.1126/science.1251178}
+
+\leavevmode\hypertarget{ref-rstanarm}{}%
+Goodrich, B., Gabry, J., Ali, I., \& Brilleman, S. (2018). Rstanarm: Bayesian applied regression modeling via Stan. Retrieved from \url{http://mc-stan.org/}
 
 \leavevmode\hypertarget{ref-Hart1995}{}%
 Hart, B., \& Risley, T. R. (1995). \emph{Meaningful differences in the everyday experience of young american children}. Baltimore, MD: Brookes.
