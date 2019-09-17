@@ -3,7 +3,7 @@ title: "Appendix"
 output: pdf_document
 ---
 
-## Experiment 1
+## Experiment 1 Activities
 
 ### Video A (6-11.9 months) "Pick it up"
 
@@ -41,7 +41,7 @@ Parents are told to give their child a musical instrument to play. They are also
 
 Props: maracas, drum, tambourine, clapper
 
-## Experiment 2
+## Experiment 2 Activities
 
 ### Video A (12-17.9 months) "Give me the toy"
 

@@ -57,3 +57,7 @@ Thus, new methods of delivering parenting advice should be considered.
 But does providing such information change parents' behavior towards young children? 
 And is this advice effective in producing change along the desired dimension? 
 An alternative might be that asking parents to focus on a specific activity that may be novel to them may tax their cognitive resources, resulting in decreases in the quality of their child-directed speech, or in less flexible, lower-quality social interactions.
+
+
+Exp 1 Discussion
+Demographics and EPAQ do not interact with condition, although there was a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (higher education yielding more types and tokens).
