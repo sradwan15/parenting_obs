@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  16 SEP 2019 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  16 SEP 2019 23:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -873,20 +873,20 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 227.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [8]
-<figs/fig-lexdiv-1.pdf, id=221, 463.7325pt x 384.43625pt>
+<figs/fig-lexdiv-1.pdf, id=221, 462.72874pt x 385.44pt>
 File: figs/fig-lexdiv-1.pdf Graphic file (type pdf)
 <use figs/fig-lexdiv-1.pdf>
 Package pdftex.def Info: figs/fig-lexdiv-1.pdf  used on input line 242.
-(pdftex.def)             Requested size: 463.73842pt x 384.44116pt.
+(pdftex.def)             Requested size: 462.72762pt x 385.43906pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [9] [10 <./figs/fig-lexdiv-1.pdf>]
-<figs/fig-JA-1.pdf, id=246, 463.7325pt x 387.4475pt>
+<figs/fig-JA-1.pdf, id=247, 464.73625pt x 387.4475pt>
 File: figs/fig-JA-1.pdf Graphic file (type pdf)
 <use figs/fig-JA-1.pdf>
 Package pdftex.def Info: figs/fig-JA-1.pdf  used on input line 263.
-(pdftex.def)             Requested size: 463.73842pt x 387.45245pt.
+(pdftex.def)             Requested size: 464.74219pt x 387.45245pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -899,7 +899,7 @@ Overfull \hbox (40.87645pt too wide) in paragraph at lines 349--358
  []
 
 [15] [16]
-<figs/e2ja-coord-1.pdf, id=308, 384.43625pt x 242.9075pt>
+<figs/e2ja-coord-1.pdf, id=310, 384.43625pt x 242.9075pt>
 File: figs/e2ja-coord-1.pdf Graphic file (type pdf)
 <use figs/e2ja-coord-1.pdf>
 Package pdftex.def Info: figs/e2ja-coord-1.pdf  used on input line 385.
@@ -919,7 +919,7 @@ Package rerunfilecheck Info: File `manuscript.out' has not changed.
 Here is how much of TeX's memory you used:
  15736 strings out of 492616
  234160 string characters out of 6129482
- 352931 words of memory out of 5000000
+ 352947 words of memory out of 5000000
  19183 multiletter control sequences out of 15000+600000
  80919 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -937,10 +937,10 @@ st/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/lm/lmss8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
 /lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt12
 .pfb>
-Output written on manuscript.pdf (25 pages, 315553 bytes).
+Output written on manuscript.pdf (25 pages, 315617 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 426 compressed objects within 5 object streams
+ 479 PDF objects out of 1000 (max. 8388607)
+ 428 compressed objects within 5 object streams
  132 named destinations out of 1000 (max. 500000)
  10568 words of extra memory for PDF output out of 12000 (max. 10000000)
 

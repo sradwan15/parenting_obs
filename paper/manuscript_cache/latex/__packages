@@ -21,3 +21,4 @@ tidyboot
 knitr
 Rcpp
 rstanarm
+scales

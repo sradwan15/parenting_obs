@@ -351,33 +351,40 @@ names(e1) = c("Condition","TTR (M)", "(sd)", "MTLD (M)", "(sd)", "Types (M)", "(
 kable(e1, digits=2, caption="Lexical diversity measures in Experiment 1.")
 ```
 
-```{r hiddenfigs, include=F}
+```{r e1ld-figs, include=F}
+small_text = theme(
+  plot.title = element_text(size = 12, face="bold"),
+  axis.title.x = element_text(size = 10),
+  axis.text.x = element_text(size = 8),
+  axis.title.y = element_text(size = 10),
+  axis.text.y = element_text(size = 8))
+
 e1ttr <- ggplot(e1_lex, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .7)) +
   geom_point(data=e1ld, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Type/Token Ratio (TTR)") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") + ggtitle("Experiment 1")
-
+  theme(legend.position="none") + ggtitle("Experiment 1") + small_text
+# want carriage return in Condition labels..
 
 e1mtld <- ggplot(e1_mtld, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
   geom_point(data=e1ld, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("MTLD") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") + ggtitle(" ")
+  theme(legend.position="none") + ggtitle(" ") + small_text
 
 e1tokens <- ggplot(e1_tok, aes(x=Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
   geom_point(data=e1ld, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Tokens") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") + ggtitle(" ")
+  theme(legend.position="none") + ggtitle(" ") + small_text
 
 ```
 
 
-```{r fig-lexdiv, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=6.5, fig.height=5.5, fig.cap = "\\label{fig:lexdiv} Mean lexical diversity scores (left: Type/Token ratio, middle: MTLD) and mean number of tokens used by condition in Experiment 1 (top) and Experiment 2 (bottom). Error bars show bootstrapped 95\\% confidence intervals (CIs), and gray dots indicate values for each participant."}
+```{r fig-lexdiv, fig.env = "figure", fig.pos = "H", fig.align='center', fig.width=6.5, fig.height=5.5, fig.cap = "\\label{fig:lexdiv} Mean lexical diversity scores (left: Type/Token ratio, middle: MTLD) and mean number of tokens used by condition (right) in Experiment 1 (top) and Experiment 2 (bottom). Error bars show bootstrapped 95\\% confidence intervals (CIs), and gray dots indicate values for each participant."}
 
 ttr2 <- e2data %>% group_by(Condition) %>%
   tidyboot_mean(TTR) 
@@ -387,7 +394,7 @@ e2ttr <- ggplot(ttr2, aes(x=Condition, y=mean, fill=Condition)) + geom_bar(stat=
   geom_point(data=e2data, aes(x=Condition, y=TTR), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Type/Token Ratio (TTR)") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") + ggtitle("Experiment 2")
+  theme(legend.position="none") + ggtitle("Experiment 2") + small_text
 
 mtld2 <- e2data %>% group_by(Condition) %>%
   tidyboot_mean(MTLD) 
@@ -398,7 +405,7 @@ e2mtld <- ggplot(mtld2, aes(x = Condition, y = mean, fill = Condition)) +
   geom_point(data=e2data, aes(x=Condition, y=MTLD), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("MTLD") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") + ggtitle(" ")
+  theme(legend.position="none") + ggtitle(" ") + small_text
 
 e2tok <- e2data %>% group_by(Condition) %>%
   tidyboot_mean(tokens) 
@@ -408,7 +415,7 @@ e2tokens <- ggplot(e2tok, aes(x = Condition, y = mean, fill = Condition)) + geom
   geom_point(data=e2data, aes(x=Condition, y=tokens), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Number of Word Tokens") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() +
-  theme(legend.position="none") + ggtitle(" ")
+  theme(legend.position="none") + ggtitle(" ") + small_text
 
 #multiplot(e1ttr, e1mtld, e1tokens, cols=3) # Exp1 LD graph
 #multiplot(e2ttr, e2mtld, e2tokens, cols=3) # Exp2 LD graph
@@ -492,7 +499,7 @@ summary(e1cja_time_mod) # NA
 ```
 
 We fit a mixed-effects linear regression predicting the number of bids for joint attention (JA) as a function of fixed effects of condition, age (centered), gender, parent's education level, and the subscales of the EPAQ: Early Learning (EL), Affection and Attachment (AA), and Rules and Respect (RR), along with interactions of condition and EL, AA, and RR. 
-This lme4 model included random intercepts per video. 
+This model included random intercepts per video. 
 There were significantly more bids for JA in the Video condition (mean: `r round(subset(e1bids_M, Condition=="Activity Video")$mean,2)`, sd: `r round(subset(e1bids_M, Condition=="Activity Video")$sd,2)`) than in the Control condition (mean: `r round(subset(e1bids_M, Condition=="No Video")$mean,2)`, sd: `r round(subset(e1bids_M, Condition=="No Video")$sd,2)`, $\beta=`r e1bids["ConditionActivity Video"]`$, 95% CI=[`r e1bids['95pLB']`,`r e1bids['95pUB']`]). 
 
 Mixed-effects regressions with the same structure were performed predicting the number of episodes of coordinated and passive JA, and the total duration of time spent in coordinated and passive JA.
@@ -512,8 +519,8 @@ e1bids <- ggplot(ms_bids1, aes(x = Condition, y = mean, fill = Condition)) + geo
   geom_point(data=e1ja, aes(x=Condition, y=bids_tot), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Mean Bids for Joint Attention") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") + ggtitle("Experiment 1")
- # theme(plot.title = element_text(size = 13, face = "bold"))
+  theme(legend.position="none") + ggtitle("Experiment 1") + small_text
+
 # total joint attention episodes
 ms_tja1 <- e1ja %>% group_by(Condition) %>%
   tidyboot_mean(total_ja) 
@@ -523,22 +530,27 @@ e1tja <- ggplot(ms_tja1, aes(x = Condition, y = mean, fill = Condition)) + geom_
   geom_point(data=e1ja, aes(x=Condition, y=total_ja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Mean Episodes of Joint Attention") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") + ggtitle(" ")
+  theme(legend.position="none") + ggtitle(" ") + small_text
   
 
 e2_cja <- e2ja %>% group_by(Condition) %>%
   tidyboot_mean(cja)
 
+library("scales")
+#show_col(solarized_pal()(2)) # blue, red
+sol_colors = solarized_pal()(2)
+
 e2_bids <- e2ja %>% group_by(Condition) %>%
   tidyboot_mean(bids)
-e2bids <- ggplot(e2_bids, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
+e2bids <- ggplot(e2_bids, aes(x = Condition, y = mean, fill = str_wrap(Condition, 8))) + geom_bar(stat="identity") + 
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), position = position_dodge(width = .9)) +
+  labs(fill="Condition") + 
   geom_point(data=e2ja, aes(x=Condition, y=bids), alpha=.2, position = position_jitterdodge()) +
-  xlab("Condition") + ylab("Total Bids for Joint Attention") +
-  langcog::scale_fill_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") + ggtitle("Experiment 2")
+  xlab("Condition") + ylab("Total Bids for Joint Attention") + 
+  scale_fill_manual(values=sol_colors) + ggthemes::theme_few() + ggtitle("Experiment 2") + small_text +
+  theme(legend.key.height=unit(1.2, "cm"), legend.text=element_text(size=9))
 
-# total JA episodes
+# total JA episodes (not currently graphed)
 e2_tja <- e2ja %>% group_by(Condition) %>%
   tidyboot_mean(total_ja) 
 e2tja <- ggplot(e2_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_bar(stat="identity") + 
@@ -546,18 +558,17 @@ e2tja <- ggplot(e2_tja, aes(x = Condition, y = mean, fill = Condition)) + geom_b
   geom_point(data=e2ja, aes(x=Condition, y=total_ja), alpha=.2, position = position_jitterdodge()) +
   xlab("Condition") + ylab("Total Episodes of Joint Attention") +
   langcog::scale_fill_solarized() + ggthemes::theme_few() + 
-  theme(legend.position="none") + ggtitle(" ")
+  ggtitle(" ") + small_text + theme(legend.position="none")
 
-e2tja_age = ggplot(e2ja, aes(x = Age, y = total_ja, group=Condition, colour = Condition)) +
-  geom_point(alpha=.7) + geom_smooth(method='lm') + 
+e2tja_age = ggplot(e2ja, aes(x = Age, y = total_ja, group=Condition, colour=Condition)) +
+  geom_point(alpha=.8) + geom_smooth(method='lm') + scale_colour_manual(values=rev(sol_colors)) +
   xlab("Age (years)") + ylab("Total Episodes of Joint Attention") +
-  langcog::scale_colour_solarized() +
-  ggthemes::theme_few() + ggtitle(" ")
+  ggthemes::theme_few() + ggtitle(" ") + small_text + theme(legend.position="none")
 
 # multiplot(e1bids, e1tja, cols=2) # old Exp1
 # multiplot(e2bids, e2tja_age, cols=5, layout=matrix(c(1,1,2,2,2), nrow=1))
 multiplot(e1bids, e1tja, e2bids, e2tja_age, 
-          cols=6, layout=matrix(c(1,1,1,2,2,2, 3,3,4,4,4,4), nrow=2, byrow=T)) 
+          cols=6, layout=matrix(c(1,1,1,2,2,2, 3,3,3,4,4,4), nrow=2, byrow=T)) 
 ```
 
 
