@@ -71,7 +71,7 @@
 \affiliation{
 \vspace{0.5cm}
 \textsuperscript{1} Department of Psychology, Stanford University\\\textsuperscript{2} Nextdoor, Inc.\\\textsuperscript{3} Gallaudet University\\\textsuperscript{4} Cornell University}
-\keywords{digital parenting advice; joint attention; lexical diversity; guided play\newline\indent Word count: 4569}
+\keywords{digital parenting advice; joint attention; lexical diversity; guided play\newline\indent Word count: 4576}
 \usepackage{csquotes}
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -231,11 +231,10 @@ Thus, we also measure lexical diversity with MTLD, which is calculated as the me
 We fit a Bayesian mixed-effects linear regression predicting TTR as a function of condition, age (centered), and their interaction with a random intercept per video using rstanarm (Goodrich, Gabry, Ali, \& Brilleman, 2018).
 For effects that are at least 95\% likely to be non-zero according to the posterior distribution, we report estimated coefficients (\(\beta\)) as well as 95\% Bayesian credible intervals (95\% CI), demarcating the range within which 95\% of the posterior predictive values fall.
 There was significantly lower TTR in the Activity Video condition (mean: 0.32) than in the No Video condition (mean: 0.43, \(\beta=\)-0.11, 95\% CI={[}-0.16,-0.06{]}).
-There were no significant effects of age, gender, or parent's level of education.
-A similar Bayesian mixed-effects linear regression instead predicting MTLD also found significantly lower lexical diversity in the Activity Video condition (mean MTLD: 17.87) than in the No Video condition (mean: 27.09, \(\beta=\)-9.30, 95\% CI={[}-15.37,-3.18{]}), with no other significant effects.
+A similar regression instead predicting MTLD also found significantly lower lexical diversity in the Activity Video condition (mean MTLD: 17.87) than in the No Video condition (mean: 27.09, \(\beta=\)-9.30, 95\% CI={[}-15.37,-3.18{]}), with no other significant effects.
 Figure \ref{fig:lexdiv} shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
 
-We also conducted similar regressions predicting the number of word tokens and types, finding only a significant effect of condition on the number of word tokens (\(\beta=\) 59.07, 95\% CI={[}19.58,97.44{]})), with parents using more words in the Activity Video condition (mean: 225, bootstrapped 95\% confidence intervals: {[}199,252{]}) than in the No Video condition (mean: 165, bootstrapped 95\% confidence intervals: {[}139,193{]}).
+We also conducted similar regressions predicting the number of word tokens and types, finding only a significant effect of condition on the number of word tokens (\(\beta=\) 59.07, 95\% CI={[}19.58,97.44{]}), with parents using more words in the Activity Video condition (mean: 225, bootstrapped 95\% confidence intervals: {[}199,252{]}) than in the No Video condition (mean: 165, bootstrapped 95\% confidence intervals: {[}139,193{]}).
 
 \begin{figure}[H]
 
@@ -332,8 +331,8 @@ We then turn to preregistered regressions of parental bids for joint attention a
 \hypertarget{lexical-diversity-1}{%
 \subsubsection{Lexical Diversity}\label{lexical-diversity-1}}
 
-We fit a mixed-effects linear regression predicting TTR as a function of age (centered) and condition with an interaction term, and with random intercepts per video using lme4 (Bates, Mächler, Bolker, \& Walker, 2015).
-There was suggestively lower TTR after the Activity Video (mean: 0.38) than after the Science Video (mean: 0.48, \(\beta=-0.09\), , 95\% CI={[}-0.16,-0.03{]}).
+We fit a Bayesian mixed-effects linear regression predicting TTR as a function of age (centered) and condition with an interaction term, and with random intercepts per video.
+There was lower TTR after the Activity Video (mean: 0.38) than after the Science Video (mean: 0.48, \(\beta=-0.09\), , 95\% CI={[}-0.16,-0.03{]}).
 There was no significant effect of age, nor a significant interaction.
 The preregistered regression predicting the number of tokens used by parents revealed no significant effects.
 An exploratory mixed-effects linear regression predicting MTLD found no significant effects of age or condition.
@@ -364,7 +363,7 @@ Shown in Figure \ref{fig:JA} (left bottom), parents made significantly more bids
 There were no other significant effects on parental bids for JA.
 
 In the regression predicting the number of episodes of JA, there was a significant main effect of condition (\(\beta=1.48\), 95\% CI = {[}0.15,2.78{]}), with more episodes of JA occurring after the Activity Video (mean: 8.80, 95\% CI: {[}7.97, 9.63{]}) than after the Control Video (mean: 7.33, 95\% CI: {[}6.58, 8.11{]}).
-There was also a significant main effect of age (\(\beta=-5\), 95\% CI = {[}-8.27,-1.41{]}), showing that the number of episodes of JA decreased with the child's age.
+There was also a significant main effect of age (\(\beta=-5\), 95\% CI = {[}-8.27,-1.41{]}), showing that older children participated in fewer episodes of JA.
 However, a significant interaction of age and condition (\(\beta=5.60\), 95\% CI = {[}0.46,10.37{]}), shown in Figure \ref{fig:JA} (right bottom), demonstrates that there were more episodes of JA for older children in the Activity Video condition (comparable to episodes of JA for younger children).
 
 \hypertarget{exploratory-analyses-1}{%
@@ -377,7 +376,7 @@ The regression predicting the total duration of coordinated JA episodes revealed
 
 In the regression predicting the number of episodes of passive JA, there was a main effect of age (\(\beta=-2.70\), 95\% CI = {[}-5.07,0.08{]}), showing that older children had more episodes of passive JA with their caregiver.
 The regression predicting the total duration of passive JA revealed a main effect of age (\(\beta=-18.32\), 95\% CI = {[}-33.50,-2.91{]}), revealing that older children spent more time in passive JA with their caregiver.
-Overall, these results show that the older children in our sample engage in more and longer episodes of joint attention with their caregivers, and suggest that the Activity Video strengthened this trend in the number of episodes of coordinated JA.
+Overall, these results show that the older children in our sample engage in more and longer episodes of joint attention with their caregivers, and that activity videos in particular lead to more episodes of coordinated JA.
 
 As for Experiment 1, we conducted a corpus characteristic analysis to examine differences parents' language use in the two conditions.
 The words that are strongly indicative of being from the Activity Video condition include \enquote{big}, \enquote{little}, \enquote{give}, \enquote{small}, \enquote{yellow}, \enquote{take}, and \enquote{put}, while words that are most characteristic of the Science Video condition include \enquote{beep}, \enquote{like}, \enquote{say}, \enquote{does}, \enquote{uhoh}, \enquote{for}, and \enquote{neigh}.
@@ -394,22 +393,18 @@ The words that are strongly indicative of being from the Activity Video conditio
 \hypertarget{discussion-1}{%
 \section{Discussion}\label{discussion-1}}
 
-This study investigated how parents change their interactions with their young children on the basis of one of several short video parenting messages from a commercial parenting app, which suggest interactive toy-based activities (e.g., learning animal sounds), along with a scientific justification.
-Parents in the control conditions received either no video (Experiment 1) or a video of a recent finding in developmental psychology (Experiment 2), and then played with their child for three minutes using the same sets of toys given to those in the experimental conditions.
-The quality of parents' interactions with their children were measured by the lexical diversity of their child-directed speech, and through behavioral coding of bids for and episodes of joint attention (JA).
-
-Experiment 1 investigated 6--24-month-olds, and found a greater number of bids for JA from parents after watching the activity video, but no difference in the number of JA episodes.
-Experiment 2 (12--24-month-olds) replicated this greater number of bids for JA after the activity video, and moreover found that while the number of JA episodes dwindled for older infants in the control condition, dyads in the activity video condition achieved an overall higher and constant number of JA episodes.
+This study investigated whether and how digital parenting advice alters parents' interactions with their toddlers during a 3-minute play period.
+In Experiment 1, parents of 6--24-month-olds made more bids for JA after watching the activity video as compared to no video, which was also found in the parents of 12--24-month-olds in Experiment 2 in comparison to a science video control.
+Experiment 2 moreover found fewer JA episodes for parents of older infants after a science video, while parents of older children engaged in more JA after the activity video.
 In combination, these results suggest that short parenting messages suggesting activities can encourage parents to make more attempts to engage their child in joint attention, and that in some cases--especially in older children--these bids are successful in increasing engagement.
 
-Experiment 1 found lower lexical diversity in parents' speech after watching the activity video, but the average number of word tokens used was higher after the activity video, and the number of word types was the same in both conditions.
-Experiment 2 had similar lexical diversity results, finding suggestively lower Type-Token Ratio after the activity video, although the length-corrected lexical diversity measure (MTLD) did not differ significantly.
-However, neither the number of tokens nor the number of types significantly differed betwen conditions in Experiment 2.
-Although it may at first blush seem worrisome that the activity videos lead to somewhat lower lexical diversity, this worry is mitigated by the fact that this difference is explained not by fewer word types but by a greater number of word tokens used by parents after the activity video (significantly in Experiment 1, and numerically in Experiment 2).
-It may be that parents are relatively more repetitive after watching the activity video in their attempt to stick to the prescribed task, but overall they talk more.
+Both experiments also found that activity videos led to lower lexical diversity in parents' child-directed speech (TTR in both; MTLD only in Exp. 1). However, activity videos resulted in parents using more word tokens (significant in Exp. 1; numerical in Exp. 2), while the number of word types did not differ significantly across conditions.
+Thus, although activity videos led to lower lexical diversity during play, this resulted not from fewer word types but from the use of more word tokens.
+Taken together with the greater number of bids for joint attention from parents, we suggest that the activity videos may lead parents to more persistently and repetitively attempt to engage their child in the prescribed activity.
+Indeed, the words identified by the corpus analysis as being words most characteristic of the activity videos were related to requests (e.g., \enquote{give}, \enquote{put}, \enquote{take}), whereas words characteristic of the control conditions were more invitational (e.g., \enquote{say}, \enquote{let}, \enquote{like}).
 
-Taken together, the results of this study show that digital parenting interventions recommending particular play activities to parents of young children can influence both the quality and quantity of child-directed speech, as well as parents attempts to engage their children in joint attention---at least in the short term.
-Future studies should investigate whether these changes in parents' speech and attempts to engage their children continue after the treatment.
+In sum, the results of this study show that digital parenting interventions recommending particular play activities to parents of young children can influence both the quality and quantity of child-directed speech, as well as parents attempts to engage their children in joint attention---at least in the short term.
+Future studies should investigate whether these changes in parents' speech and attempts to engage their children persist after the treatment.
 Another target for future study is to determine whether, over a longer treatment period, children begin to respond to the increased bids for joint attention and greater number of tokens by engaging more with their parent, and perhaps even beginning to play differently.
 
 \hypertarget{acknowledgements}{%
@@ -430,9 +425,6 @@ Thanks to members of the Language and Cognition Lab at Stanford for helpful disc
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-Baldwin1991}{}%
 Baldwin, D. (1991). Infants' contribution to the achievement of joint reference. \emph{Child Development}, \emph{62}, 875--890.
-
-\leavevmode\hypertarget{ref-lme4}{}%
-Bates, D., Mächler, M., Bolker, B., \& Walker, S. (2015). Fitting linear mixed-effects models using lme4. \emph{Journal of Statistical Software}, \emph{67}(1), 1--48. \url{http://doi.org/10.18637/jss.v067.i01}
 
 \leavevmode\hypertarget{ref-Bigelow2004}{}%
 Bigelow, A. E., MacLean, K., \& Proctor, J. (2004). The role of joint attention in the development of infants' play with objects. \emph{Developmental Science}, \emph{7}, 518--526.

@@ -61,3 +61,7 @@ An alternative might be that asking parents to focus on a specific activity that
 
 Exp 1 Discussion
 Demographics and EPAQ do not interact with condition, although there was a marginal effect of RR score on lexical diversity (lower diversity for higher RR scores), and marginal effects of parent education on word types and tokens (higher education yielding more types and tokens).
+
+Discussion
+
+Parents in the control conditions received either no video (Experiment 1) or a video of a recent finding in developmental psychology (Experiment 2), and then played with their child for three minutes using the same sets of toys given to those in the experimental conditions.
