@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -18,7 +18,7 @@
 
 
 %com: 	mother laughs.
-*MOT:	come on Zio what’s this one?
+*MOT:	come on CHILD what’s this one?
 %com:	clicking noises.
 *MOT:	what color’s the car?
 %com:	clicking noises.
@@ -26,15 +26,15 @@
 %com: 	rustling noises.
 %com:	loud children’s voices in the background.
 *MOT:	yup.
-*MOT: 	what’s this Zio? 
-*MOT:	Zio?
+*MOT: 	what’s this CHILD? 
+*MOT:	CHILD?
 %com:	mother sighs.
 %com:	clicking noises.
 *MOT: 	hmmm. 
 *MOT: 	come here. 
 %com:	clicking noises.
-*MOT: 	what color is this Zio? 
-*MOT: 	Zio?
+*MOT: 	what color is this CHILD? 
+*MOT: 	CHILD?
 %com:	tapping noises.
 *MOT:	green.
 *MOT: 	come here.
@@ -50,7 +50,7 @@
 %com:	clicking noises.
 *MOT: 	don’t do that honey.
 %com: 	rustling noises.
-*MOT: 	Zio no don’t do that. 
+*MOT: 	CHILD no don’t do that. 
 %com: 	mother laughs.
 *MOT: 	come here. 
 %com:	loud children’s voices in the background.
@@ -84,7 +84,7 @@
 *MOT: 	pink.
 %com:	tapping noises.
 *MOT: 	don’t do that. 
-*MOT: 	don’t touch that Zio. 
+*MOT: 	don’t touch that CHILD. 
 *MOT: 	come here. 
 *MOT:	come here.
 %com: 	rustling noises.
@@ -96,7 +96,7 @@
 %com:	loud children’s voices in the background.
 %com: 	mother sighs.
 %com: 	rustling noises.
-*MOT: 	sit down Zio. 
+*MOT: 	sit down CHILD. 
 *MOT: 	come here. 
 *MOT: 	come here. 
 *MOT: 	sit down right here. 

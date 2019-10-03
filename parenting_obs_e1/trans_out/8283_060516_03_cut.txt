@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -61,7 +61,7 @@ Com: 	clicking noises.
 %com: 	murmuring. 
 *MOT: 	look it. 
 *MOT: 	look it.
-*MOT: 	looklooklook.
+*MOT: 	look look look.
 %com: 	clicking noises. 
 *MOT: 	you know there’s something. 
 *MOT: 	there’s a something familiar that you love to play with at home.

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -32,12 +32,12 @@
 *MOT:		all right.
 %com:		sounds in the background.
 *MOT:		drive.
-*MOT:		good job Mi.
-*MOT:		gogogo.
+*MOT:		good job CHILD.
+*MOT:		go go go.
 *MOT:		how about the frog?
 *MOT:		here’s the frog.
 *MOT:		can you give me the frog?
-*MOT:		thank you MiMi
+*MOT:		thank you CHILD
 *MOT:		ribbit.
 *MOT:		ribbit.
 *MOT:		can you ribbit?
@@ -51,7 +51,7 @@
 *MOT:		[xxx] an elephant?
 *MOT:		can you give me the green elephant?
 *MOT:		can I see?
-*MOT:		thank you Mia.
+*MOT:		thank you CHILD.
 %com:		sounds in the background.
 *MOT:		where the boat?
 *MOT:		which one was the boat?

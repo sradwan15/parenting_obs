@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -17,10 +17,10 @@
 
 
 
-*MOT:	okay Grayson.
+*MOT:	okay CHILD.
 %com:		child making music.
 *MOT:	come here.
-*MOT:	Grayson.
+*MOT:	CHILD.
 *MOT:	come over here.
 *com:		instrument dropped.
 *MOT:	oops.
@@ -55,10 +55,10 @@
 *CHI:		[xxx]
 *MOT:	yeah.
 *CHI:		[xxx]
-*MOT:	Grayson can you bring me the small car?
+*MOT:	CHILD can you bring me the small car?
 *MOT:	where's the small car?
 *MOT:	over here.
-*MOT:	Grayson bring me the small car.
+*MOT:	CHILD bring me the small car.
 *MOT:	here's the large car.
 *MOT:	can you put it next to it?
 *MOT:	is that the large car?

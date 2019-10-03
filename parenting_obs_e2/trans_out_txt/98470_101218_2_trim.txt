@@ -1,4 +1,4 @@
-﻿*FAT:	Truck. Do you like trucks? Trucks your favorite thing? 
+*FAT:	Truck. Do you like trucks? Trucks your favorite thing? 
 
 *CHI 2:	Have it. 
 
@@ -22,7 +22,7 @@
 
 *CHI 2:	Put truck, gone home. 
 
-*FAT:	Okay. Hey, Isaac, where’s the bucket? 
+*FAT:	Okay. Hey, CHILD, where’s the bucket? 
 
 *CHI 2:	Bucket. 
 
@@ -42,7 +42,7 @@
 
 *CHI 2:	Inka, inka, truck, oh truck!
 
-*FAT:	Yeah. Hey, Isaac, which one is red? 
+*FAT:	Yeah. Hey, CHILD, which one is red? 
 *CHI 2:	Orange!
 
 *FAT:	Which one is red? 

@@ -1,4 +1,4 @@
-﻿*MOT:	This is yellow. Yellow car. This is blue. Blue car. This is blue block. This is yellow block. I know, that’s very interesting. Look at this. What is this? 
+*MOT:	This is yellow. Yellow car. This is blue. Blue car. This is blue block. This is yellow block. I know, that’s very interesting. Look at this. What is this? 
 
 *CHI:	Mama.
 
@@ -18,7 +18,7 @@
 
 *CHI:	[xxx]
 
-*MOT:	I know, I know. Come sit with me. Where’s the yellow car, Luca? Which one is yellow? Okay, not now. [Kisses] Later. Show me which one – show me which one is yellow car. 
+*MOT:	I know, I know. Come sit with me. Where’s the yellow car, CHILD? Which one is yellow? Okay, not now. [Kisses] Later. Show me which one – show me which one is yellow car. 
 
 *CHI:	[xxx]
 
@@ -26,7 +26,7 @@
 
 *CHI:	[xxx]
 
-*MOT:	This is yellow and this is yellow also. We’ll put them on the yellow blocks. And this is red and this is green. Red and green. Where is the blue car? Can you give me the blue car? I know you want to go. We’ll be – we’ll go. Luca? Luca? Oh, look at that. This is black. Come sit with me. Can you give me the blue car, please? Luca?   
+*MOT:	This is yellow and this is yellow also. We’ll put them on the yellow blocks. And this is red and this is green. Red and green. Where is the blue car? Can you give me the blue car? I know you want to go. We’ll be – we’ll go. CHILD? CHILD? Oh, look at that. This is black. Come sit with me. Can you give me the blue car, please? CHILD?   
 
 [End of Audio]
 

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -22,16 +22,16 @@
 *MOT:	yeah.
 %com:	shaking noises. 
 %com:	loud tapping noises. 
-*MOT:	oh maybe we can turn this around Krishna.
+*MOT:	oh maybe we can turn this around CHILD.
 *MOT:	back.
 %com:	child fusses.
 %com:	shaking noises. 
 %com:	loud tapping noises. 
-*MOT:	shakeshakeshake.
+*MOT:	shake shake shake.
 *MOT:	music?
 %com:	clicking noises.
 *MOT:	come.
-*CHI:	Krishna.
+*CHI:	CHILD.
 %com:	jingling noises.
 %com:	loud tapping noises. 
 %com:	jingling noises.
@@ -42,12 +42,12 @@
 %com: 	mother gasps.
 %com:	child fusses.
 *MOT:	[xxx]
-*MOT:	oh Krishna get out the circles. 
+*MOT:	oh CHILD get out the circles. 
 %com:	jingling noises.
 *MOT:	do you see the circles?
 %com:	jingling noises.
 %com:	loud tapping noises. 
-*MOT:	Krishna. 
+*MOT:	CHILD. 
 %com:	jingling noises.
 *MOT:	balls. 
 *CHI:	[xxx]
@@ -61,7 +61,7 @@
 *MOT:	circles.
 *MOT:	good.
 %com:	loud tapping noises. 
-*MOT:	ahahahahahaha.
+*MOT:	aha haha haha ha.
 %com:	loud tapping noises. 
 %com:	child fusses.
 %com:	clicking noises.
@@ -69,9 +69,9 @@
 *MOT:	[xxx]
 %com:	loud tapping noises. 
 %com:	shaking noises. 
-*MOT:	shakeshakeshakeshakeshake.
+*MOT:	shake shake shake shake shake.
 %com:	loud tapping noises. 
-*MOT: 	ohohohoh.
+*MOT: 	ohoh ohoh.
 %com:	loud tapping noises. 
 %com:	child fusses.
 *MOT:	[xxx]
@@ -96,7 +96,7 @@
 *MOT:	okay.
 %com:	loud tapping noises. 
 *MOT:	music.
-*MOT:	and Krishna lights.
+*MOT:	and CHILD lights.
 *CHI:	[xxx]
 *MOT:	where do we see lights?
 %com: 	mother gasps.
@@ -104,7 +104,7 @@
 %com:	loud tapping noises. 
 %com:	clicking noises.
 *MOT: 	oh, gogo. 
-*MOT: 	Krishna [xxx].
+*MOT: 	CHILD [xxx].
 %com:	child fusses.
 *MOT:	[xxx].
 *MOT: 	oh we cannot open that. 
@@ -117,7 +117,7 @@
 %com:	tapping noises.
 %com:	jingling noises.
 %com:	loud tapping noises. 
-*MOT:	Krishna use this ball. 
+*MOT:	CHILD use this ball. 
 *MOT: 	okay?
 %com:	loud tapping noises. 
 *CHI:	[xxx]
@@ -126,15 +126,15 @@
 *MOT:	go.
 *MOT:	[xxx]
 *MOT: 	wait. 
-*MOT:	Krishna.
+*MOT:	CHILD.
 %com:	clicking noises.
-*MOT:	Krishna.
+*MOT:	CHILD.
 %com:	clicking noises.
 *MOT:	and what about this one?
 %com:	shaking noises. 
 %com:	tapping noises.
 %com:	jingling noises.
-*MOT:	Krishna not on top of that.
+*MOT:	CHILD not on top of that.
 %com:	shaking noises. 
 *MOT: 	this you can use your hand.
 %com:	shaking noises. 

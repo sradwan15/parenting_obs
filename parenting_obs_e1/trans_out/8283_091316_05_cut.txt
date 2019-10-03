@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -95,8 +95,8 @@
 *MOT: 	moo. 
 *MOT: 	moo. 
 *MOT: 	oh you want the frog?
-*MOT: 	ribbet.
-*MOT: 	ribbet.
+*MOT: 	ribbit.
+*MOT: 	ribbit.
 %com: 	mother gasps.
 %com: 	mother makes sound effects.
 *MOT: 	baa. 

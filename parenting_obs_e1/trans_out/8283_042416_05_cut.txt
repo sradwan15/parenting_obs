@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -124,7 +124,7 @@
 *MOT: 	yeah?
 *MOT: 	want to do the cow?
 *MOT: 	cowcow. 
-*MOT: 	Elena. 
+*MOT: 	CHILD. 
 %com:	tapping noises.
 *MOT: 	hello. 
 *MOT: 	the cow. 

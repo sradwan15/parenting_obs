@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -17,7 +17,7 @@
 
 
 
-*MOT:	sit in the circle Payton.
+*MOT:	sit in the circle CHILD.
 %com: 	rustling noises. 
 %com:	loud children’s voices in the background.
 *MOT: 	put the horsey in the circle.
@@ -112,7 +112,7 @@
 *MOT: 	good job. 
 *MOT: 	drive your car.
 *CHI:	[xxx]
-*MOT: 	ayayay nasty.
+*MOT: 	ay ay ay nasty.
 *CHI:	[xxx]
 *MOT: 	you don’t put toys in mouth.
 *MOT: 	toys are to play with.

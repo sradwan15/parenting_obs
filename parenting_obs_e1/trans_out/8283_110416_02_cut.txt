@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -61,7 +61,7 @@
 *MOT:	like this?
 %com:	clicking noises.
 *CHI:	[xxx]
-*CHI:	yeahyeah.
+*CHI:	yeah yeah.
 %com:	clicking noises.
 %com:	shaking noises. 
 *MOT:	do you like these toys?
@@ -76,7 +76,7 @@
 %com:	clicking noises.
 *MOT:	you’re done?
 *CHI:	yeah.
-*CHI:	yeahyeah.
+*CHI:	yeah yeah.
 *MOT:	you’re all done?
 *CHI:	yeahyeah.
 %com: 	mother laughs.
@@ -86,18 +86,18 @@
 *MOT:	is this side different than this side?
 %com:	loud tapping noises. 
 *CHI:	yeah.
-*CHI:	[xxx] yeahyeah.
+*CHI:	[xxx] yeah yeah.
 %com:	shaking noises. 
-*CHI:	yeahyeah.
+*CHI:	yeah yeah.
 *MOT: 	these are pretty cool right?
 %com:	loud tapping noises.
 *CHI:	[xxx]
-*CHI:	yeahyeah.
+*CHI:	yeah yeah.
 %com: 	rustling noises.
 *MOT:	are you done? 
 *MOT:	are you cleaning up?
 %com:	shaking noises. 
-*CHI:	yeahyeah.
+*CHI:	yeah yeah.
 %com:	shaking noises. 
 *MOT:	alright when you make these in a little tower you can be done playing.
 %com:	jingling noises.

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -172,7 +172,7 @@
 *FAT:		look at this one.
 *FAT:		look at the tugboat.
 %com:		sounds in the background.
-*FAT:		voomvoomvoom.
+*FAT:		voom voom voom.
 *FAT:		froggy.
 *FAT:		where’d he go?
 *FAT:		over there.

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -20,8 +20,8 @@
 *MOT: 	yeah?
 *MOT: 	can you?
 *MOT: 	can you do that?
-*MOT: 	ribbet.
-*MOT: 	ribbet. 
+*MOT: 	ribbit.
+*MOT: 	ribbit. 
 %com: 	mother laughs.
 *MOT: 	ah is that what the frog says? 
 *MOT: 	okay show me.
@@ -31,7 +31,7 @@
 *MOT: 	how does it hop?
 %com: 	mother gasps.
 *MOT: 	yeah?
-*MOT: 	ribbet.
+*MOT: 	ribbit.
 *CHI:	[xxx]
 *CHI:	[xxx]
 %com: 	tapping noises. 

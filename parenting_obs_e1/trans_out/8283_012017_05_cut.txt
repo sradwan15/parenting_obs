@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -20,37 +20,37 @@
 *MOT: 	can you put all the animals in here?
 %com: 	jingling noises. 
 *MOT: 	there goes the froggy. 
-*MOT: 	ribbetribbetribbet. 
+*MOT: 	ribbit ribbit ribbit. 
 %com: 	rustling noises. 
 *MOT: 	here’s the sheep.
 *MOT: 	what’s the sheep say?
-*MOT: 	mmbaa.
-*MOT: 	mmbaa. 
+*MOT: 	mm baa.
+*MOT: 	mm baa. 
 %com: 	rustling noises. 
 *MOT: 	and you got a cow.
 *MOT: 	moo.
 *MOT: 	is the cow.
 *MOT: 	byebye cow. 
 *MOT: 	and then the horsey. 
-*MOT: 	horsey goes neighneigh. 
+*MOT: 	horsey goes neigh neigh. 
 *MOT: 	should we get one?
 *MOT: 	you want to get this one?
 *MOT: 	the froggy? 
-*MOT: 	ribbetribbetribbet.
+*MOT: 	ribbit ribbit ribbit.
 %com:	loud children’s voices in the background.
 *MOT:	you going to get the froggy?
 *MOT: 	there’s the froggy.
-*MOT: 	ribbetribbet.
-*MOT: 	ribbetribbet.
+*MOT: 	ribbit ribbit.
+*MOT: 	ribbit ribbit.
 *MOT: 	is that the froggy?
 %com:	loud children’s voices in the background.
-*MOT: 	ribbetribbet.
+*MOT: 	ribbit ribbit.
 *MOT: 	what was under this one?
 *MOT: 	is this the sheep?
 %com:	loud children’s voices in the background.
-*MOT: 	you want to get the sheep Melanie?
-*MOT: 	mmbaa.
-*MOT:	mmbaa.
+*MOT: 	you want to get the sheep CHILD?
+*MOT: 	mm baa.
+*MOT:	mm baa.
 *MOT: 	look. 
 %com: 	mother gasps. 
 *MOT: 	here’s the sheep.
@@ -59,15 +59,15 @@
 *MOT: 	you like the bowl?
 %com:	loud children’s voices in the background.
 *MOT:	you see the sheep?
-*MOT: 	mmbaa
-*MOT: 	mmbaa.
+*MOT: 	mm baa
+*MOT: 	mm baa.
 %com:	loud children’s voices in the background.
 *MOT: 	you like the sheep?
 %com:	loud children’s voices in the background.
 *MOT: 	that’s the sheep.
 *MOT: 	the sheep and the frog.
-*MOT: 	ribbetribbet.
-*MOT: 	mmbaa. 
+*MOT: 	ribbit ribbit.
+*MOT: 	mm baa. 
 %com:	loud children’s voices in the background.
 *MOT: 	yeah what was under this one? 
 %com:	tapping noises.
@@ -103,7 +103,7 @@
 *MOT: 	what’d he have?
 *MOT: 	a cow?
 *MOT: 	E-I-E-I-O. 
-*MOT: 	with a moomoo here. 
+*MOT: 	with a moo moo here. 
 *MOT: 	and a moo there. 
 *MOT: 	here a moo there a moo.
 *MOT: 	everywhere a moo. 
@@ -112,9 +112,9 @@
 %com:	loud children’s voices in the background.
 *MOT: 	want to hide these animals? 
 *MOT: 	hide the froggy again?
-*MOT: 	ribbetribbet.
+*MOT: 	ribbit ribbit.
 *MOT: 	and we hide the sheep. 
-*MOT: 	mmbaa. 
+*MOT: 	mm baa. 
 *MOT: 	byebye sheep.
 *MOT:	byebye frog. 
 *MOT: 	can you put the cow away? 
@@ -122,7 +122,7 @@
 %com:	tapping noises.
 *MOT: 	remember what was under this one?
 *MOT: 	it’s a horsey.
-*MOT: 	neighneigh.
+*MOT: 	neigh neigh.
 %com: 	mother gasps. 
 *MOT: 	there’s a horsey. 
 %com:	mother laughs.

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -20,13 +20,13 @@
 %com: 	mother gasps.
 *MOT: 	what are you doing?
 %com: 	mother gasps.
-*MOT: 	good job Luis.
+*MOT: 	good job CHILD.
 %com: 	child laughs. 
 *MOT: 	oh you like those.
 %com: 	loud tapping noises. 
 *MOT: 	those are new huh?
-*MOT: 	ohohoh.
-*MOT: 	ohohoh.
+*MOT: 	oh oh oh.
+*MOT: 	oh oh oh.
 *MOT: 	oh. 
 *MOT: 	ouch. 
 %com: 	loud tapping noises. 
@@ -35,8 +35,8 @@
 *MOT: 	you like the noise?
 *MOT: 	yeah?
 %com: 	mother gasps.
-*MOT: 	ohohoh.
-*MOT: 	ouchouchouch.
+*MOT: 	oh oh oh.
+*MOT: 	ouch ouch ouch.
 *MOT: 	ouch.
 %com:	mother gasps.
 %com: 	mother laughs.
@@ -60,10 +60,10 @@
 %com: 	clicking noises. 
 %com: 	clicking noises. 
 *MOT: 	a little car [xxx]?
-*MOT: 	a little care like Carmelo’s toys. 
+*MOT: 	a little care like CHILD's toys. 
 %com: 	clicking noises. 
 *MOT: 	look at. 
-*MOT: 	see little cars like Carmelo’s toys. 
+*MOT: 	see little cars like CHILD's toys. 
 %com: 	child laughs. 
 %com: 	mother laughs. 
 *CHI:	[xxx]

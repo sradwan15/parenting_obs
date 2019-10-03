@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -33,7 +33,7 @@
 *MOT:	shakeshakeshake.
 %com:	jingling noises.
 *MOT:	can you shake? 
-*MOT:	oh very nice Haley.
+*MOT:	oh very nice CHILD.
 %com:	mother whispering.
 *MOT: 	can you put everything everything on top?
 %com: 	rustling noises.
@@ -55,18 +55,18 @@
 *MOT:	you make music?
 *CHI:	[xxx]
 %com:	shaking noises. 
-*MOT:	shakeshakeshake.
+*MOT:	shake shake shake.
 %com:	shaking noises.
-*MOT:	shakeshakeshake.
-*MOT:	shakeshake.
+*MOT:	shake shake shake.
+*MOT:	shake shake.
 %com:	shaking noises. 
 *CHI:	[xxx]
 %com: 	mother gasps.
-*MOT: 	shakeshakeshake. 
+*MOT: 	shake shake shake. 
 %com:	clicking noises.
-*MOT:	shakeshakeshake.
+*MOT:	shake shake shake.
 %com:	shaking noises. 
-*MOT:	Haley.
+*MOT:	CHILD.
 %com:	louder tapping noises.
 *MOT: 	you make music?
 *MOT: 	you make music?
@@ -75,9 +75,9 @@
 *MOT:	yeah.
 %com:	mother makes swooshing sound effect.
 %com:	louder tapping noises.
-*MOT:	can you clapclapclap?
+*MOT:	can you clap clap clap?
 %com:	louder tapping noises.
-*MOT: 	Haley look at this.
+*MOT: 	CHILD look at this.
 %com:	jingling noises.
 *MOT:	look at this. 
 %com:	jingling noises.
@@ -85,7 +85,7 @@
 %com:	jingling noises.
 *MOT:	tambourine.
 %com:	jingling noises.
-*MOT: 	Haley. 
+*MOT: 	CHILD. 
 %com:	jingling noises.
 *MOT:	tambourine. 
 %com:	jingling noises.
@@ -94,33 +94,33 @@
 *MOT: 	let’s see. 
 %com:	tapping noises.
 *MOT:	use your hands?
-*MOT:	tap bopbop. 
+*MOT:	tap bop bop. 
 %com:	tapping noises.
-*MOT:	bopbopbop.
-*MOT: 	Haley.
+*MOT:	bop bop bop.
+*MOT: 	CHILD.
 %com:	tapping noises.
-*MOT: 	bopbop.  
+*MOT: 	bop bop.  
 %com:	tapping noises.
 *MOT:	nice. 
-*MOT:	taptaptap. 
+*MOT:	tap tap tap. 
 %com:	tapping noises.
 *MOT: 	what else is here?
 %com:	shaking noises. 
-*MOT:	shakeshakeshake.
+*MOT:	shake shake shake.
 %com:	shaking noises. 
-*MOT:	clickclickclick. 
+*MOT:	click click click. 
 %com:	clicking noises.
-*MOT: 	shakeshake.
+*MOT: 	shake shake.
 %com:	shaking noises. 
-*MOT: 	shake shakeshake.
+*MOT: 	shake shake shake.
 %com:	clicking noises.
 %com: 	mother gasps.
-*MOT:	shakeshakeshake.
+*MOT:	shake shake shake.
 *MOT:	oh thank you. 
 %com:	shaking noises. 
-*MOT: 	shake shakeshake.
+*MOT: 	shake shake shake.
 %com:	clicking noises.
-*MOT: 	shakeshakeshake. 
+*MOT: 	shake shake shake. 
 %com:	tapping noises.
 %com:	clicking noises.
 *MOT: 	oh. 
@@ -133,7 +133,7 @@
 *MOT:	can you try?
 %com:	jingling noises.
 *MOT:	dadada.
-*MOT: 	and bopbopbop.
+*MOT: 	and bop bop bop.
 %com:	jingling noises.
 %com:	shaking noises. 
 %com:	loud children’s voices in background.
@@ -142,11 +142,11 @@
 *MOT: 	play you want to keep playing?
 %com:	shaking noises. 
 %com:	tapping noises.
-*MOT:	taptap shakeshake.
+*MOT:	tap tap shake shake.
 %com:	shaking noises. 
 *MOT:	shake.
-*MOT:	Haley.
-*MOT:	Haley.
+*MOT:	CHILD.
+*MOT:	CHILD.
 %com:	tapping noises.
 *MOT:	honey.
 %com:	tapping noises.
@@ -160,8 +160,8 @@
 *MOT: 	shoes. 
 *MOT: 	those are your shoes. 
 %com:	tapping noises.
-*MOT:	taptaptap.
-*MOT:	taptaptap.
+*MOT:	tap tap tap.
+*MOT:	tap tap tap.
 %com: 	rustling noises.
 *MOT: 	want to see?
 *MOT: 	oh you lifting?
@@ -170,14 +170,14 @@
 *MOT: 	lifting.
 %com:	tapping noises.
 %com:	clicking noises.
-*MOT:	Haley tapping.
+*MOT:	CHILD tapping.
 %com:	tapping noises.
-*MOT: 	yeah taptaptap.
-*MOT:	taptaptap.
+*MOT: 	yeah tap tap tap.
+*MOT:	tap tap tap.
 %com:	tapping noises.
 %com:	jingling noises.
-*MOT: 	taptaptap.
+*MOT: 	tap tap tap.
 %com:	tapping noises.
 *CHI:	[xxx]
-*MOT: 	yeah taptaptap.
+*MOT: 	yeah tap tap tap.
 

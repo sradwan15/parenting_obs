@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -25,13 +25,13 @@
 %com:	rustling noise.
 *MOT:	okay?
 *MOT: 	and these are the small toys. 
-*MOT:	Elijah look. 
+*MOT:	CHILD look. 
 *MOT:	small toys.
 %com:	rustling noise.
 *MOT:	okay?
 *MOT:	big and small.
 *MOT:	baby which one’s small?
-*MOT:	Elijah.
+*MOT:	CHILD.
 *MOT:	which one’s small?
 %com:	rustling noise.
 *MOT:	which one’s small baby?
@@ -43,7 +43,7 @@
 *MOT:	yeah.
 *MOT:	okay where are the big toys at?
 *MOT: 	baby where are the big toys at?
-*MOT: 	Elijah where are the big toys at?
+*MOT: 	CHILD where are the big toys at?
 *CHI:	[xxx]
 *MOT: 	good job. 
 *MOT: 	those are the big toys. 
@@ -64,33 +64,33 @@
 %com:	rustling noise.
 *MOT: 	[xxx] can you put the big toys in this one please?
 **CHI:	[xxx]
-*MOT:	Elijah can you put the big toy in the yellow please?
+*MOT:	CHILD can you put the big toy in the yellow please?
 %com:	loud children’s voices in background.
 *MOT:	can you show Mommy? 
 *MOT: 	big toy right here. 
 *MOT: 	can you put that there?
-*MOT:	Elijah can you put that one there?
+*MOT:	CHILD can you put that one there?
 *CHI:	[xxx]
 *MOT: 	good job.
 *MOT: 	thank you baby. 
 %com:	loud children’s voices in background.
 *MOT:	okay what about the small one?
-*MOT:	Elijah how about the small one?
+*MOT:	CHILD how about the small one?
 *MOT: 	can you put the small one in this one?
-*MOT: 	Elijah.
+*MOT: 	CHILD.
 *CHI:	[xxx]
-*MOT: 	Elijah.
+*MOT: 	CHILD.
 *MOT: 	yeah? 
-*MOT:	Elijah come back. 
+*MOT:	CHILD come back. 
 %com:	rustling noise.
 *MOT: 	okay. 
 *CHI:	[xxx]
 %com:	rustling noise.
-*MOT:	Elijah can you put the small one in this one?
+*MOT:	CHILD can you put the small one in this one?
 *MOT: 	can you put the small one there?
 *CHI:	[xxx]
 *MOT:	please?
-*MOT: 	Elijah put the small one in this one?
+*MOT: 	CHILD put the small one in this one?
 %com:	loud children’s voices in background.
 *MOT: 	put the small one here?
 %com: 	tapping noise.
@@ -115,9 +115,9 @@
 *MOT: 	hmmm?
 %com: 	tapping noise.
 *MOT: 	baby.
-*MOT: 	Elijah. 
+*MOT: 	CHILD. 
 %com: 	tapping noise.
-*MOT:	Elijah. 
+*MOT:	CHILD. 
 *CHI:	[xxx]
 %com: 	mother makes roaring noise.
 %com:	rustling noise.

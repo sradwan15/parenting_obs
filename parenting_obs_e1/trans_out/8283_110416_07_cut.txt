@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -19,18 +19,18 @@
 
 *FAT:	you want to play with the car?
 %com: 	rustling noises.
-*FAT: 	vroomvroomvroomvroom?
-*FAT: 	vroomvroom.
-*FAT: 	vroomvroomvroom. 
-*FAT: 	vroomvroomvroom. 
-*FAT: 	vroomvroomvroomvroom. 
+*FAT: 	vroom vroom vroom vroom?
+*FAT: 	vroom vroom.
+*FAT: 	vroom vroom vroom. 
+*FAT: 	vroom vroom vroom. 
+*FAT: 	vroom vroom vroom vroom. 
 *FAT: 	can you push it? 
 %com:	clicking noises.
 *FAT: 	you’re kicking it. 
 %com:	clicking noises.
 %com: 	father laughs.
 %com: 	rustling noises.
-*FAT: 	oh Oliver come over here. 
+*FAT: 	oh CHILD come over here. 
 *FAT: 	let’s play on the mat. 
 % com: 	father clears throat. 
 *FAT: 	you like to explore don’t you? 
@@ -39,10 +39,10 @@
 *FAT: 	nope nope nope. 
 %com: 	father laughs.
 *FAT: 	we’ll just put that away. 
-*FAT: 	oh Oliver what’s that?
+*FAT: 	oh CHILD what’s that?
 %com:	clicking noises.
 *FAT: 	what’s this?
-*FAT: 	Oliver it’s a horse. 
+*FAT: 	CHILD it’s a horse. 
 %com:	tapping noises.
 *FAT: 	what’s this?
 *FAT: 	well then what’s this?
@@ -53,14 +53,14 @@
 %com: 	father laughs.
 *FAT: 	baa. 
 %com:	father laughs.
-*FAT: 	what noise the sheep make Oliver?
+*FAT: 	what noise the sheep make CHILD?
 *CHI:	[xxx]
-*FAT: 	Oliver. 
+*FAT: 	CHILD. 
 *FAT: 	the mat’s.
 *FAT: 	the mat’s kind of interesting as well isn’t it?
 %com:	loud children’s voices in the background.
 *FAT: 	that looks tasty doesn’t it?
-*FAT: 	oh Oliver. 
+*FAT: 	oh CHILD. 
 %com: 	father clears throat.
 *FAT: 	alright who’s this guy? 
 *FAT: 	he’s Mr. Horse. 
@@ -71,14 +71,14 @@
 *FAT: 	neigh.
 %com:	loud children’s voices in the background.
 *CHI:	[xxx]
-*FAT: 	vroomvroom. 
+*FAT: 	vroom vroom. 
 %com:	clicking noises.
 *FAT: 	can you say vroom?
 *FAT: 	can you?
-*FAT: 	vroomvroom. 
+*FAT: 	vroom vroom. 
 *FAT:	ready?
-*FAT: 	vroomvroom. 
-*FAT: 	vroomvroomvroomvroom.
+*FAT: 	vroom vroom. 
+*FAT: 	vroom vroom vroom vroom.
 %com: 	rustling noises.
 *CHI:	[xxx]
 *FAT: 	oh.
@@ -94,7 +94,7 @@
 %com:	tapping noises.
 *CHI:	[xxx]
 *FAT: 	yeah.
-*FAT: 	what color’s Mr. Elephant Oliver?
+*FAT: 	what color’s Mr. Elephant CHILD?
 %com:	tapping noises.
 *CHI:	[xxx]
 *FAT: 	oh. 
@@ -114,7 +114,7 @@
 *FAT: 	not [xxx] on the chair. 
 %com:	loud tapping noises. 
 %com: 	father laughs.
-*FAT: 	come on Oliver. 
+*FAT: 	come on CHILD. 
 %com:	loud tapping noises. 
 *FAT: 	sit there on the mat.
 %com:	loud tapping noises. 

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -21,7 +21,7 @@
 *FAT:		oh you have the car.
 *CHI:		[xxx]
 *FAT:		yes.
-*FAT:		Astrid?
+*FAT:		CHILD?
 *FAT:		the car?
 *FAT:		you want a horse?
 *CHI:		uhuh.

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -35,9 +35,9 @@
 %com: 	loud tapping noises. 
 %com: 	clicking noises.
 %com: 	mother is singing. 
-*MOT: 	dodododo.
+*MOT: 	do do do do.
 %com: 	clicking noises. 
-*MOT: 	dodododo.
+*MOT: 	do do do do.
 %com: 	clicking noises. 
 %com: 	loud tapping noises. 
 *MOT: 	again?
@@ -49,19 +49,19 @@
 *MOT: 	here you go. 
 %com: 	loud tapping noises. 
 *MOT: 	let’s sit.
-*MOT:	Olivia 
+*MOT:	CHILD 
 %com: 	mother makes sound effect. 
 %com: 	loud tapping noises. 
 *MOT: 	come back over. 
-*MOT: 	Olivia.
+*MOT: 	CHILD.
 %com: 	loud tapping noises. 
 *MOT: 	what now 
 *MOT: 	no boat.
 *MOT: 	no to the boat.
 *MOT: 	come on let’s make it go across the hall. 
-*MOT: 	hey Olivia.
+*MOT: 	hey CHILD.
 %com: 	clicking noises. 
-*MOT: 	Olivia.
+*MOT: 	CHILD.
 %com: 	clicking noises. 
 *CHI:	[xxx]
 *MOT: 	let’s sit. 
@@ -70,7 +70,7 @@
 *MOT: 	back to the boat.
 %com: 	mother laughs.
 *MOT: 	right there. 
-*MOT: 	Olivia come sit. 
+*MOT: 	CHILD come sit. 
 *MOT: 	sit with me. 
 %com: 	rustling noise.
 *CHI:	[xxx]
@@ -106,7 +106,7 @@
 *MOT: 	hop.
 %com: 	mother gasps.
 %com: 	mother makes sound effects.
-*MOT: 	hophophop.
+*MOT: 	hop hop hop.
 %com: 	mother makes sound effects.
 %com: 	mother makes sound effects.
 %com: 	mother makes sound effects.
@@ -136,10 +136,10 @@
 *MOT: 	frog?
 %com: 	loud children’s voices in the background.
 %com: 	mother gasps.
-*MOT: 	Olivia.
+*MOT: 	CHILD.
 %com: 	background voice speaks.
 *MOT: 	hey. 
-*MOT: 	Olivia come here. 
+*MOT: 	CHILD come here. 
 *MOT: 	come little one. 
 %com: 	loud tapping noises. 
 

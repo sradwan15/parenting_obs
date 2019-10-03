@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -95,7 +95,7 @@
 *CHI:		[xxx]
 *MOT:	can you come play with me?
 *CHI:		no.
-*MOT:	pleeease.
+*MOT:	please.
 *CHI:		no.
 *MOT:	what does the horsey say?
 *CHI:		no no no!
@@ -120,7 +120,7 @@
 %com:		mother and child overlapping.
 *MOT:	hey.
 *CHI:		[xxx]
-*MOT:	Stella.
+*MOT:	CHILD.
 *CHI:		[xxx] stay here.
 *MOT:	all right.
 *CHI:		okay.

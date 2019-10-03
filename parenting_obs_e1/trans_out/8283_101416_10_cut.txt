@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -64,7 +64,7 @@
 *MOT: 	look. 
 %com:	mother makes sound swishing sound effects. 
 %com: 	mother gasps.
-*MOT:	ribbetribbetribbetribbet. 
+*MOT:	ribbit ribbit ribbit ribbit. 
 *MOT: 	oh. 
 *MOT: 	you can have it. 
 %com:	mother laughs.
@@ -130,7 +130,7 @@
 %com: 	mother gasps.
 *MOT: 	thank you. 
 %com:	mother laughs.
-*MOT: 	whoowhoo. 
+*MOT: 	whoo whoo. 
 *MOT: 	thank you so much. 
 %com:	mother gasps.
 *MOT: 	oh can I have the elephant?

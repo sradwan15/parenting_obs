@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -52,8 +52,8 @@
 %com:	mother laughs.
 *MOT: 	can you clap? 
 %com:	tapping noises.
-*MOT: 	yay Arianna.
-*MOT: 	yay Arianna.
+*MOT: 	yay CHILD.
+*MOT: 	yay CHILD.
 %com: 	child laughs.
 *MOT: 	what else is there?
 *MOT: 	oh a car.
@@ -75,7 +75,7 @@
 %com: 	clicking noises.
 *MOT: 	it didn’t go very fast did it?
 *MOT: 	do you like that?
-*MOT: 	how about this one Arianna?
+*MOT: 	how about this one CHILD?
 %com: 	clicking noises.
 *MOT: 	oh do you like that car?
 %com:	tapping noises.

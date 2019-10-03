@@ -1,4 +1,4 @@
-﻿*CHI:	[XXX]
+*CHI:	[XXX]
 
 *MOT:	And what’s that one? Is that a horse? Neigh. Thank you. A cat? What’s next? What is it? What’s that one, do you know? 
 
@@ -30,9 +30,9 @@
 
 *MOT:	There you go. Put it in. Put him in, do you want to take him out again? Take him out. Can you give it to mommy? Thank you. Neigh. Purple horse. What’s this one?
 
-*CHI:	Baaa?
+*CHI:	Baa?
 
-*MOT:	Oh yeah, you have a sheep. Baaa. Can I have it? 
+*MOT:	Oh yeah, you have a sheep. Baa. Can I have it? 
 
 Other Child 1:	[XXX]
 
@@ -76,11 +76,11 @@ Other Child 2:	[XXX] hyena.
 
 *CHI:	[XXX]
 
-*MOT:	Do they fit? [XXX] Let’s take them out again. Can you give them to me? Thank you. Pig, oink, oink, oink. A cat, meow. And then a cow, mooo. And a doggy, woof, woof, woof, woof, woof, woof, woof. Which one is that? 
+*MOT:	Do they fit? [XXX] Let’s take them out again. Can you give them to me? Thank you. Pig, oink, oink, oink. A cat, meow. And then a cow, moo. And a doggy, woof, woof, woof, woof, woof, woof, woof. Which one is that? 
 
-*CHI:	Baaa?
+*CHI:	Baa?
 
-*MOT:	It’s not a baaa, this one, what’s this one in your hand?
+*MOT:	It’s not a baa, this one, what’s this one in your hand?
 
 Female Speaker:	Okay –
 
@@ -88,7 +88,7 @@ Female Speaker:	Okay –
 
 Female Speaker:	You’re all done. 
 
-*MOT:	Okay. And the sheep is the last one. Baaa.
+*MOT:	Okay. And the sheep is the last one. Baa.
 
 [End of Audio]
 

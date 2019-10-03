@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -54,7 +54,7 @@
 *CHI:	[xxx]
 *MOT:	what about this?
 *MOT:	what do you think about this? 
-*MOT:	vroomvroom.
+*MOT:	vroom vroom.
 *MOT: 	vroom.
 %com:	clicking noises.
 %com: 	mother laughs.

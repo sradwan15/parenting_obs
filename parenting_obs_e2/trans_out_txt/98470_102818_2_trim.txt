@@ -1,8 +1,8 @@
-﻿MOT:	Stick with that. Jackson. Jackson. Watch, watch. One, two, three. 
+MOT:	Stick with that. CHILD. CHILD. Watch, watch. One, two, three. 
 
 CHI:	[xxx]
 
-MOT:	One, two…Oh, we do it together? Here. Jackson, watch Mama. One, two, three. One, two, three. Here, use your hands, buddy.
+MOT:	One, two…Oh, we do it together? Here. CHILD, watch Mama. One, two, three. One, two, three. Here, use your hands, buddy.
 
 CHI:	[xxx]
 
@@ -22,7 +22,7 @@ MOT:	No? No, that doesn’t go in your mouth. One, two, three. You wanna play th
 
 	Here, try one more time. One, two, three. No? Over it?
 
-	Here, try… 
+	Here, try... 
 
 [End of Audio]
 

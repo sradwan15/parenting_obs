@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -35,7 +35,7 @@
 *FAT:		good job.
 *FAT:		where's the elephant?
 *FAT:		elephant.
-*FAT:		good job Gavin.
+*FAT:		good job CHILD.
 *FAT:		elephant.
 *FAT:		can I see the frog?
 *CHI:		[xxx]
@@ -81,7 +81,7 @@
 *FAT:		okay.
 *FAT:		where are the wheels?
 *FAT:		where you going?
-*FAT:		Gavin where you going?
+*FAT:		CHILD where you going?
 %com:		kids making noise in background.
 *FAT:		try you hear all the kids?
 *FAT:		you hear the kids outside?

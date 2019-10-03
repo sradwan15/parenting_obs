@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -17,7 +17,7 @@
 
 
 
-*MOT: 	Abby we got a cow and a horse.
+*MOT: 	CHILD we got a cow and a horse.
 %com:	loud children’s voices in the background. 
 *MOT: 	what’s the cow say?
 *CHI:	[xxx]
@@ -31,7 +31,7 @@
 *MOT: 	oh you knocked them over. 
 %com: 	tapping noises. 
 %com: 	louder tapping noises. 
-*MOT: 	bangbangbang.
+*MOT: 	bang bang bang.
 %com: 	mother laughs.
 *MOT: 	yeah it makes a good sound huh?
 *MOT: 	or we could put it on our heads?
@@ -80,17 +80,17 @@
 %com: 	mother gasps.
 %com: 	popping noises. 
 *MOT: 	we can make popcorn sound. 
-*MOT: 	poppoppoppoppoppop.
+*MOT: 	pop pop pop pop pop pop.
 %com:	loud child yelling in the background. 
 %com:	loud children yelling in the background. 
 %com: 	mother sniffles.
 %com:	loud children’s voices in the background. 
-*MOT: 	Abigail.
-*MOT: 	Abigail.
-*MOT: 	Abby.
-*MOT: 	nono.
-*MOT: 	Abby.
-*MOT: 	nono. 
+*MOT: 	CHILD.
+*MOT: 	CHILD.
+*MOT: 	CHILD.
+*MOT: 	no no.
+*MOT: 	CHILD.
+*MOT: 	no no. 
 *MOT: 	come here. 
 %com: 	mother sniffles. 
 %com: 	rustling noises.
@@ -102,16 +102,16 @@
 %com: 	background voice speaks.
 *MOT: 	you’re so strong. 
 *MOT: 	come here sweetheart.
-*MOT: 	ribbetribbetribbet. 
-*MOT: 	Abby come on let’s play with the froggy. 
+*MOT: 	ribbit ribbit ribbit. 
+*MOT: 	CHILD come on let’s play with the froggy. 
 *MOT: 	come on. 
 %com: 	background voice speaks. 
 *MOT: 	alright ready?
-*MOT: 	come here Abby. 
+*MOT: 	come here CHILD. 
 *MOT: 	we’ll play a game. 
 *MOT: 	want to play a game sweetie?
 %com: 	tapping noises. 
-*MOT: 	Abigail.
+*MOT: 	CHILD.
 %com: 	mother gasps.
 %com: 	tapping noises. 
 %com: 	tapping noises. 
@@ -152,29 +152,4 @@
 
  
 
-Verbatim Project Speaker tags:
-*MOT:	blah blah
-*CHI:		[xxx]
-*FAT:		blah blah
-*CHI:		uhoh mhm and uhuh
-
-Verbatim Project comments:
-%com:		tapping noises.
-%com:		rustling noises.
-%com:		loud children’s voices in the background.
-%com:		mother sighs.
-%com:		child cries.
-%com:		child starts crying.
-%com:		child fusses.
-%com:		child starts fussing.
-%com:		overlapping speech, mother and child.
-%com:	mother is singing
-%com:	mother laughs.
-%com: 	mother gasps. 
-%com:	father laughs.
-%com:	father sighs.
-%com:	father gasps.
-%com: 	loud tapping noise.
-%com:	children playing in background.
-%com:	microphone rubs.
 

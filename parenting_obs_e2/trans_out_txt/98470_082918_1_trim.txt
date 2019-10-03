@@ -1,8 +1,8 @@
-﻿*FAT:	[Mid-sentence] – a puzzle with shapes on it. Do you know any shapes? I don’t know if you know shape names yet.
+*FAT:	[Mid-sentence] – a puzzle with shapes on it. Do you know any shapes? I don’t know if you know shape names yet.
 
 *CHI:	[xxx]
 
-*FAT:	That’s a pentagon. Let’s start with – Kaia, this is a circle. You want to take the circle out? Circle. And we’re gonna take him out and put him right here, okay? Can you put the pentagon there? How about the triangle? This is a triangle. Can you put the triangle next to the circle? 
+*FAT:	That’s a pentagon. Let’s start with – CHILD, this is a circle. You want to take the circle out? Circle. And we’re gonna take him out and put him right here, okay? Can you put the pentagon there? How about the triangle? This is a triangle. Can you put the triangle next to the circle? 
 
 *CHI:	Mhm.
 
@@ -14,7 +14,7 @@
 
 *CHI:	Mhm.
 
-*FAT:	Okay, pentagon, diamond, octagon, rectangle. Okay, do you remember where the pentagon went? Don’t get distracted with Ella. Here’s the pentagon. Can you put that back in that spot? Oh, you almost got it. It fits! Where does the diamond go? That one goes right here. Can you fit the diamond in that spot? Turn it around. Keep turning. Okay, how about this circle? Do you want to do the circle? This one goes over here in the round spot. You got it! Triangle, let’s try that right here. Kaia, can you say triangle? [No answer] Almost. You want some help? How about a square? Can you say square?
+*FAT:	Okay, pentagon, diamond, octagon, rectangle. Okay, do you remember where the pentagon went? Don’t get distracted with CHILD. Here’s the pentagon. Can you put that back in that spot? Oh, you almost got it. It fits! Where does the diamond go? That one goes right here. Can you fit the diamond in that spot? Turn it around. Keep turning. Okay, how about this circle? Do you want to do the circle? This one goes over here in the round spot. You got it! Triangle, let’s try that right here. CHILD, can you say triangle? [No answer] Almost. You want some help? How about a square? Can you say square?
 
 *CHI:	[xxx]
 

@@ -1,4 +1,4 @@
-﻿*MOT:	What’s that?
+*MOT:	What’s that?
 
 *CHI 2:	Red.
 
@@ -74,7 +74,7 @@
 
 *CHI 2:	Race. [rolling car]
 
-*MOT:	Ready? Okay, ready? Does that one go forward? No. Aspen, come here.
+*MOT:	Ready? Okay, ready? Does that one go forward? No. CHILD, come here.
 
 *CHI 2:	Whoa red.
 

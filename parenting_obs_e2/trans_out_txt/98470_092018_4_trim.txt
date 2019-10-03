@@ -2,7 +2,7 @@
 
 CHI:	[xxx].
 
-*MOT:	Cleo, what’s this?
+*MOT:	CHILD, what’s this?
 
 CHI:	[xxx].
 
@@ -14,7 +14,7 @@ CHI:	[xxx].
 
 CHI:	[xxx].
 
-*MOT:	Here. Cleo, look. See the horsey? Horse?
+*MOT:	Here. CHILD, look. See the horsey? Horse?
 
 CHI:	[xxx].
 
@@ -45,7 +45,7 @@ CHI:	[xxx].
 
 CHI:	[xxx].
 
-*MOT:	Yellow, blue. Where are you going? Cleo, you found some other toys? What did you find? Bring it here. What did you find? Let’s see. What did you find? Thank you.		
+*MOT:	Yellow, blue. Where are you going? CHILD, you found some other toys? What did you find? Bring it here. What did you find? Let’s see. What did you find? Thank you.		
 
 [End of Audio]
 

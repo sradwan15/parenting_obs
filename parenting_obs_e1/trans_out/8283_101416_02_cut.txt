@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -37,7 +37,7 @@
 *MOT:	baa.
 *MOT: 	oh, we’re going to give a kiss to the sheep?
 *CHI:	[xxx]
-*MOT:	Sherman, can you say baa?
+*MOT:	CHILD, can you say baa?
 %com:	loud children’s voices in the background.
 *CHI:	[xxx]
 %com:	mother laughs.
@@ -49,20 +49,20 @@
 *MOT:	where’s the sheep?
 *MOT:	baa.
 %com:	mother laughs.
-*CHI:	baabaa.
-*MOT:	baabaa.
+*CHI:	baa baa.
+*MOT:	baa baa.
 *MOT:	baa.
 %com:	loud children’s voices in the background.
 *CHI: 	[xxx] baa.
 *MOT:	we brought a friend.
-*MOT:	ribbetribbetribbet goes the frog. 
-*MOT: 	ribbetribbet. 
+*MOT:	ribbit ribbit ribbit goes the frog. 
+*MOT: 	ribbit ribbit. 
 %com: 	mother makes kissing noise.
 *MOT:	we give the frog a kiss.
 %com: 	mother makes kissing noise.
-*MOT: 	ribbetribbetribbet. 
+*MOT: 	ribbit ribbit ribbit. 
 *CHI:	[xxx]
-*MOT: 	ribbetribbetribbet. 
+*MOT: 	ribbit ribbit ribbit. 
 *CHI:	[xxx]
 *MOT: 	no horses. 
 *MOT:	neigh.
@@ -99,7 +99,7 @@
 *MOT: 	moo. 
 *MOT: 	you like the frog?
 *CHI:	[xxx]
-*MOT: 	ribbetribbet.
+*MOT: 	ribbit ribbit.
 *MOT: 	no?
 *CHI:	[xxx]
 *MOT:	which one?
@@ -109,9 +109,9 @@
 *MOT:	baa.
 *MOT: 	oh, thank you. 
 *MOT: 	you have the frog. 
-*MOT: 	does the frog say ribbetribbetribbet?
+*MOT: 	does the frog say ribbit ribbit ribbit?
 *CHI:	[xxx]
-*MOT: 	ribbetribbetribbetribbet. 
+*MOT: 	ribbit ribbit ribbit ribbit. 
 *CHI:	[xxx]
 *MOT: 	yeah?
 *MOT: 	oh, you’re going to play with the doorstop?

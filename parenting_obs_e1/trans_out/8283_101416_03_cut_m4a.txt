@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -17,14 +17,14 @@
 
 
 
-*FAT:	Mira?
+*FAT:	CHILD?
 %com:	loud children’s voices in the background.
-*FAT:	Mira?
+*FAT:	CHILD?
 *FAT: 	this is a lamb.
 *FAT: 	lambs go baa.
-*FAT:	and the frog goes ribbet.
+*FAT:	and the frog goes ribbit.
 %com:	rustling noises.
-*FAT: 	ribbet. 
+*FAT: 	ribbit. 
 %com: 	father gasps. 
 *FAT: 	you want this?
 %com: 	tapping noises.
@@ -36,48 +36,48 @@
 *FAT:	do you want to put the lamb back like that?
 *FAT: 	and the cow?
 *FAT: 	what’s under here, honey?
-*FAT: 	Mira look under here. 
+*FAT: 	CHILD look under here. 
 %com:	loud children’s voices in the background.
-*FAT: 	Mira. 
+*FAT: 	CHILD. 
 %com:	loud children’s voices in the background.
 *FAT: 	distracted honey. 
 *FAT: 	hey. 
-*FAT:	Mira. 
+*FAT:	CHILD. 
 *FAT: 	do you want to see the animals?
 %com: 	tapping noises.
 %com:	door shutting.
-*FAT: 	Mira look under here. 
+*FAT: 	CHILD look under here. 
 %com: 	clicking noises.
-*FAT:	ribbetribbet.
+*FAT:	ribbit ribbit.
 %com: 	tapping noises.
-*FAT: 	ribbetribbet.
+*FAT: 	ribbit ribbit.
 %com: 	tapping noises.
-*FAT: 	ribbetribbet.
+*FAT: 	ribbit ribbit.
 %com: 	tapping noises.
-*FAT: 	can you say ribbet?
-*FAT:	say ribbetribbet.
+*FAT: 	can you say ribbit?
+*FAT:	say ribbit ribbit.
 %com: 	tapping noises.
 *FAT: 	it’s a frog. 
 *FAT: 	hmmm?
-*FAT: 	a frog goes ribbetribbet. 
+*FAT: 	a frog goes ribbit ribbit. 
 *FAT: 	yeah. 
 *FAT: 	see?
-*FAT: 	ribbetribbetribbet.
+*FAT: 	ribbit ribbit ribbit.
 *FAT: 	do you like that?
 *FAT: 	I’ll put the frog back that’s the frog. 
 *FAT: 	and look at this this is a lamb.
 *FAT: 	oh you like the frog. 
 *CHI:	[xxx]
 *FAT: 	what sound does a frog make?
-*FAT:	ribbetribbetribbet. 
+*FAT:	ribbit ribbit ribbit. 
 *FAT: 	you like that one?
 *FAT: 	okay. 
 *FAT: 	you want to put it back?
 *FAT: 	yeah?
-*FAT: 	say ribbetribbet goes the frog.
+*FAT: 	say ribbit ribbit goes the frog.
 *FAT: 	huh?
 %com:	loud children’s voices in the background.
-*FAT:	Mira look at this. 
+*FAT:	CHILD look at this. 
 *FAT: 	baa.
 *FAT:	baa.
 *FAT: 	the lamb.
@@ -88,7 +88,7 @@
 *FAT:	hmmm? 
 *FAT:	yeah. 
 *FAT: 	and what’s under there?
-*FAT:	ribbetribbet it’s the frog. 
+*FAT:	ribbit ribbit it’s the frog. 
 *FAT: 	thank you.
 *FAT:	thank you for that. 
 *FAT: 	I like the frog. 
@@ -125,7 +125,7 @@
 *FAT:	yeah?
 *FAT:	do you know what sound the frog makes?
 *FAT:	yeah. 
-*FAT:	it goes ribbetribbetribbetribbet. 
+*FAT:	it goes ribbit ribbit ribbit ribbit. 
 %com:	loud children’s voices in the background.
 *FAT: 	yes it does.
 %com: 	tapping noises.

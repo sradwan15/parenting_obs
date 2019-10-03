@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -119,7 +119,7 @@
 *FAT:		ally galloo ally gallee ally galloo gallee.
 %com:		father singing and making music.
 *FAT:		whoooo.
-%com:		mucis being made.
+%com:		music being made.
 *FAT:		you want to play with this?
 *FAT:		you want daddy to shake this?
 %com:		father makes music.

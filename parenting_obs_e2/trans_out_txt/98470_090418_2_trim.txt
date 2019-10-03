@@ -1,4 +1,4 @@
-﻿*MOT:	you wanna play with this one?
+*MOT:	you wanna play with this one?
 *CHI:	bubbles
 *MOT:	do you know what color this is?
 *CHI:	bubbles, bubbles.
@@ -64,7 +64,7 @@
 *MOT:	was there a box or something that –?
 *ADF:	it’s just how it is [xxx].
 *MOT:	okay, gotcha.
-*MOT:	eli, do you wanna stack the blocks up?
+*MOT:	CHILD, do you wanna stack the blocks up?
 *MOT:	come here bud.
 *MOT:	do you wanna stack the blocks?
 *MOT:	can you help mommy stack the blocks up?
@@ -77,7 +77,7 @@
 *MOT:	he really wants to see the bubbles. 
 *MOT:	[laughs] here you go.
 *MOT:	[makes falling sound]
-*MOT:	eli, do you remember what color that car is?
+*MOT:	CHILD, do you remember what color that car is?
 *CHI:	blue.
 *MOT:	blue.
 *MOT:	that’s one’s yellow.

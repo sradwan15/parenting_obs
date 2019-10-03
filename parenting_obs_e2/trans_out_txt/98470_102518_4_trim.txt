@@ -1,6 +1,6 @@
-﻿CHI:	[xxx] 
+CHI:	[xxx] 
 
-MOT:	What? Purple? Look, baby, purple? Okay, mommy will do it. We’ve got yellow. [Giggles]. Sit down. Kylie sit down. Come on, let’s finish the puzzle first and then we can go play. Sit down. Kylie. Look, the puzzle. Look green, green triangle. Like your shirt. Green. There is an orange oval. Want to do it? Kylie? You’re gonna ruin their study. [Chuckles]. Come here. Come here. Come to the puzzle. Look, blue. You do it.
+MOT:	What? Purple? Look, baby, purple? Okay, mommy will do it. We’ve got yellow. [Giggles]. Sit down. CHILD sit down. Come on, let’s finish the puzzle first and then we can go play. Sit down. CHILD. Look, the puzzle. Look green, green triangle. Like your shirt. Green. There is an orange oval. Want to do it? CHILD? You’re gonna ruin their study. [Chuckles]. Come here. Come here. Come to the puzzle. Look, blue. You do it.
 
 CHI:	[xxx]
 
@@ -8,7 +8,7 @@ MOT:	Don’t throw it. Okay, can you pick it up, please?
 
 CHI:	[xxx]
 
-MOT:	Thank – here, give it here., 
+MOT:	Thank – here, give it here. 
 
 CHI:	[xxx]
 

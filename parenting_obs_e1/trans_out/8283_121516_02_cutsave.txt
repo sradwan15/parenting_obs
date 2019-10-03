@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -46,12 +46,12 @@
 *CHI:		[xxx]
 %com:		child laughs.
 *CHI:		this goes neigh.
-*MOT:	neieigh.
+*MOT:	neigh.
 *MOT:	what does that one say?
 *CHI:		I don’t know.
 *MOT:	well if a big horsey says neigh what does a little horsey say?
 *CHI:		neigh.
-*MOT:	neieieigh.
+*MOT:	neigh.
 *MOT:	that's so good.
 *MOT:	which do you think is faster?
 *MOT:	what about with this one now.

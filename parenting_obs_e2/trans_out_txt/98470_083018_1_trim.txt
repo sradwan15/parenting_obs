@@ -1,4 +1,4 @@
-*MOT:	Susie, what does the horse say? Huh? What does the horsey say? Hm? Neigh. Neigh. Neigh. 
+*MOT:	CHILD, what does the horse say? Huh? What does the horsey say? Hm? Neigh. Neigh. Neigh. 
 
 *CHI:	Car.
 
@@ -34,7 +34,7 @@
 
 *CHI:	[xxx]
 
-*MOT:	Susie. 
+*MOT:	CHILD. 
 
 *CHI:	[xxx]
 

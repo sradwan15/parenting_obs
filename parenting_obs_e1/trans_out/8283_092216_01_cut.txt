@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -31,7 +31,7 @@
 *FAT: 	this way.
 com:	loud children’s voices in the background. 
 %com: 	dropping noise.
-*FAT: 	nuhuhuh. 
+*FAT: 	nuh uhuh. 
 *FAT: 	nah.
 *FAT: 	nuhuh. 
 *FAT: 	hmhm.
@@ -76,11 +76,11 @@ com:	loud children’s voices in the background.
 com:	loud children’s voices in the background. 
 *FAT: 	can you find me? 
 *FAT: 	like the time you found [xxx]?
-*FAT: 	wigglewiggle.
-*FAT: 	wigglewigglewiggle.
-*FAT: 	wigglewigglewiggle. 
+*FAT: 	wiggle wiggle.
+*FAT: 	wiggle wiggle wiggle.
+*FAT: 	wiggle wiggle wiggle. 
 %com: 	tapping noises. 
-*FAT: 	wigglewigglewiggle.
+*FAT: 	wiggle wiggle wiggle.
 *FAT: 	no [xxx]?
 *FAT: 	oh no. 
 *FAT: 	don’t eat me. 

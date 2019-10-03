@@ -1,4 +1,4 @@
-﻿*MOT:	What are you playing with [rattling]? A bucket [tapping]? Yeah, what is this [rattling]? A car? Two cars.
+*MOT:	What are you playing with [rattling]? A bucket [tapping]? Yeah, what is this [rattling]? A car? Two cars.
 
 *CHI:	Yeah.
 
@@ -8,7 +8,7 @@
 
 *MOT:	Two buckets [rattling]. Are you putting them inside of the bucket? Can you put this big car inside of this bucket [loud clang]?
 
-	Oh, the little one went in there! Put the big one in.
+*MOT:	Oh, the little one went in there! Put the big one in.
 
 *CHI:	Uh.
 
@@ -24,7 +24,7 @@
 
 *CHI:	Uh.
 
-*MOT:	Put it inside the bucket. Victoria – dump it out, let me see. [Gasps] Which car is the big car, honey [rattling]? The little one. That’s the little car [rattling] – oh, this one – push it back and forth [rattling] [laughing].
+*MOT:	Put it inside the bucket. CHILD – dump it out, let me see. [Gasps] Which car is the big car, honey [rattling]? The little one. That’s the little car [rattling] – oh, this one – push it back and forth [rattling] [laughing].
 
 *CHI:	Mom!
 
@@ -54,7 +54,7 @@
 
 *CHI:	Horse.
 
-*MOT:	Yeah? Then come play with me – go pick up the buckets, please. Go pick that up, love. Victoria. Thank you.
+*MOT:	Yeah? Then come play with me – go pick up the buckets, please. Go pick that up, love. CHILD. Thank you.
 
 *CHI:	Mom [rattling].
 
@@ -116,7 +116,7 @@
 
 *CHI:	Green.
 
-*MOT:	Pink. Victoria, come over here, please. You wanna bring that chair? Bring the chair closer this way – we’re gonna play [thump] on the mat. Victoria, bring the chair over here if you wanna sit on it [thumping].
+*MOT:	Pink. CHILD, come over here, please. You wanna bring that chair? Bring the chair closer this way – we’re gonna play [thump] on the mat. CHILD, bring the chair over here if you wanna sit on it [thumping].
 
 *CHI:	[xxx].
 

@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -36,7 +36,7 @@
 *FAT:		what are you playing with?
 *FAT:		the red car?
 *CHI:		[xxx]
-*FAT:		ah the nieeeegh right.
+*FAT:		ah the neigh right.
 *FAT:		the horsey goes neigh.
 %com:		child making neighing sound.
 *FAT:		this is another horsey.
@@ -73,15 +73,15 @@
 *FAT:		yeah.
 *FAT:		for me?
 *FAT:		oh look what we got.
-*CHI:		byebyeeeee.
-*FAT:		byebye.
-*FAT:		byebye car.
+*CHI:		bye bye.
+*FAT:		bye bye.
+*FAT:		bye bye car.
 *CHI:		[xxx]
 *FAT:		look.
 *FAT:		you want to drive the car?
 *FAT:		you can drive this car.
 *CHI:		[xxx]
-*FAT:		oh we're going to drive the beepbeep.
+*FAT:		oh we're going to drive the beep beep.
 *CHI:		[xxx]
 *FAT:		beepbeep.
 *CHI:		look.

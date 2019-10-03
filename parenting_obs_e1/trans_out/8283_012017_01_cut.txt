@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -39,7 +39,7 @@
 *MOT: 	that’s interesting?
 %com: 	louder tapping noises.
 %com:	mother laughs.
-*MOT: 	Luis, look at this.
+*MOT: 	CHILD, look at this.
 *MOT: 	oh okay. 
 *MOT: 	that’s yours now?
 %com:	loud children’s voices in the background. 
@@ -71,13 +71,13 @@
 *MOT: 	watch. 
 %com: 	rustling noises. 
 *MOT: 	can you do this? 
-*MOT: 	Luis. 
+*MOT: 	CHILD. 
 %com: 	louder rhythmic tapping noises.
 %com: 	jingling noises. 
 %com:	shaking noises.
 *MOT: 	can you try?
 %com:	rhythmic tapping noises.
-*MOT: 	Luis. 
+*MOT: 	CHILD. 
 *CHI:	[xxx]
 %com:	shaking noises.
 *MOT: 	what’s in it? 
@@ -124,7 +124,7 @@
 *MOT: 	that’s for Mama?
 %com:	rhythmic shaking noises.
 %com: 	louder rhythmic tapping noises.
-*MOT: 	now Luis does it. 
+*MOT: 	now CHILD does it. 
 %com: 	clicking noises. 
 *MOT: 	now can you do it?
 %com:	mother laughs.
@@ -138,13 +138,13 @@
 *CHI:	[xxx]
 *CHI:	[xxx]
 *CHI:	[xxx]
-*MOT: 	can you do shakeshakeshake?
+*MOT: 	can you do shake shake shake?
 %com:	rhythmic shaking noises.
 *MOT: 	shakeshakeshake.
 %com:	shaking noises.
 *MOT: 	good.
 %com: 	clicking noises.
-*MOT: 	here can you do bangbangbang? 
+*MOT: 	here can you do bang bang bang? 
 %com: 	louder rhythmic tapping noises.
 %com:	shaking noises.
 *MOT: 	oh no don’t put it in your mouth. 

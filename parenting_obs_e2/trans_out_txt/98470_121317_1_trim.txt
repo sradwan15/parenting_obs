@@ -1,4 +1,4 @@
-﻿MOT:	What’s this? No, stay over here. Come here, look. Sheep.
+MOT:	What’s this? No, stay over here. Come here, look. Sheep.
 
 CHI:	[xxx]
 
@@ -34,7 +34,7 @@ MOT:	What’s this one?
 
 CHI:	[xxx]
 
-MOT:	Can you guess? Come over here. Come here. Oh, look. A doggy. Natalie, look. Doggy. Which one’s the doggy?
+MOT:	Can you guess? Come over here. Come here. Oh, look. A doggy. CHILD, look. Doggy. Which one’s the doggy?
 
 CHI:	[xxx]
 
@@ -60,7 +60,7 @@ MOT:	Gentle. That’s nice. It’s nice to be gentle. [xxx]
 
 CHI:	[xxx]
 
-MOT:	Yeah [xxx]. Natalie, look. Look. Ooh. 
+MOT:	Yeah [xxx]. CHILD, look. Look. Ooh. 
 
 CHI:	[xxx]
 

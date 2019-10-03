@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -17,7 +17,7 @@
 
 
 
-*MOT:	hey Sienna. 
+*MOT:	hey CHILD. 
 *CHI:	[xxx]
 %com: 	mother gasps.
 *MOT:	what’s this?
@@ -80,9 +80,9 @@
 *CHI:	[xxx]
 *MOT: 	come here. 
 %com: 	background child crying.
-*MOT: 	Sienna. 
+*MOT: 	CHILD. 
 %com: 	mother gasps.
-*MOT:	where’s Sienna?
+*MOT:	where’s CHILD?
 %com: 	mother laughs.
 *MOT: 	peekaboo.
 *MOT: 	peekaboo.
@@ -90,7 +90,7 @@
 *MOT: 	can you do it? 
 *MOT: 	can you do it?
 %com: 	mother gasps.
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 %com:	background voice speaks.
 *MOT: 	peekaboo. 
 %com: 	mother laughs.
@@ -118,13 +118,13 @@
 *MOT: 	ready?
 %com:	tapping noises.
 *MOT: 	here it comes. 
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 %com:	loud children’s voices in the background.
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 *CHI:	[xxx]
 *MOT: 	where are you?
-*MOT: 	where’s Sienna?
-*MOT: 	where did Sienna go?
+*MOT: 	where’s CHILD?
+*MOT: 	where did CHILD go?
 %com:	loud children’s voices in the background.
 *MOT: 	where’d you go? 
 %com: 	rustling noises.
@@ -147,18 +147,18 @@
 *MOT: 	ready? 
 %com: 	mother gasps.
 %com:	child laughs.
-*MOT: 	where’s Sienna?
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
+*MOT: 	where’s CHILD?
 *MOT: 	where’d you go? 
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 %com:	tapping noises.
 *MOT: 	peekaboo.
 *MOT: 	peekaboo. 
 *MOT: 	you going to put it on? 
 %com: 	rustling noises.
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 %com:	tapping noises.
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 *MOT: 	where’d you go?
 %com:	loud children’s voices in the background.
 *MOT: 	where are you?
@@ -169,18 +169,18 @@
 *MOT: 	peekaboo. 
 %com: 	rustling noises.
 %com: 	mother laughs.
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 %com:	clicking noises.
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 %com: 	mother gasps.
 *MOT: 	peekaboo.
 %com: 	rustling noises.
 *MOT: 	peekaboo. 
 %com:	clicking noises.
 %com: 	mother gasps.
-*MOT: 	where’s Sienna?
+*MOT: 	where’s CHILD?
 %com: 	rustling noises.
-*MOT: 	where’s Si. 
+*MOT: 	where’s CHILD. 
 %com: 	mother gasps.
 *MOT: 	where’d you go? 
 %com: 	mother gasps.

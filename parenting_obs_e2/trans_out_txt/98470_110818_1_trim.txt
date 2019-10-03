@@ -1,4 +1,4 @@
-﻿MOT:	That’s a horse.
+MOT:	That’s a horse.
 
 CHI:	Doggy. Doggy. Doggy. Doggy.
 
@@ -10,7 +10,7 @@ MOT:	That’s not a doggy.
 
 CHI:	Doggy.
 
-MOT:	Okay, Eva? Can you put the small one –?
+MOT:	Okay, CHILD? Can you put the small one –?
 
 CHI:	[xxx].
 
@@ -94,7 +94,7 @@ MOT:	The eyes. He has eyes.
 
 CHI:	Yeah. He eyes. 
 
-MOT:	Mmhm. Eva, can you choose a circle to put your horse down in? 
+MOT:	Mmhm. CHILD, can you choose a circle to put your horse down in? 
 
 CHI:	[xxx].
 

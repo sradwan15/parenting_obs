@@ -39,7 +39,7 @@ abstract: |
   We showed parents a short video depicting an age-appropriate parent-child activity from a commercial parenting app, and found that the quality of parent-child interactions increases in some ways as a result of the intervention. 
   Specifically, after watching the activity video, parents spoke more and made more bids for joint attention with the child.
 keywords          : "digital parenting advice; joint attention; lexical diversity; guided play"
-wordcount         : "4576"
+wordcount         : "4706"
 
 bibliography      : ["library.bib"]
 
@@ -94,12 +94,18 @@ addline_format <- function(x,...){
 
 ```{r load-exp1-lexical-data, include=F}
 e1path = "../parenting_obs_e1/"
-load(paste(e1path,"Exp1_cleaned_data.RData",sep='')) # merged dataframe ready for plotting
+#load(paste(e1path,"Exp1_cleaned_data.RData",sep='')) # merged dataframe ready for plotting
+d <- read.csv(paste(e1path,"exp1_conditions2.csv",sep=''))
+
+d$MTLD = d$MTLD2
+d$TTR = d$TTR2
+d$types = d$types2
+d$tokens = d$tokens2
 
 e1ld <- d %>%
   #filter(!is.na(AA), !is.na(EL), !is.na(RR))%>%
   mutate(condition = factor(condition), 
-         MTLD = as.numeric(MTLD),
+         MTLD = as.numeric(MTLD2),
          EL = as.numeric(langcog::scale(EL, scale=FALSE)),
          AA = as.numeric(langcog::scale(AA, scale=FALSE)),
          RR = as.numeric(langcog::scale(RR, scale=FALSE)),
@@ -135,7 +141,13 @@ e1ja <- d %>%
 
 ```{r load-exp2-lexical-data, echo=F}
 e2path = "../parenting_obs_e2/"
-load(paste(e2path,"Exp2_cleaned_data.RData",sep=''))
+#load(paste(e2path,"Exp2_cleaned_data.RData",sep=''))
+
+d <- read.csv(paste(e2path,"exp2_conditions2.csv",sep=''))
+d$MTLD = d$MTLD2
+d$TTR = d$TTR2
+d$types = d$types2
+d$tokens = d$tokens2
 
 e2data <- d %>%
   mutate(condition = factor(condition), 
@@ -149,7 +161,7 @@ e2data$Condition = factor(d$condition, levels = c("con", "exp"), labels = c("Sci
 e2_gender = table(d$gender)
 e2_ethnicity = table(d$ethnicity)
 e2_parent_ed = table(d$parent_ed)
-e2_12to18 = nrow(subset(d, age<1.5))
+e2_12to18 = nrow(subset(d, age<1.5)) # wrong now that age is scaled
 e2_18to24 = nrow(subset(d, age>=1.5))
 ```
 
@@ -265,7 +277,7 @@ Full details of our guidelines for coding joint attention are available in SI.
 A second coder independently coded a third of the videos (i.e., 20 of the 60 videos, approximately equally distributed across ages) to establish reliability. 
 The two coders had a reliability of ICC = 0.80 with 95% confidence interval (CI) = [0.57,0.92] for number of parent bids for JA; ICC = 0.20 with 95% CI = [-0.26,0.58] for number of passive JA episodes; ICC = 0.66 with 95% CI = [0.32,0.85] for number of coordinated JA episodes; ICC = 0.24 with 95% CI = [-0.21,0.61] for total duration of passive JA episodes, and ICC = 0.62 with 95% CI = [0.27,0.83] for total duration of coordinated JA episodes. 
 
-## Results
+## Results and Discussion
 
 Parents' child-directed speech during the play sessions was transcribed.
 The transcripts and hand-coded joint attention data were analyzed according to our preregistration[^3], with any deviations or exploratory analyses noted.
@@ -293,16 +305,16 @@ get_stan_glmer_reporting_values <- function(model, cond, digits=2) {
 
 modTTR <- stan_glmer(TTR ~ condition * age + (1|video), data=e1ld)
 summary(modTTR) 
-e1TTR = get_stan_glmer_reporting_values(modTTR, "conditionexp") # -.11
+e1TTR = get_stan_glmer_reporting_values(modTTR, "conditionexp") # -.10
 
 modMTLD <- stan_glmer(MTLD ~ condition * age + (1|video), data=e1ld)
 summary(modMTLD) 
-e1MTLD = get_stan_glmer_reporting_values(modMTLD, "conditionexp") # -9.19
+e1MTLD = get_stan_glmer_reporting_values(modMTLD, "conditionexp") # -6.27
 
 # predict word tokens
 tokens_mod <- stan_glmer(tokens ~ condition * age + (1|video), control = list(adapt_delta = 0.99), data=e1ld) 
 summary(tokens_mod)
-e1tokens = get_stan_glmer_reporting_values(tokens_mod, "conditionexp") # 59.41
+e1tokens = get_stan_glmer_reporting_values(tokens_mod, "conditionexp") # 57.1
 
 # predict word types
 types_mod <- stan_glmer(types ~ condition * age + (1|video), control = list(adapt_delta = 0.99), data=e1ld)
@@ -317,7 +329,8 @@ e1_lexdiv <- e1ld %>% group_by(condition) %>%
 e1model_string = "~ condition*EL + condition*AA + condition*RR  + age + gender + parent_ed + (1|video)"
 # only 54 parents completed the EPAQ
 modTTRE <- stan_glmer(paste("TTR", e1model_string), data=e1ld)
-summary(modTTRE) # 
+summary(modTTRE) # conditionexp, RR, genderM, parent_ed 
+get_stan_glmer_reporting_values(modTTRE, 'conditionexp') # -.11
 
 modMTLDE <- stan_glmer(paste("MTLD", e1model_string), data=e1ld)
 summary(modMTLDE) #
@@ -332,8 +345,8 @@ summary(types_modE) #
 
 We fit a Bayesian mixed-effects linear regression predicting TTR as a function of condition, age (centered), and their interaction with a random intercept per video using rstanarm [@rstanarm]. 
 For effects that are at least 95% likely to be non-zero according to the posterior distribution, we report estimated coefficients ($\beta$) as well as 95% Bayesian credible intervals (95% CI), demarcating the range within which 95% of the posterior predictive values fall.
-There was significantly lower TTR in the Activity Video condition (mean: `r round(subset(e1_lexdiv, condition=='exp')$TTR, 2)`) than in the No Video condition (mean: `r round(subset(e1_lexdiv, condition=='con')$TTR, 2)`, $\beta=$`r e1TTR["conditionexp"]`, 95% CI=[`r e1TTR['95pLB']`,`r e1TTR['95pUB']`]). 
-A similar regression instead predicting MTLD also found significantly lower lexical diversity in the Activity Video condition (mean MTLD: `r round(subset(e1_lexdiv, condition=='exp')$MTLD, 2)`) than in the No Video condition (mean: `r round(subset(e1_lexdiv, condition=='con')$MTLD, 2)`, $\beta=$`r e1MTLD["conditionexp"]`, 95% CI=[`r e1MTLD['95pLB']`,`r e1MTLD['95pUB']`]), with no other significant effects.
+There was lower TTR in the Activity Video condition (mean: `r round(subset(e1_lexdiv, condition=='exp')$TTR, 2)`) than in the No Video condition (mean: `r round(subset(e1_lexdiv, condition=='con')$TTR, 2)`, $\beta=$`r e1TTR["conditionexp"]`, 95% CI=[`r e1TTR['95pLB']`,`r e1TTR['95pUB']`]). 
+A similar regression instead predicting MTLD also found lower lexical diversity in the Activity Video condition (mean MTLD: `r round(subset(e1_lexdiv, condition=='exp')$MTLD, 2)`) than in the No Video condition (mean: `r round(subset(e1_lexdiv, condition=='con')$MTLD, 2)`, $\beta=$`r e1MTLD["conditionexp"]`, 95% CI=[`r e1MTLD['95pLB']`,`r e1MTLD['95pUB']`]), with no predicted influence of age.
 Figure \ref{fig:lexdiv} shows the mean of each lexical diversity measure (TTR and MTLD) by condition.
 
 ```{r e1tokens, echo=F, include=F}
@@ -349,7 +362,7 @@ e1_type <- e1ld %>% group_by(Condition) %>%
   tidyboot_mean(types)
 ```
 
-We also conducted similar regressions predicting the number of word tokens and types, finding only a significant effect of condition on the number of word tokens ($\beta=$ `r e1tokens["conditionexp"]`, 95% CI=[`r e1tokens['95pLB']`,`r e1tokens['95pUB']`]), with parents using more words in the Activity Video condition (mean: `r round(subset(e1_lexdiv, condition=='exp')$tokens, 0)`, bootstrapped 95% confidence intervals: [`r round(subset(e1_tok, Condition=="Activity Video")$ci_lower, 0)`,`r round(subset(e1_tok, Condition=="Activity Video")$ci_upper, 0)`]) than in the No Video condition (mean: `r round(subset(e1_lexdiv, condition=='con')$tokens, 0)`, bootstrapped 95% confidence intervals: [`r round(subset(e1_tok, Condition=="No Video")$ci_lower, 0)`,`r round(subset(e1_tok, Condition=="No Video")$ci_upper, 0)`]).
+We also conducted similar regressions predicting the number of word tokens and types, finding an effect of condition on the number of word tokens ($\beta=$ `r e1tokens["conditionexp"]`, 95% CI=[`r e1tokens['95pLB']`,`r e1tokens['95pUB']`]), with parents using more words in the Activity Video condition (mean: `r round(subset(e1_lexdiv, condition=='exp')$tokens, 0)`, bootstrapped 95% confidence intervals: [`r round(subset(e1_tok, Condition=="Activity Video")$ci_lower, 0)`,`r round(subset(e1_tok, Condition=="Activity Video")$ci_upper, 0)`]) than in the No Video condition (mean: `r round(subset(e1_lexdiv, condition=='con')$tokens, 0)`, bootstrapped 95% confidence intervals: [`r round(subset(e1_tok, Condition=="No Video")$ci_lower, 0)`,`r round(subset(e1_tok, Condition=="No Video")$ci_upper, 0)`]).
 
 
 ```{r e1tab, echo=FALSE, include=F}
@@ -510,9 +523,9 @@ summary(e1cja_time_modE) # NA
 ```
 
 We fit a Bayesian mixed-effects linear regression predicting the number of bids for joint attention (JA) as a function of fixed effects of condition, age (centered), and their interaction, with random intercepts per video. 
-There were significantly more bids for JA in the Activity Video condition (mean: `r round(subset(e1bids_M, Condition=="Activity Video")$mean,2)`, sd: `r round(subset(e1bids_M, Condition=="Activity Video")$sd,2)`) than in the No Video condition (mean: `r round(subset(e1bids_M, Condition=="No Video")$mean,2)`, sd: `r round(subset(e1bids_M, Condition=="No Video")$sd,2)`, $\beta=`r e1bids["ConditionActivity Video"]`$, 95% CI=[`r e1bids['95pLB']`,`r e1bids['95pUB']`]). 
+There were more bids for JA in the Activity Video condition (mean: `r round(subset(e1bids_M, Condition=="Activity Video")$mean,2)`, sd: `r round(subset(e1bids_M, Condition=="Activity Video")$sd,2)`) than in the No Video condition (mean: `r round(subset(e1bids_M, Condition=="No Video")$mean,2)`, sd: `r round(subset(e1bids_M, Condition=="No Video")$sd,2)`, $\beta=`r e1bids["ConditionActivity Video"]`$, 95% CI=[`r e1bids['95pLB']`,`r e1bids['95pUB']`]). 
 Mixed-effects regressions with the same structure were performed predicting the number of episodes of coordinated and passive JA, and the total duration of time spent in coordinated and passive JA.
-There were no significant effects on the number of or total duration of coordinated or passive JA episodes.
+There were no predicted effects on the number of or total duration of coordinated or passive JA episodes.
 Figure \@ref(fig:JA) (top) shows the mean number bids for JA and episodes of JA by condition in Experiment 1.
 
 
@@ -520,7 +533,7 @@ Figure \@ref(fig:JA) (top) shows the mean number bids for JA and episodes of JA 
 
 We also fit Bayesian mixed-effects linear regression models predicting each of the above lexical diversity and joint attention dependent variables as a function of fixed effects of condition, age (centered), gender, parent's education level, and the subscales of the EPAQ: Early Learning (EL), Affection and Attachment (AA), and Rules and Respect (RR), along with interactions of condition and EL, AA, and RR. 
 These models included random intercepts per video. 
-Of these exploratory regressions, only the regression predicting the number of passive JA episodes produced a significant effect involving these demographic variables: an interaction of condition and RR ($\beta=`r e1pjaE["ConditionActivity Video:RR"]`$, 95% CI=[`r e1pjaE['95pLB']`,`r e1pjaE['95pUB']`]), shows that for parents in the Activity Video condition, those with higher Rules and Respect subscores engaged in more passive JA episodes.
+Of these exploratory regressions, only the regression predicting the number of passive JA episodes showed an effect involving these demographic variables: an interaction of condition and RR ($\beta=`r e1pjaE["ConditionActivity Video:RR"]`$, 95% CI=[`r e1pjaE['95pLB']`,`r e1pjaE['95pUB']`]), shows that for parents in the Activity Video condition, those with higher Rules and Respect subscores engaged in more passive JA episodes.
 
 To better understand the intervention's effect on language use, we analyzed which words are characteristic of parents' speech in each condition, comparing the differency in frequency rank of each word (lemma) in the two conditions, as well as contrasting the corpus overall with a general English-language word frequency list (see SI for the interactive corpus characteristic plot). 
 Words that are strongly indicative of being from the Activity Video condition include "give", "big", "small", "thank", "have", "which", and "school", while words that are most characteristic of the No Video condition include "ready", "on", "oh", "see", "going", "let", and "are". 
@@ -589,7 +602,7 @@ multiplot(e1bids, e1tja, e2bids, e2tja_age,
 ```
 
 
-## Discussion
+### Discussion
 
 In summary, while parents produced more word types and tokens after viewing the activity video, lexical diversity (both TTR and MTLD) was higher when parents were just asked to play as they normally would.
 It may be that parents in the Activity Video condition, in their attempt to stick to the prescribed task, end up repeating themselves more, and indeed some differences in speech acts were notable: 
@@ -634,7 +647,7 @@ A second coder independently coded a third of the videos (i.e., 26 of the 84 vid
 The two coders had a reliability of ICC = 0.80 with 95% confidence interval (CI) = [0.60,0.90] for number of parent bids for JA; ICC = 0.74 with 95% CI = [0.59,0.87] for number of passive JA episodes; ICC = 0.78 with 95% CI = [0.58,0.90] for number of coordinated JA episodes; ICC = 0.72 with 95% CI = [0.46,0.86] for total duration of passive JA episodes, and ICC = 0.88 with 95% CI = [0.75,0.94] for total duration of coordinated JA episodes. 
 
 
-## Results
+## Results and Discussion
 
 Parents' child-directed speech was transcribed and processed, and bids and episodes of joint attention were coded according to the same procedure used in Experiment 1.
 We first report preregistered regressions[^5] predicting TTR and number of tokens, as well as an exploratory regression predicting MTLD.
@@ -744,7 +757,7 @@ e2tjaAgeCond = get_stan_glmer_reporting_values(e2tja_m, "age:ConditionActivity V
 
 ```
 
-As preregistered, we fit mixed-effects linear regressions predicting the number of parental bids for joint attention and the total number of episodes of JA as a function of fixed effects of condition, age (centered), and their interaction, with random intercepts per video.
+We fit Bayesian mixed-effects linear regressions predicting the number of parental bids for joint attention and the total number of episodes of JA as a function of fixed effects of condition, age (centered), and their interaction, with random intercepts per video.
 Shown in Figure \ref{fig:JA} (left bottom), parents made significantly more bids for JA after watching the Activity Video (mean: `r round(subset(e2_bids, Condition=="Activity Video")$mean,2)`, bootstrapped 95% confidence intervals: `r round(subset(e2_bids, Condition=="Activity Video")$ci_lower,2)`, `r round(subset(e2_bids, Condition=="Activity Video")$ci_upper,2)`; $\beta=`r e2bids["ConditionActivity Video"]`$, 95% CI = [`r e2bids["95pLB"]`,`r e2bids["95pUB"]`]) than after the Science Video (mean: `r round(subset(e2_bids, Condition=="Science Video")$mean,2)`, 95% CI: [`r round(subset(e2_bids, Condition=="Science Video")$ci_lower,2)`, `r round(subset(e2_bids, Condition=="Science Video")$ci_upper,2)`]). 
 There were no other significant effects on parental bids for JA.
 
@@ -824,25 +837,37 @@ print(e2cja_age)
 #multiplot(e2cja, e2tja_age, cols=4, layout=matrix(c(1,2,2,2), nrow=1))
 ```
 
-```{r meta-analysis, include=F}
 
-```
+# General Discussion
 
-# Discussion
+We were interested in how digital parenting advice alters parents' interactions with their children. 
+We specifically set out to test whether activity suggestions lead to higher-quality play, a presupposition of many early parenting interventions. 
+Our experiments explored this question by randomly assigning parents to different advice conditions and then observing their behavior in short free-play sessions, with quality of play assessed through measures of parent language and joint attention. 
+In two experiments, we found that activity videos increased parent bids for joint attention as compared with no video (Experiment 1) and a comparable science video (Experiment 2). 
+In some cases--especially in older children--these bids were successful in increasing engagement. 
+We also observed differences in parents' talk that were broadly similar across both experiments, with a greater quantity of language but a similar breadth of vocabulary (leading to lower measures of lexical diversity). 
+Exploratory corpus analysis identified the words most characteristic of the activity videos as being related to requests (e.g., "give", "put", "take") whereas control conditions featured more invitational words (e.g., "say", "let", "like").
 
-This study investigated whether and how digital parenting advice alters parents' interactions with their toddlers during a 3-minute play period.
-In Experiment 1, parents of 6--24-month-olds made more bids for JA after watching the activity video as compared to no video, which was also found in the parents of 12--24-month-olds in Experiment 2 in comparison to a science video control.
-Experiment 2 moreover found fewer JA episodes for parents of older infants after a science video, while parents of older children engaged in more JA after the activity video.
-In combination, these results suggest that short parenting messages suggesting activities can encourage parents to make more attempts to engage their child in joint attention, and that in some cases--especially in older children--these bids are successful in increasing engagement.
+The short, activity-oriented parenting messages we used encouraged parents to make more attempts -- both verbal and non-verbal -- to engage their child, supporting their use as a component of interventions. 
+Why were they successful? 
+When parents are asked to play with their children in the presence of new toys, they may choose to follow their child's lead and engage in free play.
+While free play is positive, it nevertheless results in less scaffolded activity than when parents are given a goal that suggests a repertoire of ways to guide their child. 
+Parents may also persist in providing opportunities for their child to complete the activity, leading to more repetitive language but also more offers of engagement.
 
-Both experiments also found that activity videos led to lower lexical diversity in parents' child-directed speech (TTR in both; MTLD only in Exp. 1). However, activity videos resulted in parents using more word tokens (significant in Exp. 1; numerical in Exp. 2), while the number of word types did not differ significantly across conditions.
-Thus, although activity videos led to lower lexical diversity during play, this resulted not from fewer word types but from the use of more word tokens.
-Taken together with the greater number of bids for joint attention from parents, we suggest that the activity videos may lead parents to more persistently and repetitively attempt to engage their child in the prescribed activity.
-Indeed, the words identified by the corpus analysis as being words most characteristic of the activity videos were related to requests (e.g., "give", "put", "take"), whereas words characteristic of the control conditions were more invitational (e.g., "say", "let", "like").
+Our study has a number of limitations related to design and sample, each of which suggests possible future directions. 
+First, our design was intentionally short and minimal; future studies should investigate whether changes in parents' speech and attempts to engage their children could persist across a longer timespan (perhaps with a broader set of activities being provisioned). 
+A longer-term study would also be able to measure whether consistent increases in parent bids would lead children to respond by engaging more with their parent.
+Second, our design assumes that parents have access not only to activities but also to the materials to complete them; this assumption may be unrealistic for any parent, but especially for the parents who are most likely to be targeted for early parenting interventions. 
+Providing materials may be critical for the success of activity suggestions. 
+Finally, our sample is a convenience sample drawn from a museum, but it skews towards higher socio-economic status households as well as those families who are well-disposed towards visiting a museum (perhaps because they value education) and are interested in participating in research. 
+A key goal for future research is to assess the generality of these findings across populations. 
 
-In sum, the results of this study show that digital parenting interventions recommending particular play activities to parents of young children can influence both the quality and quantity of child-directed speech, as well as parents attempts to engage their children in joint attention---at least in the short term. 
-Future studies should investigate whether these changes in parents' speech and attempts to engage their children persist after the treatment. 
-Another target for future study is to determine whether, over a longer treatment period, children begin to respond to the increased bids for joint attention and greater number of tokens by engaging more with their parent, and perhaps even beginning to play differently.
+<!-- Taken together with the greater number of bids for joint attention from parents, we suggest that the activity videos may lead parents to more persistently and repetitively attempt to engage their child in the prescribed activity. -->
+
+<!-- Both experiments also found that activity videos led to lower lexical diversity in parents' child-directed speech (TTR in both; MTLD only in Exp. 1). However, activity videos resulted in parents using more word tokens (significant in Exp. 1; numerical in Exp. 2), while the number of word types did not differ significantly across conditions. -->
+<!-- Thus, although activity videos led to lower lexical diversity during play, this resulted not from fewer word types but from the use of more word tokens. -->
+
+In sum, the results of this study show that digital parenting videos recommending play activities can lead to short-term increases in parents' attempts to engage their young children, both verbally and non-verbally. 
 
 
 # Acknowledgements

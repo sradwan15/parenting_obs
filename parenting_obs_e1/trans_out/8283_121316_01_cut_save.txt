@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -57,11 +57,11 @@
 *MOT:	not in your mouth.
 *CHI:		[xxx]
 *MOT:	yucky.
-*MOT:	yuuucky.
+*MOT:	yucky.
 *MOT:	yuck.
 *MOT:	yuck.
 *MOT:	yucks.
-*MOT:	yuckyuck.
+*MOT:	yuck yuck.
 %com:		mother makes sucking in breath sound.
 *MOT:	where did it go?	
 *CHI:		[xxx]
@@ -80,7 +80,7 @@
 %com:		toy being played with.
 *CHI:		[xxx]
 %com:		mother making noise.
-*MOT:	where's the elephant Andre?
+*MOT:	where's the elephant CHILD?
 %com:		overlapping mother and child.
 *CHI:		[xxx]
 *MOT:	oh you're going to lay down.

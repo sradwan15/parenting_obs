@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -36,7 +36,7 @@
 *CHI:	[xxx]
 *MOT:	what is this one? 
 *MOT:	look it, it’s a horse. 
-*MOT: 	Lilya. 
+*MOT: 	CHILD. 
 %com:	loud children’s voices in background.
 %com:	tapping noises.
 *MOT:	look, it’s a horse. 

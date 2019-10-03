@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -28,8 +28,8 @@
 *CHI:	[xxx].
 *CHI:	[xxx].
 %com:	sounds in the background.
-*FAT:	Rex.
-*FAT:	Rex.
+*FAT:	CHILD.
+*FAT:	CHILD.
 *FAT:	voomvoom.
 %com:	sounds in the background.
 *FAT:	what else do we have?
@@ -52,7 +52,7 @@
 %com:	sounds in the background.
 %com:	sounds in the background.
 %com:	*CHIld yelling in the background.
-*FAT:	Rex look at this.
+*FAT:	CHILD look at this.
 *CHI:	[xxx].
 *FAT:	can you say horse?
 *FAT:	it’s a horse.

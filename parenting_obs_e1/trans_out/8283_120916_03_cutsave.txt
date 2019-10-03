@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -52,7 +52,7 @@
 %com:		child making music.
 *MOT:	there you go.
 %com:		music being made.
-*MOT:	uno dos thres.
+*MOT:	uno dos tres.
 *MOT:	one two three.
 %com:		mother and child making music.
 %com:		child making music.

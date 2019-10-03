@@ -1,4 +1,4 @@
-﻿FILE INFORMATION HEADING
+FILE INFORMATION HEADING
 
 
 @Begin
@@ -22,17 +22,17 @@
 *MOT: 	a green elephant. 
 %com: 	mother makes sound effect.
 *MOT: 	oh no. 
-*MOT: 	beepbeep.
+*MOT: 	beep beep.
 *MOT: 	boop.
 %com:	mother laughs.
 %com:	loud children’s voices in the background.
 %com: 	mother gasps. 
 *MOT:	is that a horse?
-*MOT: 	beepbeep.
+*MOT: 	beep beep.
 *MOT: 	neigh.
 %com: 	mother makes sound effect.
 %com: 	mother makes sound effect.
-*MOT: 	tititi.
+*MOT: 	ti ti ti.
 %com:	loud children’s voices in the background.
 %com:	tapping noises.
 %com:	loud children’s voices in the background. 
@@ -41,10 +41,10 @@
 %com: 	clicking noises.
 *MOT: 	like the cars your brother plays with.
 %com: 	clicking noises.
-*MOT: 	beepbeep.
-*MOT: 	beepbeep.
+*MOT: 	beep beep.
+*MOT: 	beep beep.
 *MOT: 	boop.
-*MOT: 	beepbeep.
+*MOT: 	beep beep.
 %com: 	clicking noises.
 %com:	mother laughs.
 %com: 	clicking noises.
@@ -89,9 +89,9 @@
 %com:	tapping noises.
 %com:	tapping noises.
 %com: 	mother makes sound effect.
-*MOT: 	titititi.
-*MOT: 	titititi.
-*MOT: 	tititi.
+*MOT: 	ti ti ti ti.
+*MOT: 	ti ti ti ti.
+*MOT: 	ti ti ti.
 %com:	tapping noises.
 %com:	tapping noises.
 %com:	loud children’s voices in the background.
